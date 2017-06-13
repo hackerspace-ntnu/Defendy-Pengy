@@ -24,14 +24,14 @@ public class FpsController : MonoBehaviour
 
 	bool cursorVisible;
 
-	void Start ()
+	void Start()
 	{
 		cameraT = Camera.main.transform;
 		rigidbodyR = GetComponent<Rigidbody>();
 		LockMouse();
 	}
 
-	void Update ()
+	void Update()
 	{
 		// Camera movement
 		transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * mouseSensitivity_x);

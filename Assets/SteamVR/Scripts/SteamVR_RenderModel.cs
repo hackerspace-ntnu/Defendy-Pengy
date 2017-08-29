@@ -14,24 +14,18 @@ using Valve.VR;
 public class SteamVR_RenderModel : MonoBehaviour
 {
 	public SteamVR_TrackedObject.EIndex index = SteamVR_TrackedObject.EIndex.None;
-
-	public const string modelOverrideWarning = "Model override is really only meant to be used in " +
-		"the scene view for lining things up; using it at runtime is discouraged.  Use tracked device " +
-		"index instead to ensure the correct model is displayed for all users.";
-
-	[Tooltip(modelOverrideWarning)]
 	public string modelOverride;
 
-	[Tooltip("Shader to apply to model.")]
+	// Shader to apply to model.
 	public Shader shader;
 
-	[Tooltip("Enable to print out when render models are loaded.")]
+	// Enable to print out when render models are loaded.
 	public bool verbose = false;
 
-	[Tooltip("If available, break down into separate components instead of loading as a single mesh.")]
+	// If available, break down into separate components instead of loading as a single mesh.
 	public bool createComponents = true;
 
-	[Tooltip("Update transforms of components at runtime to reflect user action.")]
+	// Update transforms of components at runtime to reflect user action.
 	public bool updateDynamically = true;
 
 	// Additional controller settings for showing scrollwheel, etc.
@@ -80,7 +74,7 @@ public class SteamVR_RenderModel : MonoBehaviour
 					if (!SteamVR.active && !SteamVR.usingNativeSupport)
 					{
 						var error = EVRInitError.None;
-						OpenVR.Init(ref error, EVRApplicationType.VRApplication_Utility);
+						OpenVR.Init(ref error, EVRApplicationType.VRApplication_Other);
 						needsShutdown = true;
 					}
 
@@ -324,7 +318,7 @@ public class SteamVR_RenderModel : MonoBehaviour
 			if (error != EVRRenderModelError.Loading)
 				break;
 
-			Sleep();
+			System.Threading.Thread.Sleep(1);
 		}
 
 		if (error != EVRRenderModelError.None)
@@ -385,7 +379,7 @@ public class SteamVR_RenderModel : MonoBehaviour
 				if (error != EVRRenderModelError.Loading)
 					break;
 
-				Sleep();
+				System.Threading.Thread.Sleep(1);
 			}
 
 			if (error == EVRRenderModelError.None)
@@ -402,7 +396,7 @@ public class SteamVR_RenderModel : MonoBehaviour
 						if (error != EVRRenderModelError.Loading)
 							break;
 
-						Sleep();
+						System.Threading.Thread.Sleep(1);
 					}
 				}
 				else
@@ -579,7 +573,7 @@ public class SteamVR_RenderModel : MonoBehaviour
 
 	SteamVR_Events.Action deviceConnectedAction, hideRenderModelsAction, modelSkinSettingsHaveChangedAction;
 
-	SteamVR_RenderModel()
+	void Awake()
 	{
 		deviceConnectedAction = SteamVR_Events.DeviceConnectedAction(OnDeviceConnected);
 		hideRenderModelsAction = SteamVR_Events.HideRenderModelsAction(OnHideRenderModels);
@@ -594,7 +588,7 @@ public class SteamVR_RenderModel : MonoBehaviour
 #endif
 		if (!string.IsNullOrEmpty(modelOverride))
 		{
-			Debug.Log(modelOverrideWarning);
+			Debug.Log("Model override is really only meant to be used in the scene view for lining things up; using it at runtime is discouraged.  Use tracked device index instead to ensure the correct model is displayed for all users.");
 			enabled = false;
 			return;
 		}
@@ -724,7 +718,7 @@ public class SteamVR_RenderModel : MonoBehaviour
 			child.localPosition = componentTransform.pos;
 			child.localRotation = componentTransform.rot;
 
-			var attach = child.Find(k_localTransformName);
+			var attach = child.FindChild(k_localTransformName);
 			if (attach != null)
 			{
 				var attachTransform = new SteamVR_Utils.RigidTransform(componentState.mTrackingToComponentLocal);
@@ -749,13 +743,6 @@ public class SteamVR_RenderModel : MonoBehaviour
 		{
 			UpdateModel();
 		}
-	}
-
-	private static void Sleep()
-	{
-#if !UNITY_METRO
-		System.Threading.Thread.Sleep(1);
-#endif
 	}
 
     /// <summary>

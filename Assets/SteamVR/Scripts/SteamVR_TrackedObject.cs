@@ -31,11 +31,8 @@ public class SteamVR_TrackedObject : MonoBehaviour
 	}
 
 	public EIndex index;
-
-	[Tooltip("If not set, relative to parent")]
-	public Transform origin;
-
-    public bool isValid { get; private set; }
+	public Transform origin; // if not set, relative to parent
+    public bool isValid = false;
 
 	private void OnNewPoses(TrackedDevicePose_t[] poses)
 	{
@@ -72,7 +69,7 @@ public class SteamVR_TrackedObject : MonoBehaviour
 
 	SteamVR_Events.Action newPosesAction;
 
-	SteamVR_TrackedObject()
+	void Awake()
 	{
 		newPosesAction = SteamVR_Events.NewPosesAction(OnNewPoses);
 	}

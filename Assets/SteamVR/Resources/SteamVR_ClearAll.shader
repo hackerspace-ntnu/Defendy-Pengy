@@ -1,17 +1,12 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 // UNITY_SHADER_NO_UPGRADE
 Shader "Custom/SteamVR_ClearAll" {
-	Properties
-	{
-		_Color ("Color", Color) = (0, 0, 0, 0)
-		_MainTex ("Base (RGB)", 2D) = "white" {}
-	}
+	Properties { _MainTex ("Base (RGB)", 2D) = "white" {} }
 
 	CGINCLUDE
 
 	#include "UnityCG.cginc"
 
-	float4 _Color;
 	sampler2D _MainTex;
 
 	struct v2f {
@@ -31,7 +26,7 @@ Shader "Custom/SteamVR_ClearAll" {
 	}
 
 	float4 frag(v2f i) : COLOR {
-		return _Color;
+		return float4(0, 0, 0, 0);
 	}
 
 	ENDCG

@@ -861,8 +861,6 @@ namespace Valve.VR.InteractionSystem
 				controllerObject = GameObject.Instantiate( controllerPrefab );
 				controllerObject.SetActive( true );
 				controllerObject.name = controllerPrefab.name + "_" + this.name;
-				controllerObject.layer = gameObject.layer;
-				controllerObject.tag = gameObject.tag;
 				AttachObject( controllerObject );
 				controller.TriggerHapticPulse( 800 );
 

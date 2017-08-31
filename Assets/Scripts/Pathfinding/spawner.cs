@@ -3,20 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class spawner : MonoBehaviour {
-	public GameObject penguin;
-	private Vector3 pos= new Vector3(-1f,2.88f,-16.33f);
-	private int a;
+	public GameObject enemyTest;
+
+	//private Vector3 pos= transform.position;
+	private float a;
+	public Transform transformSpawner;
+	private Vector3 pos;
 	// Use this for initialization
 	void Start () {
-		
+		pos = transformSpawner.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		a++;
-		if (a > 120) {
-			a = 0;
-			Instantiate (penguin, pos, Quaternion.identity);
+		a = a + 1f;
+		print (Time.deltaTime);
+		if (a > 120f) {
+			a = 0f;
+			Instantiate (enemyTest, pos, Quaternion.identity);
 		}
 	}
 }

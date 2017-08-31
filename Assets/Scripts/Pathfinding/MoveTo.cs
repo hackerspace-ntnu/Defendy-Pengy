@@ -9,5 +9,6 @@ public class MoveTo : MonoBehaviour {
 	void Start () {
 		UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		agent.destination = goal.position; 
+		print (goal.position);
 	}
 }

@@ -10,13 +10,14 @@ public class placeholderEnemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-		agent.destination = goal.position; 
+
 
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		agent.destination = goal.position; 
 		if (this.health < 0f) {
 			Destroy (gameObject);
 		}

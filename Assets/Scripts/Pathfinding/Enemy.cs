@@ -2,13 +2,18 @@
 using UnityEngine;
 using System.Collections;
 
-public class MoveTo : MonoBehaviour {
+public abstract class Enemy : MonoBehaviour{
 	UnityEngine.AI.NavMeshAgent agent;
 	public Transform goal;
+	public float health;
+	public float speed;
 
-	void Start () {
-		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+	public Enemy(float health, float speed){
+		this.health=health;
+		this.speed=speed;
+		 agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		agent.destination = goal.position; 
+		agent.speed = speed;
 		print (goal.position);
 	}
 	void Update () {
@@ -17,4 +22,13 @@ public class MoveTo : MonoBehaviour {
 			Destroy (gameObject);
 		}
 	}
+	public float getHealth(){
+		return health;
+	}
+	public void setSpeed(float speed){
+		this.speed = speed;
+	}
+
+		
+
 }

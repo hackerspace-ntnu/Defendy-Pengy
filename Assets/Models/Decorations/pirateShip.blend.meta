@@ -1,0 +1,226 @@
+fileFormatVersion: 2
+guid: 575be215f8294cf4bbdbbc0731e09555
+timeCreated: 1504197306
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: anchorRoller
+    100002: clothController
+    100004: edgePlank
+    100006: fence
+    100008: ladder
+    100010: lowerDeck
+    100012: pilar_001
+    100014: //RootNode
+    100016: planks
+    100018: planks_002
+    100020: planks_003
+    100022: planks_004
+    100024: planks_005
+    100026: ropeTop_000
+    100028: ropeTop_001
+    100030: scoreBoard
+    100032: scoreBoard_001
+    100034: Ship
+    100036: shipFront
+    100038: stairCase
+    100040: steerlWheelHandle_000
+    100042: steerlWheelHandle_001
+    100044: steerlWheelHandle_002
+    100046: steerlWheelHandle_003
+    100048: steerWheel
+    100050: steerWheelBase
+    100052: surronder
+    100054: topBowl
+    100056: upperDeck
+    400000: anchorRoller
+    400002: clothController
+    400004: edgePlank
+    400006: fence
+    400008: ladder
+    400010: lowerDeck
+    400012: pilar_001
+    400014: //RootNode
+    400016: planks
+    400018: planks_002
+    400020: planks_003
+    400022: planks_004
+    400024: planks_005
+    400026: ropeTop_000
+    400028: ropeTop_001
+    400030: scoreBoard
+    400032: scoreBoard_001
+    400034: Ship
+    400036: shipFront
+    400038: stairCase
+    400040: steerlWheelHandle_000
+    400042: steerlWheelHandle_001
+    400044: steerlWheelHandle_002
+    400046: steerlWheelHandle_003
+    400048: steerWheel
+    400050: steerWheelBase
+    400052: surronder
+    400054: topBowl
+    400056: upperDeck
+    2300000: anchorRoller
+    2300002: clothController
+    2300004: edgePlank
+    2300006: fence
+    2300008: ladder
+    2300010: lowerDeck
+    2300012: pilar_001
+    2300014: planks
+    2300016: planks_002
+    2300018: planks_003
+    2300020: planks_004
+    2300022: planks_005
+    2300024: ropeTop_000
+    2300026: ropeTop_001
+    2300028: scoreBoard
+    2300030: scoreBoard_001
+    2300032: Ship
+    2300034: shipFront
+    2300036: stairCase
+    2300038: steerlWheelHandle_000
+    2300040: steerlWheelHandle_001
+    2300042: steerlWheelHandle_002
+    2300044: steerlWheelHandle_003
+    2300046: steerWheel
+    2300048: steerWheelBase
+    2300050: surronder
+    2300052: topBowl
+    2300054: upperDeck
+    3300000: anchorRoller
+    3300002: clothController
+    3300004: edgePlank
+    3300006: fence
+    3300008: ladder
+    3300010: lowerDeck
+    3300012: pilar_001
+    3300014: planks
+    3300016: planks_002
+    3300018: planks_003
+    3300020: planks_004
+    3300022: planks_005
+    3300024: ropeTop_000
+    3300026: ropeTop_001
+    3300028: scoreBoard
+    3300030: scoreBoard_001
+    3300032: Ship
+    3300034: shipFront
+    3300036: stairCase
+    3300038: steerlWheelHandle_000
+    3300040: steerlWheelHandle_001
+    3300042: steerlWheelHandle_002
+    3300044: steerlWheelHandle_003
+    3300046: steerWheel
+    3300048: steerWheelBase
+    3300050: surronder
+    3300052: topBowl
+    3300054: upperDeck
+    4300000: Ship
+    4300002: edgePlank
+    4300004: scoreBoard_001
+    4300006: fence
+    4300008: planks
+    4300010: planks_002
+    4300012: planks_003
+    4300014: planks_004
+    4300016: planks_005
+    4300018: anchorRoller
+    4300020: pilar_001
+    4300022: clothController
+    4300024: topBowl
+    4300026: ropeTop_001
+    4300028: ropeTop_000
+    4300030: shipFront
+    4300032: stairCase
+    4300034: lowerDeck
+    4300036: upperDeck
+    4300038: ladder
+    4300040: scoreBoard
+    4300042: steerWheelBase
+    4300044: steerWheel
+    4300046: steerlWheelHandle_000
+    4300048: steerlWheelHandle_001
+    4300050: steerlWheelHandle_002
+    4300052: steerlWheelHandle_003
+    4300054: surronder
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

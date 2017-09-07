@@ -1,0 +1,170 @@
+fileFormatVersion: 2
+guid: 4f12d20c471bf574aa8e78deb3f4cd1c
+timeCreated: 1504024052
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Area
+    100002: Camera
+    100004: Icosphere
+    100006: Icosphere.001
+    100008: Icosphere.002
+    100010: Icosphere.003
+    100012: Icosphere.004
+    100014: Icosphere.005
+    100016: Icosphere.006
+    100018: Icosphere.007
+    100020: Mball.019
+    100022: NurbsPath
+    100024: NurbsPath.001
+    100026: NurbsPath.002
+    100028: NurbsPath.003
+    100030: NurbsPath.004
+    100032: NurbsPath.005
+    100034: Plane
+    100036: //RootNode
+    400000: Area
+    400002: Camera
+    400004: Icosphere
+    400006: Icosphere.001
+    400008: Icosphere.002
+    400010: Icosphere.003
+    400012: Icosphere.004
+    400014: Icosphere.005
+    400016: Icosphere.006
+    400018: Icosphere.007
+    400020: Mball.019
+    400022: NurbsPath
+    400024: NurbsPath.001
+    400026: NurbsPath.002
+    400028: NurbsPath.003
+    400030: NurbsPath.004
+    400032: NurbsPath.005
+    400034: Plane
+    400036: //RootNode
+    2000000: Camera
+    2300000: Icosphere
+    2300002: Icosphere.001
+    2300004: Icosphere.002
+    2300006: Icosphere.003
+    2300008: Icosphere.004
+    2300010: Icosphere.005
+    2300012: Icosphere.006
+    2300014: Icosphere.007
+    2300016: Mball.019
+    2300018: NurbsPath
+    2300020: NurbsPath.001
+    2300022: NurbsPath.002
+    2300024: NurbsPath.003
+    2300026: NurbsPath.004
+    2300028: NurbsPath.005
+    2300030: Plane
+    3300000: Icosphere
+    3300002: Icosphere.001
+    3300004: Icosphere.002
+    3300006: Icosphere.003
+    3300008: Icosphere.004
+    3300010: Icosphere.005
+    3300012: Icosphere.006
+    3300014: Icosphere.007
+    3300016: Mball.019
+    3300018: NurbsPath
+    3300020: NurbsPath.001
+    3300022: NurbsPath.002
+    3300024: NurbsPath.003
+    3300026: NurbsPath.004
+    3300028: NurbsPath.005
+    3300030: Plane
+    4300000: Mball.019
+    4300002: NurbsPath.005
+    4300004: NurbsPath.004
+    4300006: NurbsPath.003
+    4300008: NurbsPath.002
+    4300010: NurbsPath.001
+    4300012: NurbsPath
+    4300014: Icosphere.007
+    4300016: Icosphere.006
+    4300018: Icosphere.005
+    4300020: Icosphere.004
+    4300022: Icosphere.003
+    4300024: Icosphere.002
+    4300026: Icosphere.001
+    4300028: Icosphere
+    4300030: Plane
+    10800000: Area
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,32 +1,15 @@
 fileFormatVersion: 2
-guid: 410419cd4b497ad4b9ee72457632d42b
-timeCreated: 1504543084
+guid: 9c1958cc3194fc44cac6e9d72dee92dc
+timeCreated: 1491495706
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Plane
-    100004: Plane.001
-    100006: terrain
-    100008: water
     400000: //RootNode
-    400002: Plane
-    400004: Plane.001
-    400006: terrain
-    400008: water
-    2300000: Plane
-    2300002: Plane.001
-    2300004: terrain
-    2300006: water
-    3300000: Plane
-    3300002: Plane.001
-    3300004: terrain
-    3300006: water
-    4300000: Plane.001
-    4300002: water
-    4300004: terrain
-    4300006: Plane
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: water
   materials:
     importMaterials: 1
     materialName: 0
@@ -49,7 +32,6 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -57,10 +39,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -76,7 +55,6 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-    normalCalculationMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

@@ -38,6 +38,9 @@ namespace Valve.VR.InteractionSystem
 		private GameObject scaleParentObject = null;
 
 
+
+		private GameObject previousHitObject;
+
 		//-------------------------------------------------
 		void Start()
 		{
@@ -165,6 +168,14 @@ namespace Valve.VR.InteractionSystem
 					Physics.IgnoreCollision( shaftRB.GetComponent<Collider>(), collision.collider );
 				}
 
+
+				Enemy hitEnemy = collision.collider.gameObject.GetComponent<Enemy> ();
+				if (hitEnemy != null /*previousHitObject.GetComponent<Enemy>()*/){
+					print ("hit");
+					//hitEnemy.InflictDamage (56f);
+					Destroy (hitEnemy.gameObject);
+				}
+
 				if ( canStick )
 				{
 					StickInTarget( collision, travelledFrames < 2 );
@@ -175,6 +186,7 @@ namespace Valve.VR.InteractionSystem
 				{
 					Player.instance.PlayerShotSelf();
 				}
+				previousHitObject = collision.collider.gameObject;
 			}
 		}
 

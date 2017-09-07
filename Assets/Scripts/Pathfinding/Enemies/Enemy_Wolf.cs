@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IDamagable {
-	float GetHealth ();
-	float DecreaseHealth ();
+public class Enemy_Wolf : Enemy {
+	public float speed = 4;
 }

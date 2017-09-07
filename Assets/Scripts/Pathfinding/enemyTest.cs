@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyTest : Enemy {
-
-	// Use this for initialization
-	public EnemyTest(float health, float speed):base(health,speed){
-	}
-
+public class EnemyTest : Enemy, IDamagable {
+	
 	void Start () {
 		//EnemyTest(100f, 3f);
 	}
@@ -16,4 +12,18 @@ public class EnemyTest : Enemy {
 	void Update () {
 		
 	}
+
+	#region IDamagable implementation
+
+	public float GetHealth ()
+	{
+		throw new System.NotImplementedException ();
+	}
+
+	public float DecreaseHealth ()
+	{
+		throw new System.NotImplementedException ();
+	}
+
+	#endregion
 }

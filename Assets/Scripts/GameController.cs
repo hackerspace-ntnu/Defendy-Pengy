@@ -14,16 +14,21 @@ public class GameController : MonoBehaviour {
 		//EnemyWave wave = new EnemyWave (EnemySpawner.EnemyType.Wolf, 10, 2f);
 		//spawner.StartSpawningWave (wave);
 		isSpawning = true;
+		EnemyWave wave = new EnemyWave (EnemySpawner.EnemyType.Wolf, 3, 2f);
+		spawner.StartSpawningWave (wave);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		
+
+		/*
 		if (isSpawning){
 			timeAfterSpawn += Time.deltaTime;
 			if (timeAfterSpawn >= spawnDelay){
 				timeAfterSpawn -= spawnDelay;
 				Instantiate (enemy, transform.position, Quaternion.identity);
 			}
-		}
+		}*/
 	}
 }

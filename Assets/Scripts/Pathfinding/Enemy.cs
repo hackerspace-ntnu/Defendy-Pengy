@@ -14,15 +14,10 @@ public abstract class Enemy : MonoBehaviour, IDamagable{
 	void Start(){
 		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		agent.destination = goal.position; 
-		//agent.speed = Speed;
-		//print (health);
-
 		//initiate healthbar:
 
 		GameObject HealthBar = Instantiate(HealthBarPrefab, new Vector3(transform.position.x, transform.position.y+1.2f, transform.position.z),Quaternion.identity);
 		HealthBar.transform.parent = gameObject.transform;
-
-
 	}
 	void Update () {
 		//print (health);

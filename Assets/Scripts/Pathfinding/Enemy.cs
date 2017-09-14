@@ -1,6 +1,7 @@
 ﻿//Timmy Chan and Arne-Martin
 using UnityEngine;
 using System.Collections;
+using Valve.VR.InteractionSystem;
 
 public abstract class Enemy : MonoBehaviour, IDamagable{
 
@@ -10,25 +11,34 @@ public abstract class Enemy : MonoBehaviour, IDamagable{
 	private float Speed;
 	private static float healthStatic;
 	public GameObject HealthBarPrefab;
+	public Transform HeadsetPosition;
+	private GameObject HealthBar;
 
 	void Start(){
 		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		agent.destination = goal.position; 
 
+		//Player player=Valve.VR.InteractionSystem.Player;
 
-		//initiate healthbar, Arne-Martin
+		//initiate healthbar and finding headsetposition, Arne-Martin
 
-		GameObject HealthBar = Instantiate(HealthBarPrefab, new Vector3(transform.position.x, transform.position.y+1.2f, transform.position.z),Quaternion.identity);
+		HealthBar = Instantiate(HealthBarPrefab, new Vector3(transform.position.x, transform.position.y+1.2f, transform.position.z),Quaternion.identity);
 		HealthBar.transform.parent = gameObject.transform;
-
+		HeadsetPosition=Valve.VR.InteractionSystem.Player.instance.trackingOriginTransform;
 		healthStatic = health;
 
+
+		//Vector3 left = Quaternion.Inverse(InputTracking.GetLocalRotation(VRNode.LeftEye)) * InputTracking.GetLocalPosition(VRNode.LeftEye);
 	}
 	void Update () {
 
 		//To scale healthbar to health, Arne-Martin
 		var healthScale = this.health / healthStatic;
 		HealthBarPrefab.transform.localScale = new Vector3 (healthScale,0.1f ,0.1f );
+		//Rotate healthbar towards player, Arne-Martin
+		Vector3 UpdatedHeadsetPosition=HeadsetPosition.position;
+		HealthBar.transform.LookAt (UpdatedHeadsetPosition);
+
 
 		//UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEnginenemy.gameObjecte.AI.NavMeshAgent>();
 		if (agent.remainingDistance < 1f) {

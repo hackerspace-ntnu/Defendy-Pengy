@@ -8,21 +8,28 @@ public abstract class Enemy : MonoBehaviour, IDamagable{
 	public Transform goal;
 	public float health;
 	private float Speed;
-
+	private static float healthStatic;
 	public GameObject HealthBarPrefab;
 
 	void Start(){
 		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		agent.destination = goal.position; 
-		//initiate healthbar:
+
+
+		//initiate healthbar, Arne-Martin
 
 		GameObject HealthBar = Instantiate(HealthBarPrefab, new Vector3(transform.position.x, transform.position.y+1.2f, transform.position.z),Quaternion.identity);
 		HealthBar.transform.parent = gameObject.transform;
+
+		healthStatic = health;
+
 	}
 	void Update () {
-		//print (health);
-		HealthBarPrefab.transform.localScale = new Vector3 (GetHealth () / 100f,0.1f ,0.1f );
-		//print("hi");
+
+		//To scale healthbar to health, Arne-Martin
+		var healthScale = this.health / healthStatic;
+		HealthBarPrefab.transform.localScale = new Vector3 (healthScale,0.1f ,0.1f );
+
 		//UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEnginenemy.gameObjecte.AI.NavMeshAgent>();
 		if (agent.remainingDistance < 1f) {
 			Destroy (gameObject);

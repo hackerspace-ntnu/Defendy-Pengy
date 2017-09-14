@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveAround : MonoBehaviour {
+public class SpinAround : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

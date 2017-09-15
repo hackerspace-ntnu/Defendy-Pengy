@@ -6,12 +6,12 @@ public class SpinAround : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		transform.Rotate (Vector3.up * Random.Range (0f, 360f));
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = new Vector3 (0, 1 + 0.1f * Mathf.Sin (0.2f * Time.time % (2 * Mathf.PI)), 0);
-		transform.Rotate (Vector3.up * (10 * Time.deltaTime + 0.08f * Mathf.Sin(Time.time % (2 * Mathf.PI) ) ));
+		transform.position = new Vector3 (transform.position.x, 1 + 0.1f * Mathf.Sin (0.2f * Time.time), transform.position.z);
+		transform.Rotate (Vector3.up * (10 * Time.deltaTime + 0.08f * Mathf.Sin(Time.time) ));
 	}
 }

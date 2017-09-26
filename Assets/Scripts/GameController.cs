@@ -14,8 +14,9 @@ public class GameController : MonoBehaviour {
 		//EnemyWave wave = new EnemyWave (EnemySpawner.EnemyType.Wolf, 10, 2f);
 		//spawner.StartSpawningWave (wave);
 		isSpawning = true;
-		EnemyWave wave = new EnemyWave (EnemySpawner.EnemyType.Wolf, 3, 2f);
-		spawner.StartSpawningWave (wave);
+		//EnemyWave wave = new EnemyWave(EnemySpawner.EnemyType.Wolf, 3, 2f);
+		EnemyWave wave = WaveParser.ParseWaveFile(@"Assets\Waves\level1.txt")[0];
+		spawner.StartSpawningWave(wave);
 	}
 	
 	// Update is called once per frame

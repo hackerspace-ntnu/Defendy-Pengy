@@ -1,4 +1,6 @@
-﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
+﻿//Timmy Chan
+
+//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 //
 // Purpose: The arrow for the longbow
 //
@@ -38,8 +40,6 @@ namespace Valve.VR.InteractionSystem
 		private GameObject scaleParentObject = null;
 
 
-
-		private GameObject previousHitObject;
 
 		//-------------------------------------------------
 		void Start()
@@ -172,8 +172,7 @@ namespace Valve.VR.InteractionSystem
 				Enemy hitEnemy = collision.collider.gameObject.GetComponent<Enemy> ();
 				if (hitEnemy != null /*previousHitObject.GetComponent<Enemy>()*/){
 					print ("hit");
-					//hitEnemy.InflictDamage (56f);
-					Destroy (hitEnemy.gameObject);
+					hitEnemy.InflictDamage (46f);
 				}
 
 				if ( canStick )
@@ -186,7 +185,6 @@ namespace Valve.VR.InteractionSystem
 				{
 					Player.instance.PlayerShotSelf();
 				}
-				previousHitObject = collision.collider.gameObject;
 			}
 		}
 

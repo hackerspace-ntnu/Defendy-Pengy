@@ -7,6 +7,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour {
 	public enum EnemyType {Wolf, Fish, IceBear, Pig, Null};
 	public Enemy[] enemyPrefabs;
+	public Transform enemyContainer;
 	public Transform goal;
 	public float spawnFrequency = 3;
 
@@ -52,7 +53,7 @@ public class EnemySpawner : MonoBehaviour {
 			return false;
 		}
 		//replace the "prefab enemy variable" with a real enemy
-		Enemy enemy = Instantiate (GetPrefab(enemyType).gameObject, transform.position, Quaternion.identity).GetComponent<Enemy>();
+		Enemy enemy = Instantiate(GetPrefab(enemyType).gameObject, transform.position, Quaternion.identity, enemyContainer).GetComponent<Enemy>();
 		enemy.goal = goal;
 		return true;
 	}

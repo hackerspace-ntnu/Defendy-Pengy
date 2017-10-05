@@ -355,6 +355,7 @@ GameObject:
   - component: {fileID: 4462925015655188}
   - component: {fileID: 33462577953944444}
   - component: {fileID: 23286342581062406}
+  - component: {fileID: 64089129045624300}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -432,8 +433,6 @@ GameObject:
   - component: {fileID: 4107991618697538}
   - component: {fileID: 114450340983142668}
   - component: {fileID: 195573373280801808}
-  - component: {fileID: 33914370934081788}
-  - component: {fileID: 64032910819188772}
   m_Layer: 0
   m_Name: LowPoly_wolf
   m_TagString: Untagged
@@ -2061,13 +2060,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1182572506763502}
   m_Mesh: {fileID: 4300002, guid: 6a0572a041d04084496a7f0692378588, type: 3}
---- !u!33 &33914370934081788
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1399087364113900}
-  m_Mesh: {fileID: 0}
 --- !u!33 &33964971603296282
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -2075,20 +2067,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1959853021017894}
   m_Mesh: {fileID: 4300004, guid: 6a0572a041d04084496a7f0692378588, type: 3}
---- !u!64 &64032910819188772
+--- !u!64 &64089129045624300
 MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1399087364113900}
-  m_Material: {fileID: 0}
+  m_GameObject: {fileID: 1328993092434946}
+  m_Material: {fileID: 13400000, guid: c509d5711dc2cc346be2763cd92383ca, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 0
   m_InflateMesh: 0
   m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: 6a0572a041d04084496a7f0692378588, type: 3}
 --- !u!114 &114450340983142668
 MonoBehaviour:
   m_ObjectHideFlags: 1

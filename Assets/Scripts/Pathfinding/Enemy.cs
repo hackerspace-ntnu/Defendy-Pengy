@@ -49,6 +49,8 @@ public abstract class Enemy : MonoBehaviour, IDamagable{
 			//instantiate particles
 			Destroy (gameObject);
 		}
+
+		HandleSound();
 	}
 
 		
@@ -64,4 +66,12 @@ public abstract class Enemy : MonoBehaviour, IDamagable{
 	public void InflictDamage (float damage){health -= damage;}
 	#endregion
 
+	protected abstract void HandleSound();
+
+	protected void PlayRandomSound(AudioClip[] sounds)
+	{
+		AudioSource audio = GetComponent<AudioSource>();
+		int soundIndex = (int)(Random.value * (sounds.Length - 1));
+		audio.PlayOneShot(sounds[soundIndex]);
+	}
 }

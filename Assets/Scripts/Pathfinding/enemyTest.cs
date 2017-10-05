@@ -26,4 +26,9 @@ public class EnemyTest : Enemy, IDamagable {
 	}
 
 	#endregion
+
+	protected override void HandleSound()
+	{
+		throw new System.NotImplementedException();
+	}
 }

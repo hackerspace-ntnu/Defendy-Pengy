@@ -11,7 +11,7 @@ public abstract class Enemy : MonoBehaviour, IDamagable{
 	private float Speed;
 	private static float healthStatic;
 	public GameObject HealthBarPrefab;
-	public Transform HeadsetPosition;
+	private Transform HeadsetPosition;
 	private GameObject HealthBar;
 
 	void Start(){

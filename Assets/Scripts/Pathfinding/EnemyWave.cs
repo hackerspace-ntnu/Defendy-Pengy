@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-
+using UnityEngine;
 //Timmy Chan
 
 /* Directions:
@@ -12,38 +12,35 @@ public class EnemyWave{
 
 	public List<EnemySpawner.EnemyType> enemies = new List<EnemySpawner.EnemyType>(); //Enemy component of prefabs of different enemies
 	public List<float> spawnDelay = new List<float>();
-	private int spawnIndex = -1;  //index of the current spawned enemy
+	private int nextSpawnIndex = 0;  //index of the current spawned enemy
 
-	public EnemyWave(EnemySpawner.EnemyType[] enemies, float[] spawnDelay){
+	public EnemyWave(EnemySpawner.EnemyType[] enemies, float[] spawnDelay){ //works
 		foreach (EnemySpawner.EnemyType enemy in enemies)
 			this.enemies.Add (enemy);
 		foreach (float delay in spawnDelay)
 			this.spawnDelay.Add(delay);
 	}
 
-	public EnemyWave(EnemySpawner.EnemyType enemyType, int size, float spawnDelay){
+	public EnemyWave(EnemySpawner.EnemyType enemyType, int size, float spawnDelay){ //works
 		for(int i = 0; i < size; i++)
 			enemies.Add (enemyType);
 		this.spawnDelay.Add (spawnDelay);
 	}
 		
-	public bool IsAllSpawned(){
-		return (spawnIndex >= enemies.Count);
+	public bool IsAllSpawned(){ //works
+		return (nextSpawnIndex >= enemies.Count);
 	}
 
-	public float GetSpawnDelay(){ 
-		if (spawnIndex >= spawnDelay.Count)
+	public float GetSpawnDelay(){ //works
+		if (nextSpawnIndex - 1 >= spawnDelay.Count)
 			return spawnDelay[spawnDelay.Count-1];
-		return spawnDelay [spawnIndex];
+		return spawnDelay [nextSpawnIndex - 1];
 	}
 	public EnemySpawner.EnemyType GetNextEnemy(){
 		EnemySpawner.EnemyType result = EnemySpawner.EnemyType.Null; //null for enums
-		if (spawnIndex < enemies.Count)
-			spawnIndex += 1;
-			result = enemies [spawnIndex];
+		if (nextSpawnIndex < enemies.Count)
+			result = enemies[nextSpawnIndex];
+			nextSpawnIndex += 1;
 		return result;
-	}
-	public int CurrentSpawnIndex(){
-		return spawnIndex;
 	}
 }

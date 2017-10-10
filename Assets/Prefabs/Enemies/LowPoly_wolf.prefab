@@ -2094,8 +2094,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goal: {fileID: 4369538767071930, guid: 3305ffcff53362c4fb1cc4da6ceae529, type: 2}
   health: 100
-  HealthBarPrefab: {fileID: 0}
-  HeadsetPosition: {fileID: 0}
+  HealthBarPrefab: {fileID: 1526444277414400, guid: be44979df32dbbd48bfe006dfa3b8d86,
+    type: 2}
   speed: 4
 --- !u!195 &195573373280801808
 NavMeshAgent:

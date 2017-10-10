@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour {
 	public Enemy[] enemyPrefabs;
 	public Transform goal;
 	public float spawnFrequency = 3;
+    public SpawnManager spawnManager;
 
 
 	private bool isSpawning = false;
@@ -20,29 +21,18 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+        //stop spawning when the game is over??
 		if (isSpawning) {
 			timeToNextSpawn -= Time.deltaTime;
-			//print (timeToNextSpawn);
 			if (timeToNextSpawn <= 0f){
-				
-				print ("problem");
 				if (!SpawnEnemy(spawningWave.GetNextEnemy(), speedMultiplier)){
-					//no more enemies to spawn
+                    //no more enemies to spawn
 					isSpawning = false;
 					spawningWave = null;
+					spawnManager.WaveEnded();
+					return;
 				}
 				timeToNextSpawn += spawningWave.GetSpawnDelay ();
-				/*
-				if(spawningWave.IsArrayDelays){
-					timeToNextSpawn += spawningWave.GetSpawnDelay ();  //Does not work, fixed with currentDelayBetweenSpawn saving the first delay
-					//^^argument out of range exception
-				}else{
-					timeToNextSpawn = currentDelayBetweenSpawn;
-					//print (spawningWave.GetSpawnDelay ());
-				}*/
-
-
-
 			}
 		}
 	}
@@ -60,7 +50,7 @@ public class EnemySpawner : MonoBehaviour {
 	public void StartSpawningWave(EnemyWave wave){
 		isSpawning = true;
 		spawningWave = wave;
-		SpawnEnemy (wave.GetNextEnemy (), speedMultiplier);
+		SpawnEnemy (wave.GetNextEnemy(), speedMultiplier);
 		timeToNextSpawn = wave.GetSpawnDelay ();
 		currentDelayBetweenSpawn = wave.GetSpawnDelay ();
 	}

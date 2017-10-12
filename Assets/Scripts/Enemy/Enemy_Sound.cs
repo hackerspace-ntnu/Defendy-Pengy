@@ -33,9 +33,11 @@ abstract partial class Enemy
 	{
 		AudioSource audio = GetComponent<AudioSource>();
 
+		int soundIndex = (int)Mathf.Round(Random.value * (sounds.Length - 1));
+		audio.clip = sounds[soundIndex];
+
 		audio.pitch = Random.value * (RANDOM_PITCH_RANGE[1] - RANDOM_PITCH_RANGE[0]) + RANDOM_PITCH_RANGE[0];
 
-		int soundIndex = (int)(Random.value * (sounds.Length - 1));
-		audio.PlayOneShot(sounds[soundIndex]);
+		audio.Play();
 	}
 }

@@ -50,7 +50,7 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 			Destroy (gameObject);
 		}
 
-		HandleSound();
+		HandleIdleSound();
 	}
 
 		
@@ -61,8 +61,14 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 
 
 	#region IDamagable implementation
-	public void SetHealth (float health){this.health = health;}
-	public float GetHealth (){return health;}
-	public void InflictDamage (float damage){health -= damage;}
+	public void SetHealth(float health) { this.health = health; }
+
+	public float GetHealth() { return health; }
+
+	public void InflictDamage (float damage)
+	{
+		health -= damage;
+		PlayHurtSound();
+	}
 	#endregion
 }

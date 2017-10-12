@@ -13,7 +13,7 @@ abstract partial class Enemy
 
 	protected static readonly float[] RANDOM_PITCH_RANGE = { 0.9f, 1.1f };
 
-	protected void HandleSound()
+	protected void HandleIdleSound()
 	{
 		if (Time.time + IdleSoundFreq >= lastIdleSoundTime)
 		{
@@ -24,11 +24,18 @@ abstract partial class Enemy
 		}
 	}
 
+	protected void PlayHurtSound()
+	{
+		PlayRandomSound(hurtSounds);
+	}
+
 	protected void PlayRandomSound(AudioClip[] sounds)
 	{
 		AudioSource audio = GetComponent<AudioSource>();
+
+		audio.pitch = Random.value * (RANDOM_PITCH_RANGE[1] - RANDOM_PITCH_RANGE[0]) + RANDOM_PITCH_RANGE[0];
+
 		int soundIndex = (int)(Random.value * (sounds.Length - 1));
 		audio.PlayOneShot(sounds[soundIndex]);
-		audio.pitch = Random.value * (RANDOM_PITCH_RANGE[1] - RANDOM_PITCH_RANGE[0]) + RANDOM_PITCH_RANGE[0];
 	}
 }

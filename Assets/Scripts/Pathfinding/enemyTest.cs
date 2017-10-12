@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyTest : Enemy, IDamagable {
-	
+public class EnemyTest : Enemy, IDamagable
+{
+	protected override float IdleSoundFreq { get { throw new System.NotImplementedException(); } }
+	protected override float IdleSoundChance { get { throw new System.NotImplementedException(); } }
+
 	void Start () {
 		//EnemyTest(100f, 3f);
 	}
@@ -26,9 +29,4 @@ public class EnemyTest : Enemy, IDamagable {
 	}
 
 	#endregion
-
-	protected override void HandleSound()
-	{
-		throw new System.NotImplementedException();
-	}
 }

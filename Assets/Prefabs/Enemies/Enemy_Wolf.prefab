@@ -180,12 +180,12 @@ MonoBehaviour:
   HealthBarPrefab: {fileID: 1526444277414400, guid: be44979df32dbbd48bfe006dfa3b8d86,
     type: 2}
   HeadsetPosition: {fileID: 0}
-  speed: 4
   idleSounds:
   - {fileID: 8300000, guid: 99e7fc6c4ce6e15429747b7e156662b9, type: 3}
   - {fileID: 8300000, guid: 9621d669dbbb85c4c8de44f859b1e722, type: 3}
   hurtSounds:
   - {fileID: 8300000, guid: 0739d54f4b9765c4b9829f12ffcac308, type: 3}
+  speed: 4
 --- !u!136 &136791210700273234
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -3,8 +3,8 @@ using UnityEngine;
 using System.Collections;
 using Valve.VR.InteractionSystem;
 
-public abstract class Enemy : MonoBehaviour, IDamagable{
-
+public abstract partial class Enemy : MonoBehaviour, IDamagable
+{
 	UnityEngine.AI.NavMeshAgent agent;
 	public Transform goal;
 	public float health;
@@ -65,13 +65,4 @@ public abstract class Enemy : MonoBehaviour, IDamagable{
 	public float GetHealth (){return health;}
 	public void InflictDamage (float damage){health -= damage;}
 	#endregion
-
-	protected abstract void HandleSound();
-
-	protected void PlayRandomSound(AudioClip[] sounds)
-	{
-		AudioSource audio = GetComponent<AudioSource>();
-		int soundIndex = (int)(Random.value * (sounds.Length - 1));
-		audio.PlayOneShot(sounds[soundIndex]);
-	}
 }

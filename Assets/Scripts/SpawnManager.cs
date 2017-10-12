@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour {
-    private List<EnemyWave> waves;
-    private List<float> wavesDelay;
-    public EnemySpawner spawner;
-    private int currentWaveIndex = 0;
-    private float timeToNextWave = 0f;
-    private bool isWaveEnded = true;
-    private bool isSpawningStarted = false;
-    public int level = 1;
-    
-    void Update() {
-        if(isSpawningStarted) {
-            if(isWaveEnded) {
-                if(timeToNextWave <= 0f) {
-                    spawner.StartSpawningWave(waves[currentWaveIndex]);
-                    isWaveEnded = false;
-                }
-                timeToNextWave -= Time.deltaTime;
-            }
-        }
-    }
+	private List<EnemyWave> waves;
+	private List<float> wavesDelay;
+	public EnemySpawner spawner;
+	private int currentWaveIndex = 0;
+	private float timeToNextWave = 0f;
+	private bool isWaveEnded = true;
+	private bool isSpawningStarted = false;
+	public int level = 1;
 
-    public void StartSpawningWaves() { //called from gameManager
+	void Update() {
+		if(isSpawningStarted) {
+			if(isWaveEnded) {
+				if(timeToNextWave <= 0f) {
+					spawner.StartSpawningWave(waves[currentWaveIndex]);
+					isWaveEnded = false;
+				}
+				timeToNextWave -= Time.deltaTime;
+			}
+		}
+	}
+
+	public void StartSpawningWaves() { //called from gameManager
 		waves = new List<EnemyWave>();
 		wavesDelay = new List<float> ();
 		if(level == 1) {
@@ -41,20 +41,25 @@ public class SpawnManager : MonoBehaviour {
             wavesDelay.Add(10f);
             waves.Add(new EnemyWave(EnemySpawner.EnemyType.Wolf, 6, 2f));
             */
-        }
-        isSpawningStarted = true;
-    }
+		}
+		isSpawningStarted = true;
+	}
 
-    float WaveDelay() {
-        if (wavesDelay.Count <= currentWaveIndex)
-            return wavesDelay[wavesDelay.Count - 1];
-        return wavesDelay[currentWaveIndex];
-    }
-    public void WaveEnded() { // always called from spawner, when the wave ends
+	float WaveDelay() {
+		if (wavesDelay.Count <= currentWaveIndex)
+			return wavesDelay[wavesDelay.Count - 1];
+		return wavesDelay[currentWaveIndex];
+	}
+	public void WaveEnded() { // always called from spawner, when the wave ends
 		isWaveEnded = true;
 		timeToNextWave = WaveDelay();
 		currentWaveIndex += 1;
-		//isSpawningStarted = true;
-    }
+		if (RemainingWavesCount() <= 0)
+			isSpawningStarted = false; //stop spawning
+	}
+
+	public int RemainingWavesCount() {
+		return waves.Count - currentWaveIndex;
+	}
 
 }

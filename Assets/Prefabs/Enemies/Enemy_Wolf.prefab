@@ -185,6 +185,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9621d669dbbb85c4c8de44f859b1e722, type: 3}
   hurtSounds:
   - {fileID: 8300000, guid: 0739d54f4b9765c4b9829f12ffcac308, type: 3}
+  deathSounds:
+  - {fileID: 8300000, guid: 0739d54f4b9765c4b9829f12ffcac308, type: 3}
   speed: 4
 --- !u!136 &136791210700273234
 CapsuleCollider:

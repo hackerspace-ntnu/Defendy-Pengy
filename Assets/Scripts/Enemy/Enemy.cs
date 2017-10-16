@@ -30,6 +30,7 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 
 		//Vector3 left = Quaternion.Inverse(InputTracking.GetLocalRotation(VRNode.LeftEye)) * InputTracking.GetLocalPosition(VRNode.LeftEye);
 	}
+
 	void Update () {
 
 		//To scale healthbar to health, Arne-Martin
@@ -44,10 +45,12 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 		if (agent.remainingDistance < 1f) {
 			Destroy (gameObject);
 		}
-		if(health <= 0f){
+		if(health <= 0f)
+		{
 			//play die animation
 			//instantiate particles
-			Destroy (gameObject);
+			PlayDeathSound();
+			Destroy(gameObject);
 		}
 
 		HandleIdleSound();

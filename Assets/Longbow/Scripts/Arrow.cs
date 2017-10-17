@@ -167,13 +167,29 @@ namespace Valve.VR.InteractionSystem
 					Physics.IgnoreCollision( arrowHeadRB.GetComponent<Collider>(), collision.collider );
 					Physics.IgnoreCollision( shaftRB.GetComponent<Collider>(), collision.collider );
 				}
+			
+				GameObject possiblyDamagable = collision.collider.gameObject;
+				IDamagable hitDamagable = possiblyDamagable.GetComponent<IDamagable>();
+				if (hitDamagable != null) {
+					print ("hit"); 
+					hitDamagable.InflictDamage (20);
+				} else {
+					/*while (possiblyDamagable.transform.parent.gameObject != null) {
+						possiblyDamagable = possiblyDamagable.transform.parent.gameObject;
+						hitDamagable = possiblyDamagable.GetComponent<IDamagable>();
+						if (hitDamagable != null){
+							print ("hit"); 
+							hitDamagable.InflictDamage (20);
+						}
+					}*/
+				}
 
 
-				Enemy hitEnemy = collision.collider.gameObject.GetComponent<Enemy> ();
-				if (hitEnemy != null /*previousHitObject.GetComponent<Enemy>()*/){
+				/*Enemy hitEnemy = collision.collider.gameObject.GetComponent<Enemy> ();
+				if (hitEnemy != null){
 					print ("hit");
 					hitEnemy.InflictDamage (46f);
-				}
+				}*/
 
 				if ( canStick )
 				{

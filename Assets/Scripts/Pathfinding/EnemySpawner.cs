@@ -63,6 +63,8 @@ public class EnemySpawner : MonoBehaviour {
 		return enemyPrefabs [(int)enemyType];
 	}
 
-
+	public void StopSpawning(){
+		isSpawning = false;
+	}
 
 }

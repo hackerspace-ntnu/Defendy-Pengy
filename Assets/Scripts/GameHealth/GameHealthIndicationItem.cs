@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface GameHealthIndicationItem {
+public interface GameHealthIndicationItem{
     int GetHealthAmount();
+	GameObject GetGameObject ();
 }

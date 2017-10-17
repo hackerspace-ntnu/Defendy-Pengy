@@ -62,4 +62,9 @@ public class SpawnManager : MonoBehaviour {
 		return waves.Count - currentWaveIndex;
 	}
 
+	public void StopSpawning(){
+		isSpawningStarted = false;
+		spawner.StopSpawning();
+	}
+
 }

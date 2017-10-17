@@ -356,6 +356,7 @@ GameObject:
   - component: {fileID: 33462577953944444}
   - component: {fileID: 23286342581062406}
   - component: {fileID: 64089129045624300}
+  - component: {fileID: 114566792879767558}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -2092,11 +2093,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 567853836d29ba04cb4380f59878e89a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: {fileID: 4369538767071930, guid: 3305ffcff53362c4fb1cc4da6ceae529, type: 2}
-  health: 100
+  goal: {fileID: 0}
+  startHealth: 40
+  health: 0
   HealthBarPrefab: {fileID: 1526444277414400, guid: be44979df32dbbd48bfe006dfa3b8d86,
     type: 2}
   speed: 4
+--- !u!114 &114566792879767558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1328993092434946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ea4e5dee8c68d047aa06c3bd77a4987, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &195573373280801808
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -2106,7 +2119,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3
+  m_Speed: 3.68
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 1200

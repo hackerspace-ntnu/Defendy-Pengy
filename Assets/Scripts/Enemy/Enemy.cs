@@ -3,8 +3,7 @@ using UnityEngine;
 using System.Collections;
 using Valve.VR.InteractionSystem;
 
-public abstract class Enemy : MonoBehaviour{
-
+public abstract partial class Enemy : MonoBehaviour{
 	UnityEngine.AI.NavMeshAgent agent;
 	public Transform goal;
 	public float startHealth = 40f;
@@ -30,6 +29,7 @@ public abstract class Enemy : MonoBehaviour{
 
 		//Vector3 left = Quaternion.Inverse(InputTracking.GetLocalRotation(VRNode.LeftEye)) * InputTracking.GetLocalPosition(VRNode.LeftEye);
 	}
+
 	void Update () {
 		//To scale healthbar to health, Arne-Martin
 		float healthPercentage = this.health / startHealth;
@@ -50,11 +50,15 @@ public abstract class Enemy : MonoBehaviour{
 			enemyManager.ReachedGoal (1);
 			Destroy (gameObject);
 		}
-		if(health <= 0f){
+		if(health <= 0f)
+		{
 			//play die animation
 			//instantiate particles
-			Destroy (gameObject);
+			Destroy(gameObject);
+			PlayDeathSound();
 		}
+
+		HandleIdleSound();
 	}
 
 		
@@ -69,6 +73,9 @@ public abstract class Enemy : MonoBehaviour{
 		startHealth = health;
 	}
 	public float GetHealth (){return health;}
-	public void InflictDamage (float damage){health -= damage;}
-
+	public void InflictDamage (float damage)
+	{
+		health -= damage;
+		PlayHurtSound();
+	}
 }

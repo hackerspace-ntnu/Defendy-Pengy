@@ -3,8 +3,8 @@ using UnityEngine;
 using System.Collections;
 using Valve.VR.InteractionSystem;
 
-public abstract class Enemy : MonoBehaviour, IDamagable{
-
+public abstract partial class Enemy : MonoBehaviour, IDamagable
+{
 	UnityEngine.AI.NavMeshAgent agent;
 	public Transform goal;
 	public float health;
@@ -30,6 +30,7 @@ public abstract class Enemy : MonoBehaviour, IDamagable{
 
 		//Vector3 left = Quaternion.Inverse(InputTracking.GetLocalRotation(VRNode.LeftEye)) * InputTracking.GetLocalPosition(VRNode.LeftEye);
 	}
+
 	void Update () {
 
 		//To scale healthbar to health, Arne-Martin
@@ -44,11 +45,15 @@ public abstract class Enemy : MonoBehaviour, IDamagable{
 		if (agent.remainingDistance < 1f) {
 			Destroy (gameObject);
 		}
-		if(health <= 0f){
+		if(health <= 0f)
+		{
 			//play die animation
 			//instantiate particles
-			Destroy (gameObject);
+			PlayDeathSound();
+			Destroy(gameObject);
 		}
+
+		HandleIdleSound();
 	}
 
 		
@@ -59,9 +64,14 @@ public abstract class Enemy : MonoBehaviour, IDamagable{
 
 
 	#region IDamagable implementation
-	public void SetHealth (float health){this.health = health;}
-	public float GetHealth (){return health;}
-	public void InflictDamage (float damage){health -= damage;}
-	#endregion
+	public void SetHealth(float health) { this.health = health; }
 
+	public float GetHealth() { return health; }
+
+	public void InflictDamage (float damage)
+	{
+		health -= damage;
+		PlayHurtSound();
+	}
+	#endregion
 }

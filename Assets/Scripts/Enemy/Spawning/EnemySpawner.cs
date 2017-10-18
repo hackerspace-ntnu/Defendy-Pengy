@@ -52,7 +52,7 @@ public class EnemySpawner : MonoBehaviour {
 	public void StartSpawningWave(EnemyWave wave){
 		isSpawning = true;
 		spawningWave = wave;
-		SpawnEnemy (wave.GetNextEnemy(), speedMultiplier);
+		//SpawnEnemy (wave.GetNextEnemy(), speedMultiplier);
 		timeToNextSpawn = wave.GetSpawnDelay ();
 		currentDelayBetweenSpawn = wave.GetSpawnDelay ();
 	}

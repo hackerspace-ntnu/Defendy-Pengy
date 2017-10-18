@@ -1,21 +1,10 @@
 ### Wave 1 ###
-wolf 2.0
-wolf 2.0
-20 wolf 1.0
 wolf 10.0
-wolf 2.0
-wolf 2.0
-wolf 10.0
-wolf 2.0
-wolf 2.0
-wolf 2.0
-wolf 2.0
-wolf 10.0
-wolf 2.0
-wolf 2.0
-wolf 2.0
-wolf 2.0
-wolf 10.0
+1 wolf 2.0
+wolf 15.0
+2 wolf 2.0
+wolf 20.0
+5 wolf 2.0
 
 ### Wave 2 ###
 wolf 2.0

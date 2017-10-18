@@ -31,16 +31,16 @@ public class SpawnManager : MonoBehaviour {
 			waves = WaveParser.ParseWaveFile(@"Assets\Waves\level1.txt");
 			wavesDelay.Add(10f);
 			/*
-            waves.Add(new EnemyWave(EnemySpawner.EnemyType.Wolf, 3, 2f));
-            wavesDelay.Add(4f);
-            waves.Add(new EnemyWave(EnemySpawner.EnemyType.Wolf, 6, 2f));
-            wavesDelay.Add(10f);
-            waves.Add(new EnemyWave(EnemySpawner.EnemyType.Wolf, 6, 2f));
-            wavesDelay.Add(10f);
-            waves.Add(new EnemyWave(EnemySpawner.EnemyType.Wolf, 6, 2f));
-            wavesDelay.Add(10f);
-            waves.Add(new EnemyWave(EnemySpawner.EnemyType.Wolf, 6, 2f));
-            */
+			waves.Add(new EnemyWave(EnemySpawner.EnemyType.Wolf, 3, 2f));
+			wavesDelay.Add(4f);
+			waves.Add(new EnemyWave(EnemySpawner.EnemyType.Wolf, 6, 2f));
+			wavesDelay.Add(10f);
+			waves.Add(new EnemyWave(EnemySpawner.EnemyType.Wolf, 6, 2f));
+			wavesDelay.Add(10f);
+			waves.Add(new EnemyWave(EnemySpawner.EnemyType.Wolf, 6, 2f));
+			wavesDelay.Add(10f);
+			waves.Add(new EnemyWave(EnemySpawner.EnemyType.Wolf, 6, 2f));
+			*/
 		}
 		isSpawningStarted = true;
 	}

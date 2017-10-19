@@ -9,6 +9,7 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 	public GameHealthManager gameHealthManager;
 	public Transform enemyManager;
 	public GameObject longBow;
+	public GameObject gameOverMessage;
 
 	private float timeToStart = 3f;
 	public bool started = false;
@@ -53,6 +54,9 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 		levelEnded = true;
 		print("You have lost the game");
 		spawnManager.StopSpawning();
+		var message = Instantiate(gameOverMessage, Player.instance.hmdTransform.position, Quaternion.identity).GetComponent<GameUI_ImportantMessage>();
+		message.cam = Player.instance.hmdTransform;
+		message.transform.position = Player.instance.hmdTransform.position;
 		//change scene??
 	}
 

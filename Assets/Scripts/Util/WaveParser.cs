@@ -66,6 +66,15 @@ public class WaveParser
 	{
 		switch (token)
 		{
+			case "bear":
+				return EnemySpawner.EnemyType.Bear;
+
+			case "fish":
+				return EnemySpawner.EnemyType.Fish;
+
+			case "pig":
+				return EnemySpawner.EnemyType.Pig;
+
 			case "wolf":
 				return EnemySpawner.EnemyType.Wolf;
 

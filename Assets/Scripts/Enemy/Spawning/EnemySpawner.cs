@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour {
 	public Transform enemyContainer;
 	public Transform goal;
 	public float spawnFrequency = 3;
-    public SpawnManager spawnManager;
+	public SpawnManager spawnManager;
 
 
 	private bool isSpawning = false;
@@ -22,12 +22,12 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        //stop spawning when the game is over??
+		//stop spawning when the game is over??
 		if (isSpawning) {
 			timeToNextSpawn -= Time.deltaTime;
 			if (timeToNextSpawn <= 0f){
 				if (!SpawnEnemy(spawningWave.GetNextEnemy(), speedMultiplier)){
-                    //no more enemies to spawn
+					//no more enemies to spawn
 					isSpawning = false;
 					spawningWave = null;
 					spawnManager.WaveEnded();
@@ -52,7 +52,7 @@ public class EnemySpawner : MonoBehaviour {
 	public void StartSpawningWave(EnemyWave wave){
 		isSpawning = true;
 		spawningWave = wave;
-		//SpawnEnemy (wave.GetNextEnemy(), speedMultiplier);
+		SpawnEnemy (wave.GetNextEnemy(), speedMultiplier);
 		timeToNextSpawn = wave.GetSpawnDelay ();
 		currentDelayBetweenSpawn = wave.GetSpawnDelay ();
 	}

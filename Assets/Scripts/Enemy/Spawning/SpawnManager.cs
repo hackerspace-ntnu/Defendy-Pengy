@@ -28,19 +28,8 @@ public class SpawnManager : MonoBehaviour {
 		waves = new List<EnemyWave>();
 		wavesDelay = new List<float> ();
 		if(level == 1) {
-			waves = WaveParser.ParseWaveFile(@"Assets\Waves\level1.txt");
+			waves = WaveParser.ParseWaveFile(@"Assets\Scenes\Waves\level1.txt");
 			wavesDelay.Add(10f);
-			/*
-			waves.Add(new EnemyWave(EnemySpawner.EnemyType.Wolf, 3, 2f));
-			wavesDelay.Add(4f);
-			waves.Add(new EnemyWave(EnemySpawner.EnemyType.Wolf, 6, 2f));
-			wavesDelay.Add(10f);
-			waves.Add(new EnemyWave(EnemySpawner.EnemyType.Wolf, 6, 2f));
-			wavesDelay.Add(10f);
-			waves.Add(new EnemyWave(EnemySpawner.EnemyType.Wolf, 6, 2f));
-			wavesDelay.Add(10f);
-			waves.Add(new EnemyWave(EnemySpawner.EnemyType.Wolf, 6, 2f));
-			*/
 		}
 		isSpawningStarted = true;
 	}

@@ -79,6 +79,11 @@ namespace Valve.VR.InteractionSystem
 
 		SteamVR_Events.Action newPosesAppliedAction;
 
+		public bool IsAttachedToHand()
+		{
+			return hand != null;
+		}
+
 
 		//-------------------------------------------------
 		private void OnAttachedToHand( Hand attachedHand )
@@ -91,7 +96,7 @@ namespace Valve.VR.InteractionSystem
 		void Awake()
 		{
 			newPosesAppliedAction = SteamVR_Events.NewPosesAppliedAction( OnNewPosesApplied );
-        }
+		}
 
 
 		//-------------------------------------------------

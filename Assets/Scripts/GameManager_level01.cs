@@ -2,27 +2,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class GameManager_level01 : MonoBehaviour, IGameManager {
 	public SpawnManager spawnManager;
-    public GameHealthManager gameHealthManager;
+	public GameHealthManager gameHealthManager;
 	public Transform enemyManager;
+	public GameObject longBow;
 
-    private float timeToStart = 3f;
-    public bool started = false;
+	private float timeToStart = 3f;
+	public bool started = false;
 	public bool levelEnded = false;
-    // Use this for initialization
-    void Start () {
+	// Use this for initialization
+	void Start () {
 		gameHealthManager.gameManager = (IGameManager)this;
 	}
 
-    // Update is called once per frame
-    void Update() {
+	// Update is called once per frame
+	void Update() {
 		if (!levelEnded) {
 			if (!started) { 
 				if (timeToStart >= 0) {
 					timeToStart -= Time.deltaTime;
-				} else {
+				} else if (longBow.GetComponent<Longbow>().IsAttachedToHand()) {
 					GameStart ();
 				}
 			}
@@ -49,27 +51,27 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 
 	public void GameLost() {
 		levelEnded = true;
-        print("You have lost the game");
+		print("You have lost the game");
 		spawnManager.StopSpawning();
-        //change scene??
-    }
+		//change scene??
+	}
 
 	public void GameStart() {
 		started = true;
 		print ("Game Start!");
-        spawnManager.StartSpawningWaves();
-    }
+		spawnManager.StartSpawningWaves();
+	}
 
-    public void GamePause() {
-        throw new System.NotImplementedException();
-    }
+	public void GamePause() {
+		throw new System.NotImplementedException();
+	}
 
-    public void GameRestart() {
-        throw new System.NotImplementedException();
-    }
+	public void GameRestart() {
+		throw new System.NotImplementedException();
+	}
 
-    public void GameWin() {
+	public void GameWin() {
 		levelEnded = true;
 		print("You have won the game");
-    }
+	}
 }

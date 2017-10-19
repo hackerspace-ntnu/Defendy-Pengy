@@ -79,16 +79,12 @@ namespace Valve.VR.InteractionSystem
 
 		SteamVR_Events.Action newPosesAppliedAction;
 
-		public bool IsAttachedToHand()
-		{
-			return hand != null;
-		}
-
 
 		//-------------------------------------------------
 		private void OnAttachedToHand( Hand attachedHand )
 		{
 			hand = attachedHand;
+			GameObject.Find("GameManager").GetComponent<IGameManager>().GameStart();
 		}
 
 

@@ -8,7 +8,7 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 	public SpawnManager spawnManager;
 	public GameHealthManager gameHealthManager;
 	public Transform enemyManager;
-	public GameObject longBow;
+	public GameObject longbow;
 	public GameObject gameOverMessage;
 
 	private float timeToStart = 3f;
@@ -24,9 +24,9 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 		if (!levelEnded) {
 			if (!started) { 
 				if (timeToStart >= 0) {
-					timeToStart -= Time.deltaTime;
-				} else if (longBow.GetComponent<Longbow>().IsAttachedToHand()) {
-					GameStart ();
+					//timeToStart -= Time.deltaTime;
+				} else {
+					//GameStart ();
 				}
 			}
 			if (started) {
@@ -61,6 +61,9 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 	}
 
 	public void GameStart() {
+		if (started)
+			return;
+
 		started = true;
 		print ("Game Start!");
 		spawnManager.StartSpawningWaves();

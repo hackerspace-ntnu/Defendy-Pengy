@@ -84,6 +84,7 @@ namespace Valve.VR.InteractionSystem
 		private void OnAttachedToHand( Hand attachedHand )
 		{
 			hand = attachedHand;
+			GameObject.Find("GameManager").GetComponent<IGameManager>().GameStart();
 		}
 
 
@@ -91,7 +92,7 @@ namespace Valve.VR.InteractionSystem
 		void Awake()
 		{
 			newPosesAppliedAction = SteamVR_Events.NewPosesAppliedAction( OnNewPosesApplied );
-        }
+		}
 
 
 		//-------------------------------------------------

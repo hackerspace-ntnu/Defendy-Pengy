@@ -7,19 +7,24 @@ abstract partial class Enemy
 	public AudioClip[] hurtSounds;
 	public AudioClip[] deathSounds;
 
-	protected float lastIdleSoundTime = -1f;
+	public float IdleSoundFreq_sec = 5f;
+	public float IdleSoundChance = 0.1f;
 
-	protected abstract float IdleSoundFreq { get; }
-	protected abstract float IdleSoundChance { get; }
+	protected float lastIdleSoundTime;
+
+	void SoundStart()
+	{
+		lastIdleSoundTime = Random.value * IdleSoundFreq_sec;
+	}
 
 	protected void HandleIdleSound()
 	{
-		if (Time.time + IdleSoundFreq >= lastIdleSoundTime)
+		if (Time.time + IdleSoundFreq_sec >= lastIdleSoundTime)
 		{
 			if (Random.value <= IdleSoundChance)
 				SoundManager.PlayRandomSound(this, idleSounds);
 
-			lastIdleSoundTime += IdleSoundFreq;
+			lastIdleSoundTime += IdleSoundFreq_sec;
 		}
 	}
 

@@ -28,6 +28,7 @@ public abstract partial class Enemy : MonoBehaviour{
 		health = startHealth;
 
 		//Vector3 left = Quaternion.Inverse(InputTracking.GetLocalRotation(VRNode.LeftEye)) * InputTracking.GetLocalPosition(VRNode.LeftEye);
+		SoundStart();
 	}
 
 	void Update () {

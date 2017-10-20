@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Valve.VR.InteractionSystem;
 
 public class SelectLevel : MonoBehaviour {
@@ -26,16 +27,16 @@ public class SelectLevel : MonoBehaviour {
 	void Update() {
 		if(GetComponent<Collider>().bounds.Contains(leftHand.gameObject.transform.position)) {
 			gameObject.transform.localScale = new Vector3 (0.006f, 0.006f, 0.006f);
-			if (leftHand.GetStandardInteractionButtonDown()) {
-				Application.LoadLevel ("level1");
-			}
+			if (leftHand.GetStandardInteractionButtonDown())
+				SceneManager.LoadScene("level1");
+
 			return;
 		} 
 		if(GetComponent<Collider>().bounds.Contains(rightHand.gameObject.transform.position)) {
 			gameObject.transform.localScale = new Vector3 (0.006f, 0.006f, 0.006f);
-			if (rightHand.GetStandardInteractionButtonDown()) {
-				Application.LoadLevel ("level1");
-			}
+			if (rightHand.GetStandardInteractionButtonDown())
+				SceneManager.LoadScene("level1");
+
 			return;
 		}
 		gameObject.transform.localScale = new Vector3 (0.005f, 0.005f, 0.005f);

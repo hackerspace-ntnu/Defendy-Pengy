@@ -6,12 +6,12 @@ public class GameHealthManager : MonoBehaviour {
 	public IGameManager gameManager;
 	// when "gameHealth" gets decreased to 0, the player loses the game.
 	private int gameHealth; // we should have 20 penguins on the water
-	private List<GameHealthIndicationItem> gameHealthIndicationItems = new List<GameHealthIndicationItem>();
+	private List<IGameHealthIndicationItem> gameHealthIndicationItems = new List<IGameHealthIndicationItem>();
 
 	void Start() {
 		gameHealth = transform.childCount;
 		foreach (Transform child in transform) {
-			var comp = child.gameObject.GetComponent<GameHealthIndicationItem>();
+			var comp = child.gameObject.GetComponent<IGameHealthIndicationItem>();
 			gameHealthIndicationItems.Add (comp);
 			//gameHealthIndicationItems.Add (child.gameObject);
 		}

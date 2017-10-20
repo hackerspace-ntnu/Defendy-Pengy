@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameHealthIndicationPenguin : MonoBehaviour, GameHealthIndicationItem {
+public class GameHealthIndicationPenguin : MonoBehaviour, IGameHealthIndicationItem {
 	private int health = 1;
-    public int GetHealthAmount() {
-        return health;
-    }
+	public int GetHealthAmount() {
+		return health;
+	}
 
-    // Use this for initialization
-    void Start () {
+	// Use this for initialization
+	void Start () {
 		
 	}
 	

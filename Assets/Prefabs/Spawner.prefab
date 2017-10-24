@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33194127225136368}
   - component: {fileID: 65216454935447410}
   - component: {fileID: 23350649202170900}
-  - component: {fileID: 114171376665348028}
   - component: {fileID: 114805863563315106}
   m_Layer: 0
   m_Name: Spawner
@@ -97,23 +96,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114171376665348028
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1111779193677888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a34ea048c5ff7c84493756059d23047d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefabs:
-  - {fileID: 114450340983142668, guid: decfb6dd343791c488b04617b9603373, type: 2}
-  enemyContainer: {fileID: 0}
-  goal: {fileID: 0}
-  spawnFrequency: 3
-  spawnManager: {fileID: 0}
 --- !u!114 &114805863563315106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -127,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 114450340983142668, guid: decfb6dd343791c488b04617b9603373, type: 2}
+  - {fileID: 114346891918538942, guid: 4c2e209589dcf6546b287ef833e372a3, type: 2}
   enemyContainer: {fileID: 0}
   goal: {fileID: 0}
   spawnFrequency: 3

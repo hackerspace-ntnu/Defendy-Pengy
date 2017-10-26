@@ -13,6 +13,7 @@ public abstract partial class Enemy : MonoBehaviour{
 	private Transform HeadsetPosition;
 	private EnemyHealthBar healthBar;
 	private EnemyManager enemyManager;
+	private bool dying = false;
 
 	void Start(){
 		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -51,12 +52,19 @@ public abstract partial class Enemy : MonoBehaviour{
 			enemyManager.ReachedGoal (1);
 			Destroy (gameObject);
 		}
-		if(health <= 0f)
-		{
+
+		if(health <= 0f) {
+
 			//play die animation
 			//instantiate particles
-			Destroy(gameObject);
-			PlayDeathSound();
+			gameObject.GetComponent<Animator>().Play("Die");
+			gameObject.GetComponent<UnityEngine.AI.NavMeshAgent> ().speed = 0f;
+
+			if (!dying) {
+				dying = true;
+				Destroy (gameObject, 5f); 
+				PlayDeathSound ();
+			}
 		}
 
 		HandleIdleSound();

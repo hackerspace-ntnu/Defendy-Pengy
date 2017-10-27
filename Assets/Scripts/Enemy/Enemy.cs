@@ -35,11 +35,6 @@ public abstract partial class Enemy : MonoBehaviour{
 		//To scale healthbar to health, Arne-Martin
 		float healthPercentage = this.health / startHealth;
 		healthBar.display (healthPercentage);
-
-		if (transform.parent.GetChild (0).gameObject == gameObject){
-			// if the is the first enemy
-			print(healthPercentage);
-		}
 		//Rotate healthbar towards player, Arne-Martin
 		Vector3 UpdatedHeadsetPosition=HeadsetPosition.position;
 		healthBar.transform.LookAt (UpdatedHeadsetPosition);
@@ -74,9 +69,16 @@ public abstract partial class Enemy : MonoBehaviour{
 		startHealth = health;
 	}
 	public float GetHealth (){return health;}
-	public void InflictDamage (float damage)
-	{
+	public void InflictDamage (float damage, Vector3 direction){
 		health -= damage;
+		var pos = transform.position;
+		direction.y = 0f;
+		direction = direction / 20f;
+		transform.position = pos + direction;
+		print(direction);
+
+		
+
 		PlayHurtSound();
 	}
 }

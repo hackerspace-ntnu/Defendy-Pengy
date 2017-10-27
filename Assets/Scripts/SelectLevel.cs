@@ -9,7 +9,6 @@ public class SelectLevel : MonoBehaviour {
 	private SteamVR_TrackedObject trackedObj;
 	private Hand leftHand;
 	private Hand rightHand;
-	private Transform VRRigTransform;
 
 	private GameObject collidingObject;
 	private GameObject objectInHand;
@@ -21,7 +20,6 @@ public class SelectLevel : MonoBehaviour {
 		leftHand = Player.instance.leftHand;
 		rightHand = Player.instance.rightHand;
 		//trackedObj = GetComponent<SteamVR_TrackedObject>();
-		VRRigTransform = this.transform.root;
 	}
 
 	void Update() {

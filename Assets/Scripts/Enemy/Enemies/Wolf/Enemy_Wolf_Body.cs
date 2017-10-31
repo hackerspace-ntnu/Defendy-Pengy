@@ -14,8 +14,8 @@ public class Enemy_Wolf_Body : MonoBehaviour, IDamagable {
 		
 	}
 
-	public void InflictDamage (float damage, Vector3 direction) {
-		thisEnemy.InflictDamage (damage, direction);
+	public void InflictDamage (float damage) {
+		thisEnemy.InflictDamage (damage);
 		
 	}
 }

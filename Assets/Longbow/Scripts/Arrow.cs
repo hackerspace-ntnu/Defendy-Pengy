@@ -199,7 +199,7 @@ namespace Valve.VR.InteractionSystem
 					if (damage < 0f)
 						damage = 0f;
 					print("attack damage = " + damage.ToString());
-					hitDamagable.InflictDamage(damage, velo);
+					hitDamagable.InflictDamage(damage);
 				} else
 				{
 

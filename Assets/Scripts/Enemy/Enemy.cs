@@ -69,16 +69,9 @@ public abstract partial class Enemy : MonoBehaviour{
 		startHealth = health;
 	}
 	public float GetHealth (){return health;}
-	public void InflictDamage (float damage, Vector3 direction){
+	public void InflictDamage (float damage){
 		health -= damage;
-		var pos = transform.position;
-		direction.y = 0f;
-		direction = direction / 20f;
-		transform.position = pos + direction;
-		print(direction);
-
 		
-
 		PlayHurtSound();
 	}
 }

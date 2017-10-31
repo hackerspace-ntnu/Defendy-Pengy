@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 114450340983142668, guid: decfb6dd343791c488b04617b9603373, type: 2}
+  - {fileID: 114346891918538942, guid: 4c2e209589dcf6546b287ef833e372a3, type: 2}
   enemyManager: {fileID: 0}
   goal: {fileID: 0}
   spawnManager: {fileID: 0}

@@ -21,6 +21,10 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 
 	// Update is called once per frame
 	void Update() {
+		// TEMPORARY DEVELOPER HOTKEY:
+		if (Input.GetKeyDown(KeyCode.W))
+			GameStart();
+
 		if (!levelEnded) {
 			if (!started) {
 				if (Input.GetKeyUp(KeyCode.A))

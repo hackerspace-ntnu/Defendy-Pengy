@@ -1,3 +1,6 @@
+2 bear 3
+bear 15
+
 ### Wave 1 ###
 wolf 10.0
 1 wolf 2.0

@@ -215,6 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4699766538007994}
   - component: {fileID: 137618015270747542}
+  - component: {fileID: 64871163264196842}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -811,13 +812,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1499544942199532}
-  m_LocalRotation: {x: 0.70710695, y: -0.00000030626768, z: -0.7071066, w: -0.00000030626785}
-  m_LocalPosition: {x: -0.0000068141135, y: -1.4808755, z: -1.2794951}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.67, y: 1.29, z: 0.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4867308389452098}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
 --- !u!4 &4794290477015258
 Transform:
   m_ObjectHideFlags: 1
@@ -916,6 +917,20 @@ Transform:
   m_Father: {fileID: 4804897299121660}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &64871163264196842
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1499544942199532}
+  m_Material: {fileID: 13400000, guid: c509d5711dc2cc346be2763cd92383ca, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 03064a01fcc41974faa16fa444184a70, type: 3}
 --- !u!82 &82788943347575718
 AudioSource:
   m_ObjectHideFlags: 1

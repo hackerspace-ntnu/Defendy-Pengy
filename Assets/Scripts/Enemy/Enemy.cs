@@ -52,12 +52,15 @@ public abstract partial class Enemy : MonoBehaviour{
 
 			//play die animation
 			//instantiate particles
-			gameObject.GetComponent<Animator>().Play("Die");
-			gameObject.GetComponent<UnityEngine.AI.NavMeshAgent> ().speed = 0f;
+			
 
 			if (!dying) {
+				gameObject.GetComponent<Animator>().Play("Die");
+				gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 0f;
 				dying = true;
-				Destroy (gameObject, 5f); 
+				gameObject.transform.GetChild(2).GetComponent<MeshRenderer>().enabled = false;
+				gameObject.GetComponentInChildren<MeshCollider>().enabled = false;
+				Destroy (gameObject, 4f);
 				PlayDeathSound ();
 			}
 		}

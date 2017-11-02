@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 4699766538007994}
   - component: {fileID: 137618015270747542}
   - component: {fileID: 64871163264196842}
+  - component: {fileID: 114855694197304304}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -1040,7 +1041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 4369538767071930, guid: 3305ffcff53362c4fb1cc4da6ceae529, type: 2}
-  startHealth: 80
+  startHealth: 200
   health: 200
   HealthBarPrefab: {fileID: 1526444277414400, guid: be44979df32dbbd48bfe006dfa3b8d86,
     type: 2}
@@ -1050,6 +1051,17 @@ MonoBehaviour:
   IdleSoundFreq_sec: 5
   IdleSoundChance: 0.1
   speed: 3
+--- !u!114 &114855694197304304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1499544942199532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9382704cd110034da89ba79d03dbdbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &137618015270747542
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

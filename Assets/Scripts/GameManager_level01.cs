@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager_level01 : MonoBehaviour, IGameManager {
 	public SpawnManager spawnManager;
@@ -63,6 +64,7 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 		print("You have lost the game");
 		spawnManager.StopSpawning();
 		importantMessage.Show("Game Over");
+		Invoke ("LoadMenu", 5f);
 		//change scene??
 	}
 
@@ -86,5 +88,10 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 	public void GameWin() {
 		levelEnded = true;
 		print("You have won the game");
+	}
+
+	void LoadMenu()
+	{
+		SceneManager.LoadScene ("menu");
 	}
 }

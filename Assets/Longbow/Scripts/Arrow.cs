@@ -200,6 +200,7 @@ namespace Valve.VR.InteractionSystem
 						damage = 0f;
 					print("attack damage = " + damage.ToString());
 					hitDamagable.InflictDamage(damage);
+                    Destroy(gameObject);
 				} else
 				{
 

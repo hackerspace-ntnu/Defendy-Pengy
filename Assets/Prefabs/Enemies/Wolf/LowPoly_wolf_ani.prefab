@@ -384,6 +384,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4977771419193984}
   - component: {fileID: 137973917198822044}
+  - component: {fileID: 64003256786010152}
+  - component: {fileID: 114099017252087268}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -2150,6 +2152,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1428218145883164}
   m_Mesh: {fileID: 4300004, guid: 7a90132f06b389348a252a1008b6b23e, type: 3}
+--- !u!64 &64003256786010152
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1287393019642864}
+  m_Material: {fileID: 13400000, guid: c509d5711dc2cc346be2763cd92383ca, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300006, guid: 7a90132f06b389348a252a1008b6b23e, type: 3}
 --- !u!82 &82233482558040860
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2247,6 +2263,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114099017252087268
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1287393019642864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ea4e5dee8c68d047aa06c3bd77a4987, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114498884007500900
 MonoBehaviour:
   m_ObjectHideFlags: 1

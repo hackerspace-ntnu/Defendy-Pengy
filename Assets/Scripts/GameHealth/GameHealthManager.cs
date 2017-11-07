@@ -29,7 +29,7 @@ public class GameHealthManager : MonoBehaviour {
 		if (gameHealthIndicationItems.Count <= 0)
 			return;
 
-		Destroy (gameHealthIndicationItems [0].GetGameObject());
+		gameHealthIndicationItems [0].Kill ();
 		gameHealthIndicationItems.RemoveAt(0);
 		gameHealth -= (int)health;
 

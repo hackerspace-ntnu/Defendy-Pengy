@@ -21,6 +21,10 @@ public class GameHealthIndicationPenguin : MonoBehaviour, IGameHealthIndicationI
 		// FIXME:
 		//transform.parent.GetComponent<GameHealthManager>().DecreaseGameHealth ((uint)health);
 	}
+	public void Kill(){
+		gameObject.GetComponent<Animator> ().Play ("Die");
+		Destroy (gameObject, 2f);
+	}
 	public GameObject GetGameObject() {
 		return gameObject;
 	}

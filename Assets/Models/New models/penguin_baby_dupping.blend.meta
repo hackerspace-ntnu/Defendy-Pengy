@@ -1,51 +1,49 @@
 fileFormatVersion: 2
-guid: bb1dfbbd83b89714b9e7404c93bece0f
-timeCreated: 1509044489
+guid: 12e828169e83b504d9dd3b26bff47adc
+timeCreated: 1510069042
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Armature
-    100004: Bone
-    100006: Bone_001
-    100008: Bone_001_L
-    100010: Bone_001_L_001
-    100012: Bone_001_L_002
-    100014: Bone_001_R
-    100016: Bone_001_R_001
-    100018: Bone_001_R_002
-    100020: Bone_002
-    100022: Bone_003
-    100024: Bone_004
-    100026: Bone_L
-    100028: Bone_L_001
-    100030: Bone_R
-    100032: Bone_R_001
-    100034: Icosphere
-    400000: //RootNode
-    400002: Armature
-    400004: Bone
-    400006: Bone_001
-    400008: Bone_001_L
-    400010: Bone_001_L_001
-    400012: Bone_001_L_002
-    400014: Bone_001_R
-    400016: Bone_001_R_001
-    400018: Bone_001_R_002
-    400020: Bone_002
-    400022: Bone_003
-    400024: Bone_004
-    400026: Bone_L
-    400028: Bone_L_001
-    400030: Bone_R
-    400032: Bone_R_001
-    400034: Icosphere
-    2300000: //RootNode
-    3300000: //RootNode
+    100000: Armature
+    100002: Bone
+    100004: Bone_001
+    100006: Bone_001_L
+    100008: Bone_001_L_001
+    100010: Bone_001_L_002
+    100012: Bone_001_R
+    100014: Bone_001_R_001
+    100016: Bone_001_R_002
+    100018: Bone_002
+    100020: Bone_003
+    100022: Bone_004
+    100024: Bone_L
+    100026: Bone_L_001
+    100028: Bone_R
+    100030: Bone_R_001
+    100032: Icosphere
+    100034: //RootNode
+    400000: Armature
+    400002: Bone
+    400004: Bone_001
+    400006: Bone_001_L
+    400008: Bone_001_L_001
+    400010: Bone_001_L_002
+    400012: Bone_001_R
+    400014: Bone_001_R_001
+    400016: Bone_001_R_002
+    400018: Bone_002
+    400020: Bone_003
+    400022: Bone_004
+    400024: Bone_L
+    400026: Bone_L_001
+    400028: Bone_R
+    400030: Bone_R_001
+    400032: Icosphere
+    400034: //RootNode
     4300000: Icosphere
     7400000: Default Take
-    7400002: ArmatureAction
+    7400002: ArmatureAction_001
     7400004: PoseLib
     9500000: //RootNode
     13700000: Icosphere
@@ -65,31 +63,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Gray
     second: {fileID: 2100000, guid: 04a9bae1b4190e54db062072224e7c73, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_001
-    second: {fileID: 2100000, guid: 28371f18fc5c8844f98ec1bdf3df114b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_002
-    second: {fileID: 2100000, guid: 77545e1d1b6e0be40a12f0b2106b9106, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_003
-    second: {fileID: 2100000, guid: 4b7c4fd28d7495e4e96154866b61b7d7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_004
-    second: {fileID: 2100000, guid: 93050aedd0c764844b7d08ec0273364d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_005
-    second: {fileID: 2100000, guid: 3ba0e0f8606f71b4d8da19e1efe850cf, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

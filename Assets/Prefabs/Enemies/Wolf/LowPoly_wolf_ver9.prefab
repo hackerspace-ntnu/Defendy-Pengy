@@ -2293,12 +2293,26 @@ MonoBehaviour:
   HealthBarPrefab: {fileID: 1526444277414400, guid: be44979df32dbbd48bfe006dfa3b8d86,
     type: 2}
   idleSounds:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 6d1b67c9eb7294229a02e60aecbb801d, type: 3}
+  - {fileID: 8300000, guid: f1c7a41ad08864cb689ac2386499aa77, type: 3}
+  - {fileID: 8300000, guid: dd4ffc362500a4bc2b57d1d4bdb7c301, type: 3}
+  - {fileID: 8300000, guid: e3ad2d3d641e4434fa865bc0d5c7e52b, type: 3}
+  - {fileID: 8300000, guid: fbad1961763534c4cbc821794fc3254e, type: 3}
+  - {fileID: 8300000, guid: 365eb897a69b8453d94dad9bbf9bb100, type: 3}
+  - {fileID: 8300000, guid: 4de3bf08238e544899e564af837369fe, type: 3}
+  - {fileID: 8300000, guid: e210927d96ad94e5e85ad8074b6e5fb7, type: 3}
+  - {fileID: 8300000, guid: 4aec203025727440991218d7fb70dbdb, type: 3}
+  - {fileID: 8300000, guid: 68ca833f9a54645d1b24cefbcef1f396, type: 3}
+  - {fileID: 8300000, guid: 20a7da307d28141d2a5205688e665849, type: 3}
   hurtSounds:
+  - {fileID: 8300000, guid: e5df3c92eeb2c4c308a913bd112f0f75, type: 3}
+  - {fileID: 8300000, guid: 534d2c9fa6dee4487baa9b837c2feb89, type: 3}
+  - {fileID: 8300000, guid: 4789c691757054d4bbf0ac0c2674cac2, type: 3}
+  - {fileID: 8300000, guid: 2dbfcc3e281ee440ea5184f875edb6ef, type: 3}
+  - {fileID: 8300000, guid: 014562fd4f231408ba60a884d00c702d, type: 3}
   - {fileID: 8300000, guid: b47e95d53337ebc4595d7765ba680c90, type: 3}
   deathSounds:
-  - {fileID: 8300000, guid: b47e95d53337ebc4595d7765ba680c90, type: 3}
+  - {fileID: 8300000, guid: 9e25b2710c3274674a33366818be6dd2, type: 3}
   IdleSoundFreq_sec: 5
   IdleSoundChance: 0.1
   speed: 4

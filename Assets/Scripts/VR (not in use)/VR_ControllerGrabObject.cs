@@ -9,7 +9,7 @@ public class VR_ControllerGrabObject : MonoBehaviour {
         get { return SteamVR_Controller.Input((int)trackedObj.index); }
     }
 
-    private Transform VRRigTransform;
+    //private Transform VRRigTransform;
 
     private GameObject collidingObject;
     private GameObject objectInHand;
@@ -19,7 +19,7 @@ public class VR_ControllerGrabObject : MonoBehaviour {
 
     void Awake() {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
-        VRRigTransform = this.transform.root;
+        //VRRigTransform = this.transform.root;
     }
 
     void Update() {

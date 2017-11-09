@@ -3,12 +3,123 @@ guid: f19c151ef1790174fa77256a6dc8b7b4
 timeCreated: 1504024053
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
-  fileIDToRecycleName: {}
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Icosphere
+    100002: Icosphere_001
+    100004: Icosphere_002
+    100006: Icosphere_003
+    100008: Icosphere_004
+    100010: Icosphere_005
+    100012: Icosphere_006
+    100014: Icosphere_007
+    100016: Mball_019
+    100018: NurbsPath
+    100020: NurbsPath_001
+    100022: NurbsPath_002
+    100024: NurbsPath_003
+    100026: NurbsPath_004
+    100028: NurbsPath_005
+    100030: Plane
+    100032: //RootNode
+    400000: Icosphere
+    400002: Icosphere_001
+    400004: Icosphere_002
+    400006: Icosphere_003
+    400008: Icosphere_004
+    400010: Icosphere_005
+    400012: Icosphere_006
+    400014: Icosphere_007
+    400016: Mball_019
+    400018: NurbsPath
+    400020: NurbsPath_001
+    400022: NurbsPath_002
+    400024: NurbsPath_003
+    400026: NurbsPath_004
+    400028: NurbsPath_005
+    400030: Plane
+    400032: //RootNode
+    2300000: Icosphere
+    2300002: Icosphere_001
+    2300004: Icosphere_002
+    2300006: Icosphere_003
+    2300008: Icosphere_004
+    2300010: Icosphere_005
+    2300012: Icosphere_006
+    2300014: Icosphere_007
+    2300016: Mball_019
+    2300018: NurbsPath
+    2300020: NurbsPath_001
+    2300022: NurbsPath_002
+    2300024: NurbsPath_003
+    2300026: NurbsPath_004
+    2300028: NurbsPath_005
+    2300030: Plane
+    3300000: Icosphere
+    3300002: Icosphere_001
+    3300004: Icosphere_002
+    3300006: Icosphere_003
+    3300008: Icosphere_004
+    3300010: Icosphere_005
+    3300012: Icosphere_006
+    3300014: Icosphere_007
+    3300016: Mball_019
+    3300018: NurbsPath
+    3300020: NurbsPath_001
+    3300022: NurbsPath_002
+    3300024: NurbsPath_003
+    3300026: NurbsPath_004
+    3300028: NurbsPath_005
+    3300030: Plane
+    4300000: Mball_019
+    4300002: NurbsPath_005
+    4300004: NurbsPath_004
+    4300006: NurbsPath_003
+    4300008: NurbsPath_002
+    4300010: NurbsPath_001
+    4300012: NurbsPath
+    4300014: Icosphere_007
+    4300016: Icosphere_006
+    4300018: Icosphere_005
+    4300020: Icosphere_004
+    4300022: Icosphere_003
+    4300024: Icosphere_002
+    4300026: Icosphere_001
+    4300028: Icosphere
+    4300030: Plane
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001
+    second: {fileID: 2100000, guid: 28371f18fc5c8844f98ec1bdf3df114b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_002
+    second: {fileID: 2100000, guid: 77545e1d1b6e0be40a12f0b2106b9106, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_003
+    second: {fileID: 2100000, guid: 4b7c4fd28d7495e4e96154866b61b7d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: log
+    second: {fileID: 2100000, guid: 1247db4d2e7c84b69aa7f4587ea3981b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: unnamed
+    second: {fileID: 2100000, guid: c696ffd81b77f8f45a6ec9f382087c24, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -21,6 +132,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

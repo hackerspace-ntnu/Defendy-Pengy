@@ -1,9 +1,9 @@
 fileFormatVersion: 2
 guid: 6a0572a041d04084496a7f0692378588
-timeCreated: 1504812034
+timeCreated: 1510070157
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: Armature
     100002: body.1
@@ -70,6 +70,14 @@ ModelImporter:
     100124: Tail.C
     100126: Tail.C_end
     100128: Tail.IK
+    100130: leg.B.L.4
+    100132: leg.B.L.4_end
+    100134: leg.B.R.4
+    100136: leg.B.R.4_end
+    100138: leg.F.L.4
+    100140: leg.F.L.4_end
+    100142: leg.F.R.4
+    100144: leg.F.R.4_end
     400000: Armature
     400002: body.1
     400004: body.2
@@ -135,6 +143,14 @@ ModelImporter:
     400124: Tail.C
     400126: Tail.C_end
     400128: Tail.IK
+    400130: leg.B.L.4
+    400132: leg.B.L.4_end
+    400134: leg.B.R.4
+    400136: leg.B.R.4_end
+    400138: leg.F.L.4
+    400140: leg.F.L.4_end
+    400142: leg.F.R.4
+    400144: leg.F.R.4_end
     2300000: Cube
     2300002: Ear.L.IK
     2300004: Ear.R.IK
@@ -147,10 +163,22 @@ ModelImporter:
     4300002: Tail.IK
     4300004: Ear.L.IK
     4300006: Ear.R.IK
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf_Eyes DARK
+    second: {fileID: 2100000, guid: 981122907557d40488bd27d5fd1b6af3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf_Fur GREY
+    second: {fileID: 2100000, guid: 92e9564335dadf44c93240addecbbf46, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -163,6 +191,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

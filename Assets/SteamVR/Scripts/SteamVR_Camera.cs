@@ -198,11 +198,15 @@ public class SteamVR_Camera : MonoBehaviour
 			while (transform.childCount > 0)
 				transform.GetChild(0).parent = head;
 
+#pragma warning disable CS0618 // Type or member is obsolete
 			var guiLayer = GetComponent<GUILayer>();
+#pragma warning restore CS0618 // Type or member is obsolete
 			if (guiLayer != null)
 			{
 				DestroyImmediate(guiLayer);
+#pragma warning disable CS0618 // Type or member is obsolete
 				head.gameObject.AddComponent<GUILayer>();
+#pragma warning restore CS0618 // Type or member is obsolete
 			}
 
 			var audioListener = GetComponent<AudioListener>();
@@ -229,11 +233,15 @@ public class SteamVR_Camera : MonoBehaviour
 		while (head.childCount > 0)
 			head.GetChild(0).parent = transform;
 
+#pragma warning disable CS0618 // Type or member is obsolete
 		var guiLayer = head.GetComponent<GUILayer>();
+#pragma warning restore CS0618 // Type or member is obsolete
 		if (guiLayer != null)
 		{
 			DestroyImmediate(guiLayer);
+#pragma warning disable CS0618 // Type or member is obsolete
 			gameObject.AddComponent<GUILayer>();
+#pragma warning restore CS0618 // Type or member is obsolete
 		}
 
 		if (ears != null)

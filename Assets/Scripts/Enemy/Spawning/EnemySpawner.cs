@@ -5,11 +5,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
-	public enum EnemyType {Wolf, Bear, Fish, Pig, Null};
+	public enum EnemyType {Wolf, Bear, Fox, Fish, Pig, Null};
 	public Enemy[] enemyPrefabs;
-	public Transform enemyContainer;
+	public Transform enemyManager;
 	public Transform goal;
-	public float spawnFrequency = 3;
 	public SpawnManager spawnManager;
 
 
@@ -18,7 +17,6 @@ public class EnemySpawner : MonoBehaviour {
 
 	private EnemyWave spawningWave;
 	private float timeToNextSpawn = 0f;
-	private float currentDelayBetweenSpawn=0f;
 
 	// Update is called once per frame
 	void Update () {
@@ -44,17 +42,15 @@ public class EnemySpawner : MonoBehaviour {
 		}
 		//replace the "prefab enemy variable" with a real enemy
 		Enemy enemy = Instantiate (GetPrefab(enemyType).gameObject, transform.position, Quaternion.identity).GetComponent<Enemy>();
-		enemy.transform.parent = enemyContainer;
+		enemy.transform.parent = enemyManager;
 		enemy.goal = goal;
 		return true;
 	}
 
-	public void StartSpawningWave(EnemyWave wave){
+	public void StartSpawningWave(EnemyWave wave){ //spawns an enemy in next frame
 		isSpawning = true;
+		timeToNextSpawn = 0f;
 		spawningWave = wave;
-		SpawnEnemy (wave.GetNextEnemy(), speedMultiplier);
-		timeToNextSpawn = wave.GetSpawnDelay ();
-		currentDelayBetweenSpawn = wave.GetSpawnDelay ();
 	}
 
 

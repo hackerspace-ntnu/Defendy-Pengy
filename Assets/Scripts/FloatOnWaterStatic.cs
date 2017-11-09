@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FloatOnWaterStatic : MonoBehaviour {
 	public float moveAmount = 1f;
-	private float startTime = 0f;
 	private float originalPosY;
 	// Use this for initialization
 	void Start () {

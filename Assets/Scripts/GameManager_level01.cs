@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager_level01 : MonoBehaviour, IGameManager {
 	public SpawnManager spawnManager;
 	public GameHealthManager gameHealthManager;
 	public Transform enemyManager;
 	public GameObject longbow;
-	public GameObject gameOverMessage;
+	public GameUI_ImportantMessage importantMessage;
 
 	private float timeToStart = 3f;
 	public bool started = false;
@@ -21,8 +22,16 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 
 	// Update is called once per frame
 	void Update() {
+		// TEMPORARY DEVELOPER HOTKEY:
+		if (Input.GetKeyDown(KeyCode.W))
+			GameStart();
+
 		if (!levelEnded) {
-			if (!started) { 
+			if (!started) {
+				if (Input.GetKeyUp(KeyCode.A))
+					GameStart();
+				if (Input.GetKeyUp(KeyCode.S))
+					GameLost();
 				if (timeToStart >= 0) {
 					//timeToStart -= Time.deltaTime;
 				} else {
@@ -54,9 +63,8 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 		levelEnded = true;
 		print("You have lost the game");
 		spawnManager.StopSpawning();
-		var message = Instantiate(gameOverMessage, Player.instance.hmdTransform.position, Quaternion.identity).GetComponent<GameUI_ImportantMessage>();
-		message.cam = Player.instance.hmdTransform;
-		message.transform.position = Player.instance.hmdTransform.position;
+		importantMessage.Show("Game Over");
+		Invoke ("LoadMenu", 5f);
 		//change scene??
 	}
 
@@ -80,5 +88,10 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 	public void GameWin() {
 		levelEnded = true;
 		print("You have won the game");
+	}
+
+	void LoadMenu()
+	{
+		SceneManager.LoadScene ("menu");
 	}
 }

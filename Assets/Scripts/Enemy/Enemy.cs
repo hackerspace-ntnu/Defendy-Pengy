@@ -13,6 +13,7 @@ public abstract partial class Enemy : MonoBehaviour{
 	private Transform HeadsetPosition;
 	private EnemyHealthBar healthBar;
 	private EnemyManager enemyManager;
+	private bool dying = false;
 
 	void Start(){
 		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -35,11 +36,6 @@ public abstract partial class Enemy : MonoBehaviour{
 		//To scale healthbar to health, Arne-Martin
 		float healthPercentage = this.health / startHealth;
 		healthBar.display (healthPercentage);
-
-		if (transform.parent.GetChild (0).gameObject == gameObject){
-			// if the is the first enemy
-			print(healthPercentage);
-		}
 		//Rotate healthbar towards player, Arne-Martin
 		Vector3 UpdatedHeadsetPosition=HeadsetPosition.position;
 		healthBar.transform.LookAt (UpdatedHeadsetPosition);
@@ -51,12 +47,22 @@ public abstract partial class Enemy : MonoBehaviour{
 			enemyManager.ReachedGoal (1);
 			Destroy (gameObject);
 		}
-		if(health <= 0f)
-		{
+
+		if(health <= 0f) {
+
 			//play die animation
 			//instantiate particles
-			Destroy(gameObject);
-			PlayDeathSound();
+			
+
+			if (!dying) {
+				gameObject.GetComponent<Animator>().Play("Die");
+				gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 0f;
+				dying = true;
+				gameObject.transform.GetChild(2).GetComponent<MeshRenderer>().enabled = false;
+				gameObject.GetComponentInChildren<MeshCollider>().enabled = false;
+				Destroy (gameObject, 4f);
+				PlayDeathSound ();
+			}
 		}
 
 		HandleIdleSound();
@@ -74,9 +80,9 @@ public abstract partial class Enemy : MonoBehaviour{
 		startHealth = health;
 	}
 	public float GetHealth (){return health;}
-	public void InflictDamage (float damage)
-	{
+	public void InflictDamage (float damage){
 		health -= damage;
+		
 		PlayHurtSound();
 	}
 }

@@ -111,6 +111,17 @@ namespace Valve.VR.InteractionSystem
 				bool canStick = ( targetPhysMaterial != null && collision.collider.sharedMaterial == targetPhysMaterial && rbSpeed > 0.2f );
 				bool hitBalloon = collision.collider.gameObject.GetComponent<Balloon>() != null;
 
+				Vector3 velo = arrowHeadRB.velocity;
+
+
+
+
+
+
+
+
+
+
 				if ( travelledFrames < 2 && !canStick )
 				{
 					// Reset transform but halve your velocity
@@ -167,33 +178,32 @@ namespace Valve.VR.InteractionSystem
 					Physics.IgnoreCollision( arrowHeadRB.GetComponent<Collider>(), collision.collider );
 					Physics.IgnoreCollision( shaftRB.GetComponent<Collider>(), collision.collider );
 				}
-			
-				GameObject possiblyDamagable = collision.collider.gameObject;
-				IDamagable hitDamagable = possiblyDamagable.GetComponent<IDamagable>();
-				if (hitDamagable != null) {
-					print ("hit"); 
-					hitDamagable.InflictDamage (20);
-				} else {
-					/*while (possiblyDamagable.transform.parent.gameObject != null) {
-						possiblyDamagable = possiblyDamagable.transform.parent.gameObject;
-						hitDamagable = possiblyDamagable.GetComponent<IDamagable>();
-						if (hitDamagable != null){
-							print ("hit"); 
-							hitDamagable.InflictDamage (20);
-						}
-					}*/
-				}
 
 
-				/*Enemy hitEnemy = collision.collider.gameObject.GetComponent<Enemy> ();
-				if (hitEnemy != null){
-					print ("hit");
-					hitEnemy.InflictDamage (46f);
-				}*/
+
+
 
 				if ( canStick )
 				{
 					StickInTarget( collision, travelledFrames < 2 );
+				}
+
+
+				GameObject possiblyDamagable = collision.collider.gameObject;
+				IDamagable hitDamagable = possiblyDamagable.GetComponent<IDamagable>();
+				if (hitDamagable != null)
+				{
+					//print ("hit");
+					float speed = velo.magnitude;
+					float damage = speed * 7 - 30;
+					if (damage < 0f)
+						damage = 0f;
+					print("attack damage = " + damage.ToString());
+					hitDamagable.InflictDamage(damage);
+                    Destroy(gameObject);
+				} else
+				{
+
 				}
 
 				// Player Collision Check (self hit)

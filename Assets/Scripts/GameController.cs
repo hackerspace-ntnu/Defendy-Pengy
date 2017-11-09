@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour {
 		//spawner.StartSpawningWave (wave);
 		isSpawning = true;
 		//EnemyWave wave = new EnemyWave(EnemySpawner.EnemyType.Wolf, 3, 2f);
-		EnemyWave wave = WaveParser.ParseWaveFile(@"Assets\Waves\level1.txt")[0];
+		EnemyWave wave = WaveParser.ParseWaveFile(null)[0];
 		spawner.StartSpawningWave(wave);
 	}
 	

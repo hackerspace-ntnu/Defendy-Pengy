@@ -435,6 +435,7 @@ GameObject:
   - component: {fileID: 114450340983142668}
   - component: {fileID: 195573373280801808}
   - component: {fileID: 82759136909115116}
+  - component: {fileID: 95526848481616954}
   m_Layer: 0
   m_Name: LowPoly_wolf
   m_TagString: Untagged
@@ -705,6 +706,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4988385451518460}
+  - component: {fileID: 95857987884273818}
   m_Layer: 0
   m_Name: Armature
   m_TagString: Untagged
@@ -2171,6 +2173,40 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95526848481616954
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1399087364113900}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a48f17c26d31de43b7f166d061f3760, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95857987884273818
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1747670887307062}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a48f17c26d31de43b7f166d061f3760, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114353665390791368
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1,16 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using UnityEngine;
 
 public class WaveParser
 {
-	public static List<EnemyWave> ParseWaveFile(string filePath)
+	public static List<EnemyWave> ParseWaveFile(TextAsset wavefile)
 	{
 		List<EnemyWave> waves = new List<EnemyWave>();
 
 		List<EnemySpawner.EnemyType> enemies_currentWave = new List<EnemySpawner.EnemyType>();
 		List<float> delays_currentWave = new List<float>();
 
-		foreach (string l in File.ReadAllLines(filePath))
+		foreach (string l in wavefile.text.Split(new[] { Environment.NewLine }, StringSplitOptions.None))
 		{
 			string line = l.Trim();
 			if (line.Length == 0 || line[0] == '/' || line[0] == '#')
@@ -77,6 +79,9 @@ public class WaveParser
 
 			case "wolf":
 				return EnemySpawner.EnemyType.Wolf;
+
+			case "fox":
+				return EnemySpawner.EnemyType.Fox;
 
 			default:
 				throw new System.FormatException("Invalid enemy type: " + token);

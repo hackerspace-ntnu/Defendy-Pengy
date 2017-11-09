@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour {
+	public TextAsset waveFile;
 	private List<EnemyWave> waves;
 	private List<float> wavesDelay;
 	public EnemySpawner spawner;
@@ -10,7 +11,6 @@ public class SpawnManager : MonoBehaviour {
 	private float timeToNextWave = 0f;
 	private bool isWaveEnded = true;
 	private bool isSpawningStarted = false;
-	public int level = 1;
 
 	void Update() {
 		if(isSpawningStarted) {
@@ -25,12 +25,9 @@ public class SpawnManager : MonoBehaviour {
 	}
 
 	public void StartSpawningWaves() { //called from gameManager
-		waves = new List<EnemyWave>();
 		wavesDelay = new List<float> ();
-		if(level == 1) {
-			waves = WaveParser.ParseWaveFile(@"Assets\Scenes\Waves\level1.txt");
-			wavesDelay.Add(10f);
-		}
+		waves = WaveParser.ParseWaveFile(waveFile);
+		wavesDelay.Add(10f);
 		isSpawningStarted = true;
 	}
 

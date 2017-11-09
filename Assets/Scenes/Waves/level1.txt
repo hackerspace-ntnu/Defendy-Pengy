@@ -1,4 +1,4 @@
-2 bear 3
+2 fox 3
 bear 15
 
 ### Wave 1 ###

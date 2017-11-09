@@ -15,6 +15,9 @@ public class SelectLevel : MonoBehaviour {
 
 	bool isHoldingDownButton;
 
+	private AudioSource audioSource;
+	public AudioClip hoverSound;
+	public AudioClip selectSound;
 
 	void Awake() {
 		leftHand = Player.instance.leftHand;
@@ -24,6 +27,7 @@ public class SelectLevel : MonoBehaviour {
 
 	void Update() {
 		if(GetComponent<Collider>().bounds.Contains(leftHand.gameObject.transform.position)) {
+			audioSource.PlayOneShot (hoverSound);
 			gameObject.transform.localScale = new Vector3 (0.006f, 0.006f, 0.006f);
 			if (leftHand.GetStandardInteractionButtonDown())
 				SceneManager.LoadScene("level1");
@@ -31,6 +35,7 @@ public class SelectLevel : MonoBehaviour {
 			return;
 		} 
 		if(GetComponent<Collider>().bounds.Contains(rightHand.gameObject.transform.position)) {
+			audioSource.PlayOneShot (hoverSound);
 			gameObject.transform.localScale = new Vector3 (0.006f, 0.006f, 0.006f);
 			if (rightHand.GetStandardInteractionButtonDown())
 				SceneManager.LoadScene("level1");

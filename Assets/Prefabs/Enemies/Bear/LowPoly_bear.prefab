@@ -1046,11 +1046,16 @@ MonoBehaviour:
   HealthBarPrefab: {fileID: 1526444277414400, guid: be44979df32dbbd48bfe006dfa3b8d86,
     type: 2}
   idleSounds:
-  - {fileID: 8300000, guid: 365eb897a69b8453d94dad9bbf9bb100, type: 3}
+  - {fileID: 8300000, guid: 5783a7dd4671f4aa1bb5c34c568523e0, type: 3}
+  - {fileID: 8300000, guid: c418c3ba615e94c6988d44dd4fb10997, type: 3}
+  - {fileID: 8300000, guid: 241293668873d4ee080421e16f027d80, type: 3}
+  - {fileID: 8300000, guid: a79d6d6d26e1e4bdeac6bf0fee2c707f, type: 3}
   hurtSounds:
-  - {fileID: 8300000, guid: 4789c691757054d4bbf0ac0c2674cac2, type: 3}
+  - {fileID: 8300000, guid: a2ca26365f5f44a8e8499897cbe04ca5, type: 3}
+  - {fileID: 8300000, guid: 52ac98c2882a941cdb5beac36cb4a3e4, type: 3}
+  - {fileID: 8300000, guid: 55a648473156b4d8f871b929706ec321, type: 3}
   deathSounds:
-  - {fileID: 8300000, guid: 9e25b2710c3274674a33366818be6dd2, type: 3}
+  - {fileID: 8300000, guid: 519666caea0af4dcba0203f12b6d9689, type: 3}
   IdleSoundFreq_sec: 5
   IdleSoundChance: 0.1
   speed: 3

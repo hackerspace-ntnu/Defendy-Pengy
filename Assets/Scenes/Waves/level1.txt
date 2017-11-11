@@ -2,12 +2,10 @@
 wolf 10
 1 wolf 2.0
 wolf 15
-2 wolf 2.0
-wolf 15
+3 wolf 2.0
 
 ### Wave 2 ###
-2 bear 3.0
-bear 15
+3 bear 3.0
 
 ### Wave 3 ###
 wolf 2.0

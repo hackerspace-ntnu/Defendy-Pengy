@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameUI_ImportantMessage : MonoBehaviour {
 	public GameObject modelGameOver;
+	public GameObject modelGameWin;
 	public Transform cam;
 	private bool isShowing = false;
 	// Use this for initialization
@@ -26,6 +27,10 @@ public class GameUI_ImportantMessage : MonoBehaviour {
 		GameObject textModel = null;
 		if (message == "Game Over"){
 			textModel = modelGameOver;
+		}
+		if (message == "Game Win")
+		{
+			textModel = modelGameWin;
 		}
 
 		if (cam != null && textModel != null){

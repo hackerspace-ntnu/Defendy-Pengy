@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 using UnityEngine.SceneManagement;
+using Valve.VR;
 
 public class GameManager_level01 : MonoBehaviour, IGameManager {
 	public SpawnManager spawnManager;
@@ -12,19 +13,44 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 	public GameObject longbow;
 	public GameUI_ImportantMessage importantMessage;
 
+	public Hand leftHand;
+	public Hand rightHand;
+
 	private float timeToStart = 3f;
 	public bool started = false;
 	public bool levelEnded = false;
-	// Use this for initialization
-	void Start () {
+
+	private float resetTriggerStartTime = -1;
+	private const float RESET_BUTTON_DURATION = 1f; // seconds
+
+	void Start()
+	{
 		gameHealthManager.gameManager = (IGameManager)this;
 	}
 
-	// Update is called once per frame
-	void Update() {
-		// TEMPORARY DEVELOPER HOTKEY:
+	private bool areResetButtonsPressed()
+	{
+		return leftHand.controller.GetPress(EVRButtonId.k_EButton_ApplicationMenu)
+			&& rightHand.controller.GetPress(EVRButtonId.k_EButton_ApplicationMenu); // menu buttons on both left and right controllers
+	}
+
+	void Update()
+	{
+		// TEMPORARY DEVELOPER HOTKEYS:
+		if (areResetButtonsPressed())
+		{
+			if (resetTriggerStartTime < 0f)
+				resetTriggerStartTime = Time.time;
+			else if (Time.time > resetTriggerStartTime + RESET_BUTTON_DURATION)
+				SceneManager.LoadScene("level1");
+		} else if (resetTriggerStartTime > 0f)
+			resetTriggerStartTime = -1;
+		if (Input.GetKeyDown(KeyCode.R))
+			SceneManager.LoadScene("level1");
 		if (Input.GetKeyDown(KeyCode.W))
 			GameStart();
+		// END
+
 
 		if (!levelEnded) {
 			if (!started) {
@@ -64,8 +90,9 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 		print("You have lost the game");
 		spawnManager.StopSpawning();
 		importantMessage.Show("Game Over");
-		Invoke ("LoadMenu", 5f);
+		//Invoke ("LoadMenu", 5f);
 		//change scene??
+		Invoke("GameRestart", 5f);
 	}
 
 	public void GameStart() {
@@ -81,17 +108,20 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 		throw new System.NotImplementedException();
 	}
 
-	public void GameRestart() {
-		throw new System.NotImplementedException();
+	public void GameRestart()
+	{
+		SceneManager.LoadScene("level1");
 	}
 
 	public void GameWin() {
 		levelEnded = true;
 		print("You have won the game");
+		importantMessage.Show("Game Win");
+		Invoke("GameRestart", 5f);
 	}
 
 	void LoadMenu()
 	{
-		SceneManager.LoadScene ("menu");
+		SceneManager.LoadScene("menu");
 	}
 }

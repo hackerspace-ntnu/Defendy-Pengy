@@ -6,6 +6,8 @@ public class SpawnManager : MonoBehaviour {
 	public TextAsset waveFile;
 	private List<EnemyWave> waves;
 	private List<float> wavesDelay;
+
+	public EnemyManager enemyManager;
 	public EnemySpawner spawner;
 	private int currentWaveIndex = 0;
 	private float timeToNextWave = 0f;
@@ -15,7 +17,8 @@ public class SpawnManager : MonoBehaviour {
 	void Update() {
 		if(isSpawningStarted) {
 			if(isWaveEnded) {
-				if(timeToNextWave <= 0f) {
+				if(timeToNextWave <= 0f && enemyManager.AreAllEnemiesDead())
+				{
 					spawner.StartSpawningWave(waves[currentWaveIndex]);
 					isWaveEnded = false;
 				}
@@ -39,7 +42,7 @@ public class SpawnManager : MonoBehaviour {
 	public void WaveEnded() { // always called from spawner, when the wave ends
 		isWaveEnded = true;
 		timeToNextWave = WaveDelay();
-		currentWaveIndex += 1;
+		currentWaveIndex++;
 		if (RemainingWavesCount() <= 0)
 			isSpawningStarted = false; //stop spawning
 	}

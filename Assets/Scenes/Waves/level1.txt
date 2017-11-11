@@ -1,23 +1,20 @@
-2 bear 3
-bear 15
-
-2 fox 3
-bear 15
-
 ### Wave 1 ###
-wolf 10.0
+wolf 10
 1 wolf 2.0
-wolf 15.0
+wolf 15
 2 wolf 2.0
-wolf 20.0
-5 wolf 2.0
+wolf 15
 
 ### Wave 2 ###
-wolf 2.0
-wolf 2.0
-wolf 10.0
-20 wolf 0.5
+2 bear 3.0
+bear 15
 
 ### Wave 3 ###
-2 bear 3
-bear 15
+wolf 2.0
+bear 3.0
+wolf 2.0
+bear 3.0
+wolf 10
+9 wolf 1.0
+wolf 10
+7 bear 3.0

@@ -16,6 +16,17 @@ ModelImporter:
     100016: Cube.008
     100018: Cube.009
     100020: //RootNode
+    100022: Cube.000
+    100024: Cube.010
+    100026: Cube.011
+    100028: Cube.012
+    100030: Cube.013
+    100032: Cube.014
+    100034: Cube.015
+    100036: Cube.016
+    100038: Cube.017
+    100040: Cube.018
+    100042: Cube.019
     400000: Cube
     400002: Cube.001
     400004: Cube.002
@@ -27,6 +38,17 @@ ModelImporter:
     400016: Cube.008
     400018: Cube.009
     400020: //RootNode
+    400022: Cube.000
+    400024: Cube.010
+    400026: Cube.011
+    400028: Cube.012
+    400030: Cube.013
+    400032: Cube.014
+    400034: Cube.015
+    400036: Cube.016
+    400038: Cube.017
+    400040: Cube.018
+    400042: Cube.019
     2300000: Cube
     2300002: Cube.001
     2300004: Cube.002
@@ -37,6 +59,17 @@ ModelImporter:
     2300014: Cube.007
     2300016: Cube.008
     2300018: Cube.009
+    2300020: Cube.000
+    2300022: Cube.010
+    2300024: Cube.011
+    2300026: Cube.012
+    2300028: Cube.013
+    2300030: Cube.014
+    2300032: Cube.015
+    2300034: Cube.016
+    2300036: Cube.017
+    2300038: Cube.018
+    2300040: Cube.019
     3300000: Cube
     3300002: Cube.001
     3300004: Cube.002
@@ -47,6 +80,17 @@ ModelImporter:
     3300014: Cube.007
     3300016: Cube.008
     3300018: Cube.009
+    3300020: Cube.000
+    3300022: Cube.010
+    3300024: Cube.011
+    3300026: Cube.012
+    3300028: Cube.013
+    3300030: Cube.014
+    3300032: Cube.015
+    3300034: Cube.016
+    3300036: Cube.017
+    3300038: Cube.018
+    3300040: Cube.019
     4300000: Cube.009
     4300002: Cube.008
     4300004: Cube.007
@@ -57,6 +101,17 @@ ModelImporter:
     4300014: Cube.002
     4300016: Cube.001
     4300018: Cube
+    4300020: Cube.019
+    4300022: Cube.018
+    4300024: Cube.017
+    4300026: Cube.016
+    4300028: Cube.015
+    4300030: Cube.014
+    4300032: Cube.013
+    4300034: Cube.012
+    4300036: Cube.011
+    4300038: Cube.010
+    4300040: Cube.000
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -68,6 +123,26 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Material.001
     second: {fileID: 2100000, guid: 4fea5a528d0ff4666bda3cf3b2869627, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 3b679a25db59e443ab82b213cfd5667d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 40c3686e6711d47df971624523869a40, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: darker grass
+    second: {fileID: 2100000, guid: 986144c89397a9c45bc15002710e9a54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: light grass
+    second: {fileID: 2100000, guid: 53ddd410733c49143b60c183121efb89, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

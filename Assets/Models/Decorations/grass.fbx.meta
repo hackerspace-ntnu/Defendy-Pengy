@@ -137,12 +137,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: darker grass
-    second: {fileID: 2100000, guid: 986144c89397a9c45bc15002710e9a54, type: 2}
+    second: {fileID: 2100000, guid: 20f52bb83f65a154f84f863ba3b641ee, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: light grass
-    second: {fileID: 2100000, guid: 53ddd410733c49143b60c183121efb89, type: 2}
+    second: {fileID: 2100000, guid: 88549d5c7455b1e48a2c52dcf384a232, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

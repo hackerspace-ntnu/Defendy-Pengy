@@ -30,8 +30,9 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 
 	private bool areResetButtonsPressed()
 	{
-		return leftHand.controller.GetPress(EVRButtonId.k_EButton_ApplicationMenu)
-			&& rightHand.controller.GetPress(EVRButtonId.k_EButton_ApplicationMenu); // menu buttons on both left and right controllers
+//		return leftHand.controller.GetPress(EVRButtonId.k_EButton_ApplicationMenu)
+//			&& rightHand.controller.GetPress(EVRButtonId.k_EButton_ApplicationMenu); // menu buttons on both left and right controllers
+        return false;
 	}
 
 	void Update()

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 92f01e749178364468f45b75d6a1ecc2
-timeCreated: 1510678559
+guid: 089f7dd594d878c4cabd228bbda37d3e
+timeCreated: 1510679550
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -22,12 +22,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Blueish Snow
-    second: {fileID: 2100000, guid: f8d7048a9dec8d145abf1289a00fc860, type: 2}
+    second: {fileID: 2100000, guid: f9ccc9d47b2eea849bd48799657c0f6b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: bridge
-    second: {fileID: 2100000, guid: a8d9ed3bbd60f1f4ca1d4632aa86bf17, type: 2}
+    second: {fileID: 2100000, guid: ce20bfa590acc404494c802fa25b0c6e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

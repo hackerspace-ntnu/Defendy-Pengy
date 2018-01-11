@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: e23628c63170955408d386a3ee28fc12
+guid: 229785db6683ef64285541e5f47fd708
 timeCreated: 1506024084
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: Camera
     100002: Lamp
@@ -18,10 +18,17 @@ ModelImporter:
     3300000: Text
     4300000: Text
     10800000: Lamp
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 538ebc8345b1d474197593a7e4809f09, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -34,6 +41,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

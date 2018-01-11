@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: a76e28243c0dc5b42a1f357bd4f34a88
-timeCreated: 1510678562
+guid: 244696a3ab67a5848b93ae320fce0888
+timeCreated: 1510679550
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -187,27 +187,27 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Bark inner
-    second: {fileID: 2100000, guid: 33016120f029565479db7a99e76035fe, type: 2}
+    second: {fileID: 2100000, guid: 80180c4864d8e4a4281cf0779d7b47e2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Bark outer
-    second: {fileID: 2100000, guid: f6b915eb80e31ad40a1a6059d43fb237, type: 2}
+    second: {fileID: 2100000, guid: b1af0cb18f790c046a37185abcf93de5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Glass
-    second: {fileID: 2100000, guid: cfea7ab751d2dd64a95ac8bdd042cd56, type: 2}
+    second: {fileID: 2100000, guid: b059d363f0c8d2145a1eb9c7f249a175, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Roof
-    second: {fileID: 2100000, guid: c3c5efa5b320f694f8235fda3bc7abe4, type: 2}
+    second: {fileID: 2100000, guid: 2c3001d3f52a2b34c8be8281a3b02e94, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: snow
-    second: {fileID: 2100000, guid: 7c2b92692e39fdd4fb20989e2d98e4bf, type: 2}
+    second: {fileID: 2100000, guid: a467c52db6d99b444a20e81e65ee51c0, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

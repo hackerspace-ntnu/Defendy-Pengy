@@ -1,31 +1,27 @@
 fileFormatVersion: 2
-guid: 375e1e1cd004e804ab5cce9a306dbcbd
-timeCreated: 1510679551
+guid: e23628c63170955408d386a3ee28fc12
+timeCreated: 1506024084
 licenseType: Free
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 21
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cube
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: tower1
-    second: {fileID: 2100000, guid: f78a5424c3fbebc4e99919bdcf6deb91, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: tower2
-    second: {fileID: 2100000, guid: 872c2a9935ec6f0438c10991e6044c3c, type: 2}
+    100000: Camera
+    100002: Lamp
+    100004: //RootNode
+    100006: Text
+    400000: Camera
+    400002: Lamp
+    400004: //RootNode
+    400006: Text
+    2000000: Camera
+    2300000: Text
+    3300000: Text
+    4300000: Text
+    10800000: Lamp
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -38,7 +34,6 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

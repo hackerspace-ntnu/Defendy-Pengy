@@ -14,6 +14,7 @@ public abstract partial class Enemy : MonoBehaviour{
 	private EnemyHealthBar healthBar;
 	private EnemyManager enemyManager;
 	private bool dying = false;
+	private SkinnedMeshRenderer enemySkinnedMeshRenderer;
 
 	void Start(){
 		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -30,6 +31,22 @@ public abstract partial class Enemy : MonoBehaviour{
 
 		//Vector3 left = Quaternion.Inverse(InputTracking.GetLocalRotation(VRNode.LeftEye)) * InputTracking.GetLocalPosition(VRNode.LeftEye);
 		SoundStart();
+
+		float h, s, v; // hue, saturation, value (brightness)
+		float oldV;
+		enemySkinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer> ();
+
+		for (int i = 0; i < enemySkinnedMeshRenderer.materials.Length; i++) {
+			Color.RGBToHSV (enemySkinnedMeshRenderer.materials[i].color, out h, out s, out v);
+			oldV = v;
+			v = Random.Range (oldV*0.5f, oldV*1.5f);
+
+			if (v > 1f) {
+				v = 1f;
+			}
+
+			enemySkinnedMeshRenderer.materials[i].color = Color.HSVToRGB (h, s, v);
+		}
 	}
 
 	void Update () {

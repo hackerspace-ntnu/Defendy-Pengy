@@ -1,36 +1,54 @@
 fileFormatVersion: 2
-guid: 2a7a178b96cfe784a813ad7e5ef949ce
-timeCreated: 1507046247
+guid: 8743e50c3f6790b438f94e9d7b38b99e
+timeCreated: 1516130452
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Camera
-    100002: Cylinder
-    100004: Lamp
-    100006: Sphere
-    100008: //RootNode
-    400000: Camera
-    400002: Cylinder
-    400004: Lamp
-    400006: Sphere
-    400008: //RootNode
-    2000000: Camera
-    2100000: Material.002
-    2100002: Material.001
-    2300000: Cylinder
-    2300002: Sphere
-    3300000: Cylinder
-    3300002: Sphere
-    4300000: Sphere
-    4300002: Cylinder
-    10800000: Lamp
-  externalObjects: {}
+    100000: //RootNode
+    100002: pCube293
+    100004: pCube294
+    100006: pCube295
+    100008: pCube296
+    100010: pCube297
+    100012: pCube298
+    100014: transform38
+    100016: transform39
+    100018: transform40
+    100020: transform41
+    100022: transform42
+    400000: //RootNode
+    400002: pCube293
+    400004: pCube294
+    400006: pCube295
+    400008: pCube296
+    400010: pCube297
+    400012: pCube298
+    400014: transform38
+    400016: transform39
+    400018: transform40
+    400020: transform41
+    400022: transform42
+    2300000: pCube298
+    3300000: pCube298
+    4300000: pCube298
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grass_green
+    second: {fileID: 2100000, guid: 07b5c9dc9b4aadd4dabe0c992daa208e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert11
+    second: {fileID: 2100000, guid: 2faed817732477249865640925592e4d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -97,7 +115,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

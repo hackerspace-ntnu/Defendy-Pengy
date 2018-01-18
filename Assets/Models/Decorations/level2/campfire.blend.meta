@@ -1,36 +1,75 @@
 fileFormatVersion: 2
-guid: 2a7a178b96cfe784a813ad7e5ef949ce
-timeCreated: 1507046247
+guid: ce01d8f9a50646d439c355596cc4ccca
+timeCreated: 1510684586
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Camera
+    100000: //RootNode
     100002: Cylinder
-    100004: Lamp
-    100006: Sphere
-    100008: //RootNode
-    400000: Camera
+    100004: Cylinder_001
+    100006: Cylinder_002
+    100008: Cylinder_003
+    100010: Cylinder_004
+    100012: Cylinder_005
+    100014: Cylinder_006
+    100016: Cylinder_007
+    100018: Cylinder_019
+    400000: //RootNode
     400002: Cylinder
-    400004: Lamp
-    400006: Sphere
-    400008: //RootNode
-    2000000: Camera
-    2100000: Material.002
-    2100002: Material.001
+    400004: Cylinder_001
+    400006: Cylinder_002
+    400008: Cylinder_003
+    400010: Cylinder_004
+    400012: Cylinder_005
+    400014: Cylinder_006
+    400016: Cylinder_007
+    400018: Cylinder_019
     2300000: Cylinder
-    2300002: Sphere
+    2300002: Cylinder_001
+    2300004: Cylinder_002
+    2300006: Cylinder_003
+    2300008: Cylinder_004
+    2300010: Cylinder_005
+    2300012: Cylinder_006
+    2300014: Cylinder_007
+    2300016: Cylinder_019
     3300000: Cylinder
-    3300002: Sphere
-    4300000: Sphere
-    4300002: Cylinder
-    10800000: Lamp
-  externalObjects: {}
+    3300002: Cylinder_001
+    3300004: Cylinder_002
+    3300006: Cylinder_003
+    3300008: Cylinder_004
+    3300010: Cylinder_005
+    3300012: Cylinder_006
+    3300014: Cylinder_007
+    3300016: Cylinder_019
+    4300000: Cylinder_019
+    4300002: Cylinder_007
+    4300004: Cylinder_006
+    4300006: Cylinder_005
+    4300008: Cylinder_004
+    4300010: Cylinder_003
+    4300012: Cylinder_002
+    4300014: Cylinder_001
+    4300016: Cylinder
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inner_bark_campfire
+    second: {fileID: 2100000, guid: 603f8166076e0cc459202eee8fd83a82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outer_bark_campfire
+    second: {fileID: 2100000, guid: 0425f8fa9bbb12047b7d920a2e179060, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -97,7 +136,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

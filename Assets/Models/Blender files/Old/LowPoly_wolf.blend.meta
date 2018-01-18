@@ -1,0 +1,213 @@
+fileFormatVersion: 2
+guid: 97cb58ae5b2680e4facc35d47a7a0cd3
+timeCreated: 1516307928
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature
+    100002: body_1
+    100004: body_2
+    100006: body_3
+    100008: Cube
+    100010: Ear_L_1
+    100012: Ear_L_2
+    100014: Ear_L_3
+    100016: Ear_L_4
+    100018: Ear_L_C
+    100020: Ear_L_IK
+    100022: Ear_R_1
+    100024: Ear_R_2
+    100026: Ear_R_3
+    100028: Ear_R_4
+    100030: Ear_R_C
+    100032: Ear_R_IK
+    100034: Empty_002
+    100036: foot_BL_1
+    100038: foot_BR_1
+    100040: foot_FL_1
+    100042: foot_FR_1
+    100044: head
+    100046: Hook_Ear_L
+    100048: Hook_Ear_R
+    100050: leg_B_L_1
+    100052: leg_B_L_3
+    100054: leg_B_L_4
+    100056: leg_B_R_1
+    100058: leg_B_R_2
+    100060: leg_B_R_3
+    100062: leg_B_R_4
+    100064: leg_BL_2
+    100066: leg_F_L_1
+    100068: leg_F_L_2
+    100070: leg_F_L_3
+    100072: leg_F_L_4
+    100074: leg_F_R_1
+    100076: leg_F_R_2
+    100078: leg_F_R_3
+    100080: leg_F_R_4
+    100082: //RootNode
+    100084: neck
+    100086: shoulder_BL
+    100088: shoulder_BR_1
+    100090: shoulder_FL
+    100092: shoulder_FR
+    100094: Spine_IK
+    100096: Tail_1
+    100098: Tail_2
+    100100: Tail_3
+    100102: Tail_4
+    100104: Tail_C
+    100106: Tail_IK
+    400000: Armature
+    400002: body_1
+    400004: body_2
+    400006: body_3
+    400008: Cube
+    400010: Ear_L_1
+    400012: Ear_L_2
+    400014: Ear_L_3
+    400016: Ear_L_4
+    400018: Ear_L_C
+    400020: Ear_L_IK
+    400022: Ear_R_1
+    400024: Ear_R_2
+    400026: Ear_R_3
+    400028: Ear_R_4
+    400030: Ear_R_C
+    400032: Ear_R_IK
+    400034: Empty_002
+    400036: foot_BL_1
+    400038: foot_BR_1
+    400040: foot_FL_1
+    400042: foot_FR_1
+    400044: head
+    400046: Hook_Ear_L
+    400048: Hook_Ear_R
+    400050: leg_B_L_1
+    400052: leg_B_L_3
+    400054: leg_B_L_4
+    400056: leg_B_R_1
+    400058: leg_B_R_2
+    400060: leg_B_R_3
+    400062: leg_B_R_4
+    400064: leg_BL_2
+    400066: leg_F_L_1
+    400068: leg_F_L_2
+    400070: leg_F_L_3
+    400072: leg_F_L_4
+    400074: leg_F_R_1
+    400076: leg_F_R_2
+    400078: leg_F_R_3
+    400080: leg_F_R_4
+    400082: //RootNode
+    400084: neck
+    400086: shoulder_BL
+    400088: shoulder_BR_1
+    400090: shoulder_FL
+    400092: shoulder_FR
+    400094: Spine_IK
+    400096: Tail_1
+    400098: Tail_2
+    400100: Tail_3
+    400102: Tail_4
+    400104: Tail_C
+    400106: Tail_IK
+    4300000: Ear_L_IK
+    4300002: Ear_R_IK
+    4300004: Tail_IK
+    4300006: Cube
+    7400000: Default Take
+    9500000: //RootNode
+    13700000: Cube
+    13700002: Ear_L_IK
+    13700004: Ear_R_IK
+    13700006: Tail_IK
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf_Eyes_DARK
+    second: {fileID: 2100000, guid: ae44c580fbed0b84dbc448a7b69d50bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf_Fur_GREY
+    second: {fileID: 2100000, guid: 0a5903e3d58cdeb4290876c70073daed, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

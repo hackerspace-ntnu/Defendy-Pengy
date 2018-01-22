@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 9545886}
   - component: {fileID: 11461100}
   m_Layer: 0
-  m_Name: Longbow (copied)
+  m_Name: _copy_Longbow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

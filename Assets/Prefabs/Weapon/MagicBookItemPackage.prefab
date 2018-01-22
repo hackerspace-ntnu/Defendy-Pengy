@@ -42,7 +42,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Magic book
   packageType: 2
-  itemPrefab: {fileID: 1351061020103422, guid: bd7600e18d1da8041891d8bda1495292, type: 2}
+  itemPrefab: {fileID: 1209601439889980, guid: 77f02598a81794146ba79c59554ce2b8, type: 2}
   otherHandItemPrefab: {fileID: 0}
   previewPrefab: {fileID: 1860671100163660, guid: a8d3a0449d9915a47828a58ae3f8728d,
     type: 2}

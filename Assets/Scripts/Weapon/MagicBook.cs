@@ -84,7 +84,7 @@ namespace Valve.VR.InteractionSystem
 		private void OnAttachedToHand( Hand attachedHand )
 		{
 			hand = attachedHand;
-			GameObject.Find("GameManager").GetComponent<IGameManager>().GameStart();
+			//GameObject.Find("GameManager").GetComponent<IGameManager>().GameStart();
 		}
 
 

@@ -1,130 +1,73 @@
 fileFormatVersion: 2
-guid: 2557f409b99cb464bbee1d4f48fc7154
-timeCreated: 1509044487
+guid: eea09898767687a46bbf54ec19a9117b
+timeCreated: 1516477848
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: BezierCurve
-    100002: //RootNode
-    100004: Plane
-    100006: Plane_001
-    100008: Plane_003
-    100010: Plane_004
-    100012: terrain
-    100014: water
-    100016: level1_path
-    100018: BezierCurve_001
-    100020: terrain_inner
-    100022: terrain_outer
-    400000: BezierCurve
-    400002: //RootNode
-    400004: Plane
-    400006: Plane_001
-    400008: Plane_003
-    400010: Plane_004
-    400012: terrain
-    400014: water
-    400016: level1_path
-    400018: BezierCurve_001
-    400020: terrain_inner
-    400022: terrain_outer
-    2300000: BezierCurve
-    2300002: Plane
-    2300004: Plane_001
-    2300006: Plane_003
-    2300008: Plane_004
-    2300010: terrain
-    2300012: water
-    2300014: level1_path
-    2300016: BezierCurve_001
-    2300018: terrain_inner
-    2300020: terrain_outer
-    3300000: BezierCurve
-    3300002: Plane
-    3300004: Plane_001
-    3300006: Plane_003
-    3300008: Plane_004
-    3300010: terrain
-    3300012: water
-    3300014: level1_path
-    3300016: BezierCurve_001
-    3300018: terrain_inner
-    3300020: terrain_outer
-    4300000: BezierCurve
-    4300002: Plane_004
-    4300004: Plane_003
-    4300006: Plane_001
-    4300008: water
-    4300010: terrain
-    4300012: Plane
-    4300014: level1_path
-    4300016: BezierCurve_001
-    4300018: terrain_outer
-    4300020: terrain_inner
-    7400000: Default Take
-    9500000: //RootNode
+    100000: //RootNode
+    100002: Plane
+    100004: Plane.001
+    100006: terrain
+    100008: water
+    400000: //RootNode
+    400002: Plane
+    400004: Plane.001
+    400006: terrain
+    400008: water
+    2300000: Plane
+    2300002: Plane.001
+    2300004: terrain
+    2300006: water
+    3300000: Plane
+    3300002: Plane.001
+    3300004: terrain
+    3300006: water
+    4300000: Plane.001
+    4300002: water
+    4300004: terrain
+    4300006: Plane
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Grass
-    second: {fileID: 2100000, guid: 968e222d6187bf643883269dd5452265, type: 2}
+      name: Level 1 below ground
+    second: {fileID: 2100000, guid: c9418cb83f7c45946987d939fcbdea66, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 4342d523ca5ea664fb78df2d9a68c648, type: 2}
+      name: Level 2 below ground
+    second: {fileID: 2100000, guid: 852e1184d7c406946b7381d78c901c96, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Mountain
-    second: {fileID: 2100000, guid: 3ecf9d236a6d7d14a9267b9c127faaaa, type: 2}
+      name: Level 3 below ground
+    second: {fileID: 2100000, guid: b1432ae5e7477134f93ae7aaedab22ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mountain level 1
+    second: {fileID: 2100000, guid: d5d267c6a02705d4f92b69a24e73d438, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Mountain01
-    second: {fileID: 2100000, guid: 84e9d28db1f50c94e8697bab2917251a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mountain01_001
-    second: {fileID: 2100000, guid: 47ba4c2329a5fa147a6ec1a9358ca3ee, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mountain_001
-    second: {fileID: 2100000, guid: 0443f40ff39187149b5d060c7bf61ad6, type: 2}
+    second: {fileID: 2100000, guid: c2c7aa4c1af72b74d8396f883827f128, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: PathForEnemies
-    second: {fileID: 2100000, guid: 17274026b05f2d849b05914de2d338e7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PathForEnemies_001
-    second: {fileID: 2100000, guid: 40a61423da958c744a56292f65221e91, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Snow
-    second: {fileID: 2100000, guid: beb0bcef78613fc46aa6710d4c30dee3, type: 2}
+    second: {fileID: 2100000, guid: a9bda83d67e9dcc46acafc38901c9bfe, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Snow01
-    second: {fileID: 2100000, guid: d8ac9d7d22c08ed408326fc0cd5fb275, type: 2}
+    second: {fileID: 2100000, guid: 071fa383c5ba89141adcf66fe0a385af, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Snow01_001
-    second: {fileID: 2100000, guid: df8af679d0d9cd641bbffb8c5559f19a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Snow01_002
-    second: {fileID: 2100000, guid: 6c42b48171b4b44418c0fc556d375b9d, type: 2}
+      name: Snow01.001
+    second: {fileID: 2100000, guid: 90e892fbc4a892141b75416946862698, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -140,11 +83,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Water01
     second: {fileID: 2100000, guid: 6184528d7a768a24891062ae3a90f488, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: unnamed
-    second: {fileID: 2100000, guid: 0dd1f43f6c385d24bad6c0d2a00fbaa7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -216,7 +154,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

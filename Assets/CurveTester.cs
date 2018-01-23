@@ -21,13 +21,21 @@ public class CurveTester : MonoBehaviour {
 	void Start () {
 		bc = GetComponent<BezierCurve>();
 		bcPoints = bc.GetAnchorPoints();
-		length = new float[bcPoints.Length - 1];
+		length = new float[bcPoints.Length];
 		if (from < 0 || to > bcPoints.Length)
 			throw new System.Exception("Invalid from or to value");
-		for(int i = from; i < to - 1; i++)
+		
+		
+		for (int i = from; i < to; i++)
 		{
 			if (i == bcPoints.Length - 1)
-			length[i] = BezierCurve.ApproximateLength(bcPoints[i], bcPoints[i + 1]);
+			{
+				length[i] = BezierCurve.ApproximateLength(bcPoints[i], bcPoints[from]);
+			}
+			else
+			{
+				length[i] = BezierCurve.ApproximateLength(bcPoints[i], bcPoints[i + 1]);
+			}
 			totalMoveLength += length[i];
 		}
 		curPoint = from;
@@ -47,6 +55,7 @@ public class CurveTester : MonoBehaviour {
 				if(curPoint >= to - 1) //hit the very target point
 				{
 					isDone = true;
+					print("--- Object movement done ---");
 					return;
 				}
 				else
@@ -60,7 +69,14 @@ public class CurveTester : MonoBehaviour {
 			float curPercentage = length[curPoint] / totalMoveLength;
 			t = (pastTime / moveTime) / curPercentage;
 		} while (t >= 1f);
-		Vector3 pos = BezierCurve.GetPoint(bc.GetAnchorPoints()[curPoint], bc.GetAnchorPoints()[curPoint+1], t);
+		Vector3 pos;
+		if (curPoint == bcPoints.Length - 1)
+			pos = BezierCurve.GetPoint(bcPoints[curPoint], bcPoints[from], t);
+		else
+			pos = BezierCurve.GetPoint(bcPoints[curPoint], bcPoints[curPoint+1], t);
 		objectToBeMoved.transform.position = pos;
+
 	}
+
+	
 }

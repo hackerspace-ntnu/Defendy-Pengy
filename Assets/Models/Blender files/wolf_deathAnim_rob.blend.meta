@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: 0ac7a658b83625b4c8a2e04a9126f51f
+timeCreated: 1516307888
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature
+    100002: BodyCtrl
+    100004: Bone_003
+    100006: Bone_003_L
+    100008: Bone_003_L_001
+    100010: Bone_003_L_002
+    100012: Bone_003_L_003
+    100014: Bone_003_L_004
+    100016: Bone_003_R
+    100018: Bone_003_R_001
+    100020: Bone_003_R_002
+    100022: Bone_003_R_003
+    100024: Bone_003_R_004
+    100026: Bone_004
+    100028: Bone_004_L
+    100030: Bone_004_L_001
+    100032: Bone_004_L_002
+    100034: Bone_004_L_003
+    100036: Bone_004_L_004
+    100038: Bone_004_R
+    100040: Bone_004_R_001
+    100042: Bone_004_R_002
+    100044: Bone_004_R_003
+    100046: Bone_004_R_004
+    100048: Bone_005
+    100050: Bone_006
+    100052: Bone_007
+    100054: Bone_008
+    100056: Bone_009
+    100058: Cube
+    100060: Empty_002
+    100062: IK_poleTargetB_L
+    100064: IK_poleTargetB_R
+    100066: IK_poleTargetF_L
+    100068: IK_poleTargetF_R
+    100070: Root
+    100072: Tail_IK
+    100074: //RootNode
+    400000: Armature
+    400002: BodyCtrl
+    400004: Bone_003
+    400006: Bone_003_L
+    400008: Bone_003_L_001
+    400010: Bone_003_L_002
+    400012: Bone_003_L_003
+    400014: Bone_003_L_004
+    400016: Bone_003_R
+    400018: Bone_003_R_001
+    400020: Bone_003_R_002
+    400022: Bone_003_R_003
+    400024: Bone_003_R_004
+    400026: Bone_004
+    400028: Bone_004_L
+    400030: Bone_004_L_001
+    400032: Bone_004_L_002
+    400034: Bone_004_L_003
+    400036: Bone_004_L_004
+    400038: Bone_004_R
+    400040: Bone_004_R_001
+    400042: Bone_004_R_002
+    400044: Bone_004_R_003
+    400046: Bone_004_R_004
+    400048: Bone_005
+    400050: Bone_006
+    400052: Bone_007
+    400054: Bone_008
+    400056: Bone_009
+    400058: Cube
+    400060: Empty_002
+    400062: IK_poleTargetB_L
+    400064: IK_poleTargetB_R
+    400066: IK_poleTargetF_L
+    400068: IK_poleTargetF_R
+    400070: Root
+    400072: Tail_IK
+    400074: //RootNode
+    2100000: lighterYellow
+    2100002: brown
+    2100004: darkBrown
+    2100006: lightYellow
+    2100008: lightBrown
+    2100010: Wolf_Eyes_DARK
+    2300000: Tail_IK
+    3300000: Tail_IK
+    4300000: Cube
+    4300002: Tail_IK
+    7400000: Default Take
+    7400002: deathAnim
+    7400004: PoseLib
+    7400006: walkAnim
+    9500000: //RootNode
+    13700000: Cube
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

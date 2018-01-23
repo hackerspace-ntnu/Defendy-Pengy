@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 406c86f016134e144b10b6263a036584
-timeCreated: 1507046249
+guid: 97cb58ae5b2680e4facc35d47a7a0cd3
+timeCreated: 1516307928
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: Armature
     100002: body_1
@@ -123,10 +123,22 @@ ModelImporter:
     13700002: Ear_L_IK
     13700004: Ear_R_IK
     13700006: Tail_IK
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf_Eyes_DARK
+    second: {fileID: 2100000, guid: ae44c580fbed0b84dbc448a7b69d50bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf_Fur_GREY
+    second: {fileID: 2100000, guid: 0a5903e3d58cdeb4290876c70073daed, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -139,6 +151,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

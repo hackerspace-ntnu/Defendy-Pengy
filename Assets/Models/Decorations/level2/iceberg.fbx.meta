@@ -1,90 +1,53 @@
 fileFormatVersion: 2
-guid: 57956fc3010bee6418c23c4220a5fc1a
-timeCreated: 1516133364
+guid: b85444c63a13fc4498f4be2943fbe3cd
+timeCreated: 1516301374
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Armature
-    100002: body_1
-    100004: body_1_C
-    100006: body_2
-    100008: body_2_C
-    100010: body_3
-    100012: body_4
-    100014: body_4_C
-    100016: body_C
-    100018: head_1
-    100020: head_2
-    100022: head_3
-    100024: Icosphere
-    100026: leg_1_L
-    100028: leg_1_R
-    100030: leg_2_L
-    100032: leg_2_L_C
-    100034: leg_2_R
-    100036: leg_2_R_C
-    100038: leg_3_L
-    100040: leg_3_L_C
-    100042: leg_3_R
-    100044: leg_3_R_C
-    100046: leg_4_L
-    100048: leg_4_R
-    100050: leg_5_C_L
-    100052: leg_5_C_R
-    100054: leg_5_L
-    100056: leg_5_R
-    100058: //RootNode
-    100060: tail_L
-    100062: tail_R
-    400000: Armature
-    400002: body_1
-    400004: body_1_C
-    400006: body_2
-    400008: body_2_C
-    400010: body_3
-    400012: body_4
-    400014: body_4_C
-    400016: body_C
-    400018: head_1
-    400020: head_2
-    400022: head_3
-    400024: Icosphere
-    400026: leg_1_L
-    400028: leg_1_R
-    400030: leg_2_L
-    400032: leg_2_L_C
-    400034: leg_2_R
-    400036: leg_2_R_C
-    400038: leg_3_L
-    400040: leg_3_L_C
-    400042: leg_3_R
-    400044: leg_3_R_C
-    400046: leg_4_L
-    400048: leg_4_R
-    400050: leg_5_C_L
-    400052: leg_5_C_R
-    400054: leg_5_L
-    400056: leg_5_R
-    400058: //RootNode
-    400060: tail_L
-    400062: tail_R
-    4300000: Icosphere
-    7400000: Default Take
-    7400002: ArmatureAction
-    9500000: //RootNode
-    13700000: Icosphere
+    100000: //RootNode
+    100002: mesh_1044695277
+    100004: mesh_1265108815
+    100006: mesh_815643667
+    100008: mesh_815643667.001
+    100010: mesh_815643667.002
+    400000: //RootNode
+    400002: mesh_1044695277
+    400004: mesh_1265108815
+    400006: mesh_815643667
+    400008: mesh_815643667.001
+    400010: mesh_815643667.002
+    2300000: mesh_1044695277
+    2300002: mesh_1265108815
+    2300004: mesh_815643667
+    2300006: mesh_815643667.001
+    2300008: mesh_815643667.002
+    3300000: mesh_1044695277
+    3300002: mesh_1265108815
+    3300004: mesh_815643667
+    3300006: mesh_815643667.001
+    3300008: mesh_815643667.002
+    4300000: mesh_815643667.002
+    4300002: mesh_815643667.001
+    4300004: mesh_1265108815
+    4300006: mesh_815643667
+    4300008: mesh_1044695277
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: seal_gray_dark
-    second: {fileID: 2100000, guid: 1800aa6b4501bd34786d3c0e7693b40d, type: 2}
+      name: material_21___18494
+    second: {fileID: 2100000, guid: 46ec49e4d028bf34cae496cc357024e4, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: seal_gray_medium
-    second: {fileID: 2100000, guid: d90da734fa332234c9c65bcc460666ca, type: 2}
+      name: material_21___18494.001
+    second: {fileID: 2100000, guid: 18ddd2b33e6d3644eb47c144d820290b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_21___18494.002
+    second: {fileID: 2100000, guid: 3b0bc5ca296b4dc4abf8aff2345d526c, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -156,7 +119,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

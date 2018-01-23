@@ -13,6 +13,10 @@ ModelImporter:
     100010: Plane_004
     100012: terrain
     100014: water
+    100016: level1_path
+    100018: BezierCurve_001
+    100020: terrain_inner
+    100022: terrain_outer
     400000: BezierCurve
     400002: //RootNode
     400004: Plane
@@ -21,6 +25,10 @@ ModelImporter:
     400010: Plane_004
     400012: terrain
     400014: water
+    400016: level1_path
+    400018: BezierCurve_001
+    400020: terrain_inner
+    400022: terrain_outer
     2300000: BezierCurve
     2300002: Plane
     2300004: Plane_001
@@ -28,6 +36,10 @@ ModelImporter:
     2300008: Plane_004
     2300010: terrain
     2300012: water
+    2300014: level1_path
+    2300016: BezierCurve_001
+    2300018: terrain_inner
+    2300020: terrain_outer
     3300000: BezierCurve
     3300002: Plane
     3300004: Plane_001
@@ -35,6 +47,10 @@ ModelImporter:
     3300008: Plane_004
     3300010: terrain
     3300012: water
+    3300014: level1_path
+    3300016: BezierCurve_001
+    3300018: terrain_inner
+    3300020: terrain_outer
     4300000: BezierCurve
     4300002: Plane_004
     4300004: Plane_003
@@ -42,9 +58,23 @@ ModelImporter:
     4300008: water
     4300010: terrain
     4300012: Plane
+    4300014: level1_path
+    4300016: BezierCurve_001
+    4300018: terrain_outer
+    4300020: terrain_inner
     7400000: Default Take
     9500000: //RootNode
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grass
+    second: {fileID: 2100000, guid: 968e222d6187bf643883269dd5452265, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 4342d523ca5ea664fb78df2d9a68c648, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -58,8 +88,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Mountain01_001
+    second: {fileID: 2100000, guid: 47ba4c2329a5fa147a6ec1a9358ca3ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mountain_001
+    second: {fileID: 2100000, guid: 0443f40ff39187149b5d060c7bf61ad6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: PathForEnemies
     second: {fileID: 2100000, guid: 17274026b05f2d849b05914de2d338e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PathForEnemies_001
+    second: {fileID: 2100000, guid: 40a61423da958c744a56292f65221e91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Snow
+    second: {fileID: 2100000, guid: beb0bcef78613fc46aa6710d4c30dee3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -69,7 +119,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Snow01_001
-    second: {fileID: 2100000, guid: c932c58a582e14e4699d5498e2e6f25d, type: 2}
+    second: {fileID: 2100000, guid: df8af679d0d9cd641bbffb8c5559f19a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Snow01_002
+    second: {fileID: 2100000, guid: 6c42b48171b4b44418c0fc556d375b9d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -89,7 +144,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: unnamed
-    second: {fileID: 2100000, guid: 430fa725fb0cc3e4dbe3175aa0210b1e, type: 2}
+    second: {fileID: 2100000, guid: 0dd1f43f6c385d24bad6c0d2a00fbaa7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

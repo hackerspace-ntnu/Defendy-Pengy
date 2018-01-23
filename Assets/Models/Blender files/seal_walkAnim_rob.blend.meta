@@ -1,0 +1,169 @@
+fileFormatVersion: 2
+guid: 38f61a666e677c443b36d11cd672856a
+timeCreated: 1516477826
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature
+    100002: body_1
+    100004: body_2
+    100006: body_3
+    100008: body_4
+    100010: body_4_C
+    100012: ctrlBone
+    100014: head_1
+    100016: head_2
+    100018: head_3
+    100020: Icosphere
+    100022: leg_1_L
+    100024: leg_1_R
+    100026: leg_2_L
+    100028: leg_2_R
+    100030: leg_3_L
+    100032: leg_3_R
+    100034: leg_4_L
+    100036: leg_4_R
+    100038: leg_5_C_L
+    100040: leg_5_C_R
+    100042: leg_5_L
+    100044: leg_5_R
+    100046: Plane
+    100048: //RootNode
+    100050: tail_L
+    100052: tail_R
+    400000: Armature
+    400002: body_1
+    400004: body_2
+    400006: body_3
+    400008: body_4
+    400010: body_4_C
+    400012: ctrlBone
+    400014: head_1
+    400016: head_2
+    400018: head_3
+    400020: Icosphere
+    400022: leg_1_L
+    400024: leg_1_R
+    400026: leg_2_L
+    400028: leg_2_R
+    400030: leg_3_L
+    400032: leg_3_R
+    400034: leg_4_L
+    400036: leg_4_R
+    400038: leg_5_C_L
+    400040: leg_5_C_R
+    400042: leg_5_L
+    400044: leg_5_R
+    400046: Plane
+    400048: //RootNode
+    400050: tail_L
+    400052: tail_R
+    2300000: Plane
+    3300000: Plane
+    4300000: Plane
+    4300002: Icosphere
+    7400000: Default Take
+    7400002: PoseLib
+    7400004: seal_deathAnim
+    7400006: seal_walkAnim
+    9500000: //RootNode
+    13700000: Icosphere
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: seal_black
+    second: {fileID: 2100000, guid: 030bc5aab1948fd419e41c7344b3dff9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: seal_gray_dark
+    second: {fileID: 2100000, guid: 1800aa6b4501bd34786d3c0e7693b40d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: seal_gray_medium
+    second: {fileID: 2100000, guid: d90da734fa332234c9c65bcc460666ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: unnamed
+    second: {fileID: 2100000, guid: 31ca7fa1bbb77144fbce74950c31ca82, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

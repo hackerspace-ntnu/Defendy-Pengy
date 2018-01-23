@@ -1,71 +1,71 @@
 fileFormatVersion: 2
-guid: 0c218465f35c49547bdfa6355d7b2524
-timeCreated: 1508507941
+guid: f2d8df093f7894e4a9ff3d353fc155ac
+timeCreated: 1516307943
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: Armature
     100002: //RootNode
-    100004: BodyCTRL
-    100006: Bone_002
-    100008: Bone_002_L
-    100010: Bone_002_L_001
-    100012: Bone_002_L_003
-    100014: Bone_002_R
-    100016: Bone_002_R_001
-    100018: Bone_002_R_003
-    100020: Bone_003
-    100022: Bone_004
-    100024: Bone_005
-    100026: Bone_005_L
-    100028: Bone_005_L_001
-    100030: Bone_005_L_003
-    100032: Bone_005_R
-    100034: Bone_005_R_001
-    100036: Bone_005_R_003
-    100038: Bone_008
-    100040: Bone_009
-    100042: IK_legF_L
-    100044: IK_legF_R
-    100046: IK_legH_L
-    100048: IK_legH_R
-    100050: LowerF_L
-    100052: LowerF_R
-    100054: LowerH_L
-    100056: LowerH_R
-    100058: Plane
+    100004: bear_model
+    100006: BodyCTRL
+    100008: Bone_002
+    100010: Bone_002_L
+    100012: Bone_002_L_001
+    100014: Bone_002_L_003
+    100016: Bone_002_R
+    100018: Bone_002_R_001
+    100020: Bone_002_R_003
+    100022: Bone_003
+    100024: Bone_004
+    100026: Bone_005
+    100028: Bone_005_L
+    100030: Bone_005_L_001
+    100032: Bone_005_L_003
+    100034: Bone_005_R
+    100036: Bone_005_R_001
+    100038: Bone_005_R_003
+    100040: Bone_008
+    100042: Bone_009
+    100044: IK_legF_L
+    100046: IK_legF_R
+    100048: IK_legH_L
+    100050: IK_legH_R
+    100052: LowerF_L
+    100054: LowerF_R
+    100056: LowerH_L
+    100058: LowerH_R
     100060: Root
     400000: Armature
     400002: //RootNode
-    400004: BodyCTRL
-    400006: Bone_002
-    400008: Bone_002_L
-    400010: Bone_002_L_001
-    400012: Bone_002_L_003
-    400014: Bone_002_R
-    400016: Bone_002_R_001
-    400018: Bone_002_R_003
-    400020: Bone_003
-    400022: Bone_004
-    400024: Bone_005
-    400026: Bone_005_L
-    400028: Bone_005_L_001
-    400030: Bone_005_L_003
-    400032: Bone_005_R
-    400034: Bone_005_R_001
-    400036: Bone_005_R_003
-    400038: Bone_008
-    400040: Bone_009
-    400042: IK_legF_L
-    400044: IK_legF_R
-    400046: IK_legH_L
-    400048: IK_legH_R
-    400050: LowerF_L
-    400052: LowerF_R
-    400054: LowerH_L
-    400056: LowerH_R
-    400058: Plane
+    400004: bear_model
+    400006: BodyCTRL
+    400008: Bone_002
+    400010: Bone_002_L
+    400012: Bone_002_L_001
+    400014: Bone_002_L_003
+    400016: Bone_002_R
+    400018: Bone_002_R_001
+    400020: Bone_002_R_003
+    400022: Bone_003
+    400024: Bone_004
+    400026: Bone_005
+    400028: Bone_005_L
+    400030: Bone_005_L_001
+    400032: Bone_005_L_003
+    400034: Bone_005_R
+    400036: Bone_005_R_001
+    400038: Bone_005_R_003
+    400040: Bone_008
+    400042: Bone_009
+    400044: IK_legF_L
+    400046: IK_legF_R
+    400048: IK_legH_L
+    400050: IK_legH_R
+    400052: LowerF_L
+    400054: LowerF_R
+    400056: LowerH_L
+    400058: LowerH_R
     400060: Root
     2100000: brown4
     2100002: brown3
@@ -74,16 +74,17 @@ ModelImporter:
     2100008: light
     2100010: Material_005
     2100012: black
-    4300000: Plane
+    4300000: bear_model
     7400000: Default Take
-    7400002: ArmatureAction
+    7400002: deathAnim
     7400004: norm
+    7400006: walkAnim
     9500000: //RootNode
-    13700000: Plane
+    13700000: bear_model
   externalObjects: {}
   materials:
     importMaterials: 1
-    materialName: 2
+    materialName: 0
     materialSearch: 1
     materialLocation: 1
   animations:
@@ -106,35 +107,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: ArmatureAction
-      takeName: ArmatureAction
-      firstFrame: -1
-      lastFrame: 29
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []

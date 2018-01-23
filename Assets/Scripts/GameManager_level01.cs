@@ -12,6 +12,8 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 	public Transform enemyManager;
 	public GameObject longbow;
 	public GameUI_ImportantMessage importantMessage;
+	public AudioClip stinger;
+	AudioSource stingerSource;
 
 	public Hand leftHand;
 	public Hand rightHand;
@@ -26,6 +28,7 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 	void Start()
 	{
 		gameHealthManager.gameManager = (IGameManager)this;
+		stingerSource = GetComponent<AudioSource> ();
 	}
 
 	private bool areResetButtonsPressed()
@@ -103,6 +106,7 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 		started = true;
 		print ("Game Start!");
 		spawnManager.StartSpawningWaves();
+		stingerSource.PlayOneShot (stinger);
 	}
 
 	public void GamePause() {

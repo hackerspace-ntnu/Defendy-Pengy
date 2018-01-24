@@ -79,11 +79,23 @@ namespace Valve.VR.InteractionSystem
 
 		SteamVR_Events.Action newPosesAppliedAction;
 
+		//-------------------------------------------------
+		public GameObject runeHover;
+		private LayerMask hoverLayerMask_original;
+
 
 		//-------------------------------------------------
 		private void OnAttachedToHand( Hand attachedHand )
 		{
 			hand = attachedHand;
+
+			hoverLayerMask_original = attachedHand.hoverLayerMask;
+			
+			int magicBookLayerMask = LayerMask.GetMask(new string[] { LayerMask.LayerToName(runeHover.layer) });
+			// Sets the attached hand to interact with all objects (or those previously specified by attachedHand.hoverLayerMask),
+			// except those on the runeHover.layer (evaluates to "HandHover") layer
+			attachedHand.hoverLayerMask = hoverLayerMask_original & ~magicBookLayerMask;
+
 			//GameObject.Find("GameManager").GetComponent<IGameManager>().GameStart();
 		}
 
@@ -430,6 +442,8 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		private void OnDetachedFromHand( Hand hand )
 		{
+			hand.hoverLayerMask = hoverLayerMask_original;
+
 			Destroy( gameObject );
 		}
 

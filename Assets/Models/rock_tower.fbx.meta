@@ -1,0 +1,197 @@
+fileFormatVersion: 2
+guid: cd3c47a8f99d4a94295e7178e606b2b7
+timeCreated: 1516751728
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Icosphere.015_MeshPart0
+    100002: Icosphere.015_MeshPart1
+    100004: Icosphere.015_MeshPart2
+    100006: //RootNode
+    400000: Icosphere.015_MeshPart0
+    400002: Icosphere.015_MeshPart1
+    400004: Icosphere.015_MeshPart2
+    400006: //RootNode
+    2300000: Icosphere.015_MeshPart0
+    2300002: Icosphere.015_MeshPart1
+    2300004: Icosphere.015_MeshPart2
+    3300000: Icosphere.015_MeshPart0
+    3300002: Icosphere.015_MeshPart1
+    3300004: Icosphere.015_MeshPart2
+    4300000: Icosphere.015_MeshPart0
+    4300002: Icosphere.015_MeshPart1
+    4300004: Icosphere.015_MeshPart2
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 3b679a25db59e443ab82b213cfd5667d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 50e98ee92930a8640b513c3bba8d5f53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock 1
+    second: {fileID: 2100000, guid: ea63afce249400c42b7014dda754c8c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock 11
+    second: {fileID: 2100000, guid: d5acdea0915c22a469ac9b1932210585, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock 12
+    second: {fileID: 2100000, guid: 847dc32f6640bed419c7b9a3086a253e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock 13
+    second: {fileID: 2100000, guid: 1f4b697dee0717548b55f85e2c40c908, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock 14
+    second: {fileID: 2100000, guid: 2f10e6237c800074b9736e4f6b843fe5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock 15
+    second: {fileID: 2100000, guid: e9d0c99ef2c4f7942ba6d36c2f6a5441, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock 16
+    second: {fileID: 2100000, guid: 9b20cce9da4410243aa290db00fc5891, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock 17
+    second: {fileID: 2100000, guid: a2b229c3a358a2e499e77489f2f07c87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock 18
+    second: {fileID: 2100000, guid: ea638f53557198646a6daefdc197b05c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock 2
+    second: {fileID: 2100000, guid: 230493d1d00402b41af6462d55abd973, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock 3
+    second: {fileID: 2100000, guid: 1676418baff0d2b43b3113c5e1d46a85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock 4
+    second: {fileID: 2100000, guid: 297181de017032d46b3c6ad0ccc206c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock 5
+    second: {fileID: 2100000, guid: 2a753246360e0f14fb7c0e05abf33f63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock 6
+    second: {fileID: 2100000, guid: b1d748a115b130849a79360a9989b94f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock 7
+    second: {fileID: 2100000, guid: e66c365d763df754baf4cc7d978feb4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock 8
+    second: {fileID: 2100000, guid: 5ab4bb1356802b749aca6531ee72c6e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock 9
+    second: {fileID: 2100000, guid: 3a31d3a16cfbce8418dea14ccac9c930, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

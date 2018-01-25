@@ -1,20 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
 using Valve.VR.InteractionSystem;
 
 [RequireComponent(typeof(Interactable))]
 public class MagicBook_Hover : MonoBehaviour
 {
-	public GameObject rune;
+	public MagicBook magicBookParent;
+
+	private bool lastTriggerPress = false;
 
 	private void OnHandHoverBegin(Hand hand)
 	{
-		rune.GetComponent<Renderer>().material.color = Color.yellow;
+		magicBookParent.rune.GetComponent<Renderer>().material.color = Color.yellow;
+	}
+
+	private void HandHoverUpdate(Hand hand)
+	{
+		if (hand.controller.GetHairTrigger())
+		{
+			if (!lastTriggerPress)
+			{
+				magicBookParent.ChargeSpell(hand);
+				lastTriggerPress = true;
+			}
+		} else
+		{
+			if (lastTriggerPress)
+				lastTriggerPress = false;
+		}
 	}
 
 	private void OnHandHoverEnd(Hand hand)
 	{
-		rune.GetComponent<Renderer>().material.color = Color.white;
+		magicBookParent.rune.GetComponent<Renderer>().material.color = Color.white;
 	}
 }

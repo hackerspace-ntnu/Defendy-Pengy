@@ -80,9 +80,17 @@ namespace Valve.VR.InteractionSystem
 		SteamVR_Events.Action newPosesAppliedAction;
 
 		//-------------------------------------------------
+		public GameObject rune;
 		public GameObject runeHover;
+
+		public GameObject fireBallPrefab;
+
 		private LayerMask hoverLayerMask_original;
 
+		public void ChargeSpell(Hand hand)
+		{
+			Instantiate(fireBallPrefab, hand.transform);
+		}
 
 		//-------------------------------------------------
 		private void OnAttachedToHand( Hand attachedHand )

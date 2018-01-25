@@ -285,7 +285,7 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		public Vector3 GetArcPositionAtTime( float time )
 		{
-			Vector3 gravity = useGravity ? Physics.gravity : Vector3.zero;
+			Vector3 gravity = useGravity ? Physics.gravity * 0.1f : Vector3.zero;
 
 			Vector3 arcPos = startPos + ( ( projectileVelocity * time ) + ( 0.5f * time * time ) * gravity );
 			return arcPos;

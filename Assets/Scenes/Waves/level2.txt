@@ -1,0 +1,19 @@
+# SpawnerID count enemytype delay
+### Wave 1 ###
+1 1 wolf 10
+1 1 wolf 20
+0 1 wolf 10
+0 3 wolf 2.0
+
+### Wave 2 ###
+0 3 bear 3.0
+
+### Wave 3 ###
+0 1 wolf 2.0
+0 1 bear 3.0
+0 1 wolf 2.0
+0 1 bear 3.0
+0 1 wolf 10
+0 9 wolf 1.0
+0 1 wolf 10
+0 7 bear 3.0

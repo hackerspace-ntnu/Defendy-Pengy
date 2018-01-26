@@ -3,7 +3,7 @@ guid: 56f2f1e3d8bb59d4bbac9a247b5acd33
 timeCreated: 1492707680
 licenseType: Free
 ModelImporter:
-  serializedVersion: 19
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: Camera
     100002: Hemi
@@ -13,15 +13,20 @@ ModelImporter:
     400002: Hemi
     400004: //RootNode
     400006: Sphere
+    2100000: Material.001
+    2100002: Material.002
+    2100004: Material.003
     2300000: Sphere
     2300002: //RootNode
     3300000: Sphere
     3300002: //RootNode
     4300000: Sphere
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -34,12 +39,14 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -47,7 +54,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -63,6 +73,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

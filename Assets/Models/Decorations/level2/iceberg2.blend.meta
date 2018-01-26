@@ -11,6 +11,7 @@ ModelImporter:
     400000: Box002
     400002: Box003
     400004: //RootNode
+    2100000: ice
     2300000: Box002
     2300002: Box003
     3300000: Box002
@@ -19,17 +20,12 @@ ModelImporter:
     4300002: Box003
     7400000: Default Take
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ice
-    second: {fileID: 2100000, guid: c29e2c9ca13845a448a940227238d44d, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

@@ -7,35 +7,19 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
+    2100000: white
+    2100002: red
+    2100004: black
+    2100006: sopp_white
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cylinder.010
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: black
-    second: {fileID: 2100000, guid: 3bcfb4052dd8bbe45a17dc4e84c38485, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: red
-    second: {fileID: 2100000, guid: 29f7b1124ab20ce42ad987424e808173, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: sopp_white
-    second: {fileID: 2100000, guid: 5620557db66be4841ae196b6ae286604, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: white
-    second: {fileID: 2100000, guid: f8bd9559e4d4eda4d8daf0884fa02443, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

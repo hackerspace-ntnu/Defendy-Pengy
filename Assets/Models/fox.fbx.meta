@@ -111,6 +111,10 @@ ModelImporter:
     400100: tail_C
     400102: tail_C_end
     400104: tail_curve
+    2100000: fox_red
+    2100002: fox_white
+    2100004: fox_brown
+    2100006: fox_black
     2300000: tail_curve
     3300000: tail_curve
     4300000: tail_curve
@@ -122,32 +126,12 @@ ModelImporter:
     7400008: Armature|PoseLib
     9500000: //RootNode
     13700000: Cube
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: fox_black
-    second: {fileID: 2100000, guid: bcdfa30f91b6e29499afafa9ffc8ad47, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: fox_brown
-    second: {fileID: 2100000, guid: 94b17ba7db182e546981f6bfc7881975, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: fox_red
-    second: {fileID: 2100000, guid: f9bbfe33563d70141ade3ee3b970401b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: fox_white
-    second: {fileID: 2100000, guid: 590062f34a4e5bc4aabdc8185fd92b57, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

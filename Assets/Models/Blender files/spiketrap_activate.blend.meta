@@ -17,6 +17,13 @@ ModelImporter:
     400006: spikes_001
     400008: //RootNode
     400010: target
+    2100000: Material_004
+    2100002: Material_002
+    2100004: Material_001
+    2100006: Material_003
+    2100008: Material_005
+    2100010: unnamed
+    2100012: Gray
     2300000: Plane
     2300002: Plane_002
     2300004: spikes
@@ -34,47 +41,12 @@ ModelImporter:
     4300008: spikes
     7400000: Default Take
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Gray
-    second: {fileID: 2100000, guid: f2e1b74f1af027b4fbb5549c65776779, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_001
-    second: {fileID: 2100000, guid: 28371f18fc5c8844f98ec1bdf3df114b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_002
-    second: {fileID: 2100000, guid: 77545e1d1b6e0be40a12f0b2106b9106, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_003
-    second: {fileID: 2100000, guid: 4b7c4fd28d7495e4e96154866b61b7d7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_004
-    second: {fileID: 2100000, guid: 85ad0440058dc7e45a750a70d9b7e478, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_005
-    second: {fileID: 2100000, guid: 2ea3019f600084f488c9971f037cd5be, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: unnamed
-    second: {fileID: 2100000, guid: 31ca7fa1bbb77144fbce74950c31ca82, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

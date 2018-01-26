@@ -4,13 +4,88 @@ timeCreated: 1516731700
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    100000: Armature
+    100002: BodyCtrl
+    100004: Bone
+    100006: Bone_001
+    100008: Bone_002
+    100010: Bone_003
+    100012: Bone_004
+    100014: Bone_005
+    100016: Bone_006
+    100018: Bone_007_L
+    100020: Bone_007_L_003
+    100022: Bone_007_R
+    100024: Bone_007_R_003
+    100026: Bone_L
+    100028: Bone_L_003
+    100030: Bone_R
+    100032: Bone_R_003
+    100034: Icosphere
+    100036: IK_legF_L
+    100038: IK_legF_R
+    100040: IK_legH_L
+    100042: IK_legH_R
+    100044: LegCtrlF_L
+    100046: LegCtrlF_R
+    100048: LegCtrlH_L
+    100050: LegCtrlH_R
+    100052: LowerF_L
+    100054: LowerF_R
+    100056: LowerH_L
+    100058: LowerH_R
+    100060: //RootNode
+    100062: Root
+    400000: Armature
+    400002: BodyCtrl
+    400004: Bone
+    400006: Bone_001
+    400008: Bone_002
+    400010: Bone_003
+    400012: Bone_004
+    400014: Bone_005
+    400016: Bone_006
+    400018: Bone_007_L
+    400020: Bone_007_L_003
+    400022: Bone_007_R
+    400024: Bone_007_R_003
+    400026: Bone_L
+    400028: Bone_L_003
+    400030: Bone_R
+    400032: Bone_R_003
+    400034: Icosphere
+    400036: IK_legF_L
+    400038: IK_legF_R
+    400040: IK_legH_L
+    400042: IK_legH_R
+    400044: LegCtrlF_L
+    400046: LegCtrlF_R
+    400048: LegCtrlH_L
+    400050: LegCtrlH_R
+    400052: LowerF_L
+    400054: LowerF_R
+    400056: LowerH_L
+    400058: LowerH_R
+    400060: //RootNode
+    400062: Root
+    2100000: Horns
+    2100002: Fur
+    2100004: Eyes
+    2100006: Horn_Tip
+    2100008: Dark_Fur
+    2100010: Light_Fur
+    4300000: Icosphere
+    7400000: Default Take
+    7400002: ArmatureAction
+    9500000: //RootNode
+    13700000: Icosphere
   externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

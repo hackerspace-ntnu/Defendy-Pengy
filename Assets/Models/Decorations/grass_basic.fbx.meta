@@ -29,26 +29,18 @@ ModelImporter:
     400018: transform40
     400020: transform41
     400022: transform42
+    2100000: lambert11
+    2100002: grass_green
     2300000: pCube298
     3300000: pCube298
     4300000: pCube298
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: grass_green
-    second: {fileID: 2100000, guid: 07b5c9dc9b4aadd4dabe0c992daa208e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert11
-    second: {fileID: 2100000, guid: 2faed817732477249865640925592e4d, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

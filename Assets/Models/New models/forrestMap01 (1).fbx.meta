@@ -3,7 +3,7 @@ guid: 27659f829b24e5d45a6cbc8e93aef257
 timeCreated: 1505239188
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     100002: Plane
@@ -15,6 +15,13 @@ ModelImporter:
     400004: Plane.001
     400006: terrain
     400008: water
+    2100000: TerrainPath01
+    2100002: Mountain01
+    2100004: TerrainGrass01
+    2100006: Snow01
+    2100008: Water01
+    2100010: Snow01.001
+    2100012: Mountain
     2300000: Plane
     2300002: Plane.001
     2300004: terrain
@@ -27,10 +34,12 @@ ModelImporter:
     4300002: terrain
     4300004: water
     4300006: Plane.001
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -43,6 +52,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

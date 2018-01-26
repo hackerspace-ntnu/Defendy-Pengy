@@ -15,6 +15,17 @@ ModelImporter:
     400004: Plane.001
     400006: terrain
     400008: water
+    2100000: TerrainGrass01
+    2100002: Mountain level 1
+    2100004: Snow01.001
+    2100006: PathForEnemies
+    2100008: Level 1 below ground
+    2100010: Level 2 below ground
+    2100012: Level 3 below ground
+    2100014: Water01
+    2100016: Mountain01
+    2100018: Snow01
+    2100020: TerrainPath01
     2300000: Plane
     2300002: Plane.001
     2300004: terrain
@@ -27,67 +38,12 @@ ModelImporter:
     4300002: water
     4300004: terrain
     4300006: Plane
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Level 1 below ground
-    second: {fileID: 2100000, guid: c9418cb83f7c45946987d939fcbdea66, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Level 2 below ground
-    second: {fileID: 2100000, guid: 852e1184d7c406946b7381d78c901c96, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Level 3 below ground
-    second: {fileID: 2100000, guid: b1432ae5e7477134f93ae7aaedab22ca, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mountain level 1
-    second: {fileID: 2100000, guid: d5d267c6a02705d4f92b69a24e73d438, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mountain01
-    second: {fileID: 2100000, guid: c2c7aa4c1af72b74d8396f883827f128, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PathForEnemies
-    second: {fileID: 2100000, guid: a9bda83d67e9dcc46acafc38901c9bfe, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Snow01
-    second: {fileID: 2100000, guid: 071fa383c5ba89141adcf66fe0a385af, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Snow01.001
-    second: {fileID: 2100000, guid: 90e892fbc4a892141b75416946862698, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TerrainGrass01
-    second: {fileID: 2100000, guid: a808777b1a906c24595b19471419c136, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TerrainPath01
-    second: {fileID: 2100000, guid: f3e4da815776b4d4a8be4bb54a7bff33, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Water01
-    second: {fileID: 2100000, guid: 6184528d7a768a24891062ae3a90f488, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

@@ -67,53 +67,25 @@ ModelImporter:
     400056: LowerH_R
     400058: Plane
     400060: Root
+    2100000: brown4
+    2100002: brown3
+    2100004: brown1
+    2100006: brown2
+    2100008: light
+    2100010: Material_005
+    2100012: black
     4300000: Plane
     7400000: Default Take
     7400002: ArmatureAction
     7400004: norm
     9500000: //RootNode
     13700000: Plane
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_005
-    second: {fileID: 2100000, guid: 85b5aeec00650754a8549e04df0dd200, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: black
-    second: {fileID: 2100000, guid: acdd77fc85e39c84fb83bc354e89445a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: brown1
-    second: {fileID: 2100000, guid: 061e6df7131d1f943aaec0e4e4f37f31, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: brown2
-    second: {fileID: 2100000, guid: 18c38ea21baa49047bd20d80cfaf0dca, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: brown3
-    second: {fileID: 2100000, guid: 22ebfc86790abce428ff9d3063ad1098, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: brown4
-    second: {fileID: 2100000, guid: 596c622ee62c10d4488adff8eba4c12b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: light
-    second: {fileID: 2100000, guid: 655a0460ed7608849aab33f18639f36d, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

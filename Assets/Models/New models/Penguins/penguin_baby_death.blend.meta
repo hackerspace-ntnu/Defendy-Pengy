@@ -47,6 +47,13 @@ ModelImporter:
     400036: Icosphere
     400038: //RootNode
     400040: Rubbish
+    2100000: Material
+    2100002: unnamed
+    2100004: White_dark
+    2100006: White_Light
+    2100008: Gray
+    2100010: Brown_Dark
+    2100012: Black
     2300000: Circle
     2300002: Circle_001
     2300004: Rubbish
@@ -62,47 +69,12 @@ ModelImporter:
     7400004: PoseLib
     9500000: //RootNode
     13700000: Icosphere
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Black
-    second: {fileID: 2100000, guid: ab9a94cd62d116041800806e41f93374, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Brown_Dark
-    second: {fileID: 2100000, guid: b73faa10d13b6824fbb28c56d50be35d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Gray
-    second: {fileID: 2100000, guid: c80268a19ae9efe4ab0bae3ec697ec00, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 7ab04e9340b63364a8adf820f91effa5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: White_Light
-    second: {fileID: 2100000, guid: 33e138a2ccc4b2e4685e58a702727158, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: White_dark
-    second: {fileID: 2100000, guid: 041182b468e50e24e989968264a5938f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: unnamed
-    second: {fileID: 2100000, guid: c696ffd81b77f8f45a6ec9f382087c24, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

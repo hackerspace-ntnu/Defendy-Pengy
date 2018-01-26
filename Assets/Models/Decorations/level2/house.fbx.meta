@@ -77,6 +77,11 @@ ModelImporter:
     400066: //RootNode
     400068: Plane
     400070: Plane.001
+    2100000: Bark inner
+    2100002: Bark outer
+    2100004: Roof
+    2100006: Glass
+    2100008: snow
     2300000: Cube
     2300002: Cube.001
     2300004: Cube.002
@@ -182,37 +187,12 @@ ModelImporter:
     4300064: Cylinder.002
     4300066: Cylinder.001
     4300068: Cylinder
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Bark inner
-    second: {fileID: 2100000, guid: 33016120f029565479db7a99e76035fe, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Bark outer
-    second: {fileID: 2100000, guid: f6b915eb80e31ad40a1a6059d43fb237, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Glass
-    second: {fileID: 2100000, guid: cfea7ab751d2dd64a95ac8bdd042cd56, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Roof
-    second: {fileID: 2100000, guid: c3c5efa5b320f694f8235fda3bc7abe4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: snow
-    second: {fileID: 2100000, guid: 7c2b92692e39fdd4fb20989e2d98e4bf, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

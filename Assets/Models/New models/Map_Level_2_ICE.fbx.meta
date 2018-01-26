@@ -3,7 +3,7 @@ guid: fa0a906e178914444ae6e658e00482ac
 timeCreated: 1507046264
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     100002: Plane
@@ -21,6 +21,12 @@ ModelImporter:
     400010: Plane.004
     400012: Plane.005
     400014: Plane.006
+    2100000: River
+    2100002: Road
+    2100004: Blueish Snow
+    2100006: Mountain
+    2100008: Snow.001
+    2100010: Snow
     2300000: Plane
     2300002: Plane.001
     2300004: Plane.002
@@ -42,10 +48,12 @@ ModelImporter:
     4300008: Plane.004
     4300010: Plane.005
     4300012: Plane.006
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -58,6 +66,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

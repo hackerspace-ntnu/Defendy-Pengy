@@ -113,6 +113,8 @@ ModelImporter:
     400102: Tail_4
     400104: Tail_C
     400106: Tail_IK
+    2100000: Wolf_Fur_GREY
+    2100002: Wolf_Eyes_DARK
     4300000: Ear_L_IK
     4300002: Ear_R_IK
     4300004: Tail_IK
@@ -123,22 +125,12 @@ ModelImporter:
     13700002: Ear_L_IK
     13700004: Ear_R_IK
     13700006: Tail_IK
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Wolf_Eyes_DARK
-    second: {fileID: 2100000, guid: ae44c580fbed0b84dbc448a7b69d50bd, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Wolf_Fur_GREY
-    second: {fileID: 2100000, guid: 0a5903e3d58cdeb4290876c70073daed, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

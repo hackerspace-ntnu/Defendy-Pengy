@@ -69,27 +69,19 @@ ModelImporter:
     400058: //RootNode
     400060: tail_L
     400062: tail_R
+    2100000: seal_gray_dark
+    2100002: seal_gray_medium
     4300000: Icosphere
     7400000: Default Take
     7400002: ArmatureAction
     9500000: //RootNode
     13700000: Icosphere
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: seal_gray_dark
-    second: {fileID: 2100000, guid: 1800aa6b4501bd34786d3c0e7693b40d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: seal_gray_medium
-    second: {fileID: 2100000, guid: d90da734fa332234c9c65bcc460666ca, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

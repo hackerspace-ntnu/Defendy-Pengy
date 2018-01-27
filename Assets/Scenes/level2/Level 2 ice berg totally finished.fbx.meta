@@ -23,6 +23,14 @@ ModelImporter:
     400012: Plane.005
     400014: Plane.006
     400016: water
+    2100000: Water01
+    2100002: River
+    2100004: Road
+    2100006: Blueish Snow
+    2100008: ice below surface
+    2100010: Snow on ice mountain
+    2100012: Mountain Ice berg
+    2100014: Snow on ice mountain.001
     2300000: Plane
     2300002: Plane.001
     2300004: Plane.002
@@ -47,52 +55,12 @@ ModelImporter:
     4300010: Plane.004
     4300012: Plane.005
     4300014: Plane.006
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Blueish Snow
-    second: {fileID: 2100000, guid: 2cc0d5e0323963c408275c160fb16bb6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mountain Ice berg
-    second: {fileID: 2100000, guid: e00cf65737bd09d4793bb0c80c6ed3f4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: River
-    second: {fileID: 2100000, guid: fa7e85b1de49ec4409e216a51628de26, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Road
-    second: {fileID: 2100000, guid: 31016c5725564cc4ab1511306a622b49, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Snow on ice mountain
-    second: {fileID: 2100000, guid: aa45c577a03350f4089a2402193629d0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Snow on ice mountain.001
-    second: {fileID: 2100000, guid: 52fc67de492e23a4c858159e0b113da7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Water01
-    second: {fileID: 2100000, guid: 6184528d7a768a24891062ae3a90f488, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ice below surface
-    second: {fileID: 2100000, guid: 575ace225e355464eb837863d777100a, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

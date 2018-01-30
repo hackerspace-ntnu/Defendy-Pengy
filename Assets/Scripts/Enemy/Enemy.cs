@@ -3,7 +3,8 @@ using UnityEngine;
 using System.Collections;
 using Valve.VR.InteractionSystem;
 
-public abstract partial class Enemy : MonoBehaviour{
+public abstract partial class Enemy : MonoBehaviour, IDamagable
+{
 	UnityEngine.AI.NavMeshAgent agent;
 	public Transform goal;
 	public float startHealth = 40f;

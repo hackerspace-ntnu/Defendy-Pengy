@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: dc81f8ff888dfad42ae5c4d8f4a8c8d6
-timeCreated: 1510251032
+guid: 37a643bc9c1afff4cbb193244e8ebf95
+timeCreated: 1517338344
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -27,25 +27,25 @@ ModelImporter:
     100038: foot_FL_end
     100040: foot_FR
     100042: foot_FR_end
-    100044: //RootNode
-    100046: leg_BL_1
-    100048: leg_BL_2
-    100050: leg_BL_3
-    100052: leg_BR_1
-    100054: leg_BR_2
-    100056: leg_BR_3
-    100058: leg_FL_1
-    100060: leg_FL_2
-    100062: leg_FL_3
-    100064: leg_FL_4
-    100066: leg_FR_1
-    100068: leg_FR_2
-    100070: leg_FR_3
-    100072: leg_FR_4
-    100074: neck_1
-    100076: neck_2
-    100078: neck_3
-    100080: neck_3_end
+    100044: leg_BL_1
+    100046: leg_BL_2
+    100048: leg_BL_3
+    100050: leg_BR_1
+    100052: leg_BR_2
+    100054: leg_BR_3
+    100056: leg_FL_1
+    100058: leg_FL_2
+    100060: leg_FL_3
+    100062: leg_FL_4
+    100064: leg_FR_1
+    100066: leg_FR_2
+    100068: leg_FR_3
+    100070: leg_FR_4
+    100072: neck_1
+    100074: neck_2
+    100076: neck_3
+    100078: neck_3_end
+    100080: //RootNode
     100082: shoulder_BL
     100084: shoulder_BR
     100086: shoulder_FL
@@ -80,25 +80,25 @@ ModelImporter:
     400038: foot_FL_end
     400040: foot_FR
     400042: foot_FR_end
-    400044: //RootNode
-    400046: leg_BL_1
-    400048: leg_BL_2
-    400050: leg_BL_3
-    400052: leg_BR_1
-    400054: leg_BR_2
-    400056: leg_BR_3
-    400058: leg_FL_1
-    400060: leg_FL_2
-    400062: leg_FL_3
-    400064: leg_FL_4
-    400066: leg_FR_1
-    400068: leg_FR_2
-    400070: leg_FR_3
-    400072: leg_FR_4
-    400074: neck_1
-    400076: neck_2
-    400078: neck_3
-    400080: neck_3_end
+    400044: leg_BL_1
+    400046: leg_BL_2
+    400048: leg_BL_3
+    400050: leg_BR_1
+    400052: leg_BR_2
+    400054: leg_BR_3
+    400056: leg_FL_1
+    400058: leg_FL_2
+    400060: leg_FL_3
+    400062: leg_FL_4
+    400064: leg_FR_1
+    400066: leg_FR_2
+    400068: leg_FR_3
+    400070: leg_FR_4
+    400072: neck_1
+    400074: neck_2
+    400076: neck_3
+    400078: neck_3_end
+    400080: //RootNode
     400082: shoulder_BL
     400084: shoulder_BR
     400086: shoulder_FL
@@ -119,8 +119,8 @@ ModelImporter:
     3300000: tail_curve
     4300000: tail_curve
     4300002: Cube
-    7400000: ArmatureAction
-    7400002: ArmatureAction.002
+    7400000: Walk
+    7400002: Armature|Action
     7400004: Armature|ArmatureAction
     7400006: Armature|ArmatureAction.002
     7400008: Armature|PoseLib
@@ -154,10 +154,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: ArmatureAction
-      takeName: ArmatureAction
+      name: Walk
+      takeName: Action
       firstFrame: 0
-      lastFrame: 23
+      lastFrame: 22
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -182,10 +182,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: ArmatureAction.002
-      takeName: ArmatureAction.002
+      name: Armature|Action
+      takeName: Armature|Action
       firstFrame: 0
-      lastFrame: 17
+      lastFrame: 22
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -309,6 +309,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88

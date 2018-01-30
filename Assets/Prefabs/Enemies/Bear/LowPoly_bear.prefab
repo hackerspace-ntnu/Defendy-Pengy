@@ -1020,7 +1020,7 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1686963393170732}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 0c218465f35c49547bdfa6355d7b2524, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 03064a01fcc41974faa16fa444184a70, type: 3}
   m_Controller: {fileID: 9100000, guid: 011766272f039774d8603123c08e7c72, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
@@ -1084,13 +1084,13 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0c218465f35c49547bdfa6355d7b2524, type: 3}
-  - {fileID: 2100002, guid: 0c218465f35c49547bdfa6355d7b2524, type: 3}
-  - {fileID: 2100004, guid: 0c218465f35c49547bdfa6355d7b2524, type: 3}
-  - {fileID: 2100006, guid: 0c218465f35c49547bdfa6355d7b2524, type: 3}
-  - {fileID: 2100008, guid: 0c218465f35c49547bdfa6355d7b2524, type: 3}
-  - {fileID: 2100010, guid: 0c218465f35c49547bdfa6355d7b2524, type: 3}
-  - {fileID: 2100012, guid: 0c218465f35c49547bdfa6355d7b2524, type: 3}
+  - {fileID: 2100000, guid: 596c622ee62c10d4488adff8eba4c12b, type: 2}
+  - {fileID: 2100002, guid: f2d8df093f7894e4a9ff3d353fc155ac, type: 3}
+  - {fileID: 2100004, guid: f2d8df093f7894e4a9ff3d353fc155ac, type: 3}
+  - {fileID: 2100000, guid: 18c38ea21baa49047bd20d80cfaf0dca, type: 2}
+  - {fileID: 2100008, guid: f2d8df093f7894e4a9ff3d353fc155ac, type: 3}
+  - {fileID: 2100000, guid: 85b5aeec00650754a8549e04df0dd200, type: 2}
+  - {fileID: 2100000, guid: acdd77fc85e39c84fb83bc354e89445a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

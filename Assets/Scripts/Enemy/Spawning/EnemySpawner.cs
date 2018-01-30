@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour {
 	public Transform enemyManager;
 	public Transform goal;
 	public SpawnManager spawnManager;
-
+    public int spawnID;
 
 	private bool isSpawning = false;
 	private float speedMultiplier = 1;
@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		//stop spawning when the game is over??
+		/*//stop spawning when the game is over??
 		if (isSpawning) {
 			timeToNextSpawn -= Time.deltaTime;
 			if (timeToNextSpawn <= 0f){
@@ -31,10 +31,11 @@ public class EnemySpawner : MonoBehaviour {
 					spawnManager.WaveEnded();
 					return;
 				}
-				timeToNextSpawn += spawningWave.GetSpawnDelay ();
+				timeToNextSpawn += spawningWave.GetSpawnDelay();
 			}
-		}
+		}*/
 	}
+
 	public bool SpawnEnemy(EnemyType enemyType,float speed){
 		if (enemyType == EnemyType.Null){
 			print("Enemy not defined");

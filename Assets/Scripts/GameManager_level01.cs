@@ -1,10 +1,6 @@
 ﻿//Timmy Chan
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Valve.VR.InteractionSystem;
 using UnityEngine.SceneManagement;
-using Valve.VR;
 
 public class GameManager_level01 : MonoBehaviour, IGameManager {
 	public SpawnManager spawnManager;
@@ -15,15 +11,9 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 	public AudioClip stinger;
 	AudioSource stingerSource;
 
-	public Hand leftHand;
-	public Hand rightHand;
-
 	private float timeToStart = 3f;
 	public bool started = false;
 	public bool levelEnded = false;
-
-	private float resetTriggerStartTime = -1;
-	private const float RESET_BUTTON_DURATION = 1f; // seconds
 
 	void Start()
 	{
@@ -31,26 +21,9 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 		stingerSource = GetComponent<AudioSource> ();
 	}
 
-	private bool areResetButtonsPressed()
-	{
-		return false;
-		return leftHand.controller.GetPress(EVRButtonId.k_EButton_ApplicationMenu)
-			&& rightHand.controller.GetPress(EVRButtonId.k_EButton_ApplicationMenu); // menu buttons on both left and right controllers
-	}
-
 	void Update()
 	{
 		// TEMPORARY DEVELOPER HOTKEYS:
-		if (areResetButtonsPressed())
-		{
-			if (resetTriggerStartTime < 0f)
-				resetTriggerStartTime = Time.time;
-			else if (Time.time > resetTriggerStartTime + RESET_BUTTON_DURATION)
-				SceneManager.LoadScene("level1");
-		} else if (resetTriggerStartTime > 0f)
-			resetTriggerStartTime = -1;
-		if (Input.GetKeyDown(KeyCode.R))
-			SceneManager.LoadScene("level1");
 		if (Input.GetKeyDown(KeyCode.W))
 			GameStart();
 		// END

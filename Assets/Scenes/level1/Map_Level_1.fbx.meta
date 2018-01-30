@@ -24,6 +24,15 @@ ModelImporter:
     400014: terrain
     400016: water
     2000000: Camera
+    2100000: Mountain01
+    2100002: Grass
+    2100004: Snow01
+    2100006: Water01
+    2100008: Mountain
+    2100010: Snow
+    2100012: PathForEnemies
+    2100014: Path
+    2100016: Material
     2300000: BezierCurve
     2300002: Cube
     2300004: Plane.001
@@ -43,57 +52,12 @@ ModelImporter:
     4300008: BezierCurve
     4300010: Cube
     10800000: Lamp
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Grass
-    second: {fileID: 2100000, guid: 123ba67321082cc44a3a71beb8efafce, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 98bd4477da6f79241a97e9c57ae4019c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mountain
-    second: {fileID: 2100000, guid: 3ecf9d236a6d7d14a9267b9c127faaaa, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mountain01
-    second: {fileID: 2100000, guid: 84e9d28db1f50c94e8697bab2917251a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Path
-    second: {fileID: 2100000, guid: aa56185f580d44941a16338996990a36, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PathForEnemies
-    second: {fileID: 2100000, guid: 17274026b05f2d849b05914de2d338e7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Snow
-    second: {fileID: 2100000, guid: 5fee360e5b1c7314c8857958f7beef6e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Snow01
-    second: {fileID: 2100000, guid: d8ac9d7d22c08ed408326fc0cd5fb275, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Water01
-    second: {fileID: 2100000, guid: 6184528d7a768a24891062ae3a90f488, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

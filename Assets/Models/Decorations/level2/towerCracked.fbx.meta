@@ -7,25 +7,17 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
+    2100000: tower1
+    2100002: tower2
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cube
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: tower1
-    second: {fileID: 2100000, guid: a9e97f866bc3a264da7b2adb30410a27, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: tower2
-    second: {fileID: 2100000, guid: 57e6c5a2a5f2b33419c744c80fe07870, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

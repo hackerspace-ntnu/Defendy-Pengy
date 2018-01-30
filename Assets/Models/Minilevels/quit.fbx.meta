@@ -3,7 +3,7 @@ guid: e23628c63170955408d386a3ee28fc12
 timeCreated: 1506024084
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: Camera
     100002: Lamp
@@ -14,14 +14,17 @@ ModelImporter:
     400004: //RootNode
     400006: Text
     2000000: Camera
+    2100000: No Name
     2300000: Text
     3300000: Text
     4300000: Text
     10800000: Lamp
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -34,6 +37,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

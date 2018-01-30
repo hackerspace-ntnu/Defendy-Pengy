@@ -1,12 +1,13 @@
 fileFormatVersion: 2
-guid: 3886cd59a03bda444bc5eb813c8049e0
-timeCreated: 1516729479
+guid: 81f835bbf6d864e44ac5494e7761ce39
+timeCreated: 1516731702
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
+    2100000: unnamed
     2300000: //RootNode
     3300000: //RootNode
     4300000: Icosphere
@@ -22,7 +23,7 @@ ModelImporter:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: f58f61943a4017e44aff0e520bce33c2
-timeCreated: 1516133376
+timeCreated: 1517007143
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -23,6 +23,13 @@ ModelImporter:
     400012: Plane.005
     400014: Plane.006
     400016: water
+    2100000: Mountain
+    2100002: Snow
+    2100004: Snow.001
+    2100006: Blueish Snow
+    2100008: River
+    2100010: Road
+    2100012: Water01
     2300000: Plane
     2300002: Plane.001
     2300004: Plane.002
@@ -47,47 +54,12 @@ ModelImporter:
     4300010: Plane
     4300012: Plane.001
     4300014: water
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Blueish Snow
-    second: {fileID: 2100000, guid: c44bd08ab3fd91748af85a0f020d9edc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mountain
-    second: {fileID: 2100000, guid: f23bd7fca2e449146834ad26cb19eaf6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: River
-    second: {fileID: 2100000, guid: 737b93bce4771fb4c90a17eba0435d03, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Road
-    second: {fileID: 2100000, guid: c4c8045b0b4e35e44a1c6ca7b67901f0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Snow
-    second: {fileID: 2100000, guid: e63db041d91733540bf15a3c06d152ca, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Snow.001
-    second: {fileID: 2100000, guid: d813115d8cf39214a8aadd2840088043, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Water01
-    second: {fileID: 2100000, guid: 6184528d7a768a24891062ae3a90f488, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

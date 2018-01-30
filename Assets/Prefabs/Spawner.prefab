@@ -108,8 +108,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 114450340983142668, guid: decfb6dd343791c488b04617b9603373, type: 2}
-  - {fileID: 114346891918538942, guid: 4c2e209589dcf6546b287ef833e372a3, type: 2}
+  - {fileID: 114656920724542314, guid: 13ab2978060836a42b626ff7237da22c, type: 2}
+  - {fileID: 114241811782659116, guid: f2625dd8315b0944aade5732f242fe6c, type: 2}
+  - {fileID: 114299349514631164, guid: aef3880e61b9bbb4bab8ddc918acd842, type: 2}
   enemyManager: {fileID: 0}
   goal: {fileID: 0}
   spawnManager: {fileID: 0}
+  spawnID: 0

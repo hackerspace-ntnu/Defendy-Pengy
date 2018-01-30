@@ -3,31 +3,48 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour {
-	public TextAsset waveFile;
+    public enum EnemyType { Wolf, Bear, Fox, Fish, Pig, Null };
+    public TextAsset waveFile;
 	private List<EnemyWave> waves;
-	private List<float> wavesDelay;
+    EnemyWave currentWave;
+    private List<float> wavesDelay;
 
 	public EnemyManager enemyManager;
-	public EnemySpawner spawner;
+	public List<EnemySpawner> spawners;
 	private int currentWaveIndex = 0;
 	private float timeToNextWave = 0f;
-	private bool isWaveEnded = true;
+	private bool waveSpawning = false;
 	private bool isSpawningStarted = false;
+    private float timeToNextSpawn = 0f;
+    private float speedMultiplier = 1;
 
-	void Update() {
+    void Update() {
 		if(isSpawningStarted) {
-			if(isWaveEnded) {
-				if(timeToNextWave <= 0f && enemyManager.AreAllEnemiesDead())
-				{
-					spawner.StartSpawningWave(waves[currentWaveIndex]);
-					isWaveEnded = false;
-				}
-				timeToNextWave -= Time.deltaTime;
-			}
-		}
-	}
+            if (timeToNextWave <= 0f && enemyManager.AreAllEnemiesDead())
+            {
+                startNewWave();
+            }
+            if (waveSpawning) {
+                if (timeToNextSpawn <= 0f)
+                {
+                    List<object> nextSpawn = currentWave.GetNextEnemy();
+                    int nextSpawnID = (int)nextSpawn[0];
+                    if (nextSpawnID == -1)
+                    {
+                        WaveEnded();
+                        return;
+                    }
+                    EnemySpawner.EnemyType nextEnemy = (EnemySpawner.EnemyType)nextSpawn[1];
+                    spawners[nextSpawnID].SpawnEnemy(nextEnemy, speedMultiplier);
+                    timeToNextSpawn += currentWave.GetSpawnDelay();
+                }
+                timeToNextSpawn -= Time.deltaTime;
+            }
+            timeToNextWave -= Time.deltaTime;
+        }
+    }
 
-	public void StartSpawningWaves() { //called from gameManager
+    public void StartSpawningWaves() { //called from gameManager
 		wavesDelay = new List<float> ();
 		waves = WaveParser.ParseWaveFile(waveFile);
 		wavesDelay.Add(10f);
@@ -39,8 +56,9 @@ public class SpawnManager : MonoBehaviour {
 			return wavesDelay[wavesDelay.Count - 1];
 		return wavesDelay[currentWaveIndex];
 	}
+
 	public void WaveEnded() { // always called from spawner, when the wave ends
-		isWaveEnded = true;
+		waveSpawning = false;
 		timeToNextWave = WaveDelay();
 		currentWaveIndex++;
 		if (RemainingWavesCount() <= 0)
@@ -51,9 +69,19 @@ public class SpawnManager : MonoBehaviour {
 		return waves.Count - currentWaveIndex;
 	}
 
+    void startNewWave()
+    {
+        currentWave = waves[currentWaveIndex];
+        waveSpawning = true;
+    }
+
 	public void StopSpawning(){
 		isSpawningStarted = false;
-		spawner.StopSpawning();
+        foreach (EnemySpawner spawner in spawners)
+        {
+            spawner.StopSpawning();
+        }
+		
 	}
 
 }

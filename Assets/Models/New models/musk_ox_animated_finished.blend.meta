@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5f2fb0e1c46a7dd4db8a5dc9494d3b06
-timeCreated: 1516729484
+guid: 1275b95f0021c304799592b765d6f8af
+timeCreated: 1516731700
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -69,47 +69,23 @@ ModelImporter:
     400058: LowerH_R
     400060: //RootNode
     400062: Root
+    2100000: Horns
+    2100002: Fur
+    2100004: Eyes
+    2100006: Horn_Tip
+    2100008: Dark_Fur
+    2100010: Light_Fur
     4300000: Icosphere
     7400000: Default Take
     7400002: ArmatureAction
     9500000: //RootNode
     13700000: Icosphere
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Dark_Fur
-    second: {fileID: 2100000, guid: 6cc70c7c2be7e8b4688e5a344389de10, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Eyes
-    second: {fileID: 2100000, guid: 7d618a02db048b44ab6f0a2f74f1a8f0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Fur
-    second: {fileID: 2100000, guid: 5afca9b2de6af584cb282a21bdc31f92, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Horn_Tip
-    second: {fileID: 2100000, guid: b3b7b63d79e13b745ac52296b7dbb540, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Horns
-    second: {fileID: 2100000, guid: 0bb1c6fcfdc67424db2f075ceaaa68ac, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Light_Fur
-    second: {fileID: 2100000, guid: 82ed870655188d24ab252e6e424b6bbc, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

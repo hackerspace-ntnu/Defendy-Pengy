@@ -151,6 +151,8 @@ ModelImporter:
     400140: leg.F.L.4_end
     400142: leg.F.R.4
     400144: leg.F.R.4_end
+    2100000: Wolf_Fur GREY
+    2100002: Wolf_Eyes DARK
     2300000: Cube
     2300002: Ear.L.IK
     2300004: Ear.R.IK
@@ -163,22 +165,12 @@ ModelImporter:
     4300002: Tail.IK
     4300004: Ear.L.IK
     4300006: Ear.R.IK
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Wolf_Eyes DARK
-    second: {fileID: 2100000, guid: 981122907557d40488bd27d5fd1b6af3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Wolf_Fur GREY
-    second: {fileID: 2100000, guid: 92e9564335dadf44c93240addecbbf46, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

@@ -11,43 +11,23 @@ ModelImporter:
     400000: //RootNode
     400002: terrain_inner
     400004: terrain_outer
+    2100000: Grass
+    2100002: Mountain01
+    2100004: Snow
+    2100006: PathForEnemies.001
+    2100008: Snow01
     2300000: terrain_inner
     2300002: terrain_outer
     3300000: terrain_inner
     3300002: terrain_outer
     4300000: terrain_outer
     4300002: terrain_inner
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Grass
-    second: {fileID: 2100000, guid: 968e222d6187bf643883269dd5452265, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mountain01
-    second: {fileID: 2100000, guid: 84e9d28db1f50c94e8697bab2917251a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PathForEnemies.001
-    second: {fileID: 2100000, guid: 1776d2a991b0d3747b1c4c1a69eb55b5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Snow
-    second: {fileID: 2100000, guid: beb0bcef78613fc46aa6710d4c30dee3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Snow01
-    second: {fileID: 2100000, guid: d8ac9d7d22c08ed408326fc0cd5fb275, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System;
 using UnityEngine;
 //Timmy Chan
 
@@ -10,21 +11,18 @@ using UnityEngine;
 
 public class EnemyWave{
 
+    public List<int> spawnID = new List<int>();
 	public List<EnemySpawner.EnemyType> enemies = new List<EnemySpawner.EnemyType>(); //Enemy component of prefabs of different enemies
 	public List<float> spawnDelay = new List<float>();
 	private int nextSpawnIndex = 0;  //index of the current spawned enemy
 
-	public EnemyWave(EnemySpawner.EnemyType[] enemies, float[] spawnDelay){ //works
+	public EnemyWave(int[] spawnerID, EnemySpawner.EnemyType[] enemies, float[] spawnDelay){ //works
+        foreach (int spawnID in spawnerID)
+            this.spawnID.Add(spawnID);
 		foreach (EnemySpawner.EnemyType enemy in enemies)
 			this.enemies.Add (enemy);
 		foreach (float delay in spawnDelay)
 			this.spawnDelay.Add(delay);
-	}
-
-	public EnemyWave(EnemySpawner.EnemyType enemyType, int size, float spawnDelay){ //works
-		for(int i = 0; i < size; i++)
-			enemies.Add (enemyType);
-		this.spawnDelay.Add (spawnDelay);
 	}
 		
 	public bool IsAllSpawned(){ //works
@@ -36,11 +34,20 @@ public class EnemyWave{
 			return spawnDelay[spawnDelay.Count-1];
 		return spawnDelay [nextSpawnIndex - 1];
 	}
-	public EnemySpawner.EnemyType GetNextEnemy(){
-		EnemySpawner.EnemyType result = EnemySpawner.EnemyType.Null; //null for enums
-		if (nextSpawnIndex < enemies.Count)
-			result = enemies[nextSpawnIndex];
-			nextSpawnIndex += 1;
+	public List<object> GetNextEnemy(){
+		EnemySpawner.EnemyType nextEnemy = EnemySpawner.EnemyType.Null; //null for enums
+        int nextSpawnID = -1; //default
+        List<object> result = new List<object>();
+        if (nextSpawnIndex < enemies.Count)
+        {
+            nextSpawnID = spawnID[nextSpawnIndex];
+            nextEnemy = enemies[nextSpawnIndex];
+            nextSpawnIndex += 1;
+        }
+        
+        result.Add(nextSpawnID);
+        result.Add(nextEnemy);
+        
 		return result;
 	}
 }

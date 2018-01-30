@@ -33,6 +33,8 @@ ModelImporter:
     400022: Cylinder.013
     400024: Cylinder.014
     400026: //RootNode
+    2100000: leaves
+    2100002: Material.003
     2300000: Cylinder.001
     2300002: Cylinder.003
     2300004: Cylinder.004
@@ -72,22 +74,12 @@ ModelImporter:
     4300020: Cylinder.004
     4300022: Cylinder.003
     4300024: Cylinder.001
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.003
-    second: {fileID: 2100000, guid: 40c3686e6711d47df971624523869a40, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: leaves
-    second: {fileID: 2100000, guid: 510cdba2b4dbda742b055c1c9caebdb5, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

@@ -40,7 +40,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400006, guid: a33f00868ab8570468eaea9802f1314e, type: 3}
+  m_Motion: {fileID: 7400002, guid: 0ac7a658b83625b4c8a2e04a9126f51f, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -52,7 +52,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Armature|ArmatureAction
+  m_Name: Walk
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -65,7 +65,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400004, guid: a33f00868ab8570468eaea9802f1314e, type: 3}
+  m_Motion: {fileID: 7400006, guid: 018281e47acd5a34a858af035184ab53, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -84,7 +84,7 @@ AnimatorStateMachine:
     m_Position: {x: 396, y: 252, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102269064649481366}
-    m_Position: {x: 696, y: 264, z: 0}
+    m_Position: {x: 216, y: 384, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

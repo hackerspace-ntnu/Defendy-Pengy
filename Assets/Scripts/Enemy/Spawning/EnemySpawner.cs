@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour {
 	public Transform enemyManager;
 	public Transform goal;
 	public SpawnManager spawnManager;
-    public int spawnID;
+	public int spawnID;
 
 	private bool isSpawning = false;
 	private float speedMultiplier = 1;
@@ -42,7 +42,7 @@ public class EnemySpawner : MonoBehaviour {
 			return false;
 		}
 		//replace the "prefab enemy variable" with a real enemy
-		Enemy enemy = Instantiate (GetPrefab(enemyType).gameObject, transform.position, Quaternion.identity).GetComponent<Enemy>();
+		Enemy enemy = Instantiate(GetPrefab(enemyType).gameObject, transform).GetComponent<Enemy>();
 		enemy.transform.parent = enemyManager;
 		enemy.goal = goal;
 		return true;

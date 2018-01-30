@@ -1,49 +1,60 @@
 fileFormatVersion: 2
-guid: cd3c47a8f99d4a94295e7178e606b2b7
-timeCreated: 1516751728
+guid: d10d3a86dbf247f44a352b260cbd4fce
+timeCreated: 1517345254
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Icosphere.015_MeshPart0
-    100002: Icosphere.015_MeshPart1
-    100004: Icosphere.015_MeshPart2
-    100006: //RootNode
-    400000: Icosphere.015_MeshPart0
-    400002: Icosphere.015_MeshPart1
-    400004: Icosphere.015_MeshPart2
-    400006: //RootNode
-    2100000: Rock 15
-    2100002: Rock 2
-    2100004: Rock 8
-    2100006: Rock 1
-    2100008: Rock 3
-    2100010: Rock 4
-    2100012: Rock 5
-    2100014: Rock 6
-    2100016: Rock 7
-    2100018: Material.004
-    2100020: Rock 11
-    2100022: Rock 9
-    2100024: Rock 13
-    2100026: Rock 12
-    2100028: Rock 14
-    2100030: Material.002
-    2100032: Rock 18
-    2100034: Rock 16
-    2100036: Rock 17
-    2300000: Icosphere.015_MeshPart0
-    2300002: Icosphere.015_MeshPart1
-    2300004: Icosphere.015_MeshPart2
-    2300006: //RootNode
-    3300000: Icosphere.015_MeshPart0
-    3300002: Icosphere.015_MeshPart1
-    3300004: Icosphere.015_MeshPart2
-    3300006: //RootNode
-    4300000: Icosphere.015_MeshPart0
-    4300002: Icosphere.015_MeshPart1
-    4300004: Icosphere.015_MeshPart2
-    4300006: Icosphere.015
+    100000: Armature
+    100002: body_1
+    100004: body_1_end
+    100006: body_2
+    100008: body_3
+    100010: body_4
+    100012: body_5
+    100014: body_5_end
+    100016: body_C
+    100018: Camera
+    100020: //RootNode
+    100022: Cylinder
+    100024: Lamp
+    100026: wing_l1
+    100028: wing_l2
+    100030: wing_l3
+    100032: wing_l3_end
+    100034: wing_r1
+    100036: wing_r2
+    100038: wing_r3
+    100040: wing_r3_end
+    400000: Armature
+    400002: body_1
+    400004: body_1_end
+    400006: body_2
+    400008: body_3
+    400010: body_4
+    400012: body_5
+    400014: body_5_end
+    400016: body_C
+    400018: Camera
+    400020: //RootNode
+    400022: Cylinder
+    400024: Lamp
+    400026: wing_l1
+    400028: wing_l2
+    400030: wing_l3
+    400032: wing_l3_end
+    400034: wing_r1
+    400036: wing_r2
+    400038: wing_r3
+    400040: wing_r3_end
+    2000000: Camera
+    2100000: Material
+    4300000: Cylinder
+    7400000: ArmatureAction
+    7400002: Armature|ArmatureAction
+    9500000: //RootNode
+    10800000: Lamp
+    13700000: Cylinder
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -118,7 +129,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

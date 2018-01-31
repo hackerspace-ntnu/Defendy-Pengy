@@ -1,8 +1,9 @@
 ﻿//Timmy Chan
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour {
-	public enum EnemyType {Wolf, Bear, Fox, PolarBear, Seal, Muskox, Fish, Pig, Null};
+public class EnemySpawner : MonoBehaviour
+{
+	public enum EnemyType { Wolf, Bear, Fox, PolarBear, Seal, Muskox, Null };
 	public Enemy[] enemyPrefabs;
 	public Transform enemyManager;
 	public Transform goal;

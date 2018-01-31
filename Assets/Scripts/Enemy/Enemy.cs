@@ -54,7 +54,7 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 	{
 		//To scale healthbar to health, Arne-Martin
 		float healthPercentage = health / startHealth;
-		healthBar.display(healthPercentage);
+		healthBar.Display(healthPercentage);
 		//Rotate healthbar towards player, Arne-Martin
 		Vector3 UpdatedHeadsetPosition = HeadsetPosition.position;
 		healthBar.transform.LookAt(UpdatedHeadsetPosition);
@@ -75,7 +75,6 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 				GetComponent<Enemy_Animator>().OnDeath();
 				GetComponent<NavMeshAgent>().speed = 0f;
 				dying = true;
-				transform.GetChild(2).GetComponent<MeshRenderer>().enabled = false;
 				GetComponentInChildren<MeshCollider>().enabled = false;
 				Destroy(gameObject, 4f);
 				PlayDeathSound();

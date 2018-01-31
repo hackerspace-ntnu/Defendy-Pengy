@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour {
-    public enum EnemyType { Wolf, Bear, Fox, Seal, Muskox, Fish, Pig, Null };
-    public TextAsset waveFile;
+public class SpawnManager : MonoBehaviour
+{
+	public enum EnemyType { Wolf, Bear, Fox, Seal, Muskox, Fish, Pig, Null };
+	public TextAsset waveFile;
 	private List<EnemyWave> waves;
 	EnemyWave currentWave;
 	private List<float> wavesDelay;
@@ -23,7 +24,7 @@ public class SpawnManager : MonoBehaviour {
 		{
 			if (timeToNextWave <= 0f && enemyManager.AreAllEnemiesDead())
 			{
-				startNewWave();
+				StartNewWave();
 			}
 			if (waveSpawning)
 			{
@@ -77,7 +78,7 @@ public class SpawnManager : MonoBehaviour {
 		return waves.Count - currentWaveIndex;
 	}
 
-	void startNewWave()
+	void StartNewWave()
 	{
 		currentWave = waves[currentWaveIndex];
 		waveSpawning = true;

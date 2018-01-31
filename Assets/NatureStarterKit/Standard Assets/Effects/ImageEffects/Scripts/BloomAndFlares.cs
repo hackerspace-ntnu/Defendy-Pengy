@@ -109,8 +109,10 @@ namespace UnityStandardAssets.ImageEffects
 
             doHdr = false;
             if (hdr == HDRBloomMode.Auto)
-                doHdr = source.format == RenderTextureFormat.ARGBHalf && GetComponent<Camera>().hdr;
-            else
+#pragma warning disable CS0618 // Type or member is obsolete
+				doHdr = source.format == RenderTextureFormat.ARGBHalf && GetComponent<Camera>().hdr;
+#pragma warning restore CS0618 // Type or member is obsolete
+			else
             {
                 doHdr = hdr == HDRBloomMode.On;
             }

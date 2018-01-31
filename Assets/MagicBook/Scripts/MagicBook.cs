@@ -12,7 +12,7 @@ namespace Valve.VR.InteractionSystem
 {
 	//-------------------------------------------------------------------------
 	[RequireComponent( typeof( Interactable ) )]
-	public class MagicBook : MonoBehaviour
+	public partial class MagicBook : MonoBehaviour
 	{
 		public enum Handedness { Left, Right };
 
@@ -127,7 +127,6 @@ namespace Valve.VR.InteractionSystem
 		{
 			newPosesAppliedAction.enabled = false;
 		}
-
 
 		//-------------------------------------------------
 		void LateUpdate()

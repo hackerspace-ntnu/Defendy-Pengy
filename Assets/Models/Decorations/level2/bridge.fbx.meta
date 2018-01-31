@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 089f7dd594d878c4cabd228bbda37d3e
-timeCreated: 1510679550
+guid: 92f01e749178364468f45b75d6a1ecc2
+timeCreated: 1510678559
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -11,28 +11,20 @@ ModelImporter:
     400000: //RootNode
     400002: Cube
     400004: Cube.001
+    2100000: Blueish Snow
+    2100002: bridge
     2300000: Cube
     2300002: Cube.001
     3300000: Cube
     3300002: Cube.001
     4300000: Cube.001
     4300002: Cube
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Blueish Snow
-    second: {fileID: 2100000, guid: f9ccc9d47b2eea849bd48799657c0f6b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: bridge
-    second: {fileID: 2100000, guid: ce20bfa590acc404494c802fa25b0c6e, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

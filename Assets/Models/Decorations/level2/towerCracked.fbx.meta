@@ -1,31 +1,23 @@
 fileFormatVersion: 2
-guid: 375e1e1cd004e804ab5cce9a306dbcbd
-timeCreated: 1510679551
+guid: 56934351a06bd2647a69a189b97e4392
+timeCreated: 1510678527
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
+    2100000: tower1
+    2100002: tower2
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cube
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: tower1
-    second: {fileID: 2100000, guid: f78a5424c3fbebc4e99919bdcf6deb91, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: tower2
-    second: {fileID: 2100000, guid: 872c2a9935ec6f0438c10991e6044c3c, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

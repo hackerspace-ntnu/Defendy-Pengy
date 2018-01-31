@@ -190,7 +190,7 @@ namespace Valve.VR.InteractionSystem
 
 
 				GameObject possiblyDamagable = collision.collider.gameObject;
-				IDamagable hitDamagable = possiblyDamagable.GetComponent<IDamagable>();
+				IDamagable hitDamagable = possiblyDamagable.GetComponentInParent<IDamagable>();
 				if (hitDamagable != null)
 				{
 					//print ("hit");
@@ -200,7 +200,7 @@ namespace Valve.VR.InteractionSystem
 						damage = 0f;
 					print("attack damage = " + damage.ToString());
 					hitDamagable.InflictDamage(damage);
-                    Destroy(gameObject);
+					Destroy(gameObject);
 				} else
 				{
 

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.SceneManagement;
 using Valve.VR.InteractionSystem;
 using Valve.VR;

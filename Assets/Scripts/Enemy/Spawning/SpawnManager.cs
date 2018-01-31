@@ -1,13 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour {
     public enum EnemyType { Wolf, Bear, Fox, Seal, Muskox, Fish, Pig, Null };
     public TextAsset waveFile;
 	private List<EnemyWave> waves;
-    EnemyWave currentWave;
-    private List<float> wavesDelay;
+	EnemyWave currentWave;
+	private List<float> wavesDelay;
 
 	public EnemyManager enemyManager;
 	public List<EnemySpawner> spawners;
@@ -15,73 +14,77 @@ public class SpawnManager : MonoBehaviour {
 	private float timeToNextWave = 0f;
 	private bool waveSpawning = false;
 	private bool isSpawningStarted = false;
-    private float timeToNextSpawn = 0f;
-    private float speedMultiplier = 1;
+	private float timeToNextSpawn = 0f;
+	private float speedMultiplier = 1;
 
-    void Update() {
-		if(isSpawningStarted) {
-            if (timeToNextWave <= 0f && enemyManager.AreAllEnemiesDead())
-            {
-                startNewWave();
-            }
-            if (waveSpawning) {
-                if (timeToNextSpawn <= 0f)
-                {
-                    List<object> nextSpawn = currentWave.GetNextEnemy();
-                    int nextSpawnID = (int)nextSpawn[0];
-                    if (nextSpawnID == -1)
-                    {
-                        WaveEnded();
-                        return;
-                    }
-                    EnemySpawner.EnemyType nextEnemy = (EnemySpawner.EnemyType)nextSpawn[1];
-                    spawners[nextSpawnID].SpawnEnemy(nextEnemy, speedMultiplier);
-                    timeToNextSpawn += currentWave.GetSpawnDelay();
-                }
-                timeToNextSpawn -= Time.deltaTime;
-            }
-            timeToNextWave -= Time.deltaTime;
-        }
-    }
+	void Update()
+	{
+		if (isSpawningStarted)
+		{
+			if (timeToNextWave <= 0f && enemyManager.AreAllEnemiesDead())
+			{
+				startNewWave();
+			}
+			if (waveSpawning)
+			{
+				if (timeToNextSpawn <= 0f)
+				{
+					List<object> nextSpawn = currentWave.GetNextEnemy();
+					int nextSpawnID = (int)nextSpawn[0];
+					if (nextSpawnID == -1)
+					{
+						WaveEnded();
+						return;
+					}
+					EnemySpawner.EnemyType nextEnemy = (EnemySpawner.EnemyType)nextSpawn[1];
+					spawners[nextSpawnID].SpawnEnemy(nextEnemy, speedMultiplier);
+					timeToNextSpawn += currentWave.GetSpawnDelay();
+				}
+				timeToNextSpawn -= Time.deltaTime;
+			}
+			timeToNextWave -= Time.deltaTime;
+		}
+	}
 
-    public void StartSpawningWaves() { //called from gameManager
-		wavesDelay = new List<float> ();
+	public void StartSpawningWaves()
+	{ //called from gameManager
+		wavesDelay = new List<float>();
 		waves = WaveParser.ParseWaveFile(waveFile);
 		wavesDelay.Add(10f);
 		isSpawningStarted = true;
 	}
 
-	float WaveDelay() {
+	float WaveDelay()
+	{
 		if (wavesDelay.Count <= currentWaveIndex)
 			return wavesDelay[wavesDelay.Count - 1];
+
 		return wavesDelay[currentWaveIndex];
 	}
 
-	public void WaveEnded() { // always called from spawner, when the wave ends
+	public void WaveEnded()
+	{ // always called from spawner, when the wave ends
 		waveSpawning = false;
 		timeToNextWave = WaveDelay();
 		currentWaveIndex++;
+
 		if (RemainingWavesCount() <= 0)
 			isSpawningStarted = false; //stop spawning
 	}
 
-	public int RemainingWavesCount() {
+	public int RemainingWavesCount()
+	{
 		return waves.Count - currentWaveIndex;
 	}
 
-    void startNewWave()
-    {
-        currentWave = waves[currentWaveIndex];
-        waveSpawning = true;
-    }
-
-	public void StopSpawning(){
-		isSpawningStarted = false;
-        foreach (EnemySpawner spawner in spawners)
-        {
-            spawner.StopSpawning();
-        }
-		
+	void startNewWave()
+	{
+		currentWave = waves[currentWaveIndex];
+		waveSpawning = true;
 	}
 
+	public void StopSpawning()
+	{
+		isSpawningStarted = false;
+	}
 }

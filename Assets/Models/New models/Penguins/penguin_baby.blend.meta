@@ -41,6 +41,11 @@ ModelImporter:
     400030: Bone_R
     400032: Bone_R_001
     400034: Icosphere
+    2100000: White_dark
+    2100002: White_Light
+    2100004: Gray
+    2100006: Brown_Dark
+    2100008: Black
     2300000: //RootNode
     3300000: //RootNode
     4300000: Icosphere
@@ -50,21 +55,6 @@ ModelImporter:
     9500000: //RootNode
     13700000: Icosphere
   externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Black
-    second: {fileID: 2100000, guid: c6d01069b30137b4dace86ee23cad17f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Brown_Dark
-    second: {fileID: 2100000, guid: c33451e012c5eab42bef1ba22817370a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Gray
-    second: {fileID: 2100000, guid: 04a9bae1b4190e54db062072224e7c73, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -90,21 +80,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Material_005
     second: {fileID: 2100000, guid: 3ba0e0f8606f71b4d8da19e1efe850cf, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: White_Light
-    second: {fileID: 2100000, guid: 22abfadb391cbff4e9f37fa6206be9c8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: White_dark
-    second: {fileID: 2100000, guid: 0a0f868aa9f56c044afe24421a055d91, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

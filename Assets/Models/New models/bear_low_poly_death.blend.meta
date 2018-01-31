@@ -67,53 +67,25 @@ ModelImporter:
     400056: LowerH_L
     400058: LowerH_R
     400060: Root
+    2100000: brown4
+    2100002: brown3
+    2100004: brown1
+    2100006: brown2
+    2100008: light
+    2100010: Material_005
+    2100012: black
     4300000: bear_model
     7400000: Default Take
     7400002: ArmatureAction_001
     7400004: norm
     9500000: //RootNode
     13700000: bear_model
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_005
-    second: {fileID: 2100000, guid: d7f380c299b4a764fbe5b65e506e7448, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: black
-    second: {fileID: 2100000, guid: a6c61b65b537e8040b5bcc62df292eef, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: brown1
-    second: {fileID: 2100000, guid: 7749b4ee104fd0d42917dedcea32d645, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: brown2
-    second: {fileID: 2100000, guid: 70ec6dcca81d9f24e8ce8e7d120858a3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: brown3
-    second: {fileID: 2100000, guid: 8311a0b92c482d84581c91dff37378ba, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: brown4
-    second: {fileID: 2100000, guid: 7a4e70d1381a8c743ae8126ed75ae228, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: light
-    second: {fileID: 2100000, guid: 88c538dcb86f20b43beb4229bfbbd5af, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

@@ -3,7 +3,7 @@ guid: 3866ec8a76a283d48a1d73c78ecf3cc4
 timeCreated: 1507046247
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: Icosphere
     100002: Icosphere.001
@@ -37,6 +37,9 @@ ModelImporter:
     400026: NurbsPath.004
     400028: NurbsPath.005
     400030: //RootNode
+    2100000: No Name
+    2100002: log
+    2100004: Material.002
     2300000: Icosphere
     2300002: Icosphere.001
     2300004: Icosphere.002
@@ -82,10 +85,12 @@ ModelImporter:
     4300024: NurbsPath.004
     4300026: NurbsPath.005
     4300028: Mball.019
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -98,6 +103,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

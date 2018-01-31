@@ -39,6 +39,10 @@ ModelImporter:
     400028: plataa
     400030: tower2
     400032: //RootNode
+    2100000: Material.002
+    2100002: Material
+    2100004: Material.001
+    2100006: No Name
     2300000: Circle
     2300002: Circle_cell.012_cell.004_cell
     2300004: Cube
@@ -87,32 +91,12 @@ ModelImporter:
     4300026: Cylinder_cell.028_cell.000
     4300028: Cylinder_cell.028_cell.016
     4300030: Cylinder
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 7ab04e9340b63364a8adf820f91effa5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 4fea5a528d0ff4666bda3cf3b2869627, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.002
-    second: {fileID: 2100000, guid: 3b679a25db59e443ab82b213cfd5667d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 538ebc8345b1d474197593a7e4809f09, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

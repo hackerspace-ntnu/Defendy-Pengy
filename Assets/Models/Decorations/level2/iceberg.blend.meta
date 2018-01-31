@@ -17,6 +17,9 @@ ModelImporter:
     400006: mesh_815643667
     400008: mesh_815643667_001
     400010: mesh_815643667_002
+    2100000: material_21___18494_001
+    2100002: material_21___18494_002
+    2100004: material_21___18494
     2300000: mesh_1044695277
     2300002: mesh_1265108815
     2300004: mesh_815643667
@@ -34,27 +37,12 @@ ModelImporter:
     4300008: mesh_1044695277
     7400000: Default Take
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: material_21___18494
-    second: {fileID: 2100000, guid: 46ec49e4d028bf34cae496cc357024e4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: material_21___18494_001
-    second: {fileID: 2100000, guid: 1b7df5e2458e4f84392a8989dc4430a4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: material_21___18494_002
-    second: {fileID: 2100000, guid: 3696788e174ea0446a01eaa151d44a9d, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

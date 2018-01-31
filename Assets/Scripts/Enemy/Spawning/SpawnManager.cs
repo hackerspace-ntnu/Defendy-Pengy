@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour {
-    public enum EnemyType { Wolf, Bear, Fox, Fish, Pig, Null };
+    public enum EnemyType { Wolf, Bear, Fox, Seal, Fish, Pig, Null };
     public TextAsset waveFile;
 	private List<EnemyWave> waves;
     EnemyWave currentWave;

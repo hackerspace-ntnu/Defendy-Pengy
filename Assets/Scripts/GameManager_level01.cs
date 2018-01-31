@@ -2,10 +2,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager_level01 : MonoBehaviour, IGameManager {
+public class GameManager_level01 : MonoBehaviour, IGameManager
+{
 	public SpawnManager spawnManager;
 	public GameHealthManager gameHealthManager;
-	public Transform enemyManager;
+	public EnemyManager enemyManager;
 	public GameObject longbow;
 	public GameUI_ImportantMessage importantMessage;
 	public AudioClip stinger;
@@ -18,7 +19,7 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 	void Start()
 	{
 		gameHealthManager.gameManager = (IGameManager)this;
-		stingerSource = GetComponent<AudioSource> ();
+		stingerSource = GetComponent<AudioSource>();
 	}
 
 	void Update()
@@ -26,43 +27,56 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 		// TEMPORARY DEVELOPER HOTKEYS:
 		if (Input.GetKeyDown(KeyCode.W))
 			GameStart();
+		if (Input.GetKeyDown(KeyCode.K))
+		{
+			foreach (Enemy enemy in enemyManager.GetComponentsInChildren<Enemy>())
+				enemy.health = 0f;
+		}
 		// END
 
 
-		if (!levelEnded) {
-			if (!started) {
+		if (!levelEnded)
+		{
+			if (!started)
+			{
 				if (Input.GetKeyUp(KeyCode.A))
 					GameStart();
 				if (Input.GetKeyUp(KeyCode.S))
 					GameLost();
-				if (timeToStart >= 0) {
+				if (timeToStart >= 0)
+				{
 					//timeToStart -= Time.deltaTime;
-				} else {
+				} else
+				{
 					//GameStart ();
 				}
 			}
-			if (started) {
+			if (started)
+			{
 				//if there are no more lives
 				/*if (gameHealthManager.RemainingGameHealth () <= 0) {
 					GameLost ();
 					levelEnded = true;
 				}*/
 				//if there are no more enemies to be spawned
-				if (spawnManager.RemainingWavesCount () == 0) {
+				if (spawnManager.RemainingWavesCount() == 0)
+				{
 					//if there are no more enemies alive
-					if (enemyManager.childCount == 0) {
-						GameWin ();
+					if (enemyManager.transform.childCount == 0)
+					{
+						GameWin();
 						levelEnded = true;
 					}
 				}
 			}
-		}
-		else {
+		} else
+		{
 			//what to do?
 		}
 	}
 
-	public void GameLost() {
+	public void GameLost()
+	{
 		levelEnded = true;
 		print("You have lost the game");
 		spawnManager.StopSpawning();
@@ -72,17 +86,19 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 		Invoke("GameRestart", 5f);
 	}
 
-	public void GameStart() {
+	public void GameStart()
+	{
 		if (started)
 			return;
 
 		started = true;
-		print ("Game Start!");
+		print("Game Start!");
 		spawnManager.StartSpawningWaves();
-		stingerSource.PlayOneShot (stinger);
+		stingerSource.PlayOneShot(stinger);
 	}
 
-	public void GamePause() {
+	public void GamePause()
+	{
 		throw new System.NotImplementedException();
 	}
 
@@ -91,7 +107,8 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 		SceneManager.LoadScene("level1");
 	}
 
-	public void GameWin() {
+	public void GameWin()
+	{
 		levelEnded = true;
 		print("You have won the game");
 		importantMessage.Show("Game Win");

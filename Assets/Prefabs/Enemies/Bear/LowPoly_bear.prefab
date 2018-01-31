@@ -427,6 +427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4661679135356942}
   - component: {fileID: 114492198665661194}
+  - component: {fileID: 114971146238619958}
   - component: {fileID: 95433634482829092}
   - component: {fileID: 195922628715607346}
   - component: {fileID: 82672126061772414}
@@ -1056,6 +1057,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 519666caea0af4dcba0203f12b6d9689, type: 3}
   IdleSoundFreq_sec: 5
   IdleSoundChance: 0.1
+--- !u!114 &114971146238619958
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1920162308419738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf2304d23d8a8b947bb1470f5ff20f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &137998736111916690
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

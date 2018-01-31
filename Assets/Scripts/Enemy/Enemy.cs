@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using Valve.VR.InteractionSystem;
 
+[RequireComponent(typeof(Enemy_Animator))]
 public abstract partial class Enemy : MonoBehaviour, IDamagable
 {
 	NavMeshAgent agent;
@@ -71,7 +72,7 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 			//instantiate particles
 			if (!dying)
 			{
-				GetComponent<Animator>().Play("Die");
+				GetComponent<Enemy_Animator>().OnDeath();
 				GetComponent<NavMeshAgent>().speed = 0f;
 				dying = true;
 				transform.GetChild(2).GetComponent<MeshRenderer>().enabled = false;

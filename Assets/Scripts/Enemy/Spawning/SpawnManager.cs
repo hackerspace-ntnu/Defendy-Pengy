@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
-{
-	public enum EnemyType { Wolf, Bear, Fox, Fish, Pig, Null };
-	public TextAsset waveFile;
+public class SpawnManager : MonoBehaviour {
+    public enum EnemyType { Wolf, Bear, Fox, Seal, Muskox, Fish, Pig, Null };
+    public TextAsset waveFile;
 	private List<EnemyWave> waves;
 	EnemyWave currentWave;
 	private List<float> wavesDelay;

@@ -1,8 +1,8 @@
 # SpawnerID count enemytype delay
 ### Wave 1 ###
-1 1 polarbear 10
-1 1 seal 20
-0 1 wolf 10
+1 1 polarbear 1
+1 1 seal 2
+0 1 muskox 1
 0 3 wolf 2.0
 
 ### Wave 2 ###

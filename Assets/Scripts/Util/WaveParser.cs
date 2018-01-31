@@ -81,6 +81,9 @@ public class WaveParser
             case "seal":
                 return EnemySpawner.EnemyType.Seal;
 
+            case "muskox":
+                return EnemySpawner.EnemyType.Muskox;
+
 			default:
 				throw new System.FormatException("Invalid enemy type: " + token);
 		}

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
-	public enum EnemyType {Wolf, Bear, Fox, PolarBear, Seal, Fish, Pig, Null};
+	public enum EnemyType {Wolf, Bear, Fox, PolarBear, Seal, Muskox, Fish, Pig, Null};
 	public Enemy[] enemyPrefabs;
 	public Transform enemyManager;
 	public Transform goal;

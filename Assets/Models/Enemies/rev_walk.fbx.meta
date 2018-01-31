@@ -119,7 +119,7 @@ ModelImporter:
     3300000: tail_curve
     4300000: tail_curve
     4300002: Cube
-    7400000: Walk
+    7400000: walkAnim
     7400002: Armature|Action
     7400004: Armature|ArmatureAction
     7400006: Armature|ArmatureAction.002
@@ -154,7 +154,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Walk
+      name: walkAnim
       takeName: Action
       firstFrame: 0
       lastFrame: 22

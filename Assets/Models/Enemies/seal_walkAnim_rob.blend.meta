@@ -70,7 +70,7 @@ ModelImporter:
     7400000: Default Take
     7400002: PoseLib
     7400004: seal_deathAnim
-    7400006: seal_walkAnim
+    7400006: walkAnim
     9500000: //RootNode
     13700000: Icosphere
   externalObjects: {}
@@ -185,7 +185,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: seal_walkAnim
+      name: walkAnim
       takeName: seal_walkAnim
       firstFrame: -1
       lastFrame: 37
@@ -195,7 +195,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

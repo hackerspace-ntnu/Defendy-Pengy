@@ -1,15 +1,14 @@
 ﻿//Timmy Chan and Arne-Martin
 using UnityEngine;
-using System.Collections;
+using UnityEngine.AI;
 using Valve.VR.InteractionSystem;
 
 public abstract partial class Enemy : MonoBehaviour, IDamagable
 {
-	UnityEngine.AI.NavMeshAgent agent;
+	NavMeshAgent agent;
 	public Transform goal;
 	public float startHealth = 40f;
 	public float health;
-	private float speed;
 	public GameObject HealthBarPrefab;
 	private Transform HeadsetPosition;
 	private EnemyHealthBar healthBar;
@@ -19,16 +18,15 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 
 	void Start()
 	{
-		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+		agent = GetComponent<NavMeshAgent>();
 		agent.destination = goal.position;
 		enemyManager = transform.parent.GetComponent<EnemyManager>();
-		//Player player=Valve.VR.InteractionSystem.Player;
 
 		//initiate healthbar and finding headsetposition, Arne-Martin
 		healthBar = Instantiate(HealthBarPrefab, new Vector3(transform.position.x, transform.position.y + 2.4f, transform.position.z), Quaternion.identity)
 			.GetComponent<EnemyHealthBar>();
 		healthBar.transform.parent = transform;
-		HeadsetPosition = Valve.VR.InteractionSystem.Player.instance.trackingOriginTransform;
+		HeadsetPosition = Player.instance.trackingOriginTransform;
 		health = startHealth;
 
 		//Vector3 left = Quaternion.Inverse(InputTracking.GetLocalRotation(VRNode.LeftEye)) * InputTracking.GetLocalPosition(VRNode.LeftEye);
@@ -60,7 +58,6 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 		Vector3 UpdatedHeadsetPosition = HeadsetPosition.position;
 		healthBar.transform.LookAt(UpdatedHeadsetPosition);
 
-		//UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEnginenemy.gameObjecte.AI.NavMeshAgent>();
 		if (agent.remainingDistance < 1f)
 		{
 			print("goal");
@@ -75,7 +72,7 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 			if (!dying)
 			{
 				GetComponent<Animator>().Play("Die");
-				GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 0f;
+				GetComponent<NavMeshAgent>().speed = 0f;
 				dying = true;
 				transform.GetChild(2).GetComponent<MeshRenderer>().enabled = false;
 				GetComponentInChildren<MeshCollider>().enabled = false;
@@ -85,24 +82,6 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 		}
 
 		HandleIdleSound();
-	}
-
-
-	public void SpeedMultiplier(float mult)
-	{
-		speed *= mult;
-		agent.speed = speed;
-	}
-
-	public void SetHealth(float health)
-	{
-		this.health = health;
-		startHealth = health;
-	}
-
-	public float GetHealth()
-	{
-		return health;
 	}
 
 	public void InflictDamage(float damage)

@@ -1,12 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
 	private static SoundManager INSTANCE;
 
 	public Transform pointSoundPrefab;
+
+	public AudioClip DEBUG_SOUND;
 
 	void Start()
 	{
@@ -28,7 +28,14 @@ public class SoundManager : MonoBehaviour
 		AudioSource audio = gameObject.GetComponent<AudioSource>();
 
 		int soundIndex = (int)Mathf.Round(Random.value * (sounds.Length - 1));
-		audio.clip = sounds[soundIndex];
+		try
+		{
+			audio.clip = sounds[soundIndex];
+		} catch (System.IndexOutOfRangeException)
+		{
+			Debug.LogError(gameObject.name + " is missing some sounds. Playing \"" + INSTANCE.DEBUG_SOUND.name + "\" instead.");
+			audio.clip = INSTANCE.DEBUG_SOUND;
+		}
 
 		audio.pitch = Random.value * (RANDOM_PITCH_RANGE[1] - RANDOM_PITCH_RANGE[0]) + RANDOM_PITCH_RANGE[0];
 

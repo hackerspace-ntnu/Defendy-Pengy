@@ -25,6 +25,8 @@ ModelImporter:
     400014: Cylinder.006
     400016: Cylinder.007
     400018: Cylinder.019
+    2100000: outer_bark_campfire
+    2100002: inner_bark_campfire
     2300000: Cylinder
     2300002: Cylinder.001
     2300004: Cylinder.002
@@ -52,17 +54,7 @@ ModelImporter:
     4300012: Cylinder.002
     4300014: Cylinder.001
     4300016: Cylinder
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: inner_bark_campfire
-    second: {fileID: 2100000, guid: 603f8166076e0cc459202eee8fd83a82, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: outer_bark_campfire
-    second: {fileID: 2100000, guid: 0425f8fa9bbb12047b7d920a2e179060, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -105,6 +97,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88

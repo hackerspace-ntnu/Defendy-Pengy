@@ -1041,7 +1041,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goal: {fileID: 4369538767071930, guid: 3305ffcff53362c4fb1cc4da6ceae529, type: 2}
   startHealth: 200
-  health: 200
   HealthBarPrefab: {fileID: 1526444277414400, guid: be44979df32dbbd48bfe006dfa3b8d86,
     type: 2}
   idleSounds:
@@ -1057,7 +1056,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 519666caea0af4dcba0203f12b6d9689, type: 3}
   IdleSoundFreq_sec: 5
   IdleSoundChance: 0.1
-  speed: 3
 --- !u!137 &137998736111916690
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

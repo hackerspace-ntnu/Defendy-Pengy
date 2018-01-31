@@ -30,7 +30,7 @@ public class GameManager_level01 : MonoBehaviour, IGameManager
 		if (Input.GetKeyDown(KeyCode.K))
 		{
 			foreach (Enemy enemy in enemyManager.GetComponentsInChildren<Enemy>())
-				enemy.health = 0f;
+				enemy.InflictDamage(enemy.startHealth);
 		}
 		// END
 

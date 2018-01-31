@@ -8,7 +8,7 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 	NavMeshAgent agent;
 	public Transform goal;
 	public float startHealth = 40f;
-	public float health;
+	protected float health;
 	public GameObject HealthBarPrefab;
 	private Transform HeadsetPosition;
 	private EnemyHealthBar healthBar;

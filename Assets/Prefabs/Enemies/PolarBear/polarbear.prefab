@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 82427717436027812}
   - component: {fileID: 195165192937708472}
   m_Layer: 0
-  m_Name: polarbear
+  m_Name: PolarBear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1033,7 +1033,6 @@ MonoBehaviour:
   deathSounds: []
   IdleSoundFreq_sec: 5
   IdleSoundChance: 0.1
-  speed: 3
 --- !u!137 &137748541226628832
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

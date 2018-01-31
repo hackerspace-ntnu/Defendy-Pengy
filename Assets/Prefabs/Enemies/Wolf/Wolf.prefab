@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 195470456856048982}
   - component: {fileID: 82993662923870040}
   m_Layer: 0
-  m_Name: LowPoly_wolf
+  m_Name: Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

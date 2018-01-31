@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 195922628715607346}
   - component: {fileID: 82672126061772414}
   m_Layer: 0
-  m_Name: LowPoly_bear
+  m_Name: Bear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

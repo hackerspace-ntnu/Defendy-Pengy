@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 82321854265185514}
   - component: {fileID: 195823512913584252}
   m_Layer: 0
-  m_Name: seal
+  m_Name: Seal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -958,7 +958,6 @@ MonoBehaviour:
   deathSounds: []
   IdleSoundFreq_sec: 5
   IdleSoundChance: 0.1
-  speed: 3
 --- !u!137 &137044752409150378
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

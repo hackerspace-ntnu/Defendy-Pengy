@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 82341178692063502}
   - component: {fileID: 195627204283368482}
   m_Layer: 0
-  m_Name: muskox
+  m_Name: Muskox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1334,7 +1334,6 @@ MonoBehaviour:
   deathSounds: []
   IdleSoundFreq_sec: 5
   IdleSoundChance: 0.1
-  speed: 3
 --- !u!137 &137920130564640376
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

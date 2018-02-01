@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 195512815135987420}
   - component: {fileID: 82754541847824438}
   m_Layer: 0
-  m_Name: Muskox_
+  m_Name: Muskox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

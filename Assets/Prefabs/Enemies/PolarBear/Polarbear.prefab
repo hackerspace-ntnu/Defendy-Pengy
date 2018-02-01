@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 195201718554149794}
   - component: {fileID: 82951580012741396}
   m_Layer: 0
-  m_Name: Polarbear_
+  m_Name: Polarbear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

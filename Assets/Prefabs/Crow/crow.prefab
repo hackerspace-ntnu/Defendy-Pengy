@@ -95,6 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4591022289208604}
   - component: {fileID: 95892944455492400}
+  - component: {fileID: 114355494199293334}
   m_Layer: 0
   m_Name: crow
   m_TagString: Untagged
@@ -698,6 +699,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114355494199293334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1226569650704594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4bf0708b56a3a549a3a25f23aff9ade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 15
+  goal: {fileID: 0}
 --- !u!137 &137933618381855616
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

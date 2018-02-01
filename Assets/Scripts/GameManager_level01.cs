@@ -8,6 +8,7 @@ public class GameManager_level01 : MonoBehaviour, IGameManager
 	public EnemyManager enemyManager;
 	public GameHealthManager gameHealthManager;
 	public GameUI_ImportantMessage importantMessage;
+	public CrowSpawner crowSpawner;
 
 	private float timeToStart = 3f;
 	public bool started = false;

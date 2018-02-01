@@ -6,11 +6,11 @@ public class Cloud : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		Destroy (gameObject, 600f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		gameObject.transform.Translate (0.05f, 0f, 0f);
+		gameObject.transform.Translate (0.02f, 0f, 0f);
 	}
 }

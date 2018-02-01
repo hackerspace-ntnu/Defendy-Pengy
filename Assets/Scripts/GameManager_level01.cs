@@ -90,8 +90,14 @@ public class GameManager_level01 : MonoBehaviour, IGameManager
 
 		started = true;
 		print("Game Start!");
-		spawnManager.StartSpawningWaves();
 		SoundManager.PlayStinger();
+		Invoke ("StartSpawn", 2f);
+	}
+
+	public void StartSpawn()
+	{
+		crowSpawner.SpawnCrows ();
+		spawnManager.StartSpawningWaves();
 	}
 
 	public void GamePause()

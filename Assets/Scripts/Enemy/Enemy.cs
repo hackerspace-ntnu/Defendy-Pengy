@@ -54,13 +54,6 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 
 	void Update()
 	{
-		//To scale healthbar to health, Arne-Martin
-		float healthPercentage = health / startHealth;
-		healthBar.Display(healthPercentage);
-		//Rotate healthbar towards player, Arne-Martin
-		Vector3 UpdatedHeadsetPosition = headsetPosition.position;
-		healthBar.transform.LookAt(UpdatedHeadsetPosition);
-
 		if (agent.remainingDistance < 1f)
 		{
 			print("goal");
@@ -82,6 +75,14 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 				Destroy(gameObject, 4f);
 				PlayDeathSound();
 			}
+		} else
+		{
+			//To scale healthbar to health, Arne-Martin
+			float healthPercentage = health / startHealth;
+			healthBar.Display(healthPercentage);
+			//Rotate healthbar towards player, Arne-Martin
+			Vector3 UpdatedHeadsetPosition = headsetPosition.position;
+			healthBar.transform.LookAt(UpdatedHeadsetPosition);
 		}
 
 		HandleIdleSound();

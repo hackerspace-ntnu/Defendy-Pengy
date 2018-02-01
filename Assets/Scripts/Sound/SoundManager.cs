@@ -4,18 +4,22 @@ public class SoundManager : MonoBehaviour
 {
 	private static SoundManager INSTANCE;
 
-	public Transform pointSoundPrefab;
+	public AudioClip stinger;
 
+	public Transform pointSoundPrefab;
 	public AudioClip DEBUG_SOUND;
 
-	void Start()
+	void Awake()
 	{
-		INSTANCE = this;
+		if (INSTANCE == null)
+			INSTANCE = this;
+		else if (INSTANCE != this)
+			Destroy(gameObject);
 	}
 
-	void Update()
+	public static void PlayStinger()
 	{
-
+		INSTANCE.GetComponent<AudioSource>().PlayOneShot(INSTANCE.stinger);
 	}
 
 	protected static readonly float[] RANDOM_PITCH_RANGE = { 0.9f, 1.1f };

@@ -5,12 +5,9 @@ using UnityEngine.SceneManagement;
 public class GameManager_level01 : MonoBehaviour, IGameManager
 {
 	public SpawnManager spawnManager;
-	public GameHealthManager gameHealthManager;
 	public EnemyManager enemyManager;
-	public GameObject longbow;
+	public GameHealthManager gameHealthManager;
 	public GameUI_ImportantMessage importantMessage;
-	public AudioClip stinger;
-	AudioSource stingerSource;
 
 	private float timeToStart = 3f;
 	public bool started = false;
@@ -19,7 +16,6 @@ public class GameManager_level01 : MonoBehaviour, IGameManager
 	void Start()
 	{
 		gameHealthManager.gameManager = (IGameManager)this;
-		stingerSource = GetComponent<AudioSource>();
 	}
 
 	void Update()
@@ -94,7 +90,7 @@ public class GameManager_level01 : MonoBehaviour, IGameManager
 		started = true;
 		print("Game Start!");
 		spawnManager.StartSpawningWaves();
-		stingerSource.PlayOneShot(stinger);
+		SoundManager.PlayStinger();
 	}
 
 	public void GamePause()

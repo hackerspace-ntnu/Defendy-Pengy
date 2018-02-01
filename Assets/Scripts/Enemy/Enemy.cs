@@ -11,6 +11,7 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 	public float startHealth = 40f;
 	protected float health;
 	public GameObject healthBarPrefab;
+
 	private Transform headsetPosition;
 	private EnemyHealthBar healthBar;
 	private EnemyManager enemyManager;

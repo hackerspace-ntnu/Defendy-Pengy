@@ -42,11 +42,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Magic book
   packageType: 2
-  itemPrefab: {fileID: 1290781887520504, guid: 77f02598a81794146ba79c59554ce2b8, type: 2}
+  itemPrefab: {fileID: 1976726155271802, guid: a19f05519e4d8754195b59f86a2af373, type: 2}
   otherHandItemPrefab: {fileID: 0}
-  previewPrefab: {fileID: 1860671100163660, guid: a8d3a0449d9915a47828a58ae3f8728d,
+  previewPrefab: {fileID: 1864223478366762, guid: c8bfb2ed29ceca841b9310b5d1a4b758,
     type: 2}
-  fadedPreviewPrefab: {fileID: 1658821115098960, guid: 95a9012e9bdd05b44be0d2fba026c20b,
+  fadedPreviewPrefab: {fileID: 1864223478366762, guid: 58d75a7c41e123d468883c38aa0e2bd7,
     type: 2}
 --- !u!1001 &100100000
 Prefab:

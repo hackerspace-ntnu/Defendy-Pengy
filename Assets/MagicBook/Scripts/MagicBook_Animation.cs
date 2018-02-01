@@ -57,7 +57,6 @@ namespace Valve.VR.InteractionSystem
 		{
 			i += 1;
 			var mat = rend.material;
-			float gridSize = 1f / textureSize;
 			int sumOfXandY = Mathf.CeilToInt((Mathf.Sqrt(1 + 8 * i) - 1) / 2f) - 1;
 			int x = 0, y = 0;
 			if (i > (textureSize * (textureSize + 1)) / 2)

@@ -272,8 +272,8 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    animationCompression: 0
-    animationRotationError: 0.5
+    animationCompression: 1
+    animationRotationError: 0.09
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
@@ -423,7 +423,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.035
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

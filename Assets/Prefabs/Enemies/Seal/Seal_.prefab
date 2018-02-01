@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 195509730443165448}
   - component: {fileID: 82217460910292980}
   m_Layer: 0
-  m_Name: Seal
+  m_Name: Seal_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

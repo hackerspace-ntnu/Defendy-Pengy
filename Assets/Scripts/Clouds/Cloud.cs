@@ -6,7 +6,7 @@ public class Cloud : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Destroy (gameObject, 600f);
+		Destroy (gameObject, 1000f);
 	}
 	
 	// Update is called once per frame

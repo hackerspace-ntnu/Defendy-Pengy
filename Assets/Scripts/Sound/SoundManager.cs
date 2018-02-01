@@ -2,27 +2,40 @@
 
 public class SoundManager : MonoBehaviour
 {
-	private static SoundManager INSTANCE;
+	private static SoundManager THIS;
 
 	public AudioClip stinger;
+	public AudioClip crowSound;
 
 	public Transform pointSoundPrefab;
 	public AudioClip DEBUG_SOUND;
 
+	private AudioSource audioSource;
+
 	void Awake()
 	{
-		if (INSTANCE == null)
-			INSTANCE = this;
-		else if (INSTANCE != this)
+		if (THIS == null)
+			THIS = this;
+		else if (THIS != this)
 			Destroy(gameObject);
+	}
+
+	void Start()
+	{
+		audioSource = GetComponent<AudioSource>();
 	}
 
 	public static void PlayStinger()
 	{
-		INSTANCE.GetComponent<AudioSource>().PlayOneShot(INSTANCE.stinger);
+		THIS.audioSource.PlayOneShot(THIS.stinger);
 	}
 
-	protected static readonly float[] RANDOM_PITCH_RANGE = { 0.9f, 1.1f };
+	public static void PlayCrowSound()
+	{
+		THIS.audioSource.PlayOneShot(THIS.crowSound);
+	}
+
+	private static readonly float[] RANDOM_PITCH_RANGE = { 0.9f, 1.1f };
 
 	/// <summary>
 	/// Returns the AudioClip played.
@@ -37,8 +50,8 @@ public class SoundManager : MonoBehaviour
 			audio.clip = sounds[soundIndex];
 		} catch (System.IndexOutOfRangeException)
 		{
-			Debug.LogError(gameObject.name + " is missing some sounds. Playing \"" + INSTANCE.DEBUG_SOUND.name + "\" instead.");
-			audio.clip = INSTANCE.DEBUG_SOUND;
+			Debug.LogError(gameObject.name + " is missing some sounds. Playing \"" + THIS.DEBUG_SOUND.name + "\" instead.");
+			audio.clip = THIS.DEBUG_SOUND;
 		}
 
 		audio.pitch = Random.value * (RANDOM_PITCH_RANGE[1] - RANDOM_PITCH_RANGE[0]) + RANDOM_PITCH_RANGE[0];
@@ -51,9 +64,9 @@ public class SoundManager : MonoBehaviour
 	{
 		Transform pointSound;
 		if (parent)
-			pointSound = Instantiate(INSTANCE.pointSoundPrefab, point, Quaternion.identity, parent);
+			pointSound = Instantiate(THIS.pointSoundPrefab, point, Quaternion.identity, parent);
 		else
-			pointSound = Instantiate(INSTANCE.pointSoundPrefab, point, Quaternion.identity);
+			pointSound = Instantiate(THIS.pointSoundPrefab, point, Quaternion.identity);
 
 		AudioClip sound = PlayRandomSound(pointSound, sounds);
 		Destroy(pointSound.gameObject, sound.length);

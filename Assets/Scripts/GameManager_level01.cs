@@ -8,7 +8,7 @@ public class GameManager_level01 : MonoBehaviour, IGameManager
 	public EnemyManager enemyManager;
 	public GameHealthManager gameHealthManager;
 	public GameUI_ImportantMessage importantMessage;
-	public CrowSpawner crowSpawner;
+	public CrowSpawner[] crowSpawners;
 
 	private float timeToStart = 3f;
 	public bool started = false;
@@ -89,15 +89,18 @@ public class GameManager_level01 : MonoBehaviour, IGameManager
 			return;
 		print("Game Start!");
 		SoundManager.PlayStinger();
-		Invoke ("StartSpawn", 2f);
+		Invoke("StartSpawn", 2f);
 	}
 
 	public void StartSpawn()
 	{
-		//crowSpawner.SpawnCrows ();
+		SoundManager.PlayCrowSound();
+		foreach (CrowSpawner crowSpawner in crowSpawners)
+			crowSpawner.SpawnCrows();
+
 		spawnManager.StartSpawningWaves();
-        started = true;
-    }
+		started = true;
+	}
 
 	public void GamePause()
 	{

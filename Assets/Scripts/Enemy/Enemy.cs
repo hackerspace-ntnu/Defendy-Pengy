@@ -6,12 +6,13 @@ using Valve.VR.InteractionSystem;
 [RequireComponent(typeof(Enemy_Animator))]
 public abstract partial class Enemy : MonoBehaviour, IDamagable
 {
-	NavMeshAgent agent;
+	protected NavMeshAgent agent;
 	public Transform goal;
 	public float startHealth = 40f;
 	protected float health;
 	public GameObject healthBarPrefab;
 
+    private Random random = new Random();
 	private Transform headsetPosition;
 	private EnemyHealthBar healthBar;
 	private EnemyManager enemyManager;
@@ -21,12 +22,14 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 
 	void Start()
 	{
-		agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
 		agent.destination = goal.position;
 		enemyManager = transform.parent.GetComponent<EnemyManager>();
+        float enemySpeed = setSpeed();
+        agent.speed = enemySpeed;
 
-		//initiate healthbar and finding headsetposition, Arne-Martin
-		healthBar = Instantiate(healthBarPrefab, new Vector3(transform.position.x, transform.position.y + 2.4f, transform.position.z), Quaternion.identity)
+        //initiate healthbar and finding headsetposition, Arne-Martin
+        healthBar = Instantiate(healthBarPrefab, new Vector3(transform.position.x, transform.position.y + 2.4f, transform.position.z), Quaternion.identity)
 			.GetComponent<EnemyHealthBar>();
 		healthBar.transform.parent = transform;
 		headsetPosition = Player.instance.trackingOriginTransform;
@@ -52,7 +55,9 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 		}
 	}
 
-	void Update()
+    internal abstract float setSpeed();
+
+    void Update()
 	{
 		if (agent.remainingDistance < 1f)
 		{

@@ -87,8 +87,6 @@ public class GameManager_level01 : MonoBehaviour, IGameManager
 	{
 		if (started)
 			return;
-
-		started = true;
 		print("Game Start!");
 		SoundManager.PlayStinger();
 		Invoke ("StartSpawn", 2f);
@@ -96,9 +94,10 @@ public class GameManager_level01 : MonoBehaviour, IGameManager
 
 	public void StartSpawn()
 	{
-		crowSpawner.SpawnCrows ();
+		//crowSpawner.SpawnCrows ();
 		spawnManager.StartSpawningWaves();
-	}
+        started = true;
+    }
 
 	public void GamePause()
 	{
@@ -107,7 +106,7 @@ public class GameManager_level01 : MonoBehaviour, IGameManager
 
 	public void GameRestart()
 	{
-		SceneManager.LoadScene("level1");
+		SceneManager.LoadScene("menu");
 	}
 
 	public void GameWin()

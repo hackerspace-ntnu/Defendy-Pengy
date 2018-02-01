@@ -489,7 +489,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1885372085305002}
-  m_LocalRotation: {x: 0.6935945, y: 0.576096, z: -0.2899208, w: -0.3209143}
+  m_LocalRotation: {x: 0.6935946, y: 0.57609606, z: -0.28992084, w: -0.32091433}
   m_LocalPosition: {x: -0.0000005849215, y: -2.32831e-10, z: -0.00000006623486}
   m_LocalScale: {x: 1, y: 1.0000001, z: 1}
   m_Children:
@@ -1053,7 +1053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goal: {fileID: 4369538767071930, guid: 3305ffcff53362c4fb1cc4da6ceae529, type: 2}
   startHealth: 300
-  HealthBarPrefab: {fileID: 1526444277414400, guid: be44979df32dbbd48bfe006dfa3b8d86,
+  healthBarPrefab: {fileID: 1526444277414400, guid: be44979df32dbbd48bfe006dfa3b8d86,
     type: 2}
   idleSounds: []
   hurtSounds: []

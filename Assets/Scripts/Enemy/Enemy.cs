@@ -10,12 +10,13 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 	public Transform goal;
 	public float startHealth = 40f;
 	protected float health;
-	public GameObject HealthBarPrefab;
-	private Transform HeadsetPosition;
+	public GameObject healthBarPrefab;
+	private Transform headsetPosition;
 	private EnemyHealthBar healthBar;
 	private EnemyManager enemyManager;
-	private bool dying = false;
 	private SkinnedMeshRenderer enemySkinnedMeshRenderer;
+
+	private bool alive = true;
 
 	void Start()
 	{
@@ -24,10 +25,10 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 		enemyManager = transform.parent.GetComponent<EnemyManager>();
 
 		//initiate healthbar and finding headsetposition, Arne-Martin
-		healthBar = Instantiate(HealthBarPrefab, new Vector3(transform.position.x, transform.position.y + 2.4f, transform.position.z), Quaternion.identity)
+		healthBar = Instantiate(healthBarPrefab, new Vector3(transform.position.x, transform.position.y + 2.4f, transform.position.z), Quaternion.identity)
 			.GetComponent<EnemyHealthBar>();
 		healthBar.transform.parent = transform;
-		HeadsetPosition = Player.instance.trackingOriginTransform;
+		headsetPosition = Player.instance.trackingOriginTransform;
 		health = startHealth;
 
 		//Vector3 left = Quaternion.Inverse(InputTracking.GetLocalRotation(VRNode.LeftEye)) * InputTracking.GetLocalPosition(VRNode.LeftEye);
@@ -56,7 +57,7 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 		float healthPercentage = health / startHealth;
 		healthBar.Display(healthPercentage);
 		//Rotate healthbar towards player, Arne-Martin
-		Vector3 UpdatedHeadsetPosition = HeadsetPosition.position;
+		Vector3 UpdatedHeadsetPosition = headsetPosition.position;
 		healthBar.transform.LookAt(UpdatedHeadsetPosition);
 
 		if (agent.remainingDistance < 1f)
@@ -70,12 +71,13 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 		{
 			//play die animation
 			//instantiate particles
-			if (!dying)
+			if (alive)
 			{
 				GetComponent<Enemy_Animator>().OnDeath();
 				GetComponent<NavMeshAgent>().speed = 0f;
-				dying = true;
+				alive = false;
 				GetComponentInChildren<MeshCollider>().enabled = false;
+				Destroy(healthBar.gameObject);
 				Destroy(gameObject, 4f);
 				PlayDeathSound();
 			}

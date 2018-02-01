@@ -25,11 +25,12 @@ public class SelectLevel : MonoBehaviour {
 		leftHand = Player.instance.leftHand;
 		rightHand = Player.instance.rightHand;
 		//trackedObj = GetComponent<SteamVR_TrackedObject>();
+		audioSource = gameObject.GetComponent<AudioSource> ();
 	}
 
 	void Update() {
 		if(GetComponent<Collider>().bounds.Contains(leftHand.gameObject.transform.position)) {
-			//audioSource.PlayOneShot (hoverSound);
+			audioSource.PlayOneShot (hoverSound);
 			gameObject.transform.localScale = new Vector3 (0.006f, 0.006f, 0.006f);
 			if (leftHand.GetStandardInteractionButtonDown())
 				SceneManager.LoadScene(level);
@@ -37,7 +38,7 @@ public class SelectLevel : MonoBehaviour {
 			return;
 		} 
 		if(GetComponent<Collider>().bounds.Contains(rightHand.gameObject.transform.position)) {
-			//audioSource.PlayOneShot (hoverSound);
+			audioSource.PlayOneShot (hoverSound);
 			gameObject.transform.localScale = new Vector3 (0.006f, 0.006f, 0.006f);
 			if (rightHand.GetStandardInteractionButtonDown())
 				SceneManager.LoadScene(level);

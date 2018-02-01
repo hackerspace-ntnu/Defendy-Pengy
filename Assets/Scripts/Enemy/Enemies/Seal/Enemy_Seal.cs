@@ -2,8 +2,8 @@
 
 public class Enemy_Seal : Enemy
 {
-    private float baseSpeed = 1.8f;
-    private float speedRange = 1f;
+    private float baseSpeed = 1.4f;
+    private float speedRange = 0.8f;
 
     internal override float setSpeed()
     {

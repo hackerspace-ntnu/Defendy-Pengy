@@ -2,8 +2,8 @@
 
 public class Enemy_Muskox : Enemy
 {
-    private float baseSpeed = 0.7f;
-    private float speedRange = 1f;
+    private float baseSpeed = 0.9f;
+    private float speedRange = 0.5f;
 
     internal override float setSpeed()
     {

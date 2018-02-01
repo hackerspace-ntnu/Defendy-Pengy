@@ -26,6 +26,10 @@ ModelImporter:
     100036: wing_r2
     100038: wing_r3
     100040: wing_r3_end
+    100042: body_1_end_end
+    100044: body_5_end_end
+    100046: wing_l3_end_end
+    100048: wing_r3_end_end
     400000: Armature
     400002: body_1
     400004: body_1_end
@@ -47,11 +51,20 @@ ModelImporter:
     400036: wing_r2
     400038: wing_r3
     400040: wing_r3_end
+    400042: body_1_end_end
+    400044: body_5_end_end
+    400046: wing_l3_end_end
+    400048: wing_r3_end_end
     2000000: Camera
     2100000: Material
+    2100002: Material.001
     4300000: Cylinder
     7400000: ArmatureAction
     7400002: Armature|ArmatureAction
+    7400004: Armature|Armature|ArmatureAction|ArmatureAction
+    7400006: Armature|Armature|Armature|ArmatureAction|Armature|ArmatureAction
+    7400008: Armature|Camera.001|ArmatureAction|ArmatureAction
+    7400010: Armature|Lamp.001|ArmatureAction|ArmatureAction
     9500000: //RootNode
     10800000: Lamp
     13700000: Cylinder
@@ -81,7 +94,119 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|Armature|ArmatureAction|ArmatureAction
+      takeName: Armature|Armature|ArmatureAction|ArmatureAction
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Armature|Armature|ArmatureAction|Armature|ArmatureAction
+      takeName: Armature|Armature|Armature|ArmatureAction|Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Camera.001|ArmatureAction|ArmatureAction
+      takeName: Armature|Camera.001|ArmatureAction|ArmatureAction
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Lamp.001|ArmatureAction|ArmatureAction
+      takeName: Armature|Lamp.001|ArmatureAction|ArmatureAction
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

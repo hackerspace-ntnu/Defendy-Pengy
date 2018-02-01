@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Valve.VR.InteractionSystem
 {
 	[RequireComponent(typeof(Animator))]
-	public partial class MagicBook : MonoBehaviour
+	public class MagicBook_Animation : MonoBehaviour
 	{
 		public SkinnedMeshRenderer[] pages;
 		private int textureSize = 4;
@@ -15,36 +15,120 @@ namespace Valve.VR.InteractionSystem
 
 		private Animator anim;
 		private int curTextureInt = 0;
-		private bool startedAnimation;
+		private bool startedAnimation = false;
 		private int openAnim;
+
+
+
+		#region SteamVR touchPad gestures
+		bool prevIsTouched = false;
+		bool isSwiped = false;
+		SteamVR_Controller.Device gestureController;
+		Vector2 prevTouchPos = Vector2.zero;
+		Vector2 gestureStartPoint = Vector2.zero;
+		float gestureTimeSpent = 0f;
+		#endregion
+
 		// Use this for initialization
 		void Start()
 		{
 			anim = GetComponent<Animator>();
-			startedAnimation = false;
 		}
 
 		// Update is called once per frame
 		void Update()
 		{
-			if (Input.GetKeyDown(KeyCode.Space))
+			#region SteamVR Swipe recognition
+			foreach(var hand in Player.instance.hands)
 			{
+				if (hand.currentAttachedObject.GetComponent<MagicBook>()) // FIXME: if the hand is the MagicBook hand, CODE CAN BE IMPROVED!!!!!!!!
+				{
+					var ctrl = hand.controller;
+					if (ctrl == null)
+						continue;
+					SteamVR_Controller.Input((int)ctrl.index);
+					if (ctrl.GetTouch(SteamVR_Controller.ButtonMask.Touchpad)) // if finger is on touchpad
+					{
+						if (isSwiped) //if the player already has a recognized swipe, skip it until the user releases that touch.
+							continue;
+						gestureTimeSpent += Time.deltaTime;
+						var touchPos = ctrl.GetAxis(EVRButtonId.k_EButton_SteamVR_Touchpad); // get the touched position of the pad
+						if (prevIsTouched == false) //if the touchpad previously was not touched
+						{
+							gestureController = ctrl;
+							gestureStartPoint = touchPos;
+							gestureTimeSpent = 0f;
+							//print("Touched");
+							//print(gestureStartPoint);
+						} else
+						{
+							var diff = touchPos - prevTouchPos;
+							var gestureTotalMoved = touchPos - gestureStartPoint;
+							if (Mathf.Sign(gestureTotalMoved.x) != Mathf.Sign(diff.x)) //if the touchpad did NOT kept moving in the same direction
+							{
+								//restart observing the gesture
+								gestureStartPoint = touchPos;
+								gestureTimeSpent = 0f;
+								gestureTotalMoved = Vector2.zero;
+							}
+							gestureTotalMoved += diff;
+							if (gestureTotalMoved.magnitude > 0.65f && gestureTimeSpent < 0.3f) // if the gesture is so fast and so long.
+							{
+								var dir = Mathf.Sign(gestureTotalMoved.x) == 1 ? "right" : "left";
+								isSwiped = true;
+								gestureStartPoint = touchPos;
+								gestureTimeSpent = 0f;
+								OnSwipe(dir);
+							}
+						}
+						prevTouchPos = touchPos;
+						prevIsTouched = true;
+					}
+					else
+					{
+						if (ctrl == gestureController)
+						{
+							isSwiped = false;
+							prevIsTouched = false;
+						}
 
+					}
+				}
 			}
+			#endregion
+
+
 			if (!startedAnimation)
 				return;
 		}
 
+		private void OnSwipe(string dir)
+		{
+			print("Swiped " + dir);
+			if (dir == "right")
+			{
+				PrevPage();
+			}
+			else //dir == right
+			{
+				NextPage();
+			}
+		}
 
 		public void NextPage()
 		{
-			//anim.SetTrigger()
+			anim.SetTrigger("NextPage");
+			anim.ResetTrigger("PrevPage");
+		}
+		public void PrevPage()
+		{
+			anim.SetTrigger("PrevPage");
+			anim.ResetTrigger("NextPage");
 		}
 
 
 		public void PlayGlowEffect() //plays on the two current pages
 		{
-
 		}
 
 

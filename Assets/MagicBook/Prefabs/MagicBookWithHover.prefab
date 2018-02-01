@@ -97,6 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4325428217610066}
   - component: {fileID: 95326811812141264}
+  - component: {fileID: 114734089850596306}
   m_Layer: 0
   m_Name: MagicBook
   m_TagString: Untagged
@@ -3342,7 +3343,7 @@ Animator:
   m_GameObject: {fileID: 1904306389730812}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dce9cb939315983458ca2327c208ae5e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3405,14 +3406,6 @@ MonoBehaviour:
   runeHover: {fileID: 1441885490394090}
   fireBallPrefab: {fileID: 1740384599701424, guid: 9e8b8d6362b2f40458cdb746aa8bc2df,
     type: 2}
-  pages:
-  - {fileID: 137923856687313048}
-  - {fileID: 137126107078573998}
-  - {fileID: 137868890981316566}
-  - {fileID: 137226979486624738}
-  - {fileID: 137030658197928506}
-  - {fileID: 137483433376450892}
-  - {fileID: 137100393027952908}
 --- !u!114 &114331562486088894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3436,6 +3429,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114734089850596306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1073152565048178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53966353f3f32f44ca2add480d2ca580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pages:
+  - {fileID: 137923856687313048}
+  - {fileID: 137126107078573998}
+  - {fileID: 137868890981316566}
+  - {fileID: 137226979486624738}
+  - {fileID: 137030658197928506}
+  - {fileID: 137483433376450892}
+  - {fileID: 137100393027952908}
 --- !u!114 &114780510065777526
 MonoBehaviour:
   m_ObjectHideFlags: 1

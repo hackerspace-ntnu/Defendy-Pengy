@@ -30,6 +30,9 @@ public class MagicBook_Hover : MonoBehaviour
 			if (lastTriggerPress)
 				lastTriggerPress = false;
 		}
+		//Player.instance.hands;
+		//var a = hand.AttachedObjects;
+		
 	}
 
 	private void OnHandHoverEnd(Hand hand)

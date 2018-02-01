@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-	public enum EnemyType { Wolf, Bear, Fox, Seal, Muskox, Polarbear, Null };
+	public enum EnemyType { Wolf, Bear, Fox, Seal, Muskox, PolarBear, Null };
 	public Enemy[] enemyPrefabs;
 	public Transform enemyManager;
 	public Transform goal;

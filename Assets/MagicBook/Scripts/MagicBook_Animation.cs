@@ -41,6 +41,8 @@ namespace Valve.VR.InteractionSystem
 			#region SteamVR Swipe recognition
 			foreach(var hand in Player.instance.hands)
 			{
+				if (!hand.currentAttachedObject)
+					continue;
 				if (hand.currentAttachedObject.GetComponent<MagicBook>()) // FIXME: if the hand is the MagicBook hand, CODE CAN BE IMPROVED!!!!!!!!
 				{
 					var ctrl = hand.controller;

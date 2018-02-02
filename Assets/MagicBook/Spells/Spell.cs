@@ -9,25 +9,23 @@ public abstract class Spell : MonoBehaviour
 
 	protected bool fired = false;
 
-	public abstract void Fire();
+	public abstract void Fire(Vector3 handDirection);
 
+
+	public abstract void HidePreview();
+	protected abstract void Start_Derived();
 	protected abstract void Update_Derived();
 	protected abstract void FixedUpdate_Derived();
+	//public abstract void OnPlayerTakeSpell();
+	public abstract void OnPlayerHoldSpell();
 
 	void Start()
 	{
-		hand = GetComponentInParent<Hand>();
+		Start_Derived();
 	}
 
 	void Update()
 	{
-		if (!fired && !hand.controller.GetHairTrigger())
-		{
-			transform.parent = null;
-			Fire();
-			fired = true;
-		}
-
 		Update_Derived();
 	}
 

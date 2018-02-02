@@ -24,7 +24,7 @@ namespace Valve.VR.InteractionSystem
 		public Transform pivotTransform;
 		public Transform handleTransform;
 
-		private Hand hand;
+		public Hand hand;
 		private ArrowHand arrowHand;
 
 		public Transform nockTransform;
@@ -89,7 +89,7 @@ namespace Valve.VR.InteractionSystem
 
 		public void ChargeSpell(Hand hand)
 		{
-			Instantiate(fireBallPrefab, hand.transform);
+			//Instantiate(fireBallPrefab, hand.transform); removed timmy
 		}
 
 		//-------------------------------------------------

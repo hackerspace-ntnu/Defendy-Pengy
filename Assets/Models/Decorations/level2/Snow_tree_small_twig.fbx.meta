@@ -1,36 +1,24 @@
 fileFormatVersion: 2
 guid: 00bac0a9cc0c045acbac45666e8bd14d
-timeCreated: 1517504610
+timeCreated: 1517692858
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
+    2100000: Leaves Snow Tree Twig_
+    2100002: White Leaves Snow Tree Twig_
+    2100004: Tree Trunk Snow tree Twig
     2300000: //RootNode
     3300000: //RootNode
     4300000: Icosphere.002
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Leaves Snow Tree Twig_
-    second: {fileID: 2100000, guid: 5ca507a762b8c43a3b7327ecd5ebf511, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tree Trunk Snow tree Twig
-    second: {fileID: 2100000, guid: 8b5632760a5f646c19c0d4df95080d1e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: White Leaves Snow Tree Twig_
-    second: {fileID: 2100000, guid: 6dcc96144878a4a679a4049d0f4deba1, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

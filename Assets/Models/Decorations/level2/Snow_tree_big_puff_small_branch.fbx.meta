@@ -1,36 +1,24 @@
 fileFormatVersion: 2
 guid: 3ead3d3aaf4144a9bb21f1dc5f7a53bb
-timeCreated: 1517504619
+timeCreated: 1517692854
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
+    2100000: White Leaves Snow Tree Big Puff With 1 Small Branch
+    2100002: Leaves Snow Tree Big Puff With 1 Small Branch
+    2100004: Tree Trunk Snow tree Big puff with 1 small branch
     2300000: //RootNode
     3300000: //RootNode
     4300000: Icosphere
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Leaves Snow Tree Big Puff With 1 Small Branch
-    second: {fileID: 2100000, guid: 375d7710f12dd4219b1bec40f65bffeb, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tree Trunk Snow tree Big puff with 1 small branch
-    second: {fileID: 2100000, guid: 4a6a4632e3f5b4c2faf0c13914405cdd, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: White Leaves Snow Tree Big Puff With 1 Small Branch
-    second: {fileID: 2100000, guid: 862ca5425b4af4fd284aaf2c98165ce1, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

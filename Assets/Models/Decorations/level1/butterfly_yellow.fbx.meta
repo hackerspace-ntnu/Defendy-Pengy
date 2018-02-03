@@ -1,45 +1,40 @@
 fileFormatVersion: 2
-guid: eea09898767687a46bbf54ec19a9117b
-timeCreated: 1516477848
+guid: 257b8d3765fea4baeb681efe8ee657a9
+timeCreated: 1517683718
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Plane
-    100004: Plane.001
-    100006: terrain
-    100008: water
-    400000: //RootNode
-    400002: Plane
-    400004: Plane.001
-    400006: terrain
-    400008: water
-    2100000: TerrainGrass01
-    2100002: Mountain level 1
-    2100004: Snow01.001
-    2100006: PathForEnemies
-    2100008: Level 1 below ground
-    2100010: Level 2 below ground
-    2100012: Level 3 below ground
-    2100014: Water01
-    2100016: Mountain01
-    2100018: Snow01
-    2100020: TerrainPath01
-    2300000: Plane
-    2300002: Plane.001
-    2300004: terrain
-    2300006: water
-    2300008: //RootNode
-    3300000: Plane
-    3300002: Plane.001
-    3300004: terrain
-    3300006: water
-    3300008: //RootNode
-    4300000: Plane.001
-    4300002: water
-    4300004: terrain
-    4300006: Plane
+    100000: Armature
+    100002: body_c
+    100004: //RootNode
+    100006: Cube.001
+    100008: wing_l
+    100010: wing_l_end
+    100012: wing_r
+    100014: wing_r_end
+    400000: Armature
+    400002: body_c
+    400004: //RootNode
+    400006: Cube.001
+    400008: wing_l
+    400010: wing_l_end
+    400012: wing_r
+    400014: wing_r_end
+    2100000: br_body_black
+    2100002: br_ears_black
+    2100004: br_wing_yellow_1
+    2100006: br_wing_black
+    2100008: br_wing_red_1
+    2100010: br_wing_red_2
+    2100012: br_wing_red_4
+    2100014: br_wing_inner
+    2100016: br_wing_yellow_3
+    2100018: br_wing_yellow_2
+    4300000: Cube.001
+    7400000: Armature|ArmatureAction
+    9500000: //RootNode
+    13700000: Cube.001
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -114,7 +109,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

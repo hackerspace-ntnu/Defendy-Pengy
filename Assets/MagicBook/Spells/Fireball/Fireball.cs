@@ -63,6 +63,7 @@ public class Fireball : Spell
 
 	public override void OnPlayerHoldSpell()
 	{
+		print("done");
 		//move itself towards the hand position
 		if (transform.parent)
 			transform.position = Vector3.Lerp(transform.position, transform.parent.position + transform.parent.forward*0.2f, 0.2f);
@@ -83,7 +84,7 @@ public class Fireball : Spell
     }
 
     void OnTriggerEnter(Collider collider) {
-        IDamagable damagable = collider.gameObject.GetComponent<IDamagable>();
+        IDamagable damagable = collider.gameObject.GetComponentInParent<IDamagable>();
         if(damagable != null) {
             damagable.InflictDamage(damage);
             Destroy(gameObject);

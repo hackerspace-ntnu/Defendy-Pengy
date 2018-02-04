@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4287547645184922}
   - component: {fileID: 54708894068334592}
   - component: {fileID: 135285023128030578}
-  - component: {fileID: 114479025370385040}
+  - component: {fileID: 114578048702966354}
   m_Layer: 0
   m_Name: SlowRange
   m_TagString: Untagged
@@ -150,7 +150,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114479025370385040
+--- !u!114 &114578048702966354
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -158,12 +158,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1708727920857804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c492e20b2c1a9943aae60adf2d1260b, type: 3}
+  m_Script: {fileID: 11500000, guid: 052ce98025f80b144adf563b6fc44a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowAmount: 0.1
+  slowAmount: 0.3
   slowDuration: 8
-  enemies: []
 --- !u!135 &135285023128030578
 SphereCollider:
   m_ObjectHideFlags: 1

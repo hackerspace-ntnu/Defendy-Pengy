@@ -200,7 +200,9 @@ MonoBehaviour:
   slowAmount: 0.8
   slowRadius: 4
   pointLight: {fileID: 108143333240278304}
-  SlowRangePrefab: {fileID: 1708727920857804, guid: 4d4863a8665995748bbe9dda1b97a557,
+  SlowRangePrefab2: {fileID: 1708727920857804, guid: 4d4863a8665995748bbe9dda1b97a557,
+    type: 2}
+  SlowRangePrefab3: {fileID: 1708727920857804, guid: 4d4863a8665995748bbe9dda1b97a557,
     type: 2}
   ps: {fileID: 198794649077697692}
 --- !u!135 &135297419013762676

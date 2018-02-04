@@ -1,26 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 
 public class ResetHotkeys : MonoBehaviour
 {
-	public SceneAsset sceneLoadedWhenReset;
-	public Player player;
+	public string sceneLoadedWhenReset;
 
 	private SteamVR_Controller.Device[] controllers = null;
 
 	private float resetTriggerStartTime = -1;
 	private const float RESET_BUTTON_DURATION = 1f; // seconds
 
-
 	private bool AreResetButtonsPressed()
 	{
 		if (controllers == null)
 		{
+			Player player = Player.instance;
 			// The controller fields might be null while some VR stuff is starting up
 			if (player.leftController == null || player.rightController == null)
 				return false;
@@ -49,6 +45,6 @@ public class ResetHotkeys : MonoBehaviour
 
 	private void LoadScene()
 	{
-		SceneManager.LoadScene(sceneLoadedWhenReset.name);
+		SceneManager.LoadScene(sceneLoadedWhenReset);
 	}
 }

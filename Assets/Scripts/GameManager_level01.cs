@@ -22,6 +22,9 @@ public class GameManager_level01 : MonoBehaviour, IGameManager
 	void Update()
 	{
 		// TEMPORARY DEVELOPER HOTKEYS:
+
+		if (Input.GetKeyDown(KeyCode.Q))
+			GameWin();
 		if (Input.GetKeyDown(KeyCode.W))
 			GameStart();
 		if (Input.GetKeyDown(KeyCode.K))
@@ -119,7 +122,7 @@ public class GameManager_level01 : MonoBehaviour, IGameManager
 		print("You have won the game");
 		importantMessage.Show("Game Win");
 		SoundManager.PlayWinFanfare();
-		Invoke("GameRestart", 5f);
+		//Invoke("GameRestart", 5f);
 	}
 
 	void LoadMenu()

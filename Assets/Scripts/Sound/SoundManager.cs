@@ -6,6 +6,8 @@ public class SoundManager : MonoBehaviour
 
 	public AudioClip stinger;
 	public AudioClip crowSound;
+	public AudioClip gameLost;
+	public AudioClip gameWon;
 
 	public Transform pointSoundPrefab;
 	public AudioClip DEBUG_SOUND;
@@ -33,6 +35,20 @@ public class SoundManager : MonoBehaviour
 	public static void PlayCrowSound()
 	{
 		THIS.audioSource.PlayOneShot(THIS.crowSound);
+	}
+
+	public static void PlayLevelLostSound()
+	{
+		AudioSource levelMusic = THIS.GetComponentInChildren<AudioSource>();
+		levelMusic.Stop();
+		THIS.audioSource.PlayOneShot(THIS.gameLost);
+	}
+
+	public static void PlayWinFanfare()
+	{
+		AudioSource levelMusic = THIS.GetComponentInChildren<AudioSource>();
+		levelMusic.Stop();
+		THIS.audioSource.PlayOneShot(THIS.gameLost);
 	}
 
 	private static readonly float[] RANDOM_PITCH_RANGE = { 0.9f, 1.1f };

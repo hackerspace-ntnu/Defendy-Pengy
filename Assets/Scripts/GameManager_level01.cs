@@ -78,9 +78,10 @@ public class GameManager_level01 : MonoBehaviour, IGameManager
 		print("You have lost the game");
 		spawnManager.StopSpawning();
 		importantMessage.Show("Game Over");
+		SoundManager.PlayLevelLostSound();
 		//Invoke ("LoadMenu", 5f);
 		//change scene??
-		Invoke("GameRestart", 5f);
+		Invoke("GameRestart", 10f);
 	}
 
 	public void GameStart()
@@ -117,6 +118,7 @@ public class GameManager_level01 : MonoBehaviour, IGameManager
 		levelEnded = true;
 		print("You have won the game");
 		importantMessage.Show("Game Win");
+		SoundManager.PlayWinFanfare();
 		Invoke("GameRestart", 5f);
 	}
 

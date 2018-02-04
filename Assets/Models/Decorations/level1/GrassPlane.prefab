@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4696011083976814}
   - component: {fileID: 33098094130317160}
   - component: {fileID: 23390367640874638}
+  - component: {fileID: 64483400508572294}
   m_Layer: 0
   m_Name: GrassPlane
   m_TagString: Untagged
@@ -34,13 +35,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1592707901142566}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -6.405344, y: -2.9237285, z: 9.183968}
-  m_LocalScale: {x: 797.5599, y: 797.5606, z: 797.5606}
+  m_LocalRotation: {x: -0.8414768, y: 0.012942433, z: 0.15536828, w: 0.51731044}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 797.5601, y: 797.5613, z: 797.5613}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -118.99899, y: 30.779999, z: -16.65799}
 --- !u!23 &23390367640874638
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -81,4 +82,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1592707901142566}
+  m_Mesh: {fileID: 4300000, guid: 1e55ae0519756b64b89af63178604f1b, type: 3}
+--- !u!64 &64483400508572294
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1592707901142566}
+  m_Material: {fileID: 13400000, guid: c509d5711dc2cc346be2763cd92383ca, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 1e55ae0519756b64b89af63178604f1b, type: 3}

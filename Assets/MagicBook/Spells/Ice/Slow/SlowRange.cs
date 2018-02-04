@@ -10,23 +10,19 @@ public class SlowRange : MonoBehaviour
 	private float increaseDuration = 2f;
 	private float staticDuration = 2f;
 
-	public float slowAmount = 0.3f; // slow till speed percentage (0.1 = 10%) on enemy hit
+	public float slowAmount = 0.5f; // slow till speed percentage (0.1 = 10%) on enemy hit
 	public float slowDuration = 8f; //slow for seconds
 
-	private List<Enemy> enemies;
+	private static List<Enemy> allSlowedEnemies = new List<Enemy>();
+	private List<Enemy> slowedEnemies = new List<Enemy>();
 
 	// Use this for initialization
 	void Start()
 	{
-		enemies = new List<Enemy>();
 		sCol = GetComponent<SphereCollider>();
 		StartCoroutine(GraduallyIncreaseCollider());
 	}
-
-	// Update is called once per frame
-	void Update()
-	{
-	}
+	
 
 	void OnTriggerEnter(Collider col)
 	{
@@ -67,26 +63,28 @@ public class SlowRange : MonoBehaviour
 
 	void SlowDownEnemy(Enemy enemy)
 	{
-		if (enemies.Contains(enemy))//if enemy is already being affected, do nothing;
+		if (allSlowedEnemies.Contains(enemy))//if enemy is already being affected, do nothing;
 			return;
-		else
-			enemies.Add(enemy);
+		allSlowedEnemies.Add(enemy);
 		AddEffectToEnemy(enemy);
+		slowedEnemies.Add(enemy);
 	}
 
 	void RemoveEffect()
 	{
-		foreach (var enemy in enemies)
+		foreach (var enemy in slowedEnemies)
 		{
 			RemoveEffectOnEnemy(enemy);
+			allSlowedEnemies.Remove(enemy);
 		}
 	}
 
 	void AddEffectToEnemy(Enemy enemy)
 	{
 		var navMesh = enemy.GetComponent<NavMeshAgent>();
-		print(navMesh.speed * slowAmount);
+		//print(navMesh.speed * slowAmount);
 		navMesh.speed *= slowAmount;
+		
 	}
 
 	void RemoveEffectOnEnemy(Enemy enemy)

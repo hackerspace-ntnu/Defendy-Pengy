@@ -9,10 +9,10 @@ public class MagicBook_SpellController : MonoBehaviour {
 	private int curSpell = 0;
 	private Hand spellHand; //the hand holdning the spell
 
-    private float openDelay = 1.2f;
-    private bool isOpened = false;
+	private float openDelay = 1.2f;
+	private bool isOpened = false;
 	private Spell instantiatedSpell;
-    private bool isChangingSpell = true;
+	private bool isChangingSpell = true;
 	// Use this for initialization
 	void Start () {
 		if (spells.Length == 0)
@@ -21,14 +21,14 @@ public class MagicBook_SpellController : MonoBehaviour {
 
 	private void Update()
 	{
-        if(!isOpened) {
-            openDelay -= Time.deltaTime;
-            if(openDelay < 0f) {
-                isOpened = true;
-                openDelay = 1.2f;
-            }
-            return;
-        }
+		if(!isOpened) {
+			openDelay -= Time.deltaTime;
+			if(openDelay < 0f) {
+				isOpened = true;
+				openDelay = 1.2f;
+			}
+			return;
+		}
 		if (!instantiatedSpell)
 			MakeSpell(isChangingSpell);
 		if (spellHand)
@@ -52,11 +52,11 @@ public class MagicBook_SpellController : MonoBehaviour {
 		///instantiate a spell and it will act as a preview
 		if (hand.controller.GetHairTriggerDown())
 		{
-            if (hand != GetComponentInParent<Hand>() && instantiatedSpell)
-            { //if it is the other hand
-                if(!instantiatedSpell.isInitSizing)
-                    PlayerTakesSpell(hand);
-            }
+			if (hand != GetComponentInParent<Hand>() && instantiatedSpell)
+			{ //if it is the other hand
+				if(!instantiatedSpell.isInitSizing)
+					PlayerTakesSpell(hand);
+			}
 		}
 
 	}
@@ -64,7 +64,7 @@ public class MagicBook_SpellController : MonoBehaviour {
 
 	private void PlayerTakesSpell(Hand hand)
 	{
-        print("PlayerTakeSpell");
+		print("PlayerTakeSpell");
 		instantiatedSpell.transform.parent = hand.transform;
 		spellHand = hand;
 	}
@@ -76,16 +76,16 @@ public class MagicBook_SpellController : MonoBehaviour {
 		curSpell = n;
 	}
 
-    public void ChangeSpell(int page) {
-        if (page == 2) {
-            curSpell = 0;
-        } else if (page == 3) {
-            curSpell = 1;
-        }
-        if(instantiatedSpell)
-            instantiatedSpell.HidePreview();
-        isChangingSpell = true;
-    }
+	public void ChangeSpell(int page) {
+		if (page == 2) {
+			curSpell = 0;
+		} else if (page == 3) {
+			curSpell = 1;
+		}
+		if(instantiatedSpell)
+			instantiatedSpell.HidePreview();
+		isChangingSpell = true;
+	}
 
 
 	public void MakeSpell(bool skipDelay = false)
@@ -94,8 +94,8 @@ public class MagicBook_SpellController : MonoBehaviour {
 		//instantiatedSpell.transform.parent = transform;
 		instantiatedSpell.transform.parent = transform;
 		instantiatedSpell.transform.position = transform.position;
-        if (skipDelay)
-            instantiatedSpell.delayBetweenSpawns = 0f;
-        isChangingSpell = false;
+		if (skipDelay)
+			instantiatedSpell.delayBetweenSpawns = 0f;
+		isChangingSpell = false;
 	}
 }

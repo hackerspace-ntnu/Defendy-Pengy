@@ -196,14 +196,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b0450fcbb71b8949b3784c3d1208cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInitSizing: 1
+  delayBetweenSpawns: 1
   speed: 5
   slowAmount: 0.8
   slowRadius: 4
   pointLight: {fileID: 108143333240278304}
   SlowRangePrefab2: {fileID: 1708727920857804, guid: 4d4863a8665995748bbe9dda1b97a557,
     type: 2}
-  SlowRangePrefab3: {fileID: 1708727920857804, guid: 4d4863a8665995748bbe9dda1b97a557,
-    type: 2}
+  playerHoldScalingDuration: 6
+  maxAdditionalSlowRadius: 8
   ps: {fileID: 198794649077697692}
 --- !u!135 &135297419013762676
 SphereCollider:

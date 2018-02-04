@@ -5,16 +5,16 @@ using Valve.VR.InteractionSystem;
 
 public abstract class Spell : MonoBehaviour
 {
-    protected float fadeDuration = 0.3f;
-    protected bool fired = false;
-    public bool isInitSizing = true;
-    public float delayBetweenSpawns = 1f;
+	protected float fadeDuration = 0.3f;
+	protected bool fired = false;
+	public bool isInitSizing = true;
+	public float delayBetweenSpawns = 1f;
 
-    public abstract void Fire(Vector3 handDirection);
+	public abstract void Fire(Vector3 handDirection);
 
 
-    public abstract void ShowPreview();
-    public abstract void HidePreview();
+	public abstract void ShowPreview();
+	public abstract void HidePreview();
 	protected abstract void Start_Derived();
 	protected abstract void Update_Derived();
 	protected abstract void FixedUpdate_Derived();

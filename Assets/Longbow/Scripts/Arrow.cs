@@ -195,9 +195,7 @@ namespace Valve.VR.InteractionSystem
 				{
 					//print ("hit");
 					float speed = velo.magnitude;
-					float damage = speed * 7 - 30;
-					if (damage < 0f)
-						damage = 0f;
+					float damage = speed * 7;
 					print("attack damage = " + damage.ToString());
 					hitDamagable.InflictDamage(damage);
 					Destroy(gameObject);

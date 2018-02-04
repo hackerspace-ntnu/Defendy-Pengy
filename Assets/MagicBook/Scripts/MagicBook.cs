@@ -104,7 +104,7 @@ namespace Valve.VR.InteractionSystem
 			// except those on the runeHover.layer (evaluates to "HandHover") layer
 			//attachedHand.hoverLayerMask = hoverLayerMask_original & ~magicBookLayerMask;
 
-			//GameObject.Find("GameManager").GetComponent<IGameManager>().GameStart();
+			GameObject.Find("GameManager").GetComponent<IGameManager>().GameStart();
 		}
 
 

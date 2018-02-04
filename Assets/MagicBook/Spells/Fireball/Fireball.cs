@@ -8,17 +8,15 @@ public class Fireball : Spell
     public float damage = Mathf.Ceil(200f / 3f); // 200 is the amount of health bears currently have
 	private Vector3 direction;
     public Light pointLight;
-
-
+    
 	#region ParticleSystem
 	public ParticleSystem ps;
 	private float targetStartSize;
 	private float curStartSize;
-	private bool isInitSizing = true;
 	private float curVelocitySmoothDamp = 0f;
 
 	
-	private float maxScaleMultiplier = 3f; //double the size of fireball;
+	private float maxScaleMultiplier = 4f; //double the size of fireball;
 	private Vector3 maxScale;
 	private Vector3 scaleSmoothDamp;
 
@@ -63,13 +61,12 @@ public class Fireball : Spell
 
 	public override void OnPlayerHoldSpell()
 	{
-		print("done");
 		//move itself towards the hand position
 		if (transform.parent)
 			transform.position = Vector3.Lerp(transform.position, transform.parent.position + transform.parent.forward*0.2f, 0.2f);
 		if (!isInitSizing) //wait till the spell is on a ready size. Then increase the size;
 		{
-			transform.localScale = Vector3.SmoothDamp(transform.localScale, maxScale, ref scaleSmoothDamp, 5f);
+			transform.localScale = Vector3.SmoothDamp(transform.localScale, maxScale, ref scaleSmoothDamp, 3f);
 			//add damage
 		}
 		
@@ -83,7 +80,12 @@ public class Fireball : Spell
         StartCoroutine(LifeTimeOut());
     }
 
-    void OnTriggerEnter(Collider collider) {
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.GetComponent<Spell>()) //don't collide with spells
+            return;
+        if (!fired)
+            return;
         IDamagable damagable = collider.gameObject.GetComponentInParent<IDamagable>();
         if(damagable != null) {
             damagable.InflictDamage(damage);
@@ -105,25 +107,7 @@ public class Fireball : Spell
 	{
 		StartCoroutine(HideAndDestroy());
 	}
-
-
-    /*
-	private float hidingCurStartSize; 
-	private IEnumerator HideAndDestroy()
-	{
-		var main = ps.main;
-		hidingCurStartSize = main.startSize.constant;
-		//curSize += 1f * Time.deltaTime; // takes 1 sec to become a full ball
-		curStartSize = Mathf.SmoothDamp(curStartSize, targetStartSize, ref curVelocitySmoothDamp, 1f);
-		while (hidingCurStartSize > 0f)
-		{
-			hidingCurStartSize *= 0.1f;
-			main.startSize = hidingCurStartSize;
-            pointLight.intensity -= 4f * Time.deltaTime;
-			yield return null;
-		}
-		Destroy(gameObject);
-	}*/
+    
 
     private IEnumerator HideAndDestroy() { //gradually decrease the size of the spell and finally destroy
         Vector3 scaleAtThatMoment = transform.localScale;
@@ -141,6 +125,7 @@ public class Fireball : Spell
 
 
     private IEnumerator Show() { //gradually increase the size of the spell
+        yield return new WaitForSeconds(delayBetweenSpawns);
         Vector3 scaleAtThatMoment = transform.localScale;
         float intensityAtThatMoment = pointLight.intensity;
         transform.localScale = Vector3.zero;
@@ -158,7 +143,7 @@ public class Fireball : Spell
     }
 
     protected IEnumerator LifeTimeOut() {
-        yield return new WaitForSeconds(60);
+        yield return new WaitForSeconds(30);
         Destroy(gameObject);
     }
 }

@@ -51,8 +51,11 @@ public class MagicBook_SpellController : MonoBehaviour {
 		///instantiate a spell and it will act as a preview
 		if (hand.controller.GetHairTriggerDown())
 		{
-			if(hand != GetComponentInParent<Hand>() && instantiatedSpell) //if it is the other hand
-				PlayerTakesSpell(hand);
+            if (hand != GetComponentInParent<Hand>() && instantiatedSpell)
+            { //if it is the other hand
+                if(!instantiatedSpell.isInitSizing)
+                    PlayerTakesSpell(hand);
+            }
 		}
 
 	}
@@ -60,6 +63,7 @@ public class MagicBook_SpellController : MonoBehaviour {
 
 	private void PlayerTakesSpell(Hand hand)
 	{
+        print("PlayerTakeSpell");
 		instantiatedSpell.transform.parent = hand.transform;
 		spellHand = hand;
 	}

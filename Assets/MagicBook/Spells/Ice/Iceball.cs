@@ -9,13 +9,11 @@ public class Iceball : Spell {
 	private Vector3 direction;
 	public Light pointLight;
 	public GameObject SlowRangePrefab2;
-	public GameObject SlowRangePrefab3;
 
 	#region ParticleSystem
 	public ParticleSystem ps;
 	private float targetStartSize;
 	private float curStartSize;
-	private bool isInitSizing = true;
 	private float curVelocitySmoothDamp = 0f;
 
 
@@ -65,7 +63,11 @@ public class Iceball : Spell {
 	}
 
 	void OnTriggerEnter(Collider collider) {
-		var slowRange = Instantiate(SlowRangePrefab3);
+        if (collider.GetComponent<Spell>()) //don't collide with spells
+            return;
+        if (!fired)
+            return;
+        var slowRange = Instantiate(SlowRangePrefab2);
 		slowRange.transform.localScale *= slowRadius;
 		slowRange.transform.position = transform.position;
 		Destroy(gameObject);
@@ -91,8 +93,10 @@ public class Iceball : Spell {
 		}
 		Destroy(gameObject);
 	}
-	private IEnumerator Show() {
-		Vector3 scaleAtThatMoment = transform.localScale;
+	private IEnumerator Show()
+    {
+        yield return new WaitForSeconds(delayBetweenSpawns);
+        Vector3 scaleAtThatMoment = transform.localScale;
 		float intensityAtThatMoment = pointLight.intensity;
 		transform.localScale = Vector3.zero;
 		pointLight.intensity = 0f;

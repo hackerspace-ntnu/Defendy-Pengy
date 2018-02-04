@@ -7,8 +7,10 @@ public abstract class Spell : MonoBehaviour
 {
     protected float fadeDuration = 0.3f;
     protected bool fired = false;
+    public bool isInitSizing = true;
+    public float delayBetweenSpawns = 1f;
 
-	public abstract void Fire(Vector3 handDirection);
+    public abstract void Fire(Vector3 handDirection);
 
 
     public abstract void ShowPreview();

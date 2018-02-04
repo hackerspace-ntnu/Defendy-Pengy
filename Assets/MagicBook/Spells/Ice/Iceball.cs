@@ -3,59 +3,67 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Iceball : Spell {
-	public float speed = 5f;
-	public float slowAmount = 0.8f; //decrease 80% speed
-	public float slowRadius = 4f; //decrease 80% speed
-	private Vector3 direction;
-	public Light pointLight;
-	public GameObject SlowRangePrefab2;
+    public float speed = 5f;
+    public float slowAmount = 0.8f; //decrease 80% speed
+    public float slowRadius = 4f; //decrease 80% speed
+    private Vector3 direction;
+    public Light pointLight;
+    public GameObject SlowRangePrefab2;
+    public float playerHoldScalingDuration = 3f;
 
-	#region ParticleSystem
-	public ParticleSystem ps;
-	private float targetStartSize;
-	private float curStartSize;
-	private float curVelocitySmoothDamp = 0f;
-
-
-	private float maxScaleMultiplier = 3f; //double the size of fireball;
-	private Vector3 maxScale;
-	private Vector3 scaleSmoothDamp;
+    #region ParticleSystem
+    public ParticleSystem ps;
+    private float targetStartSize;
+    private float curStartSize;
+    private float curVelocitySmoothDamp = 0f;
 
 
-	#endregion
+    private Vector3 scaleSmoothDamp;
 
-	protected override void Start_Derived() {
-		targetStartSize = ps.main.startSize.constant;
-		curStartSize = 0f;
-		maxScale = transform.lossyScale * maxScaleMultiplier;
-		StartCoroutine(Show());
-	}
+    private float maxScaleMultiplier = 10f; //double the size of iceball;
+    private Vector3 maxAdditionalScale;
 
-	protected override void Update_Derived() {
-		if(Input.GetKeyDown(KeyCode.Space))
-			HidePreview();
-		if(fired) {
-			transform.Translate(direction * (speed * Time.deltaTime), Space.World);
-			// TODO: edit gravity of fireball to get the moving feel
-		}
-	}
+    #endregion
 
-	protected override void FixedUpdate_Derived() { }
+    protected override void Start_Derived()
+    {
+        targetStartSize = ps.main.startSize.constant;
+        curStartSize = 0f;
+        maxAdditionalScale = transform.lossyScale * maxScaleMultiplier;
+        StartCoroutine(Show());
+    }
 
-	public override void OnPlayerHoldSpell() {
-		GetComponent<SphereCollider>().enabled = true;
-		//move itself towards the hand position
-		if(transform.parent)
-			transform.position = Vector3.Lerp(transform.position, transform.parent.position + transform.parent.forward * 0.2f, 0.2f);
-		if(!isInitSizing) //wait till the spell is on a ready size. Then increase the size;
-		{
-			transform.localScale = Vector3.SmoothDamp(transform.localScale, maxScale, ref scaleSmoothDamp, 5f);
-			//add damage
-		}
+    protected override void Update_Derived()
+    {
+        if (Input.GetKey(KeyCode.Space))
+            OnPlayerHoldSpell();
+        if (fired)
+        {
+            transform.Translate(direction * (speed * Time.deltaTime), Space.World);
+            // TODO: edit gravity of fireball to get the moving feel
+        }
+    }
 
-	}
+    protected override void FixedUpdate_Derived() { }
 
-	public override void Fire(Vector3 handDirection) {
+    public override void OnPlayerHoldSpell()
+    {
+        //move itself towards the hand position
+        if (transform.parent)
+            transform.position = Vector3.Lerp(transform.position, transform.parent.position + transform.parent.forward * 0.2f, 0.2f);
+        if (!isInitSizing) //wait till the spell is on a ready size. Then increase the size;
+        {
+            if (transform.lossyScale.x >= 0.5f)
+                return;
+            var a = Time.deltaTime / playerHoldScalingDuration;
+            transform.localScale += maxAdditionalScale * Time.deltaTime * 2f;
+            slowRadius += 2f * a * 0.95f;
+            print(slowRadius);
+        }
+
+    }
+
+    public override void Fire(Vector3 handDirection) {
 		transform.parent = null;
 		direction = handDirection;
 		fired = true;
@@ -95,14 +103,14 @@ public class Iceball : Spell {
 	}
 	private IEnumerator Show()
     {
-        yield return new WaitForSeconds(delayBetweenSpawns);
         Vector3 scaleAtThatMoment = transform.localScale;
 		float intensityAtThatMoment = pointLight.intensity;
-		transform.localScale = Vector3.zero;
+		transform.localScale = new Vector3(0.0001f, 0.0001f, 0.0001f);
 		pointLight.intensity = 0f;
 		float curDuration = fadeDuration;
-		curStartSize = Mathf.SmoothDamp(curStartSize, targetStartSize, ref curVelocitySmoothDamp, 1f);
-		while(curDuration > 0f) {
+        yield return new WaitForSeconds(delayBetweenSpawns);
+        while (curDuration > 0f)
+        {
 			var a = Time.deltaTime / fadeDuration;
 			transform.localScale += scaleAtThatMoment * a;
 			pointLight.intensity += intensityAtThatMoment * a;
@@ -115,7 +123,7 @@ public class Iceball : Spell {
 
 	
 	protected IEnumerator LifeTimeOut() {
-		yield return new WaitForSeconds(60);
+		yield return new WaitForSeconds(30);
 		Destroy(gameObject);
 	}
 

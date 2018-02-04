@@ -12,6 +12,7 @@ public class MagicBook_SpellController : MonoBehaviour {
     private float openDelay = 1.2f;
     private bool isOpened = false;
 	private Spell instantiatedSpell;
+    private bool isChangingSpell = true;
 	// Use this for initialization
 	void Start () {
 		if (spells.Length == 0)
@@ -29,7 +30,7 @@ public class MagicBook_SpellController : MonoBehaviour {
             return;
         }
 		if (!instantiatedSpell)
-			MakeSpell();
+			MakeSpell(isChangingSpell);
 		if (spellHand)
 		{
 			instantiatedSpell.OnPlayerHoldSpell();
@@ -83,14 +84,18 @@ public class MagicBook_SpellController : MonoBehaviour {
         }
         if(instantiatedSpell)
             instantiatedSpell.HidePreview();
+        isChangingSpell = true;
     }
 
 
-	public void MakeSpell()
+	public void MakeSpell(bool skipDelay = false)
 	{
 		instantiatedSpell = Instantiate(spells[curSpell].gameObject).GetComponent<Spell>();
 		//instantiatedSpell.transform.parent = transform;
 		instantiatedSpell.transform.parent = transform;
 		instantiatedSpell.transform.position = transform.position;
+        if (skipDelay)
+            instantiatedSpell.delayBetweenSpawns = 0f;
+        isChangingSpell = false;
 	}
 }

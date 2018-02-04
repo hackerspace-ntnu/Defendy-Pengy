@@ -60,6 +60,7 @@ public class MagicBook_SpellController : MonoBehaviour {
 
 	private void PlayerTakesSpell(Hand hand)
 	{
+        print("PlayerTakeSpell");
 		instantiatedSpell.transform.parent = hand.transform;
 		spellHand = hand;
 	}

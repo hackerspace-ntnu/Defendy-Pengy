@@ -65,7 +65,11 @@ public class Iceball : Spell {
 	}
 
 	void OnTriggerEnter(Collider collider) {
-		var slowRange = Instantiate(SlowRangePrefab3);
+        if (collider.GetComponent<Spell>()) //don't collide with spells
+            return;
+        if (!fired)
+            return;
+        var slowRange = Instantiate(SlowRangePrefab3);
 		slowRange.transform.localScale *= slowRadius;
 		slowRange.transform.position = transform.position;
 		Destroy(gameObject);

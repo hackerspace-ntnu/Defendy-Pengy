@@ -194,8 +194,12 @@ namespace Valve.VR.InteractionSystem
 				if (hitDamagable != null)
 				{
 					//print ("hit");
-					float speed = velo.magnitude;
-					float damage = speed * 7;
+					float speed = prevVelocity.magnitude;
+					float damage = speed * 5 - 50;
+					if (damage < 0f)
+					{
+						damage = 0f;
+					}
 					print("attack damage = " + damage.ToString());
 					hitDamagable.InflictDamage(damage);
 					Destroy(gameObject);

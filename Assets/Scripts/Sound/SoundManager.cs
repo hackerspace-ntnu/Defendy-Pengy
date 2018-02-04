@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour
 	public AudioClip gameLost;
 	public AudioClip gameWon;
 
+	public GameObject levelMusicChild;
 	public Transform pointSoundPrefab;
 	public AudioClip DEBUG_SOUND;
 
@@ -17,14 +18,11 @@ public class SoundManager : MonoBehaviour
 	void Awake()
 	{
 		if (THIS == null)
+		{
 			THIS = this;
-		else if (THIS != this)
+			audioSource = GetComponent<AudioSource>();
+		} else if (THIS != this)
 			Destroy(gameObject);
-	}
-
-	void Start()
-	{
-		audioSource = GetComponent<AudioSource>();
 	}
 
 	public static void PlayStinger()
@@ -39,16 +37,14 @@ public class SoundManager : MonoBehaviour
 
 	public static void PlayLevelLostSound()
 	{
-		AudioSource levelMusic = THIS.GetComponentInChildren<AudioSource>();
-		levelMusic.Stop();
+		THIS.levelMusicChild.GetComponent<AudioSource>().Stop();
 		THIS.audioSource.PlayOneShot(THIS.gameLost);
 	}
 
 	public static void PlayWinFanfare()
 	{
-		AudioSource levelMusic = THIS.GetComponentInChildren<AudioSource>();
-		levelMusic.Stop();
-		THIS.audioSource.PlayOneShot(THIS.gameLost);
+		THIS.levelMusicChild.GetComponent<AudioSource>().Stop();
+		THIS.audioSource.PlayOneShot(THIS.gameWon);
 	}
 
 	public static void PlaySoundAtPoint(AudioClip sound, Vector3 point, Transform parent = null)

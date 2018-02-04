@@ -49,6 +49,12 @@ ModelImporter:
     400038: Cube.017
     400040: Cube.018
     400042: Cube.019
+    2100000: Material.003
+    2100002: Material.002
+    2100004: Material.001
+    2100006: Material
+    2100008: light grass
+    2100010: darker grass
     2300000: Cube
     2300002: Cube.001
     2300004: Cube.002
@@ -112,42 +118,12 @@ ModelImporter:
     4300036: Cube.011
     4300038: Cube.010
     4300040: Cube.000
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 7ab04e9340b63364a8adf820f91effa5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 4fea5a528d0ff4666bda3cf3b2869627, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.002
-    second: {fileID: 2100000, guid: 3b679a25db59e443ab82b213cfd5667d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.003
-    second: {fileID: 2100000, guid: 40c3686e6711d47df971624523869a40, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: darker grass
-    second: {fileID: 2100000, guid: 986144c89397a9c45bc15002710e9a54, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: light grass
-    second: {fileID: 2100000, guid: 53ddd410733c49143b60c183121efb89, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

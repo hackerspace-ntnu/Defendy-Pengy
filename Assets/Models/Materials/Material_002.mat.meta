@@ -1,11 +1,6 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 77545e1d1b6e0be40a12f0b2106b9106
 timeCreated: 1508514047
-=======
-guid: 3f0056847b514cc4b80867b96956ff7f
-timeCreated: 1516125002
->>>>>>> 04b5da6... Added new decoration objects and decorated menu_betterDecorated.scene
 licenseType: Free
 NativeFormatImporter:
   externalObjects: {}

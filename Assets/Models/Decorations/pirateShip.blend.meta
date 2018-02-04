@@ -3,7 +3,7 @@ guid: 575be215f8294cf4bbdbbc0731e09555
 timeCreated: 1504197306
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: anchorRoller
     100002: clothController
@@ -63,6 +63,13 @@ ModelImporter:
     400052: surronder
     400054: topBowl
     400056: upperDeck
+    2100000: ShipShell01
+    2100002: ShipShell02
+    2100004: ShipDeckWood01
+    2100006: Material_002
+    2100008: ShipRope01
+    2100010: WoodDark01
+    2100012: Gold
     2300000: anchorRoller
     2300002: clothController
     2300004: edgePlank
@@ -149,10 +156,12 @@ ModelImporter:
     4300054: surronder
     7400000: Default Take
     9500000: //RootNode
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -165,6 +174,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

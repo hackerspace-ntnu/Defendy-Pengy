@@ -21,6 +21,12 @@ ModelImporter:
     400010: Plane.004
     400012: Plane.005
     400014: Plane.006
+    2100000: River
+    2100002: Road
+    2100004: Blueish Snow
+    2100006: Mountain
+    2100008: Snow.001
+    2100010: Snow
     2300000: Plane
     2300002: Plane.001
     2300004: Plane.002
@@ -42,42 +48,12 @@ ModelImporter:
     4300008: Plane.004
     4300010: Plane.005
     4300012: Plane.006
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Blueish Snow
-    second: {fileID: 2100000, guid: f8d7048a9dec8d145abf1289a00fc860, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mountain
-    second: {fileID: 2100000, guid: 8c5d258cc6a44144481c743136010816, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: River
-    second: {fileID: 2100000, guid: 359332f39c829934395bd9962d79feb4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Road
-    second: {fileID: 2100000, guid: f7fa09a3c85a97849b9e919c1d04a38f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Snow
-    second: {fileID: 2100000, guid: 7c2b92692e39fdd4fb20989e2d98e4bf, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Snow.001
-    second: {fileID: 2100000, guid: 692a4664e93f9fa40b9e60883ae5043b, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

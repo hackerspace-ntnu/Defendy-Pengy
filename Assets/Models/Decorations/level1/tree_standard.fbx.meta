@@ -16,6 +16,8 @@ ModelImporter:
     400006: Lamp
     400008: //RootNode
     2000000: Camera
+    2100000: Material.002
+    2100002: Material.001
     2300000: Cylinder
     2300002: Cylinder.001
     3300000: Cylinder
@@ -23,22 +25,12 @@ ModelImporter:
     4300000: Cylinder.001
     4300002: Cylinder
     10800000: Lamp
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 4fea5a528d0ff4666bda3cf3b2869627, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.002
-    second: {fileID: 2100000, guid: 3b679a25db59e443ab82b213cfd5667d, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

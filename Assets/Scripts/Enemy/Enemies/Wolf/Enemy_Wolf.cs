@@ -1,8 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Enemy_Wolf : Enemy
 {
-	public float speed = 4;
+    private float baseSpeed = 2f;
+    private float speedRange = 1f;
+
+    internal override float setSpeed()
+    {
+        float randomizer = Random.Range(baseSpeed - speedRange / 2, baseSpeed + speedRange / 2);
+        float enemySpeed = randomizer;
+        return enemySpeed;
+    }
 }

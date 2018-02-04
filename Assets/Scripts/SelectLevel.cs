@@ -19,10 +19,13 @@ public class SelectLevel : MonoBehaviour {
 	public AudioClip hoverSound;
 	public AudioClip selectSound;
 
+	public string level;
+
 	void Awake() {
 		leftHand = Player.instance.leftHand;
 		rightHand = Player.instance.rightHand;
 		//trackedObj = GetComponent<SteamVR_TrackedObject>();
+		audioSource = gameObject.GetComponent<AudioSource> ();
 	}
 
 	void Update() {
@@ -30,7 +33,7 @@ public class SelectLevel : MonoBehaviour {
 			audioSource.PlayOneShot (hoverSound);
 			gameObject.transform.localScale = new Vector3 (0.006f, 0.006f, 0.006f);
 			if (leftHand.GetStandardInteractionButtonDown())
-				SceneManager.LoadScene("level1");
+				SceneManager.LoadScene(level);
 
 			return;
 		} 
@@ -38,7 +41,7 @@ public class SelectLevel : MonoBehaviour {
 			audioSource.PlayOneShot (hoverSound);
 			gameObject.transform.localScale = new Vector3 (0.006f, 0.006f, 0.006f);
 			if (rightHand.GetStandardInteractionButtonDown())
-				SceneManager.LoadScene("level1");
+				SceneManager.LoadScene(level);
 
 			return;
 		}

@@ -5,13 +5,26 @@
 //=============================================================================
 
 using UnityEngine;
+
+#if UNITY_2017_2_OR_NEWER
+
+[ExecuteInEditMode]
+public class SteamVR_Stats : MonoBehaviour
+{
+	void Awake()
+	{
+		Debug.Log("SteamVR_Stats is deprecated in Unity 2017.2 - REMOVING");
+		DestroyImmediate(this);
+	}
+}
+
+#else
+
 using Valve.VR;
 
 public class SteamVR_Stats : MonoBehaviour
 {
-#pragma warning disable CS0618 // Type or member is obsolete
 	public GUIText text;
-#pragma warning restore CS0618 // Type or member is obsolete
 
 	public Color fadeColor = Color.black;
 	public float fadeDuration = 1.0f;
@@ -20,9 +33,7 @@ public class SteamVR_Stats : MonoBehaviour
 	{
 		if (text == null)
 		{
-#pragma warning disable CS0618 // Type or member is obsolete
 			text = GetComponent<GUIText>();
-#pragma warning restore CS0618 // Type or member is obsolete
 			text.enabled = false;
 		}
 
@@ -69,4 +80,6 @@ public class SteamVR_Stats : MonoBehaviour
 		}
 	}
 }
+
+#endif
 

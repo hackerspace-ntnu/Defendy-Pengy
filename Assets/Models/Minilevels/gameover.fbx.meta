@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 20b4b6a8401ab0f48b51fa28ff833750
+guid: 8f08a398898e9a243aab95206586ac49
 timeCreated: 1508436106
 licenseType: Free
 ModelImporter:
@@ -7,20 +7,16 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
+    2100000: No Name
     2300000: //RootNode
     3300000: //RootNode
     4300000: Text
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 538ebc8345b1d474197593a7e4809f09, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

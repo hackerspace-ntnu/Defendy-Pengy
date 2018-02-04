@@ -1,95 +1,79 @@
 ﻿//Timmy Chan
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Valve.VR.InteractionSystem;
 using UnityEngine.SceneManagement;
-using Valve.VR;
 
-public class GameManager_level01 : MonoBehaviour, IGameManager {
+public class GameManager_level01 : MonoBehaviour, IGameManager
+{
 	public SpawnManager spawnManager;
+	public EnemyManager enemyManager;
 	public GameHealthManager gameHealthManager;
-	public Transform enemyManager;
-	public GameObject longbow;
 	public GameUI_ImportantMessage importantMessage;
-	public AudioClip stinger;
-	AudioSource stingerSource;
-
-	public Hand leftHand;
-	public Hand rightHand;
+	public CrowSpawner[] crowSpawners;
 
 	private float timeToStart = 3f;
 	public bool started = false;
 	public bool levelEnded = false;
 
-	private float resetTriggerStartTime = -1;
-	private const float RESET_BUTTON_DURATION = 1f; // seconds
-
 	void Start()
 	{
 		gameHealthManager.gameManager = (IGameManager)this;
-		stingerSource = GetComponent<AudioSource> ();
-	}
-
-	private bool areResetButtonsPressed()
-	{
-//		return leftHand.controller.GetPress(EVRButtonId.k_EButton_ApplicationMenu)
-//			&& rightHand.controller.GetPress(EVRButtonId.k_EButton_ApplicationMenu); // menu buttons on both left and right controllers
-        return false;
 	}
 
 	void Update()
 	{
 		// TEMPORARY DEVELOPER HOTKEYS:
-		if (areResetButtonsPressed())
-		{
-			if (resetTriggerStartTime < 0f)
-				resetTriggerStartTime = Time.time;
-			else if (Time.time > resetTriggerStartTime + RESET_BUTTON_DURATION)
-				SceneManager.LoadScene("level1");
-		} else if (resetTriggerStartTime > 0f)
-			resetTriggerStartTime = -1;
-		if (Input.GetKeyDown(KeyCode.R))
-			SceneManager.LoadScene("level1");
 		if (Input.GetKeyDown(KeyCode.W))
 			GameStart();
+		if (Input.GetKeyDown(KeyCode.K))
+		{
+			foreach (Enemy enemy in enemyManager.GetComponentsInChildren<Enemy>())
+				enemy.InflictDamage(enemy.startHealth);
+		}
 		// END
 
 
-		if (!levelEnded) {
-			if (!started) {
+		if (!levelEnded)
+		{
+			if (!started)
+			{
 				if (Input.GetKeyUp(KeyCode.A))
 					GameStart();
 				if (Input.GetKeyUp(KeyCode.S))
 					GameLost();
-				if (timeToStart >= 0) {
+				if (timeToStart >= 0)
+				{
 					//timeToStart -= Time.deltaTime;
-				} else {
+				} else
+				{
 					//GameStart ();
 				}
 			}
-			if (started) {
+			if (started)
+			{
 				//if there are no more lives
 				/*if (gameHealthManager.RemainingGameHealth () <= 0) {
 					GameLost ();
 					levelEnded = true;
 				}*/
 				//if there are no more enemies to be spawned
-				if (spawnManager.RemainingWavesCount () == 0) {
+				if (spawnManager.RemainingWavesCount() == 0)
+				{
 					//if there are no more enemies alive
-					if (enemyManager.childCount == 0) {
-						GameWin ();
+					if (enemyManager.transform.childCount == 0)
+					{
+						GameWin();
 						levelEnded = true;
 					}
 				}
 			}
-		}
-		else {
+		} else
+		{
 			//what to do?
 		}
 	}
 
-	public void GameLost() {
+	public void GameLost()
+	{
 		levelEnded = true;
 		print("You have lost the game");
 		spawnManager.StopSpawning();
@@ -99,26 +83,37 @@ public class GameManager_level01 : MonoBehaviour, IGameManager {
 		Invoke("GameRestart", 5f);
 	}
 
-	public void GameStart() {
+	public void GameStart()
+	{
 		if (started)
 			return;
-
-		started = true;
-		print ("Game Start!");
-		spawnManager.StartSpawningWaves();
-		stingerSource.PlayOneShot (stinger);
+		print("Game Start!");
+		SoundManager.PlayStinger();
+		Invoke("StartSpawn", 2f);
 	}
 
-	public void GamePause() {
+	public void StartSpawn()
+	{
+		SoundManager.PlayCrowSound();
+		foreach (CrowSpawner crowSpawner in crowSpawners)
+			crowSpawner.SpawnCrows();
+
+		spawnManager.StartSpawningWaves();
+		started = true;
+	}
+
+	public void GamePause()
+	{
 		throw new System.NotImplementedException();
 	}
 
 	public void GameRestart()
 	{
-		SceneManager.LoadScene("level1");
+		SceneManager.LoadScene("menu");
 	}
 
-	public void GameWin() {
+	public void GameWin()
+	{
 		levelEnded = true;
 		print("You have won the game");
 		importantMessage.Show("Game Win");

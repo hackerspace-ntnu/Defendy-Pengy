@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 2f2e08a4e65c31e459ed295bf3cccdc1
-timeCreated: 1510678524
+guid: e71b6ff7d67acdf4496adcb66f49016b
+timeCreated: 1510679560
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -15,17 +15,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: inner_bark_campfire
-    second: {fileID: 2100000, guid: 603f8166076e0cc459202eee8fd83a82, type: 2}
+    second: {fileID: 2100000, guid: 8572c35e1ffeec24b9d1958755a5583e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: outer_bark_campfire
-    second: {fileID: 2100000, guid: 0425f8fa9bbb12047b7d920a2e179060, type: 2}
+    second: {fileID: 2100000, guid: 5a52e903686745845bd896c2e305931c, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

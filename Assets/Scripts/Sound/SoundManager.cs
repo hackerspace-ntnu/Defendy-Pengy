@@ -51,32 +51,43 @@ public class SoundManager : MonoBehaviour
 		THIS.audioSource.PlayOneShot(THIS.gameLost);
 	}
 
-	private static readonly float[] RANDOM_PITCH_RANGE = { 0.9f, 1.1f };
+	public static void PlaySoundAtPoint(AudioClip sound, Vector3 point, Transform parent = null)
+	{
+		AudioSource audio = CreatePointSound(point, parent);
+		audio.clip = sound;
+		audio.Play();
+		Destroy(audio.gameObject, sound.length);
+	}
 
-	/// <summary>
-	/// Returns the AudioClip played.
-	/// </summary>
+	public static void PlayRandomSoundAtPoint(AudioClip[] sounds, Vector3 point, Transform parent = null)
+	{
+		AudioSource audio = CreatePointSound(point, parent);
+		AudioClip sound = PlayRandomSound(audio, sounds);
+		Destroy(audio.gameObject, sound.length);
+	}
+
 	public static AudioClip PlayRandomSound(Component gameObject, AudioClip[] sounds)
 	{
 		AudioSource audio = gameObject.GetComponent<AudioSource>();
 
-		int soundIndex = (int)Mathf.Round(Random.value * (sounds.Length - 1));
+		AudioClip sound = null;
 		try
 		{
-			audio.clip = sounds[soundIndex];
+			sound = ChooseRandomAudioClip(sounds);
 		} catch (System.IndexOutOfRangeException)
 		{
-			Debug.LogError(gameObject.name + " is missing some sounds. Playing \"" + THIS.DEBUG_SOUND.name + "\" instead.");
-			audio.clip = THIS.DEBUG_SOUND;
+			Debug.LogError(audio.gameObject.name + " is missing some sounds. Playing \"" + THIS.DEBUG_SOUND.name + "\" instead.");
 		}
-
-		audio.pitch = Random.value * (RANDOM_PITCH_RANGE[1] - RANDOM_PITCH_RANGE[0]) + RANDOM_PITCH_RANGE[0];
+		if (sound)
+			audio.clip = sound;
+		else
+			audio.clip = THIS.DEBUG_SOUND;
 
 		audio.Play();
 		return audio.clip;
 	}
 
-	public static void PlayRandomSoundAtPoint(AudioClip[] sounds, Vector3 point, Transform parent = null)
+	private static AudioSource CreatePointSound(Vector3 point, Transform parent = null)
 	{
 		Transform pointSound;
 		if (parent)
@@ -84,7 +95,20 @@ public class SoundManager : MonoBehaviour
 		else
 			pointSound = Instantiate(THIS.pointSoundPrefab, point, Quaternion.identity);
 
-		AudioClip sound = PlayRandomSound(pointSound, sounds);
-		Destroy(pointSound.gameObject, sound.length);
+		AudioSource audio = pointSound.GetComponent<AudioSource>();
+		return audio;
+	}
+
+	private static readonly float[] RANDOM_PITCH_RANGE = { 0.9f, 1.1f };
+
+	private static AudioClip ChooseRandomAudioClip(AudioClip[] sounds)
+	{
+		int soundIndex = (int)Mathf.Round(Random.value * (sounds.Length - 1));
+		return sounds[soundIndex];
+	}
+
+	private static float GetRandomPitch()
+	{
+		return Random.value * (RANDOM_PITCH_RANGE[1] - RANDOM_PITCH_RANGE[0]) + RANDOM_PITCH_RANGE[0];
 	}
 }

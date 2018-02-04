@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 135297419013762676}
   - component: {fileID: 114157552082744226}
   - component: {fileID: 54282387143933532}
+  - component: {fileID: 82730320709960490}
   m_Layer: 0
   m_Name: Iceball
   m_TagString: Untagged
@@ -149,6 +150,86 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &82730320709960490
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1871344310892532}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!108 &108143333240278304
 Light:
   m_ObjectHideFlags: 1
@@ -196,6 +277,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b0450fcbb71b8949b3784c3d1208cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  igniteSound: {fileID: 8300000, guid: 1766bb5c6b5680047926d76cf48f704f, type: 3}
+  loopSound: {fileID: 8300000, guid: e8686a6c1d8ec3643a8adad130dadb44, type: 3}
+  throwSound: {fileID: 8300000, guid: a60a4517e2fea3d44990ac1bc0e48fb9, type: 3}
+  impactSound: {fileID: 8300000, guid: a1d412636dbcb7343842a90298fa9121, type: 3}
   isInitSizing: 1
   delayBetweenSpawns: 1
   speed: 5

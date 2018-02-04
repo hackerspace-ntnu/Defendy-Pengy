@@ -7,7 +7,6 @@ public class Fireball : Spell
 	public float speed = 10f;
 	public float damage = 67f;
 	public float maxAdditionalDamage = 200f;
-	public float playerHoldScalingDuration = 6f;
 	private Vector3 direction;
 	public Light pointLight;
 
@@ -52,11 +51,13 @@ public class Fireball : Spell
 			if (transform.lossyScale.x >= 0.5f)
 				return;
 			transform.localScale += maxAdditionalScale * Time.deltaTime / playerHoldScalingDuration;
+
+			UpdateLoopSound();
+
 			//print(transform.localScale);
 			damage += maxAdditionalDamage * Time.deltaTime/playerHoldScalingDuration;
 			//print(damage);
 		}
-
 	}
 
 	public override void Fire(Vector3 handDirection)
@@ -65,6 +66,7 @@ public class Fireball : Spell
 		direction = handDirection;
 		fired = true;
 		StartCoroutine(LifeTimeOut());
+		PlayThrowSound();
 	}
 
 	void OnTriggerEnter(Collider collider)
@@ -79,13 +81,17 @@ public class Fireball : Spell
 		if (damagable != null)
 		{
 			damagable.InflictDamage(damage);
+			PlayImpactSound();
 			Destroy(gameObject);
 		}
 		else
 		{
 			// To ignore collisions with MagicBook's own collider; layer 0 is the Default layer
 			if (collider.gameObject.layer == 0)
+			{
+				PlayImpactSound();
 				Destroy(gameObject);
+			}
 		}
 	}
 

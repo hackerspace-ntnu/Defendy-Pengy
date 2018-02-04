@@ -9,7 +9,6 @@ public class Iceball : Spell {
 	private Vector3 direction;
 	public Light pointLight;
 	public GameObject SlowRangePrefab2;
-	public float playerHoldScalingDuration = 6f;
 
 	public float maxAdditionalSlowRadius = 8f;
 
@@ -49,6 +48,10 @@ public class Iceball : Spell {
 			if (transform.lossyScale.x >= 0.5f)
 				return;
 			transform.localScale += maxAdditionalScale * Time.deltaTime / playerHoldScalingDuration;
+
+			UpdateLoopSound();
+
+			audioSource.volume = (Time.time - playerHoldStartTime) / playerHoldScalingDuration;
 			slowRadius += maxAdditionalSlowRadius * 1.3f * Time.deltaTime / playerHoldScalingDuration;
 			//print(slowRadius);
 		}
@@ -60,6 +63,7 @@ public class Iceball : Spell {
 		direction = handDirection;
 		fired = true;
 		StartCoroutine(LifeTimeOut());
+		PlayThrowSound();
 	}
 
 	void OnTriggerEnter(Collider collider) {
@@ -72,6 +76,7 @@ public class Iceball : Spell {
 		var slowRange = Instantiate(SlowRangePrefab2);
 		slowRange.transform.localScale *= slowRadius;
 		slowRange.transform.position = transform.position;
+		PlayImpactSound();
 		Destroy(gameObject);
 	}
 

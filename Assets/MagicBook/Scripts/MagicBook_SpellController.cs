@@ -26,6 +26,8 @@ public class MagicBook_SpellController : MonoBehaviour {
 			if(openDelay < 0f) {
 				isOpened = true;
 				openDelay = 1.2f;
+
+				StartCoroutine(PlayIgniteSound());
 			}
 			return;
 		}
@@ -85,6 +87,15 @@ public class MagicBook_SpellController : MonoBehaviour {
 		if(instantiatedSpell)
 			instantiatedSpell.HidePreview();
 		isChangingSpell = true;
+
+		StartCoroutine(PlayIgniteSound());
+	}
+
+	private IEnumerator PlayIgniteSound()
+	{
+		yield return new WaitForSeconds(0.2f);
+		if (isOpened)
+			SoundManager.PlaySoundAtPoint(spells[curSpell].igniteSound, transform.position);
 	}
 
 

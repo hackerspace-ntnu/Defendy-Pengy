@@ -415,6 +415,7 @@ GameObject:
   - component: {fileID: 4830338688906832}
   - component: {fileID: 114616520365971812}
   - component: {fileID: 114223350774720544}
+  - component: {fileID: 114565386708656674}
   - component: {fileID: 114605382592008860}
   - component: {fileID: 114198299714321258}
   - component: {fileID: 114129691243849392}
@@ -3298,6 +3299,19 @@ MonoBehaviour:
   arrowSlideSound: {fileID: 0}
   releaseSound: {fileID: 0}
   nockSound: {fileID: 0}
+--- !u!114 &114565386708656674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1236206311779802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d4cc6cf300b3e4bb1411c4e041030c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportAllowed: 1
+  overrideHoverLock: 1
 --- !u!114 &114605382592008860
 MonoBehaviour:
   m_ObjectHideFlags: 1

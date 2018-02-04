@@ -50,6 +50,7 @@ public class Fireball : Spell
 		{
 			if (transform.lossyScale.x >= 0.5f)
 				return;
+			transform.parent.GetComponent<Valve.VR.InteractionSystem.Hand>().controller.TriggerHapticPulse(500);
 			transform.localScale += maxAdditionalScale * Time.deltaTime / playerHoldScalingDuration;
 
 			UpdateLoopSound();

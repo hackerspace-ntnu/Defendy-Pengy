@@ -7,20 +7,27 @@ using Valve.VR.InteractionSystem;
 public class MagicBook_SpellController : MonoBehaviour {
 	public Spell[] spells;
 	private int curSpell = 0;
-	private MagicBook mb;
 	private Hand spellHand; //the hand holdning the spell
 
-
+    private float openDelay = 1.2f;
+    private bool isOpened = false;
 	private Spell instantiatedSpell;
 	// Use this for initialization
 	void Start () {
-		mb = GetComponentInParent<MagicBook>();
 		if (spells.Length == 0)
 			print("Add Spells to the MagicBook_SpellController");
 	}
 
 	private void Update()
 	{
+        if(!isOpened) {
+            openDelay -= Time.deltaTime;
+            if(openDelay < 0f) {
+                isOpened = true;
+                openDelay = 1.2f;
+            }
+            return;
+        }
 		if (!instantiatedSpell)
 			MakeSpell();
 		if (spellHand)
@@ -44,7 +51,7 @@ public class MagicBook_SpellController : MonoBehaviour {
 		///instantiate a spell and it will act as a preview
 		if (hand.controller.GetHairTriggerDown())
 		{
-			if(hand != GetComponentInParent<Hand>()) //if it is the other hand
+			if(hand != GetComponentInParent<Hand>() && instantiatedSpell) //if it is the other hand
 				PlayerTakesSpell(hand);
 		}
 
@@ -64,6 +71,15 @@ public class MagicBook_SpellController : MonoBehaviour {
 		curSpell = n;
 	}
 
+    public void ChangeSpell(int page) {
+        if (page == 2) {
+            curSpell = 0;
+        } else if (page == 3) {
+            curSpell = 1;
+        }
+        if(instantiatedSpell)
+            instantiatedSpell.HidePreview();
+    }
 
 
 	public void MakeSpell()

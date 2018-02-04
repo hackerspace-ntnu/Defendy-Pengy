@@ -5,9 +5,9 @@ using UnityEngine;
 public class Fireball : Spell
 {
 	public float speed = 5f;
-	public float damage = Mathf.Ceil(200f / 3f); // 200 is the amount of health bears currently have
+    public float damage = Mathf.Ceil(200f / 3f); // 200 is the amount of health bears currently have
 	private Vector3 direction;
-	
+    public Light pointLight;
 
 
 	#region ParticleSystem
@@ -30,6 +30,7 @@ public class Fireball : Spell
 		targetStartSize = ps.main.startSize.constant;
 		curStartSize = 0f;
 		maxScale = transform.lossyScale * maxScaleMultiplier;
+        StartCoroutine(Show());
 	}
 
 	protected override void Update_Derived()
@@ -43,7 +44,7 @@ public class Fireball : Spell
 		}
 		else
 		{
-			if (isInitSizing == true) //make the fireball smoothly increase in size in the beginning
+			/*if (isInitSizing == true) //make the fireball smoothly increase in size in the beginning
 			{
 				var main = ps.main;
 				//curSize += 1f * Time.deltaTime; // takes 1 sec to become a full ball
@@ -51,10 +52,10 @@ public class Fireball : Spell
 				main.startSize = curStartSize;
 				if (Mathf.Abs(curStartSize - targetStartSize) < 0.1f)
 				{
-					print("This is equal");
+					//print("This is equal");
 					isInitSizing = false;
 				}
-			}
+			}*/
 		}
 	}
 
@@ -78,16 +79,35 @@ public class Fireball : Spell
 		transform.parent = null;
 		direction = handDirection;
 		fired = true;
-	}
-	
-	public override void HidePreview()
+        StartCoroutine(LifeTimeOut());
+    }
+
+    void OnTriggerEnter(Collider collider) {
+        IDamagable damagable = collider.gameObject.GetComponent<IDamagable>();
+        if(damagable != null) {
+            damagable.InflictDamage(damage);
+            Destroy(gameObject);
+        } else {
+            // To ignore collisions with MagicBook's own collider; layer 0 is the Default layer
+            if(collider.gameObject.layer == 0)
+                Destroy(gameObject);
+        }
+    }
+
+
+
+    public override void ShowPreview() {
+        StartCoroutine(Show());
+    }
+
+    public override void HidePreview()
 	{
 		StartCoroutine(HideAndDestroy());
 	}
 
 
-
-	private float hidingCurStartSize;
+    /*
+	private float hidingCurStartSize; 
 	private IEnumerator HideAndDestroy()
 	{
 		var main = ps.main;
@@ -96,13 +116,48 @@ public class Fireball : Spell
 		curStartSize = Mathf.SmoothDamp(curStartSize, targetStartSize, ref curVelocitySmoothDamp, 1f);
 		while (hidingCurStartSize > 0f)
 		{
-			hidingCurStartSize *= 0.5f;
+			hidingCurStartSize *= 0.1f;
 			main.startSize = hidingCurStartSize;
-			print(main.startSize.constant);
+            pointLight.intensity -= 4f * Time.deltaTime;
 			yield return null;
 		}
 		Destroy(gameObject);
-	}
-	
+	}*/
 
+    private IEnumerator HideAndDestroy() { //gradually decrease the size of the spell and finally destroy
+        Vector3 scaleAtThatMoment = transform.localScale;
+        float intensityAtThatMoment = pointLight.intensity;
+        float curDuration = fadeDuration;
+        while(curDuration > 0f) {
+            var a = Time.deltaTime / fadeDuration;
+            transform.localScale -= scaleAtThatMoment * a;
+            pointLight.intensity -= intensityAtThatMoment * a;
+            curDuration -= Time.deltaTime;
+            yield return null;
+        }
+        Destroy(gameObject);
+    }
+
+
+    private IEnumerator Show() { //gradually increase the size of the spell
+        Vector3 scaleAtThatMoment = transform.localScale;
+        float intensityAtThatMoment = pointLight.intensity;
+        transform.localScale = Vector3.zero;
+        pointLight.intensity = 0f;
+        float curDuration = fadeDuration;
+        curStartSize = Mathf.SmoothDamp(curStartSize, targetStartSize, ref curVelocitySmoothDamp, 1f);
+        while(curDuration > 0f) {
+            var a = Time.deltaTime / fadeDuration;
+            transform.localScale += scaleAtThatMoment * a;
+            pointLight.intensity += intensityAtThatMoment * a;
+            curDuration -= Time.deltaTime;
+            yield return null;
+        }
+        isInitSizing = false;
+    }
+
+    protected IEnumerator LifeTimeOut() {
+        yield return new WaitForSeconds(60);
+        Destroy(gameObject);
+    }
 }

@@ -5,14 +5,14 @@ using Valve.VR.InteractionSystem;
 
 public abstract class Spell : MonoBehaviour
 {
-	protected Hand hand;
-
-	protected bool fired = false;
+    protected float fadeDuration = 0.3f;
+    protected bool fired = false;
 
 	public abstract void Fire(Vector3 handDirection);
 
 
-	public abstract void HidePreview();
+    public abstract void ShowPreview();
+    public abstract void HidePreview();
 	protected abstract void Start_Derived();
 	protected abstract void Update_Derived();
 	protected abstract void FixedUpdate_Derived();

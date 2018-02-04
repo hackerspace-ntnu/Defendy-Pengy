@@ -57,27 +57,6 @@ public class MagicBall_SlowDownEnemy : MonoBehaviour {
         }
     }
 
-	/*void OnCollisionEnter(Collision collision)
-	{
-		//explode
-		float radius = 2f;
-		Instantiate(splashEffect, transform.position, Quaternion.identity, transform.parent);
-		Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
-
-		foreach(Collider c in hitColliders){
-			var enemy = c.gameObject.GetComponent<Enemy>();
-			if (enemy != null){
-				enemies.Add(enemy);
-				//enemy.knockback()
-				enemy.InflictDamage(30f);
-			}
-			
-		}
-
-
-		Destroy(gameObject);
-	}*/
-
 
     void SlowDownEnemy(Enemy enemy)
     {
@@ -87,41 +66,7 @@ public class MagicBall_SlowDownEnemy : MonoBehaviour {
             enemies.Add(enemy);
         AddEffectToEnemy(enemy);
     }
-
-	/*void SlowDownEnemy()
-	{
-		//Instantiate(splashEffect, transform.position, Quaternion.identity, transform.parent);
-		Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
-
-		int i = 0;
-		foreach (Collider c in hitColliders)
-		{
-			var p = c.gameObject.transform.parent;
-			if (p != null)
-			{
-				print(++i);
-				p.GetComponent<Enemy>();
-				var enemy = p.GetComponent<Enemy>();
-				if (enemy != null)
-				{
-					print(enemy.transform.name);
-					enemies.Add(enemy);
-					//enemy.knockback()
-					//enemy.InflictDamage(30f);
-				}
-			}
-			
-
-		}
-		foreach(var enemy in enemies)
-		{
-			AddEffectToEnemy(enemy);
-		}
-		isOnEffect = true;
-	}*/
-
-
-
+    
 	void RemoveEffect()
 	{
 		foreach (var enemy in enemies)

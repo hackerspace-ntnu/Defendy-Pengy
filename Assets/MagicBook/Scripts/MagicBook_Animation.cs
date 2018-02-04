@@ -10,15 +10,16 @@ namespace Valve.VR.InteractionSystem
 	{
 		public SkinnedMeshRenderer[] pages;
 		private int textureSize = 4;
-		private int curPage = 1; //starts with page 2
-
+		//private int curPage = 1; //starts with page 2
+        
 
 		private Animator anim;
-		private int curTextureInt = 0;
+		//private int curTextureInt = 0;
 		private bool startedAnimation = false;
 		private int openAnim;
 
 
+        public MagicBook_SpellController spellController; //the container of the spell
 
 		#region SteamVR touchPad gestures
 		bool prevIsTouched = false;
@@ -97,8 +98,13 @@ namespace Valve.VR.InteractionSystem
 					}
 				}
 			}
-			#endregion
+            #endregion
 
+            //print(anim.GetCurrentAnimatorStateInfo(0).IsName("Page2_nextPage"));
+            if(Input.GetKeyDown(KeyCode.LeftArrow))
+                NextPage();
+            if(Input.GetKeyDown(KeyCode.RightArrow))
+                PrevPage();
 
 			if (!startedAnimation)
 				return;
@@ -121,13 +127,17 @@ namespace Valve.VR.InteractionSystem
 		{
 			anim.SetTrigger("NextPage");
 			anim.ResetTrigger("PrevPage");
-		}
+        }
 		public void PrevPage()
 		{
 			anim.SetTrigger("PrevPage");
 			anim.ResetTrigger("NextPage");
 		}
 
+        public void PageFlippingTo(int page) {
+            //curPage = page;
+            spellController.ChangeSpell(page);
+        }
 
 		public void PlayGlowEffect() //plays on the two current pages
 		{
@@ -175,12 +185,7 @@ namespace Valve.VR.InteractionSystem
 			//int(mat.mainTextureOffset.ToString("F3"));
 		}
 
-
-
-		public int GetCurrentPage_Left()
-		{
-			return curPage;
-		}
+        
 	}
 
 }

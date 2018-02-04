@@ -80,10 +80,10 @@ namespace Valve.VR.InteractionSystem
 		SteamVR_Events.Action newPosesAppliedAction;
 
 		//-------------------------------------------------
-		public GameObject rune;
-		public GameObject runeHover;
+		//public GameObject rune;
+		//public GameObject runeHover;
 
-		public GameObject fireBallPrefab;
+		//public GameObject fireBallPrefab;
 
 		private LayerMask hoverLayerMask_original;
 
@@ -99,10 +99,10 @@ namespace Valve.VR.InteractionSystem
 
 			hoverLayerMask_original = attachedHand.hoverLayerMask;
 			
-			int magicBookLayerMask = LayerMask.GetMask(new string[] { LayerMask.LayerToName(runeHover.layer) });
+			//int magicBookLayerMask = LayerMask.GetMask(new string[] { LayerMask.LayerToName(runeHover.layer) });
 			// Sets the attached hand to interact with all objects (or those previously specified by attachedHand.hoverLayerMask),
 			// except those on the runeHover.layer (evaluates to "HandHover") layer
-			attachedHand.hoverLayerMask = hoverLayerMask_original & ~magicBookLayerMask;
+			//attachedHand.hoverLayerMask = hoverLayerMask_original & ~magicBookLayerMask;
 
 			//GameObject.Find("GameManager").GetComponent<IGameManager>().GameStart();
 		}

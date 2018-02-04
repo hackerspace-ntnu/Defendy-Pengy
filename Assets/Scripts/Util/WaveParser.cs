@@ -11,7 +11,7 @@ public class WaveParser
 		List<EnemySpawner.EnemyType> enemies_currentWave = new List<EnemySpawner.EnemyType>();
 		List<float> delays_currentWave = new List<float>();
 
-		foreach (string l in wavefile.text.Split(new[] { Environment.NewLine }, StringSplitOptions.None))
+		foreach (string l in wavefile.text.Split(new[] { "\n" }, StringSplitOptions.None))
 		{
 			string line = l.Trim();
 			if (line.Length == 0 || line[0] == '/' || line[0] == '#')

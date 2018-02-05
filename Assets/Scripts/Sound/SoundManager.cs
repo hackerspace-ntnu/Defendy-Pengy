@@ -62,7 +62,7 @@ public class SoundManager : MonoBehaviour
 		Destroy(audio.gameObject, sound.length);
 	}
 
-	public static AudioClip PlayRandomSound(Component gameObject, AudioClip[] sounds)
+	public static AudioClip PlayRandomSound(Component gameObject, AudioClip[] sounds, float volume = 1f)
 	{
 		AudioSource audio = gameObject.GetComponent<AudioSource>();
 
@@ -79,6 +79,7 @@ public class SoundManager : MonoBehaviour
 		else
 			audio.clip = THIS.DEBUG_SOUND;
 
+		audio.volume = volume;
 		audio.Play();
 		return audio.clip;
 	}

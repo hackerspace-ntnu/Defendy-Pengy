@@ -1049,12 +1049,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c418c3ba615e94c6988d44dd4fb10997, type: 3}
   - {fileID: 8300000, guid: 241293668873d4ee080421e16f027d80, type: 3}
   - {fileID: 8300000, guid: a79d6d6d26e1e4bdeac6bf0fee2c707f, type: 3}
+  idleVolume: 1
   hurtSounds:
   - {fileID: 8300000, guid: a2ca26365f5f44a8e8499897cbe04ca5, type: 3}
   - {fileID: 8300000, guid: 52ac98c2882a941cdb5beac36cb4a3e4, type: 3}
   - {fileID: 8300000, guid: 55a648473156b4d8f871b929706ec321, type: 3}
+  hurtVolume: 0.5
   deathSounds:
   - {fileID: 8300000, guid: 519666caea0af4dcba0203f12b6d9689, type: 3}
+  deathVolume: 1
   IdleSoundFreq_sec: 5
   IdleSoundChance: 0.1
 --- !u!114 &114971146238619958

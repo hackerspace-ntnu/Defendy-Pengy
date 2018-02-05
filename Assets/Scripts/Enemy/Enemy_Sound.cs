@@ -37,6 +37,6 @@ abstract partial class Enemy
 
 	protected void PlayDeathSound()
 	{
-		SoundManager.PlayRandomSoundAtPoint(deathSounds, transform.position, transform.parent);
+		SoundManager.PlayRandomSoundAtPoint(deathSounds, transform.position, 1f, transform.parent);
 	}
 }

@@ -15,7 +15,7 @@ public class SelectLevel : MonoBehaviour
 	void OnHandHoverBegin(Hand hand)
 	{
 		transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
-		SoundManager.PlaySoundAtPoint(hoverSound, transform.position);
+		SoundManager.PlaySoundAtPoint(hoverSound, transform.position, 0.5f);
 	}
 
 	void HandHoverUpdate(Hand hand)
@@ -24,7 +24,7 @@ public class SelectLevel : MonoBehaviour
 		{
 			if (!isLoadingLevel)
 			{
-				SoundManager.PlaySoundAtPoint(selectSound, transform.position);
+				SoundManager.PlaySoundAtPoint(selectSound, transform.position, 0.5f);
 				Invoke("LoadLevel", selectSound.length);
 				isLoadingLevel = true;
 			}

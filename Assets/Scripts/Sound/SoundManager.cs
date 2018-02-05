@@ -47,18 +47,19 @@ public class SoundManager : MonoBehaviour
 		THIS.audioSource.PlayOneShot(THIS.gameWon);
 	}
 
-	public static void PlaySoundAtPoint(AudioClip sound, Vector3 point, Transform parent = null)
+	public static void PlaySoundAtPoint(AudioClip sound, Vector3 point, float volume = 1f, Transform parent = null)
 	{
 		AudioSource audio = CreatePointSound(point, parent);
 		audio.clip = sound;
+		audio.volume = volume;
 		audio.Play();
 		Destroy(audio.gameObject, sound.length);
 	}
 
-	public static void PlayRandomSoundAtPoint(AudioClip[] sounds, Vector3 point, Transform parent = null)
+	public static void PlayRandomSoundAtPoint(AudioClip[] sounds, Vector3 point, float volume = 1f, Transform parent = null)
 	{
 		AudioSource audio = CreatePointSound(point, parent);
-		AudioClip sound = PlayRandomSound(audio, sounds);
+		AudioClip sound = PlayRandomSound(audio, sounds, volume);
 		Destroy(audio.gameObject, sound.length);
 	}
 

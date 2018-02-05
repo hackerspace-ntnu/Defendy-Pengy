@@ -1,14 +1,15 @@
-﻿using UnityEngine;
-
-public class Enemy_Bear : Enemy
+﻿public class Enemy_Bear : Enemy
 {
-    private float baseSpeed = 1.5f;
-    private float speedRange = 1f;
+	public float baseSpeed = 1.5f;
+	public float speedRange = 1f;
 
-    internal override float setSpeed()
-    {
-        float randomizer = Random.Range(baseSpeed - speedRange / 2, baseSpeed + speedRange / 2);
-        float enemySpeed = randomizer;
-        return enemySpeed;
-    }
+	protected override float GetBaseSpeed()
+	{
+		return baseSpeed;
+	}
+
+	protected override float GetSpeedRange()
+	{
+		return speedRange;
+	}
 }

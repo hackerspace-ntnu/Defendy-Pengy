@@ -12,7 +12,6 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 	protected float health;
 	public GameObject healthBarPrefab;
 
-	private Random random = new Random();
 	private Transform headsetPosition;
 	private EnemyHealthBar healthBar;
 	private EnemyManager enemyManager;
@@ -20,13 +19,15 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 
 	private bool alive = true;
 
+	protected abstract float GetBaseSpeed();
+	protected abstract float GetSpeedRange();
+
 	void Start()
 	{
 		agent = GetComponent<NavMeshAgent>();
 		agent.destination = goal.position;
 		enemyManager = transform.parent.GetComponent<EnemyManager>();
-		float enemySpeed = setSpeed();
-		//agent.speed = enemySpeed;
+		SetSpeed();
 
 		//initiate healthbar and finding headsetposition, Arne-Martin
 		healthBar = Instantiate(healthBarPrefab, new Vector3(transform.position.x, transform.position.y + 2.4f, transform.position.z), Quaternion.identity)
@@ -55,7 +56,13 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 		}
 	}
 
-	internal abstract float setSpeed();
+	protected void SetSpeed()
+	{
+		float baseSpeed = GetBaseSpeed();
+		float speedRange = GetSpeedRange();
+		float randomizedSpeed = Random.Range(baseSpeed - speedRange / 2, baseSpeed + speedRange / 2);
+		agent.speed = randomizedSpeed;
+	}
 
 	void Update()
 	{

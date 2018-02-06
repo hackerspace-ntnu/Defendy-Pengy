@@ -283,13 +283,13 @@ MonoBehaviour:
   impactSound: {fileID: 8300000, guid: a1d412636dbcb7343842a90298fa9121, type: 3}
   isInitSizing: 1
   delayBetweenSpawns: 1
+  playerHoldScalingDuration: 6
   speed: 5
   slowAmount: 0.8
   slowRadius: 4
   pointLight: {fileID: 108143333240278304}
   SlowRangePrefab2: {fileID: 1708727920857804, guid: 4d4863a8665995748bbe9dda1b97a557,
     type: 2}
-  playerHoldScalingDuration: 6
   maxAdditionalSlowRadius: 8
   ps: {fileID: 198794649077697692}
 --- !u!135 &135297419013762676

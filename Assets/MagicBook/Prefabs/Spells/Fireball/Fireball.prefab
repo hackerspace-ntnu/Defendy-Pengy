@@ -308,7 +308,7 @@ MonoBehaviour:
   isInitSizing: 1
   delayBetweenSpawns: 1
   playerHoldScalingDuration: 6
-  speed: 5
+  speed: 10
   damage: 67
   maxAdditionalDamage: 200
   pointLight: {fileID: 108569519831283328}

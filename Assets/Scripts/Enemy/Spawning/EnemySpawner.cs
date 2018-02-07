@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
 	{
 		if (enemyType == EnemyType.Null)
 		{
-			print("Enemy not defined");
+			Debug.LogError("Enemy " + enemyType + " not defined");
 			return false;
 		}
 		//replace the "prefab enemy variable" with a real enemy

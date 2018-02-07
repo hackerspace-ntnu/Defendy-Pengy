@@ -68,7 +68,7 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 	{
 		if (agent.remainingDistance < 1f)
 		{
-			print("goal");
+			print(name + " reached goal");
 			enemyManager.ReachedGoal(1);
 			Destroy(gameObject);
 		}

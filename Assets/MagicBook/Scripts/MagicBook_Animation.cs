@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 namespace Valve.VR.InteractionSystem
 {
@@ -11,7 +8,7 @@ namespace Valve.VR.InteractionSystem
 		public SkinnedMeshRenderer[] pages;
 		private int textureSize = 4;
 		//private int curPage = 1; //starts with page 2
-        
+		
 
 		private Animator anim;
 		//private int curTextureInt = 0;
@@ -19,7 +16,7 @@ namespace Valve.VR.InteractionSystem
 		private int openAnim;
 
 
-        public MagicBook_SpellController spellController; //the container of the spell
+		public MagicBook_SpellController spellController; //the container of the spell
 
 		#region SteamVR touchPad gestures
 		bool prevIsTouched = false;
@@ -61,8 +58,6 @@ namespace Valve.VR.InteractionSystem
 							gestureController = ctrl;
 							gestureStartPoint = touchPos;
 							gestureTimeSpent = 0f;
-							//print("Touched");
-							//print(gestureStartPoint);
 						} else
 						{
 							var diff = touchPos - prevTouchPos;
@@ -98,13 +93,12 @@ namespace Valve.VR.InteractionSystem
 					}
 				}
 			}
-            #endregion
+			#endregion
 
-            //print(anim.GetCurrentAnimatorStateInfo(0).IsName("Page2_nextPage"));
-            if(Input.GetKeyDown(KeyCode.LeftArrow))
-                NextPage();
-            if(Input.GetKeyDown(KeyCode.RightArrow))
-                PrevPage();
+			if(Input.GetKeyDown(KeyCode.LeftArrow))
+				NextPage();
+			if(Input.GetKeyDown(KeyCode.RightArrow))
+				PrevPage();
 
 			if (!startedAnimation)
 				return;
@@ -127,17 +121,17 @@ namespace Valve.VR.InteractionSystem
 		{
 			anim.SetTrigger("NextPage");
 			anim.ResetTrigger("PrevPage");
-        }
+		}
 		public void PrevPage()
 		{
 			anim.SetTrigger("PrevPage");
 			anim.ResetTrigger("NextPage");
 		}
 
-        public void PageFlippingTo(int page) {
-            //curPage = page;
-            spellController.ChangeSpell(page);
-        }
+		public void PageFlippingTo(int page) {
+			//curPage = page;
+			spellController.ChangeSpell(page);
+		}
 
 		public void PlayGlowEffect() //plays on the two current pages
 		{
@@ -184,8 +178,5 @@ namespace Valve.VR.InteractionSystem
 			mat.mainTextureOffset = new Vector2(matX, matY);
 			//int(mat.mainTextureOffset.ToString("F3"));
 		}
-
-        
 	}
-
 }

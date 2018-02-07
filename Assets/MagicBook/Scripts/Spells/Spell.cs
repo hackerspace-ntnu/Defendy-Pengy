@@ -22,7 +22,6 @@ public abstract class Spell : MonoBehaviour
 
 	public abstract void Fire(Vector3 handDirection);
 
-
 	public abstract void ShowPreview();
 	public abstract void HidePreview();
 	protected abstract void Start_Derived();
@@ -38,8 +37,6 @@ public abstract class Spell : MonoBehaviour
 
 	void Start()
 	{
-		print("start");
-
 		Start_Derived();
 	}
 

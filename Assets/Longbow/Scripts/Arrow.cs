@@ -193,15 +193,14 @@ namespace Valve.VR.InteractionSystem
 				IDamagable hitDamagable = possiblyDamagable.GetComponentInParent<IDamagable>();
 				if (hitDamagable != null)
 				{
-					//print ("hit");
 					float speed = prevVelocity.magnitude;
 					float damage = speed * 5 - 50;
 					if (damage < 0f)
-					{
 						damage = 0f;
-					}
-					print("attack damage = " + damage.ToString());
 					hitDamagable.InflictDamage(damage);
+
+					print("Arrow damage: " + damage);
+
 					Destroy(gameObject);
 				} else
 				{

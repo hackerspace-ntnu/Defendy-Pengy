@@ -1,8 +1,8 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Iceball : Spell {
+public class Iceball : Spell
+{
 	public float speed = 7f;
 	public float slowAmount = 0.8f; //decrease 80% speed
 	public float slowRadius = 4f; //decrease 80% speed
@@ -16,7 +16,6 @@ public class Iceball : Spell {
 	public ParticleSystem ps;
 	private float maxScaleMultiplier = 7.1f; //double the size of iceball;
 	private Vector3 maxAdditionalScale;
-
 	#endregion
 
 	protected override void Start_Derived()
@@ -54,12 +53,12 @@ public class Iceball : Spell {
 
 			audioSource.volume = (Time.time - playerHoldStartTime) / playerHoldScalingDuration;
 			slowRadius += maxAdditionalSlowRadius * 1.3f * Time.deltaTime / playerHoldScalingDuration;
-			//print(slowRadius);
 		}
 
 	}
 
-	public override void Fire(Vector3 handDirection) {
+	public override void Fire(Vector3 handDirection)
+	{
 		transform.parent = null;
 		direction = handDirection;
 		fired = true;
@@ -67,7 +66,8 @@ public class Iceball : Spell {
 		PlayThrowSound();
 	}
 
-	void OnTriggerEnter(Collider collider) {
+	void OnTriggerEnter(Collider collider)
+	{
 		if (collider.GetComponent<Spell>()) //don't collide with spells
 			return;
 		if (!fired)
@@ -81,18 +81,23 @@ public class Iceball : Spell {
 		Destroy(gameObject);
 	}
 
-
-	public override void ShowPreview() {
+	public override void ShowPreview()
+	{
 		StartCoroutine(Show());
 	}
-	public override void HidePreview() {
+
+	public override void HidePreview()
+	{
 		StartCoroutine(HideAndDestroy());
 	}
-	private IEnumerator HideAndDestroy() {
+
+	private IEnumerator HideAndDestroy()
+	{
 		Vector3 scaleAtThatMoment = transform.localScale;
 		float intensityAtThatMoment = pointLight.intensity;
 		float curDuration = fadeDuration;
-		while(curDuration > 0f) {
+		while (curDuration > 0f)
+		{
 			var a = Time.deltaTime / fadeDuration;
 			transform.localScale -= scaleAtThatMoment * a;
 			pointLight.intensity -= intensityAtThatMoment * a;
@@ -101,6 +106,7 @@ public class Iceball : Spell {
 		}
 		Destroy(gameObject);
 	}
+
 	private IEnumerator Show()
 	{
 		Vector3 scaleAtThatMoment = transform.localScale;
@@ -120,11 +126,9 @@ public class Iceball : Spell {
 		isInitSizing = false;
 	}
 
-
-	
-	protected IEnumerator LifeTimeOut() {
+	protected IEnumerator LifeTimeOut()
+	{
 		yield return new WaitForSeconds(30);
 		Destroy(gameObject);
 	}
-
 }

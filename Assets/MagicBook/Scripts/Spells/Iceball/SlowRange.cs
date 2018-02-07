@@ -22,18 +22,16 @@ public class SlowRange : MonoBehaviour
 		sCol = GetComponent<SphereCollider>();
 		StartCoroutine(GraduallyIncreaseCollider());
 	}
-	
 
 	void OnTriggerEnter(Collider col)
 	{
-		var enemy = col.GetComponentInParent<Enemy>();
+		Enemy enemy = col.GetComponentInParent<Enemy>();
 		if (enemy != null)
 		{
-			print("Slowed down an enemy");
 			SlowDownEnemy(enemy);
+			print("Slowed down enemy " + enemy.name);
 		}
 	}
-
 
 	private IEnumerator GraduallyIncreaseCollider()
 	{
@@ -58,9 +56,6 @@ public class SlowRange : MonoBehaviour
 		Destroy(gameObject);
 	}
 
-
-
-
 	void SlowDownEnemy(Enemy enemy)
 	{
 		if (allSlowedEnemies.Contains(enemy))//if enemy is already being affected, do nothing;
@@ -82,9 +77,7 @@ public class SlowRange : MonoBehaviour
 	void AddEffectToEnemy(Enemy enemy)
 	{
 		var navMesh = enemy.GetComponent<NavMeshAgent>();
-		//print(navMesh.speed * slowAmount);
 		navMesh.speed *= slowAmount;
-		
 	}
 
 	void RemoveEffectOnEnemy(Enemy enemy)

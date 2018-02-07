@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Fireball : Spell
@@ -12,18 +11,15 @@ public class Fireball : Spell
 
 	#region ParticleSystem
 	public ParticleSystem ps;
-	private float targetStartSize;
-
+	//private float targetStartSize;
 
 	private float maxScaleMultiplier = 7.1f; //double the size of fireball;
 	private Vector3 maxAdditionalScale;
-
-
 	#endregion
 
 	protected override void Start_Derived()
 	{
-		targetStartSize = ps.main.startSize.constant;
+		//targetStartSize = ps.main.startSize.constant;
 		maxAdditionalScale = transform.lossyScale * maxScaleMultiplier;
 		StartCoroutine(Show());
 	}
@@ -55,9 +51,7 @@ public class Fireball : Spell
 
 			UpdateLoopSound();
 
-			//print(transform.localScale);
-			damage += maxAdditionalDamage * Time.deltaTime/playerHoldScalingDuration;
-			//print(damage);
+			damage += maxAdditionalDamage * Time.deltaTime / playerHoldScalingDuration;
 		}
 	}
 
@@ -82,10 +76,12 @@ public class Fireball : Spell
 		if (damagable != null)
 		{
 			damagable.InflictDamage(damage);
+
+			print("Fireball damage: " + damage);
+
 			PlayImpactSound();
 			Destroy(gameObject);
-		}
-		else
+		} else
 		{
 			// To ignore collisions with MagicBook's own collider; layer 0 is the Default layer
 			if (collider.gameObject.layer == 0)
@@ -96,8 +92,6 @@ public class Fireball : Spell
 		}
 	}
 
-
-
 	public override void ShowPreview()
 	{
 		StartCoroutine(Show());
@@ -107,7 +101,6 @@ public class Fireball : Spell
 	{
 		StartCoroutine(HideAndDestroy());
 	}
-
 
 	private IEnumerator HideAndDestroy()
 	{ //gradually decrease the size of the spell and finally destroy
@@ -124,7 +117,6 @@ public class Fireball : Spell
 		}
 		Destroy(gameObject);
 	}
-
 
 	private IEnumerator Show()
 	{ //gradually increase the size of the spell

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CloudSpawner : MonoBehaviour {
 	public Cloud[] cloudPrefabs;
@@ -17,7 +15,6 @@ public class CloudSpawner : MonoBehaviour {
 			framesToNextSpawn += frameInterval;
 		}
 		framesToNextSpawn -= 1;
-		//print (framesToNextSpawn);
 	}
 
 	void SpawnCloud (int quantity) {

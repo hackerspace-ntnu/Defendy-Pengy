@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
@@ -13,13 +12,17 @@ public class MagicBook_SpellController : MonoBehaviour {
 	private bool isOpened = false;
 	private Spell instantiatedSpell;
 	private bool isChangingSpell = true;
-	// Use this for initialization
-	void Start () {
+
+	void Start()
+	{
 		if (spells.Length == 0)
-			print("Add Spells to the MagicBook_SpellController");
+		{
+			Debug.LogError("No Spells added to the MagicBook_SpellController");
+			Destroy(this);
+		}
 	}
 
-	private void Update()
+	void Update()
 	{
 		if(!isOpened) {
 			openDelay -= Time.deltaTime;
@@ -60,13 +63,10 @@ public class MagicBook_SpellController : MonoBehaviour {
 					PlayerTakesSpell(hand);
 			}
 		}
-
 	}
-
 
 	private void PlayerTakesSpell(Hand hand)
 	{
-		print("PlayerTakeSpell");
 		instantiatedSpell.transform.parent = hand.transform;
 		spellHand = hand;
 	}
@@ -74,7 +74,7 @@ public class MagicBook_SpellController : MonoBehaviour {
 	public void SetCurSpell(int n)
 	{
 		if (n >= spells.Length)
-			print("Spell number is not valid");
+			Debug.LogError("Spell index " + n + " is not valid");
 		curSpell = n;
 	}
 
@@ -97,7 +97,6 @@ public class MagicBook_SpellController : MonoBehaviour {
 		if (isOpened)
 			SoundManager.PlaySoundAtPoint(spells[curSpell].igniteSound, transform.position);
 	}
-
 
 	public void MakeSpell(bool skipDelay = false)
 	{

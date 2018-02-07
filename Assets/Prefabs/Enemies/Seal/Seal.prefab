@@ -930,13 +930,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1fc6ba69b0802314d89a5bd8b1444dee, type: 3}
   - {fileID: 8300000, guid: 2e8a148e7cd79b84a8c503a9fee31d3a, type: 3}
   - {fileID: 8300000, guid: 62368aa7661670f4a8b49ffd666b8460, type: 3}
+  idleVolume: 1
   hurtSounds:
   - {fileID: 8300000, guid: ce8ab3b2fd5d27a48a231a4a213c10ba, type: 3}
   - {fileID: 8300000, guid: a44e934d9eb1d784facdf46a59b7bd62, type: 3}
+  hurtVolume: 0.5
   deathSounds:
   - {fileID: 8300000, guid: 9794e025b44737e489997ec71352a644, type: 3}
+  deathVolume: 1
   IdleSoundFreq_sec: 5
   IdleSoundChance: 0.1
+  baseSpeed: 1.2
+  speedRange: 0.5
 --- !u!114 &114847146269127126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1028,7 +1033,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2
+  m_Speed: 0
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 1200

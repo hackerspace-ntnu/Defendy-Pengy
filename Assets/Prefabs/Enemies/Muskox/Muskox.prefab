@@ -1145,6 +1145,8 @@ MonoBehaviour:
   deathVolume: 1
   IdleSoundFreq_sec: 5
   IdleSoundChance: 0.1
+  baseSpeed: 0.9
+  speedRange: 0.5
 --- !u!114 &114939713085094696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1247,7 +1249,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 0.7
+  m_Speed: 0
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 1200

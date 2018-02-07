@@ -1,7 +1,7 @@
 ﻿public class Enemy_Muskox : Enemy
 {
-	private float baseSpeed = 0.9f;
-	private float speedRange = 0.5f;
+	public float baseSpeed = 0.9f;
+	public float speedRange = 0.5f;
 
 	protected override float GetBaseSpeed()
 	{

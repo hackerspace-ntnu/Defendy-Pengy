@@ -1210,6 +1210,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4aec203025727440991218d7fb70dbdb, type: 3}
   - {fileID: 8300000, guid: 68ca833f9a54645d1b24cefbcef1f396, type: 3}
   - {fileID: 8300000, guid: 20a7da307d28141d2a5205688e665849, type: 3}
+  idleVolume: 1
   hurtSounds:
   - {fileID: 8300000, guid: e5df3c92eeb2c4c308a913bd112f0f75, type: 3}
   - {fileID: 8300000, guid: 534d2c9fa6dee4487baa9b837c2feb89, type: 3}
@@ -1217,10 +1218,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2dbfcc3e281ee440ea5184f875edb6ef, type: 3}
   - {fileID: 8300000, guid: 014562fd4f231408ba60a884d00c702d, type: 3}
   - {fileID: 8300000, guid: b47e95d53337ebc4595d7765ba680c90, type: 3}
+  hurtVolume: 0.5
   deathSounds:
   - {fileID: 8300000, guid: 9e25b2710c3274674a33366818be6dd2, type: 3}
+  deathVolume: 1
   IdleSoundFreq_sec: 5
   IdleSoundChance: 0.1
+  baseSpeed: 2
+  speedRange: 1
 --- !u!137 &137319408874593468
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1314,7 +1319,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2.2
+  m_Speed: 0
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 1200

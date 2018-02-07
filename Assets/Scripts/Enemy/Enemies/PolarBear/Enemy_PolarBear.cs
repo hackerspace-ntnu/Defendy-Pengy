@@ -1,7 +1,7 @@
 ﻿public class Enemy_PolarBear : Enemy
 {
-	private float baseSpeed = 1.5f;
-	private float speedRange = 1f;
+	public float baseSpeed = 1.5f;
+	public float speedRange = 1f;
 
 	protected override float GetBaseSpeed()
 	{

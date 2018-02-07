@@ -489,7 +489,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1885372085305002}
-  m_LocalRotation: {x: 0.6935946, y: 0.57609606, z: -0.28992084, w: -0.32091433}
+  m_LocalRotation: {x: 0.6935945, y: 0.576096, z: -0.2899208, w: -0.3209143}
   m_LocalPosition: {x: -0.0000005849215, y: -2.32831e-10, z: -0.00000006623486}
   m_LocalScale: {x: 1, y: 1.0000001, z: 1}
   m_Children:
@@ -1060,14 +1060,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c418c3ba615e94c6988d44dd4fb10997, type: 3}
   - {fileID: 8300000, guid: 241293668873d4ee080421e16f027d80, type: 3}
   - {fileID: 8300000, guid: a79d6d6d26e1e4bdeac6bf0fee2c707f, type: 3}
+  idleVolume: 1
   hurtSounds:
   - {fileID: 8300000, guid: a2ca26365f5f44a8e8499897cbe04ca5, type: 3}
   - {fileID: 8300000, guid: 52ac98c2882a941cdb5beac36cb4a3e4, type: 3}
   - {fileID: 8300000, guid: 55a648473156b4d8f871b929706ec321, type: 3}
+  hurtVolume: 0.5
   deathSounds:
   - {fileID: 8300000, guid: 519666caea0af4dcba0203f12b6d9689, type: 3}
+  deathVolume: 1
   IdleSoundFreq_sec: 5
   IdleSoundChance: 0.1
+  baseSpeed: 1.5
+  speedRange: 1
 --- !u!137 &137579290250024440
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1155,7 +1160,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1.5
+  m_Speed: 0
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 1200

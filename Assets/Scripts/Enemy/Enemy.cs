@@ -62,6 +62,8 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 		float speedRange = GetSpeedRange();
 		float randomizedSpeed = Random.Range(baseSpeed - speedRange / 2, baseSpeed + speedRange / 2);
 		agent.speed = randomizedSpeed;
+
+		GetComponent<Enemy_Animator>().OnSetSpeed(baseSpeed, randomizedSpeed);
 	}
 
 	void Update()

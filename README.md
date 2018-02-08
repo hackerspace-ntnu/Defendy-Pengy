@@ -23,7 +23,7 @@ Evt. link for å installere dem for seg: [Git](https://git-scm.com/downloads) og
    ```
    Evt. kan du bare kommentere ut de to linjene som var der fra før med en `#` foran hver av dem, og legge til de to linjene over, istedenfor.
 
-3. Gå til mappen hvor hele spillet ligger og gå til `MyFirstGame/.git`; `.git` er en skjult mappe, så du må vise skjulte filer før den dukker opp.
+3. Gå til mappen hvor hele spillet ligger og gå til `Defendy-Pengy/.git`; `.git` er en skjult mappe, så du må vise skjulte filer før den dukker opp.
    Åpne `config`-fila og legg til disse linjene, f.eks. i bunnen av fila:
    ```
    [merge]

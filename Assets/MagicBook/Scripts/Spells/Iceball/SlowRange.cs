@@ -16,7 +16,6 @@ public class SlowRange : MonoBehaviour
 	private static List<Enemy> allSlowedEnemies = new List<Enemy>();
 	private List<Enemy> slowedEnemies = new List<Enemy>();
 
-	// Use this for initialization
 	void Start()
 	{
 		sCol = GetComponent<SphereCollider>();

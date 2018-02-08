@@ -4,7 +4,6 @@ public class Crow : MonoBehaviour
 {
 	public float speed = 15f;
 	public Transform goal;
-	private float distanceToGoal;
 
 	void Start()
 	{

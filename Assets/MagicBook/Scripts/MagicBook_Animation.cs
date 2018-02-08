@@ -13,8 +13,6 @@ namespace Valve.VR.InteractionSystem
 		private Animator anim;
 		//private int curTextureInt = 0;
 		private bool startedAnimation = false;
-		private int openAnim;
-
 
 		public MagicBook_SpellController spellController; //the container of the spell
 
@@ -27,13 +25,11 @@ namespace Valve.VR.InteractionSystem
 		float gestureTimeSpent = 0f;
 		#endregion
 
-		// Use this for initialization
 		void Start()
 		{
 			anim = GetComponent<Animator>();
 		}
 
-		// Update is called once per frame
 		void Update()
 		{
 			#region SteamVR Swipe recognition

@@ -30,4 +30,3 @@ public class CloudSpawner : MonoBehaviour {
 
 }
 // Optimal position for level 1 is (-503, 134, -389)
-

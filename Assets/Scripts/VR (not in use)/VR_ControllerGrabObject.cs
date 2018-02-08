@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class VR_ControllerGrabObject : MonoBehaviour {
 
@@ -13,9 +11,6 @@ public class VR_ControllerGrabObject : MonoBehaviour {
 
     private GameObject collidingObject;
     private GameObject objectInHand;
-
-    bool isHoldingDownButton;
-
 
     void Awake() {
         trackedObj = GetComponent<SteamVR_TrackedObject>();

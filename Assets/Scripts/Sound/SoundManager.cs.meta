@@ -1,10 +1,14 @@
 fileFormatVersion: 2
 guid: 0a17d330cb24eba4f9c730d9f4ce623c
-timeCreated: 1506623000
+timeCreated: 1517447404
 licenseType: Free
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - pointSoundPrefab: {fileID: 4327442255696092, guid: 4c9627a07c28d4349b95ac5d9284a581,
+      type: 2}
+  - DEBUG_SOUND: {fileID: 8300000, guid: b47e95d53337ebc4595d7765ba680c90, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

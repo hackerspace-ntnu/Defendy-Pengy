@@ -3,7 +3,7 @@ guid: 4f12d20c471bf574aa8e78deb3f4cd1c
 timeCreated: 1504024052
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: Area
     100002: Camera
@@ -44,6 +44,11 @@ ModelImporter:
     400034: Plane
     400036: //RootNode
     2000000: Camera
+    2100000: Material.002
+    2100002: log
+    2100004: No Name
+    2100006: Material.003
+    2100008: Material.001
     2300000: Icosphere
     2300002: Icosphere.001
     2300004: Icosphere.002
@@ -93,10 +98,12 @@ ModelImporter:
     4300028: Icosphere
     4300030: Plane
     10800000: Area
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -109,6 +116,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

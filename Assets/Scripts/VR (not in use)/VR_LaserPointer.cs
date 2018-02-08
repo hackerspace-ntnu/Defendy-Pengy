@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class VR_LaserPointer : MonoBehaviour {
 
@@ -36,7 +34,6 @@ public class VR_LaserPointer : MonoBehaviour {
         teleportReticleTransform = reticle.transform;
     }
 
-    // Update is called once per frame
     void Update() {
 
         if(Controller.GetPress(SteamVR_Controller.ButtonMask.Touchpad)) {

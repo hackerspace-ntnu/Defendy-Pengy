@@ -51,5 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a77b6db6fc165014ea09cc80f700fa5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textModel: {fileID: 1412698520685898, guid: 19acbee4887ebc541a8a6d3a30b1aef1, type: 2}
+  modelGameOver: {fileID: 1571009215961136, guid: f0f24325f758d704991b399b9eddec48,
+    type: 2}
+  modelGameWin: {fileID: 1369674370764604, guid: b8724e20516848244b6be1ca8302fab4,
+    type: 2}
   cam: {fileID: 0}

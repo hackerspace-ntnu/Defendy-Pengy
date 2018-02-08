@@ -3,7 +3,7 @@ guid: 1e55ae0519756b64b89af63178604f1b
 timeCreated: 1507046245
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: Camera
     100002: Grass
@@ -2028,6 +2028,8 @@ ModelImporter:
     402018: Plane|Grass|Dupli|998.0.0.0.0.0.0.0.0.0
     402020: Plane|Grass|Dupli|999.0.0.0.0.0.0.0.0.0
     2000000: Camera
+    2100000: Material.001
+    2100002: Material
     2300000: Grass
     2300002: Plane
     2300004: Plane|Grass|Dupli|0.0.0.0.0.0.0.0.0.0
@@ -4047,10 +4049,12 @@ ModelImporter:
     4300000: Plane
     4300002: Plane|Grass|Dupli|0.0.0.0.0.0.0.0.0.0
     10800000: Lamp
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -4063,6 +4067,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

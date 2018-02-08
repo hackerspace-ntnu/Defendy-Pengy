@@ -1,0 +1,57 @@
+# SpawnerID count enemytype delay
+### Wave 1 ###
+1 1 seal 3
+1 1 seal 3
+1 1 seal 4
+0 1 wolf 3
+0 1 wolf 3
+0 1 wolf 3
+
+### Wave 2 ###
+1 1 seal 0
+0 1 polarbear 2
+0 2 wolf 3.5
+0 1 polarbear 10
+1 2 seal 1
+0 1 polarbear 2
+0 2 wolf 3.5
+0 1 polarbear 10
+1 2 seal 1
+0 1 polarbear 2
+0 2 wolf 3.5
+0 1 polarbear 10
+
+### Wave 3 ###
+1 2 seal 1
+0 1 muskox 2
+0 3 wolf 3
+0 1 polarbear 10
+1 3 seal 1
+0 1 muskox 2
+0 2 wolf 3
+0 1 polarbear 15
+1 3 seal 1
+0 1 polarbear 2
+0 2 wolf 3
+0 1 polarbear 10
+
+### Wave 4 ###
+1 3 seal 2
+0 3 muskox 3
+0 3 polarbear 3
+1 4 seal 2
+0 5 wolf 2
+1 1 seal 0
+0 1 wolf 10
+
+### Wave 5 ###
+1 3 seal 2
+0 3 wolf 2
+0 1 wolf 5
+1 3 seal 2
+0 3 muskox 2
+0 1 muskox 5
+1 3 seal 2
+0 3 polarbear 2.5
+0 1 polarbear 5
+1 3 seal 2

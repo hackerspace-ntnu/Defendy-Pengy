@@ -1,11 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class EnemyManager : MonoBehaviour {
+public class EnemyManager : MonoBehaviour
+{
 	public GameHealthManager gameHealthManager;
-	// Use this for initialization
-	public void ReachedGoal(uint n) {
-		gameHealthManager.DecreaseGameHealth (n);
+
+	public bool AreAllEnemiesDead()
+	{
+		return transform.childCount == 0;
+	}
+
+	public void ReachedGoal(uint n)
+	{
+		gameHealthManager.DecreaseGameHealth(n);
 	}
 }

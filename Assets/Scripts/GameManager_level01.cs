@@ -1,84 +1,127 @@
 ﻿//Timmy Chan
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Valve.VR.InteractionSystem;
+using UnityEngine.SceneManagement;
 
-public class GameManager_level01 : MonoBehaviour, IGameManager {
+public class GameManager_level01 : MonoBehaviour, IGameManager
+{
 	public SpawnManager spawnManager;
+	public EnemyManager enemyManager;
 	public GameHealthManager gameHealthManager;
-	public Transform enemyManager;
-	public GameObject longbow;
-	public GameObject gameOverMessage;
+	public GameUI_ImportantMessage importantMessage;
 
 	private float timeToStart = 3f;
 	public bool started = false;
 	public bool levelEnded = false;
-	// Use this for initialization
-	void Start () {
+
+	void Start()
+	{
 		gameHealthManager.gameManager = (IGameManager)this;
 	}
 
-	// Update is called once per frame
-	void Update() {
-		if (!levelEnded) {
-			if (!started) { 
-				if (timeToStart >= 0) {
+	void Update()
+	{
+		// TEMPORARY DEVELOPER HOTKEYS:
+
+		if (Input.GetKeyDown(KeyCode.Q))
+			GameWin();
+		if (Input.GetKeyDown(KeyCode.W))
+			GameStart();
+		if (Input.GetKeyDown(KeyCode.K))
+		{
+			foreach (Enemy enemy in enemyManager.GetComponentsInChildren<Enemy>())
+				enemy.InflictDamage(enemy.startHealth);
+		}
+		// END
+
+
+		if (!levelEnded)
+		{
+			if (!started)
+			{
+				if (Input.GetKeyUp(KeyCode.A))
+					GameStart();
+				if (Input.GetKeyUp(KeyCode.S))
+					GameLost();
+				if (timeToStart >= 0)
+				{
 					//timeToStart -= Time.deltaTime;
-				} else {
+				} else
+				{
 					//GameStart ();
 				}
 			}
-			if (started) {
+			if (started)
+			{
 				//if there are no more lives
 				/*if (gameHealthManager.RemainingGameHealth () <= 0) {
 					GameLost ();
 					levelEnded = true;
 				}*/
 				//if there are no more enemies to be spawned
-				if (spawnManager.RemainingWavesCount () == 0) {
+				if (spawnManager.RemainingWavesCount() == 0)
+				{
 					//if there are no more enemies alive
-					if (enemyManager.childCount == 0) {
-						GameWin ();
+					if (enemyManager.transform.childCount == 0)
+					{
+						GameWin();
 						levelEnded = true;
 					}
 				}
 			}
-		}
-		else {
+		} else
+		{
 			//what to do?
 		}
 	}
 
-	public void GameLost() {
+	public void GameLost()
+	{
 		levelEnded = true;
 		print("You have lost the game");
 		spawnManager.StopSpawning();
-		var message = Instantiate(gameOverMessage, Player.instance.hmdTransform.position, Quaternion.identity).GetComponent<GameUI_ImportantMessage>();
-		message.cam = Player.instance.hmdTransform;
-		message.transform.position = Player.instance.hmdTransform.position;
+		importantMessage.Show("Game Over");
+		SoundManager.PlayLevelLostSound();
+		//Invoke ("LoadMenu", 5f);
 		//change scene??
+		Invoke("GameRestart", 10f);
 	}
 
-	public void GameStart() {
+	public void GameStart()
+	{
 		if (started)
 			return;
+		print("Game Start!");
+		SoundManager.PlayStinger();
+		Invoke("StartSpawn", 2f);
+	}
 
-		started = true;
-		print ("Game Start!");
+	public void StartSpawn()
+	{
 		spawnManager.StartSpawningWaves();
+		started = true;
 	}
 
-	public void GamePause() {
+	public void GamePause()
+	{
 		throw new System.NotImplementedException();
 	}
 
-	public void GameRestart() {
-		throw new System.NotImplementedException();
+	public void GameRestart()
+	{
+		SceneManager.LoadScene("menu");
 	}
 
-	public void GameWin() {
+	public void GameWin()
+	{
 		levelEnded = true;
 		print("You have won the game");
+		importantMessage.Show("Game Win");
+		SoundManager.PlayWinFanfare();
+		Invoke("GameRestart", 5f);
+	}
+
+	void LoadMenu()
+	{
+		SceneManager.LoadScene("menu");
 	}
 }

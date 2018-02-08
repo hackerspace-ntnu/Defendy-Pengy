@@ -3,7 +3,7 @@ guid: 373ce942553dc4e4c8b0d11a987d0821
 timeCreated: 1507046247
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: Camera
     100002: Cylinder
@@ -20,6 +20,9 @@ ModelImporter:
     400010: Lamp
     400012: //RootNode
     2000000: Camera
+    2100000: Material.001
+    2100002: Material.003
+    2100004: Material.002
     2300000: Cylinder
     2300002: Cylinder.001
     2300004: Cylinder.002
@@ -33,10 +36,12 @@ ModelImporter:
     4300004: Cylinder.001
     4300006: Cylinder
     10800000: Lamp
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -49,6 +54,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

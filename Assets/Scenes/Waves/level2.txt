@@ -1,12 +1,11 @@
 # SpawnerID count enemytype delay
 ### Wave 1 ###
-1 1 seal 0
+1 1 seal 3
+1 1 seal 3
+1 1 seal 4
 0 1 wolf 3
-1 1 seal 0
 0 1 wolf 3
-1 1 seal 0
 0 1 wolf 3
-
 
 ### Wave 2 ###
 1 1 seal 0

@@ -30,9 +30,15 @@ public class SoundManager : MonoBehaviour
 		THIS.audioSource.PlayOneShot(THIS.stinger);
 	}
 
-	public static void PlayCrowSound()
+	public static void PlayCrowSound(Vector3 point)
 	{
-		THIS.audioSource.PlayOneShot(THIS.crowSound);
+		AudioSource audio = CreatePointSound(point);
+		audio.clip = THIS.crowSound;
+		// FIXME: Magic numbers and code repeated in PlaySoundAtPoint()
+		audio.minDistance = 10f;
+		audio.maxDistance = 100f;
+		audio.Play();
+		Destroy(audio.gameObject, THIS.crowSound.length);
 	}
 
 	public static void PlayLevelLostSound()

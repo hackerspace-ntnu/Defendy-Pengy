@@ -7,6 +7,8 @@ public class CrowSpawner : MonoBehaviour
 
 	public void SpawnCrows()
 	{
+		SoundManager.PlayCrowSound(transform.position);
+
 		for (int i = 0; i < goals.Length; i++)
 		{
 			Crow crow = Instantiate(crowPrefab.gameObject, transform.position, Quaternion.identity).GetComponent<Crow>();

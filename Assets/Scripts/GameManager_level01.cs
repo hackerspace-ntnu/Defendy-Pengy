@@ -8,7 +8,6 @@ public class GameManager_level01 : MonoBehaviour, IGameManager
 	public EnemyManager enemyManager;
 	public GameHealthManager gameHealthManager;
 	public GameUI_ImportantMessage importantMessage;
-	public CrowSpawner[] crowSpawners;
 
 	private float timeToStart = 3f;
 	public bool started = false;
@@ -98,10 +97,6 @@ public class GameManager_level01 : MonoBehaviour, IGameManager
 
 	public void StartSpawn()
 	{
-		SoundManager.PlayCrowSound();
-		foreach (CrowSpawner crowSpawner in crowSpawners)
-			crowSpawner.SpawnCrows();
-
 		spawnManager.StartSpawningWaves();
 		started = true;
 	}

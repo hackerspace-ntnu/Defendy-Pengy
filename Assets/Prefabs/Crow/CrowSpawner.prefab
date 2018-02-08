@@ -154,9 +154,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4537370982852286}
+  - component: {fileID: 114188486559399192}
   - component: {fileID: 33629940926691084}
   - component: {fileID: 23213959826896560}
-  - component: {fileID: 114188486559399192}
   m_Layer: 0
   m_Name: CrowSpawner
   m_TagString: Untagged

@@ -12,6 +12,8 @@ abstract partial class Enemy
 	public float IdleSoundFreq_sec = 5f;
 	public float IdleSoundChance = 0.1f;
 
+	public Vector2 randomPitchRange = new Vector2(0.8f, 1.2f);
+
 	protected float lastIdleSoundTime;
 
 	void SoundStart()
@@ -24,7 +26,7 @@ abstract partial class Enemy
 		if (Time.time + IdleSoundFreq_sec >= lastIdleSoundTime)
 		{
 			if (Random.value <= IdleSoundChance)
-				SoundManager.PlayRandomSound(this, idleSounds);
+				SoundManager.PlayRandomSound(this, idleSounds, randomPitchRange);
 
 			lastIdleSoundTime += IdleSoundFreq_sec;
 		}
@@ -32,11 +34,11 @@ abstract partial class Enemy
 
 	protected void PlayHurtSound()
 	{
-		SoundManager.PlayRandomSound(this, hurtSounds, hurtVolume);
+		SoundManager.PlayRandomSound(this, hurtSounds, randomPitchRange, hurtVolume);
 	}
 
 	protected void PlayDeathSound()
 	{
-		SoundManager.PlayRandomSoundAtPoint(deathSounds, transform.position, 1f, transform.parent);
+		SoundManager.PlayRandomSoundAtPoint(deathSounds, transform.position, randomPitchRange, 1f, transform.parent);
 	}
 }

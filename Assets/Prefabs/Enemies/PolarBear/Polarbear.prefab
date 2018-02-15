@@ -489,7 +489,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1885372085305002}
-  m_LocalRotation: {x: 0.6935945, y: 0.576096, z: -0.2899208, w: -0.3209143}
+  m_LocalRotation: {x: 0.6935946, y: 0.57609606, z: -0.28992084, w: -0.32091433}
   m_LocalPosition: {x: -0.0000005849215, y: -2.32831e-10, z: -0.00000006623486}
   m_LocalScale: {x: 1, y: 1.0000001, z: 1}
   m_Children:
@@ -1071,6 +1071,7 @@ MonoBehaviour:
   deathVolume: 1
   IdleSoundFreq_sec: 5
   IdleSoundChance: 0.1
+  randomPitchRange: {x: 0.8, y: 1.2}
   baseSpeed: 1.5
   speedRange: 1
 --- !u!137 &137579290250024440

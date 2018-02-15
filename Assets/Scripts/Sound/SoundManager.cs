@@ -62,14 +62,14 @@ public class SoundManager : MonoBehaviour
 		Destroy(audio.gameObject, sound.length);
 	}
 
-	public static void PlayRandomSoundAtPoint(AudioClip[] sounds, Vector3 point, float volume = 1f, Transform parent = null)
+	public static void PlayRandomSoundAtPoint(AudioClip[] sounds, Vector3 point, Vector2 randomPitchRange, float volume = 1f, Transform parent = null)
 	{
 		AudioSource audio = CreatePointSound(point, parent);
-		AudioClip sound = PlayRandomSound(audio, sounds, volume);
+		AudioClip sound = PlayRandomSound(audio, sounds, randomPitchRange, volume);
 		Destroy(audio.gameObject, sound.length);
 	}
 
-	public static AudioClip PlayRandomSound(Component gameObject, AudioClip[] sounds, float volume = 1f)
+	public static AudioClip PlayRandomSound(Component gameObject, AudioClip[] sounds, Vector2 randomPitchRange, float volume = 1f)
 	{
 		AudioSource audio = gameObject.GetComponent<AudioSource>();
 
@@ -87,6 +87,7 @@ public class SoundManager : MonoBehaviour
 			audio.clip = THIS.DEBUG_SOUND;
 
 		audio.volume = volume;
+		audio.pitch = GetRandomPitch(randomPitchRange);
 		audio.Play();
 		return audio.clip;
 	}
@@ -103,16 +104,14 @@ public class SoundManager : MonoBehaviour
 		return audio;
 	}
 
-	private static readonly float[] RANDOM_PITCH_RANGE = { 0.9f, 1.1f };
-
 	private static AudioClip ChooseRandomAudioClip(AudioClip[] sounds)
 	{
 		int soundIndex = (int)Mathf.Round(Random.value * (sounds.Length - 1));
 		return sounds[soundIndex];
 	}
 
-	private static float GetRandomPitch()
+	private static float GetRandomPitch(Vector2 randomPitchRange)
 	{
-		return Random.value * (RANDOM_PITCH_RANGE[1] - RANDOM_PITCH_RANGE[0]) + RANDOM_PITCH_RANGE[0];
+		return Random.value * (randomPitchRange[1] - randomPitchRange[0]) + randomPitchRange[0];
 	}
 }

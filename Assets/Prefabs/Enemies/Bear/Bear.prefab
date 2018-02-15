@@ -1060,6 +1060,7 @@ MonoBehaviour:
   deathVolume: 1
   IdleSoundFreq_sec: 5
   IdleSoundChance: 0.1
+  randomPitchRange: {x: 0.8, y: 1.2}
   baseSpeed: 1.5
   speedRange: 1
 --- !u!114 &114971146238619958

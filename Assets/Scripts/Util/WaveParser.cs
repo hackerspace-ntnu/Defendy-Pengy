@@ -6,17 +6,15 @@ public class WaveParser
 {
 	public static List<EnemyWave> ParseWaveFile(TextAsset wavefile)
 	{
+		List<EnemyWave.Spawn> spawns = new List<EnemyWave.Spawn>();
 		List<EnemyWave> waves = new List<EnemyWave>();
-		List<int> spawnerID_currentWave = new List<int>();
-		List<EnemySpawner.EnemyType> enemies_currentWave = new List<EnemySpawner.EnemyType>();
-		List<float> delays_currentWave = new List<float>();
 
 		foreach (string l in wavefile.text.Split(new[] { "\n" }, StringSplitOptions.None))
 		{
 			string line = l.Trim();
 			if (line.Length == 0 || line[0] == '/' || line[0] == '#')
 			{
-				AddWave(waves, spawnerID_currentWave, enemies_currentWave, delays_currentWave);
+				AddWave(waves, spawns);
 				continue;
 			}
 
@@ -27,54 +25,48 @@ public class WaveParser
 
 			int spawnID = int.Parse(tokens[0]);
 			int enemyCount = int.Parse(tokens[1]);
-			EnemySpawner.EnemyType enemy = GetEnemyType(tokens[2]);
+			Enemy.Type enemy = GetEnemyType(tokens[2]);
 			float delay = float.Parse(tokens[3]);
 			for (int i = 0; i < enemyCount; i++)
-			{
-				spawnerID_currentWave.Add(spawnID);
-				enemies_currentWave.Add(enemy);
-				delays_currentWave.Add(delay);
-			}
+				spawns.Add(new EnemyWave.Spawn(spawnID, enemy, delay));
 		}
 
-		if (enemies_currentWave.Count > 0)
-			AddWave(waves, spawnerID_currentWave, enemies_currentWave, delays_currentWave);
+		if (spawns.Count > 0)
+			AddWave(waves, spawns);
 
 		return waves;
 	}
 
-	private static void AddWave(List<EnemyWave> waves, List<int> spawnerID_currentWave, List<EnemySpawner.EnemyType> enemies_currentWave, List<float> delays_currentWave)
+	private static void AddWave(List<EnemyWave> waves, List<EnemyWave.Spawn> spawns)
 	{
-		if (enemies_currentWave.Count == 0)
+		if (spawns.Count == 0)
 			return;
 
-		waves.Add(new EnemyWave(spawnerID_currentWave.ToArray(), enemies_currentWave.ToArray(), delays_currentWave.ToArray()));
-		spawnerID_currentWave.Clear();
-		enemies_currentWave.Clear();
-		delays_currentWave.Clear();
+		waves.Add(new EnemyWave(spawns));
+		spawns.Clear();
 	}
 
-	private static EnemySpawner.EnemyType GetEnemyType(string token)
+	private static Enemy.Type GetEnemyType(string token)
 	{
-		switch (token)
+		switch (token.ToLower())
 		{
-			case "bear":
-				return EnemySpawner.EnemyType.Bear;
-
 			case "wolf":
-				return EnemySpawner.EnemyType.Wolf;
+				return Enemy.Type.Wolf;
+
+			case "bear":
+				return Enemy.Type.Bear;
 
 			case "fox":
-				return EnemySpawner.EnemyType.Fox;
-
-			case "polarbear":
-				return EnemySpawner.EnemyType.PolarBear;
+				return Enemy.Type.Fox;
 
 			case "seal":
-				return EnemySpawner.EnemyType.Seal;
+				return Enemy.Type.Seal;
+
+			case "polarbear":
+				return Enemy.Type.PolarBear;
 
 			case "muskox":
-				return EnemySpawner.EnemyType.Muskox;
+				return Enemy.Type.Muskox;
 
 			default:
 				throw new System.FormatException("Invalid enemy type: " + token);

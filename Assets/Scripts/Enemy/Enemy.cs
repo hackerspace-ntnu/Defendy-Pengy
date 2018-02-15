@@ -6,6 +6,11 @@ using Valve.VR.InteractionSystem;
 [RequireComponent(typeof(Enemy_Animator))]
 public abstract partial class Enemy : MonoBehaviour, IDamagable
 {
+	public enum Type
+	{
+		Wolf, Bear, Fox, Seal, PolarBear, Muskox
+	}
+
 	protected NavMeshAgent agent;
 	public Transform goal;
 	public float startHealth = 40f;
@@ -18,6 +23,8 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 	private SkinnedMeshRenderer enemySkinnedMeshRenderer;
 
 	private bool alive = true;
+
+	public abstract Type type { get; }
 
 	protected abstract float GetBaseSpeed();
 	protected abstract float GetSpeedRange();

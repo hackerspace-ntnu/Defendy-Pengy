@@ -1,22 +1,50 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-	public enum EnemyType { Wolf, Bear, Fox, Seal, Muskox, Fish, Pig, Null };
 	public TextAsset waveFile;
+	public float timeBetweenWaves = 10f;
 	private List<EnemyWave> waves;
-	EnemyWave currentWave;
-	private List<float> wavesDelay;
+	private EnemyWave currentWave;
 
 	public EnemyManager enemyManager;
 	public List<EnemySpawner> spawners;
+
+	public Enemy[] enemyPrefabs;
+
 	private int currentWaveIndex = 0;
 	private float timeToNextWave = 0f;
 	private bool waveSpawning = false;
 	private bool isSpawningStarted = false;
 	private float timeToNextSpawn = 0f;
-	private float speedMultiplier = 1;
+
+	void Awake()
+	{
+		// Sort enemy prefabs
+
+		if (enemyPrefabs == null || enemyPrefabs.Length < 1)
+		{
+			Debug.LogError(name + " is missing enemy prefabs to spawn.");
+			Destroy(this);
+			return;
+		}
+
+		if (Array.IndexOf(enemyPrefabs, null) > -1)
+		{
+			Debug.LogError(name + "'s enemy prefabs should not contain null values.");
+			Destroy(this);
+			return;
+		}
+
+		// Places each enemy in the original enemyPrefabs array on its respective index in the new sorted array
+		Enemy[] enemyPrefabs_sorted = new Enemy[Enum.GetNames(typeof(Enemy.Type)).Length];
+		foreach (Enemy enemy in enemyPrefabs)
+			enemyPrefabs_sorted[(int)enemy.type] = enemy;
+
+		enemyPrefabs = enemyPrefabs_sorted;
+	}
 
 	void Update()
 	{
@@ -30,16 +58,7 @@ public class SpawnManager : MonoBehaviour
 			{
 				if (timeToNextSpawn <= 0f)
 				{
-					List<object> nextSpawn = currentWave.GetNextEnemy();
-					int nextSpawnID = (int)nextSpawn[0];
-					if (nextSpawnID == -1)
-					{
-						WaveEnded();
-						return;
-					}
-					EnemySpawner.EnemyType nextEnemy = (EnemySpawner.EnemyType)nextSpawn[1];
-					spawners[nextSpawnID].SpawnEnemy(nextEnemy, speedMultiplier);
-					timeToNextSpawn += currentWave.GetSpawnDelay();
+					SpawnNextEnemy();
 				}
 				timeToNextSpawn -= Time.deltaTime;
 			}
@@ -47,26 +66,27 @@ public class SpawnManager : MonoBehaviour
 		}
 	}
 
-	public void StartSpawningWaves()
-	{ //called from gameManager
-		wavesDelay = new List<float>();
-		waves = WaveParser.ParseWaveFile(waveFile);
-		wavesDelay.Add(10f);
-		isSpawningStarted = true;
+	private void SpawnNextEnemy()
+	{
+		if (currentWave.HasNext())
+		{
+			EnemyWave.Spawn nextSpawn = currentWave.GetNextSpawn();
+			spawners[nextSpawn.spawnerID].SpawnEnemy(enemyPrefabs[(int)nextSpawn.enemy]);
+			timeToNextSpawn += nextSpawn.delay;
+		} else
+			WaveEnded();
 	}
 
-	float WaveDelay()
-	{
-		if (wavesDelay.Count <= currentWaveIndex)
-			return wavesDelay[wavesDelay.Count - 1];
-
-		return wavesDelay[currentWaveIndex];
+	public void StartSpawningWaves()
+	{ //called from gameManager
+		waves = WaveParser.ParseWaveFile(waveFile);
+		isSpawningStarted = true;
 	}
 
 	public void WaveEnded()
 	{ // always called from spawner, when the wave ends
 		waveSpawning = false;
-		timeToNextWave = WaveDelay();
+		timeToNextWave = timeBetweenWaves;
 		currentWaveIndex++;
 
 		if (RemainingWavesCount() <= 0)

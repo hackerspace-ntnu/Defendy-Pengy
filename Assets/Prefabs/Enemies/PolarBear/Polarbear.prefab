@@ -952,7 +952,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 5
-  MaxDistance: 40
+  MaxDistance: 60
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -1069,8 +1069,8 @@ MonoBehaviour:
   deathSounds:
   - {fileID: 8300000, guid: 519666caea0af4dcba0203f12b6d9689, type: 3}
   deathVolume: 1
-  IdleSoundFreq_sec: 5
-  IdleSoundChance: 0.1
+  idleSoundFreq_sec: 5
+  idleSoundChance: 0.2
   randomPitchRange: {x: 0.8, y: 1.2}
   baseSpeed: 1.5
   speedRange: 1

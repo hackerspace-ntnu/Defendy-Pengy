@@ -9,36 +9,45 @@ abstract partial class Enemy
 	public AudioClip[] deathSounds;
 	public float deathVolume = 1f;
 
-	public float IdleSoundFreq_sec = 5f;
-	public float IdleSoundChance = 0.1f;
+	public float idleSoundFreq_sec = 5f;
+	public float idleSoundChance = 0.2f;
 
 	public Vector2 randomPitchRange = new Vector2(0.8f, 1.2f);
 
-	protected float lastIdleSoundTime;
+	private float nextIdleSoundTime;
 
 	void SoundStart()
 	{
-		lastIdleSoundTime = Random.value * IdleSoundFreq_sec;
+		nextIdleSoundTime = Time.time;
 	}
 
-	protected void HandleIdleSound()
+	void SoundUpdate()
 	{
-		if (Time.time + IdleSoundFreq_sec >= lastIdleSoundTime)
-		{
-			if (Random.value <= IdleSoundChance)
-				SoundManager.PlayRandomSound(this, idleSounds, randomPitchRange);
+		HandleIdleSound();
+	}
 
-			lastIdleSoundTime += IdleSoundFreq_sec;
+	private void HandleIdleSound()
+	{
+		float currentTime = Time.time;
+		if (currentTime >= nextIdleSoundTime)
+		{
+			if (Random.value <= idleSoundChance)
+			{
+				SoundManager.PlayRandomSound(this, idleSounds, randomPitchRange, idleVolume);
+				// Longer timeout if enemy just played a sound
+				nextIdleSoundTime = currentTime + idleSoundFreq_sec * 1.5f + Random.value * idleSoundFreq_sec;
+			} else
+				nextIdleSoundTime = currentTime + idleSoundFreq_sec * 0.5f + Random.value * idleSoundFreq_sec;
 		}
 	}
 
-	protected void PlayHurtSound()
+	private void PlayHurtSound()
 	{
 		SoundManager.PlayRandomSound(this, hurtSounds, randomPitchRange, hurtVolume);
 	}
 
-	protected void PlayDeathSound()
+	private AudioClip PlayDeathSound()
 	{
-		SoundManager.PlayRandomSoundAtPoint(deathSounds, transform.position, randomPitchRange, 1f, transform.parent);
+		return SoundManager.PlayRandomSound(this, deathSounds, randomPitchRange, deathVolume);
 	}
 }

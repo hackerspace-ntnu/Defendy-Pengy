@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+	private static SpawnManager THIS;
+
 	public TextAsset waveFile;
 	public float timeBetweenWaves = 10f;
 	private List<EnemyWave> waves;
@@ -22,6 +24,15 @@ public class SpawnManager : MonoBehaviour
 
 	void Awake()
 	{
+		if (THIS == null)
+		{
+			THIS = this;
+		} else if (THIS != this)
+		{
+			Debug.LogWarning("There's more than one SpawnManager in the scene!");
+			Destroy(gameObject);
+		}
+
 		// Sort enemy prefabs
 
 		if (enemyPrefabs == null || enemyPrefabs.Length < 1)

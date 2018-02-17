@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager_level01 : MonoBehaviour, IGameManager
 {
+	private static GameManager_level01 THIS;
+
 	public SpawnManager spawnManager;
 	public EnemyManager enemyManager;
 	public GameHealthManager gameHealthManager;
@@ -13,9 +15,21 @@ public class GameManager_level01 : MonoBehaviour, IGameManager
 	public bool started = false;
 	public bool levelEnded = false;
 
+	void Awake()
+	{
+		if (THIS == null)
+		{
+			THIS = this;
+		} else if (THIS != this)
+		{
+			Debug.LogWarning("There's more than one GameManager in the scene!");
+			Destroy(gameObject);
+		}
+	}
+
 	void Start()
 	{
-		gameHealthManager.gameManager = (IGameManager)this;
+		gameHealthManager.gameManager = this;
 	}
 
 	void Update()

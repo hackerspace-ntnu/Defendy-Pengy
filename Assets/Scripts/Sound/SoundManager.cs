@@ -22,7 +22,10 @@ public class SoundManager : MonoBehaviour
 			THIS = this;
 			audioSource = GetComponent<AudioSource>();
 		} else if (THIS != this)
+		{
+			Debug.LogWarning("There's more than one SoundManager in the scene!");
 			Destroy(gameObject);
+		}
 	}
 
 	public static void PlayStinger()

@@ -94,12 +94,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34ea048c5ff7c84493756059d23047d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabs:
-  - {fileID: 114913640852120514, guid: d339565cfdd2f4c46949d4b3e6e21692, type: 2}
-  - {fileID: 114492198665661194, guid: f20227b523f8fb044935e0d54fd60308, type: 2}
-  - {fileID: 114384707417834582, guid: d840dea650132934e879d05f43b1eaf1, type: 2}
-  - {fileID: 114704428381771678, guid: 1407309d59ecf594297f07e0ab6df0ab, type: 2}
-  - {fileID: 114258363527639956, guid: 465551762f45b674cae36fbad175631d, type: 2}
-  - {fileID: 114023079292328544, guid: 7be7c6afff2934948ad4aeac5654935f, type: 2}
   enemyManager: {fileID: 0}
   goal: {fileID: 0}
+  crowSpawner: {fileID: 0}

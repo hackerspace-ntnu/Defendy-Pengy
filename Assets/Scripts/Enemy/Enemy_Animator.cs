@@ -17,6 +17,19 @@ public class Enemy_Animator : MonoBehaviour
 		animator.SetFloat(speedMultiplierHash, setSpeed / baseSpeed);
 	}
 
+	public float GetDeathAnimationLength()
+	{
+		AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
+		foreach (AnimationClip clip in clips)
+		{
+			if (clip.name.ToLower().Contains("death"))
+				return clip.length;
+		}
+
+		Debug.LogError("Couldn't find any death animation clips in the " + animator.runtimeAnimatorController.name + " animator controller.");
+		return -1f;
+	}
+
 	public void OnDeath()
 	{
 		animator.SetTrigger(deathHash);

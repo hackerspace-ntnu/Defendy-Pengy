@@ -9,8 +9,8 @@ public class EnemyManager : MonoBehaviour
 		return transform.childCount == 0;
 	}
 
-	public void ReachedGoal(uint n)
+	public void EnemyReachedGoal(uint healthLost)
 	{
-		gameHealthManager.DecreaseGameHealth(n);
+		gameHealthManager.DecreaseGameHealth(healthLost);
 	}
 }

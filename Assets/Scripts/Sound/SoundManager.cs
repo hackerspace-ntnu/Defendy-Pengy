@@ -62,29 +62,26 @@ public class SoundManager : MonoBehaviour
 		Destroy(audio.gameObject, sound.length);
 	}
 
-	public static void PlayRandomSoundAtPoint(AudioClip[] sounds, Vector3 point, Vector2 randomPitchRange, float volume = 1f, Transform parent = null)
+	public static AudioClip PlayRandomSoundAtPoint(AudioClip[] sounds, Vector3 point, Vector2 randomPitchRange, float volume = 1f, Transform parent = null)
 	{
 		AudioSource audio = CreatePointSound(point, parent);
 		AudioClip sound = PlayRandomSound(audio, sounds, randomPitchRange, volume);
 		Destroy(audio.gameObject, sound.length);
+		return audio.clip;
 	}
 
 	public static AudioClip PlayRandomSound(Component gameObject, AudioClip[] sounds, Vector2 randomPitchRange, float volume = 1f)
 	{
 		AudioSource audio = gameObject.GetComponent<AudioSource>();
 
-		AudioClip sound = null;
 		try
 		{
-			sound = ChooseRandomAudioClip(sounds);
+			audio.clip = ChooseRandomAudioClip(sounds);
 		} catch (System.IndexOutOfRangeException)
 		{
 			Debug.LogError(audio.gameObject.name + " is missing some sounds. Playing \"" + THIS.DEBUG_SOUND.name + "\" instead.");
-		}
-		if (sound)
-			audio.clip = sound;
-		else
 			audio.clip = THIS.DEBUG_SOUND;
+		}
 
 		audio.volume = volume;
 		audio.pitch = GetRandomPitch(randomPitchRange);

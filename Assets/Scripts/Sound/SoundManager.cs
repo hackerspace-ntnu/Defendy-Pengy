@@ -65,6 +65,9 @@ public class SoundManager : MonoBehaviour
 		Destroy(audio.gameObject, sound.length);
 	}
 
+	/// <summary>
+	/// Returns the AudioClip played.
+	/// </summary>
 	public static AudioClip PlayRandomSoundAtPoint(AudioClip[] sounds, Vector3 point, Vector2 randomPitchRange, float volume = 1f, Transform parent = null)
 	{
 		AudioSource audio = CreatePointSound(point, parent);
@@ -73,6 +76,9 @@ public class SoundManager : MonoBehaviour
 		return audio.clip;
 	}
 
+	/// <summary>
+	/// Returns the AudioClip played.
+	/// </summary>
 	public static AudioClip PlayRandomSound(Component gameObject, AudioClip[] sounds, Vector2 randomPitchRange, float volume = 1f)
 	{
 		AudioSource audio = gameObject.GetComponent<AudioSource>();

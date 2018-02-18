@@ -113,6 +113,7 @@ public class SpawnManager : MonoBehaviour
 	{
 		currentWave = waves[currentWaveIndex];
 		waveSpawning = true;
+		enemyManager.OnNewWave();
 	}
 
 	public void StopSpawning()

@@ -4,12 +4,11 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
 	public EnemyManager enemyManager;
-	public Transform goal;
-
 	public CrowSpawner crowSpawner;
+
 	private bool firstEnemy = true;
 
-	public bool SpawnEnemy(Enemy enemy)
+	public void SpawnEnemy(Enemy enemy)
 	{
 		if (firstEnemy)
 		{
@@ -21,9 +20,6 @@ public class EnemySpawner : MonoBehaviour
 			firstEnemy = false;
 		}
 
-		Enemy spawnedEnemy = Instantiate(enemy.gameObject, transform).GetComponent<Enemy>();
-		spawnedEnemy.transform.parent = enemyManager.transform;
-		spawnedEnemy.goal = goal;
-		return true;
+		enemyManager.OnEnemySpawned(Instantiate(enemy.gameObject, transform).GetComponent<Enemy>());
 	}
 }

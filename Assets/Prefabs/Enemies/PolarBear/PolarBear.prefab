@@ -109,8 +109,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4996711073243608}
-  - component: {fileID: 114050262194664224}
   - component: {fileID: 114258363527639956}
+  - component: {fileID: 114050262194664224}
   - component: {fileID: 95012213828333092}
   - component: {fileID: 195201718554149794}
   - component: {fileID: 82951580012741396}
@@ -1071,6 +1071,7 @@ MonoBehaviour:
   deathVolume: 1
   idleSoundFreq_sec: 5
   idleSoundChance: 0.2
+  maxSilenceDuration_sec: 20
   randomPitchRange: {x: 0.8, y: 1.2}
   baseSpeed: 1.5
   speedRange: 1

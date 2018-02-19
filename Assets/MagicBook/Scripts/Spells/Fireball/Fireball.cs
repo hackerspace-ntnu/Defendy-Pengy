@@ -4,10 +4,14 @@ using UnityEngine;
 public class Fireball : Spell
 {
 	public float speed = 10f;
-	public float damage = 67f;
-	public float maxAdditionalDamage = 200f;
+	public float damage = 30f;
+	public float maxAdditionalDamage = 70f;
 	private Vector3 direction;
 	public Light pointLight;
+
+	public GameObject FireRangePrefab;
+	private float damageRadius = 0.5f;
+	private float maxAdditionalDamageRadius = 3f;
 
 	#region ParticleSystem
 	public ParticleSystem ps;
@@ -52,6 +56,7 @@ public class Fireball : Spell
 			UpdateLoopSound();
 
 			damage += maxAdditionalDamage * Time.deltaTime / playerHoldScalingDuration;
+			damageRadius += maxAdditionalDamageRadius * 1.3f * Time.deltaTime / playerHoldScalingDuration;
 		}
 	}
 
@@ -72,7 +77,9 @@ public class Fireball : Spell
 			return;
 		if (collider.GetComponent<SlowRange>()) //don't collide with spells
 			return;
-		IDamagable damagable = collider.gameObject.GetComponentInParent<IDamagable>();
+		if (collider.GetComponent<FireballRange>()) //don't collide with spells
+			return;
+		/*IDamagable damagable = collider.gameObject.GetComponentInParent<IDamagable>();
 		if (damagable != null)
 		{
 			damagable.InflictDamage(damage);
@@ -89,7 +96,15 @@ public class Fireball : Spell
 				PlayImpactSound();
 				Destroy(gameObject);
 			}
-		}
+		}*/
+		var fireRange = Instantiate(FireRangePrefab);
+		fireRange.transform.localScale *= damageRadius;
+		fireRange.GetComponent<FireballRange>().attackDamage = damage;
+		fireRange.transform.position = transform.position;
+		PlayImpactSound();
+		print("damage:" + damage.ToString());
+		print("radius:" + damageRadius.ToString());
+		Destroy(gameObject);
 	}
 
 	public override void ShowPreview()

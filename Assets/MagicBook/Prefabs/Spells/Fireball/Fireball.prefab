@@ -320,10 +320,12 @@ MonoBehaviour:
   isInitSizing: 1
   delayBetweenSpawns: 1
   playerHoldScalingDuration: 6
-  speed: 10
-  damage: 67
-  maxAdditionalDamage: 200
+  speed: 14
+  damage: 15
+  maxAdditionalDamage: 40
   pointLight: {fileID: 108569519831283328}
+  FireRangePrefab: {fileID: 1673509378881658, guid: 1f33a090d0a27e74f954abe39f8629cf,
+    type: 2}
   ps: {fileID: 198121465302706526}
 --- !u!135 &135151076508705686
 SphereCollider:

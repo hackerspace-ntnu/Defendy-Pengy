@@ -5,7 +5,7 @@ public class Iceball : Spell
 {
 	public float speed = 7f;
 	public float slowAmount = 0.8f; //decrease 80% speed
-	public float slowRadius = 4f; //decrease 80% speed
+	public float slowRadius = 4f;
 	private Vector3 direction;
 	public Light pointLight;
 	public GameObject SlowRangePrefab2;
@@ -52,7 +52,7 @@ public class Iceball : Spell
 			UpdateLoopSound();
 
 			audioSource.volume = (Time.time - playerHoldStartTime) / playerHoldScalingDuration;
-			slowRadius += maxAdditionalSlowRadius * 1.3f * Time.deltaTime / playerHoldScalingDuration;
+			slowRadius += maxAdditionalSlowRadius * Time.deltaTime / playerHoldScalingDuration;
 		}
 
 	}
@@ -73,6 +73,8 @@ public class Iceball : Spell
 		if (!fired)
 			return;
 		if (collider.GetComponent<SlowRange>()) //don't collide with spells
+			return;
+		if (collider.GetComponent<FireballRange>()) //don't collide with spells
 			return;
 		var slowRange = Instantiate(SlowRangePrefab2);
 		slowRange.transform.localScale *= slowRadius;

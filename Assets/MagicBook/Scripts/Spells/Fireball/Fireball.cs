@@ -63,10 +63,13 @@ public class Fireball : Spell
 
 	public override void Fire(Vector3 handDirection)
 	{
-		GetComponent<BoxCollider>().enabled = true;
 		transform.parent = null;
 		direction = handDirection;
 		fired = true;
+		GetComponent<BoxCollider>().enabled = true;
+		//rotate the transform towards the direction. to be able to use transform forward
+		transform.rotation = Quaternion.LookRotation(direction);
+
 		StartCoroutine(LifeTimeOut());
 		PlayThrowSound();
 	}

@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 54785709522886298}
   - component: {fileID: 82270390973700498}
   - component: {fileID: 114380002433175008}
+  - component: {fileID: 65590007657417784}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -164,6 +165,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65590007657417784
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1740384599701424}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 4}
+  m_Center: {x: 0, y: 0, z: -2}
 --- !u!82 &82270390973700498
 AudioSource:
   m_ObjectHideFlags: 1
@@ -321,7 +334,7 @@ MonoBehaviour:
   delayBetweenSpawns: 1
   playerHoldScalingDuration: 6
   speed: 14
-  damage: 15
+  damage: 10
   maxAdditionalDamage: 30
   pointLight: {fileID: 108569519831283328}
   FireRangePrefab: {fileID: 1673509378881658, guid: 1f33a090d0a27e74f954abe39f8629cf,

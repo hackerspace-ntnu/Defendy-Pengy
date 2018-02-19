@@ -34,6 +34,7 @@ public class Fireball : Spell
 			OnPlayerHoldSpell();
 		if (fired)
 		{
+
 			transform.Translate(direction * (speed * Time.deltaTime), Space.World);
 			// TODO: edit gravity of fireball to get the moving feel
 		}
@@ -62,6 +63,7 @@ public class Fireball : Spell
 
 	public override void Fire(Vector3 handDirection)
 	{
+		GetComponent<BoxCollider>().enabled = true;
 		transform.parent = null;
 		direction = handDirection;
 		fired = true;
@@ -102,8 +104,8 @@ public class Fireball : Spell
 		fireRange.GetComponent<FireballRange>().attackDamage = damage;
 		fireRange.transform.position = transform.position;
 		PlayImpactSound();
-		print("damage:" + damage.ToString());
-		print("radius:" + damageRadius.ToString());
+		//print("damage:" + damage.ToString());
+		//print("radius:" + damageRadius.ToString());
 		Destroy(gameObject);
 	}
 

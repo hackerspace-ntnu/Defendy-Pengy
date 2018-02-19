@@ -66,7 +66,7 @@ namespace Valve.VR.InteractionSystem
 								gestureTotalMoved = Vector2.zero;
 							}
 							gestureTotalMoved += diff;
-							if (gestureTotalMoved.magnitude > 0.65f && gestureTimeSpent < 0.3f) // if the gesture is so fast and so long.
+							if (gestureTotalMoved.magnitude > 0.5f && gestureTimeSpent < 0.33f) // if the gesture is so fast and so long.
 							{
 								var dir = Mathf.Sign(gestureTotalMoved.x) == 1 ? "right" : "left";
 								isSwiped = true;

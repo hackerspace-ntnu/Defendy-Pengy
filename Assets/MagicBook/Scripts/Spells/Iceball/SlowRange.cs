@@ -10,7 +10,7 @@ public class SlowRange : MonoBehaviour
 	private float increaseDuration = 2f;
 	private float staticDuration = 2f;
 
-	public float slowAmount = 0.5f; // slow till speed percentage (0.1 = 10%) on enemy hit
+	public float slowAmount = 0.7f; // slow till speed percentage (0.1 = 10%) on enemy hit
 	public float slowDuration = 8f; //slow for seconds
 
 	private static List<Enemy> allSlowedEnemies = new List<Enemy>();
@@ -81,6 +81,8 @@ public class SlowRange : MonoBehaviour
 
 	void RemoveEffectOnEnemy(Enemy enemy)
 	{
+		if (enemy == null)
+			return;
 		var navMesh = enemy.GetComponent<NavMeshAgent>();
 		navMesh.speed /= slowAmount;
 	}

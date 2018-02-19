@@ -253,7 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireEffect: {fileID: 199894523801454330}
   smokeEffect: {fileID: 198456965011063730}
-  attackDamage: 70
+  attackDamage: 15
   totalBurnDuration: 3
 --- !u!135 &135792272438208660
 SphereCollider:

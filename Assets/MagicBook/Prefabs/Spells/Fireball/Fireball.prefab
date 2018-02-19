@@ -322,7 +322,7 @@ MonoBehaviour:
   playerHoldScalingDuration: 6
   speed: 14
   damage: 15
-  maxAdditionalDamage: 40
+  maxAdditionalDamage: 30
   pointLight: {fileID: 108569519831283328}
   FireRangePrefab: {fileID: 1673509378881658, guid: 1f33a090d0a27e74f954abe39f8629cf,
     type: 2}

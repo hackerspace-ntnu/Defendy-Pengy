@@ -4,8 +4,8 @@ using UnityEngine;
 public class Fireball : Spell
 {
 	public float speed = 10f;
-	public float damage = 30f;
-	public float maxAdditionalDamage = 70f;
+	public float damage = 15f;
+	public float maxAdditionalDamage = 30f;
 	private Vector3 direction;
 	public Light pointLight;
 

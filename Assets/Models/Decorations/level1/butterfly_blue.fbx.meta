@@ -1,18 +1,26 @@
 fileFormatVersion: 2
-guid: 1d7659013b3b14af5b626089ddcd64f0
-timeCreated: 1517683717
+guid: aa5edca8b56c671468252fe59e01c751
+timeCreated: 1519123865
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Cube
-    100004: Cube.001
-    100006: Plane
-    400000: //RootNode
-    400002: Cube
-    400004: Cube.001
-    400006: Plane
+    100000: Armature
+    100002: body_c
+    100004: //RootNode
+    100006: Cube.001
+    100008: wing_l
+    100010: wing_l_end
+    100012: wing_r
+    100014: wing_r_end
+    400000: Armature
+    400002: body_c
+    400004: //RootNode
+    400006: Cube.001
+    400008: wing_l
+    400010: wing_l_end
+    400012: wing_r
+    400014: wing_r_end
     2100000: b_body_black
     2100002: b_ears_black
     2100004: b_wing_green_1
@@ -23,15 +31,11 @@ ModelImporter:
     2100014: b_wing_inner
     2100016: b_wing_green_3
     2100018: b_wing_green_2
-    2300000: Cube
-    2300002: Cube.001
-    2300004: Plane
-    3300000: Cube
-    3300002: Cube.001
-    3300004: Plane
-    4300000: Cube
-    4300002: Cube.001
-    4300004: Plane
+    4300000: Cube.001
+    7400000: Flap
+    7400002: Armature|ArmatureAction
+    9500000: //RootNode
+    13700000: Cube.001
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -58,7 +62,63 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Flap
+      takeName: ArmatureAction
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|ArmatureAction
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -106,7 +166,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

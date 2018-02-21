@@ -48,7 +48,7 @@ ModelImporter:
     2100008: Black
     4300000: Icosphere
     7400000: Default Take
-    7400002: ArmatureAction_001
+    7400002: bobAnim
     7400004: PoseLib
     9500000: //RootNode
     13700000: Icosphere
@@ -108,7 +108,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: ArmatureAction_001
+      name: bobAnim
       takeName: ArmatureAction_001
       firstFrame: -1
       lastFrame: 59
@@ -179,6 +179,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88

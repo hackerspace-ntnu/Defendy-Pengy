@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0bb6d60c9f1504142ad1a4aa6c161351
+guid: 1a70f17ba913bae489e03f972eb4f733
 timeCreated: 1519244211
 licenseType: Free
 ModelImporter:
@@ -32,62 +32,12 @@ ModelImporter:
     2100016: b_wing_green_3
     2100018: b_wing_green_2
     4300000: Cube.000
-    7400000: Armature.001|Armature.001Action
+    7400000: Flap
     7400002: Armature.001|Armature|ArmatureAction|ArmatureAction
     7400004: Armature.001|Armature|Armature|ArmatureAction|Armature|ArmatureAction
     9500000: //RootNode
     13700000: Cube.000
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: b_body_black
-    second: {fileID: 2100000, guid: 257b8d3765fea4baeb681efe8ee657a9, type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: b_ears_black
-    second: {fileID: 2100002, guid: 257b8d3765fea4baeb681efe8ee657a9, type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: b_wing_black
-    second: {fileID: 2100006, guid: 257b8d3765fea4baeb681efe8ee657a9, type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: b_wing_blue_1
-    second: {fileID: 2100008, guid: 257b8d3765fea4baeb681efe8ee657a9, type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: b_wing_blue_2
-    second: {fileID: 2100010, guid: 257b8d3765fea4baeb681efe8ee657a9, type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: b_wing_blue_4
-    second: {fileID: 2100012, guid: 257b8d3765fea4baeb681efe8ee657a9, type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: b_wing_green_1
-    second: {fileID: 2100004, guid: 257b8d3765fea4baeb681efe8ee657a9, type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: b_wing_green_2
-    second: {fileID: 2100018, guid: 257b8d3765fea4baeb681efe8ee657a9, type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: b_wing_green_3
-    second: {fileID: 2100016, guid: 257b8d3765fea4baeb681efe8ee657a9, type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: b_wing_inner
-    second: {fileID: 2100014, guid: 257b8d3765fea4baeb681efe8ee657a9, type: 3}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -115,7 +65,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature.001|Armature.001Action
+      name: Flap
       takeName: Armature.001|Armature.001Action
       firstFrame: 0
       lastFrame: 19

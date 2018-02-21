@@ -90,6 +90,6 @@ public class FireballRange : MonoBehaviour
 
 	void InflictDamage(Enemy enemy)
 	{
-		enemy.InflictDamage(attackDamage * Time.deltaTime);
+		enemy.InflictDamage(attackDamage * Time.deltaTime, this);
 	}
 }

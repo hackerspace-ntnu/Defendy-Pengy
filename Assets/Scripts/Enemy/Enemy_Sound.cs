@@ -18,6 +18,8 @@ abstract partial class Enemy
 	private float nextIdleSoundTime;
 	private float lastSoundPlayTime;
 
+	private AudioClip lastPlayedSound;
+
 	void SoundStart()
 	{
 		nextIdleSoundTime = Time.time;
@@ -49,18 +51,28 @@ abstract partial class Enemy
 	private void PlayIdleSound()
 	{
 		float currentTime = Time.time;
-		SoundManager.PlayRandomSound(this, idleSounds, randomPitchRange, idleVolume);
+		AudioClip clip = SoundManager.PlayRandomSound(this, idleSounds, randomPitchRange, idleVolume);
 		enemyManager.OnEnemyPlayedSound(this);
 		lastSoundPlayTime = currentTime;
+		lastPlayedSound = clip;
 		// Longer timeout when enemy has just played a sound
 		nextIdleSoundTime = currentTime + idleSoundFreq_sec * 1.5f + Random.value * idleSoundFreq_sec;
 	}
 
-	private void PlayHurtSound()
+	private void PlayHurtSound(Component source)
 	{
-		SoundManager.PlayRandomSound(this, hurtSounds, randomPitchRange, hurtVolume);
+		float currentTime = Time.time;
+		if (source is FireballRange)
+		{
+			if (lastPlayedSound != null
+				&& currentTime <= lastSoundPlayTime + lastPlayedSound.length * 1.5f) // 50% extra silence time
+				return;
+		}
+
+		AudioClip clip = SoundManager.PlayRandomSound(this, hurtSounds, randomPitchRange, hurtVolume);
 		enemyManager.OnEnemyPlayedSound(this);
-		lastSoundPlayTime = Time.time;
+		lastSoundPlayTime = currentTime;
+		lastPlayedSound = clip;
 	}
 
 	private AudioClip PlayDeathSound()
@@ -68,6 +80,7 @@ abstract partial class Enemy
 		AudioClip clip = SoundManager.PlayRandomSound(this, deathSounds, randomPitchRange, deathVolume);
 		enemyManager.OnEnemyPlayedSound(this);
 		lastSoundPlayTime = Time.time;
+		lastPlayedSound = clip;
 		return clip;
 	}
 }

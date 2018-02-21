@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 
-public interface IGameHealthIndicationItem{
+public interface IGameHealthIndicationItem
+{
 	int GetHealthAmount();
-	GameObject GetGameObject ();
+	GameObject GetGameObject();
 	void Kill();
 }

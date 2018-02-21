@@ -19,9 +19,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4113095535572826}
+  - component: {fileID: 114107097949485434}
   - component: {fileID: 198342620694680766}
   - component: {fileID: 199893699604099760}
-  - component: {fileID: 114107097949485434}
   m_Layer: 0
   m_Name: FireballEffect
   m_TagString: Untagged

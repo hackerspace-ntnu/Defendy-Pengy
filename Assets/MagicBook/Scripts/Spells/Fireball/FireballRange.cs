@@ -1,34 +1,42 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
 public class FireballRange : MonoBehaviour
 {
-	private SphereCollider sCol;
-
 	public ParticleSystemRenderer fireEffect;
 	public ParticleSystem smokeEffect;
+
+	public AudioClip burnSound;
+
 	public float attackDamage; // per second
 	public float totalBurnDuration; //slow for seconds
+
+	private float particleLifetime;
 
 	void Start()
 	{
 		#region changeDurationOfParticleSystems
-			var ps = fireEffect.GetComponent<ParticleSystem>();
-			ps.Stop();
-			var main = fireEffect.GetComponent<ParticleSystem>().main;
-			main.duration = totalBurnDuration;
-			ps.Play();
-			smokeEffect.Stop();
-			main = smokeEffect.main;
-			if (totalBurnDuration < 1)
-				main.duration = 0.01f;
-			else
-				main.duration = totalBurnDuration - 1f;
-			smokeEffect.Play();
+		ParticleSystem particleSystem = fireEffect.GetComponent<ParticleSystem>();
+		ParticleSystem.MainModule main = particleSystem.main;
+		particleLifetime = main.startLifetime.constant;
+
+		particleSystem.Stop();
+		main.duration = totalBurnDuration;
+		particleSystem.Play();
+		smokeEffect.Stop();
+		main = smokeEffect.main;
+		if (totalBurnDuration < particleLifetime)
+			main.duration = 0.01f;
+		else
+			main.duration = totalBurnDuration - particleLifetime;
+		smokeEffect.Play();
 		#endregion
-		sCol = GetComponent<SphereCollider>();
+
+		AudioSource audio = GetComponent<AudioSource>();
+		audio.clip = burnSound;
+		audio.Play();
+
 		StartCoroutine(Chronology());
 	}
 
@@ -41,12 +49,15 @@ public class FireballRange : MonoBehaviour
 		}
 	}
 
-
 	private IEnumerator Chronology()
 	{
-		yield return new WaitForSeconds(totalBurnDuration + 1f); //1f is the life time of each particle
+		yield return new WaitForSeconds(totalBurnDuration);
+
+		StartCoroutine(FadeAudio(particleLifetime));
+		yield return new WaitForSeconds(particleLifetime);
+
 		//remove the AOE
-		sCol.enabled = false;
+		GetComponent<SphereCollider>().enabled = false;
 		/*Color c = fireEffect.material.GetColor("_TintColor"); //make the object fade object by turning down its opacity gradually
 		while (c.a > 0)
 		{
@@ -57,16 +68,28 @@ public class FireballRange : MonoBehaviour
 			yield return null;
 		}*/
 
-		//make the fire transparent and remove it
-
 		//wait till the smoke disappears
-		yield return new WaitForSeconds(3f);
+		yield return new WaitForSeconds(smokeEffect.main.duration);
 
 		Destroy(gameObject);
 	}
 
+	private IEnumerator FadeAudio(float fadeTime)
+	{
+		AudioSource audio = GetComponent<AudioSource>();
+		float startVolume = audio.volume;
+
+		while (audio.volume > 0)
+		{
+			audio.volume -= startVolume * Time.deltaTime / fadeTime;
+			yield return null;
+		}
+
+		audio.Stop();
+	}
+
 	void InflictDamage(Enemy enemy)
 	{
-		enemy.InflictDamage(attackDamage*Time.deltaTime);
+		enemy.InflictDamage(attackDamage * Time.deltaTime);
 	}
 }

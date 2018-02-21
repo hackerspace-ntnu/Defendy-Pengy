@@ -14,16 +14,12 @@ public class Fireball : Spell
 	private float maxAdditionalDamageRadius = 3f;
 
 	#region ParticleSystem
-	public ParticleSystem ps;
-	//private float targetStartSize;
-
 	private float maxScaleMultiplier = 7.1f; //double the size of fireball;
 	private Vector3 maxAdditionalScale;
 	#endregion
 
 	protected override void Start_Derived()
 	{
-		//targetStartSize = ps.main.startSize.constant;
 		maxAdditionalScale = transform.lossyScale * maxScaleMultiplier;
 		StartCoroutine(Show());
 	}
@@ -102,11 +98,13 @@ public class Fireball : Spell
 				Destroy(gameObject);
 			}
 		}*/
-		var fireRange = Instantiate(FireRangePrefab);
-		fireRange.transform.localScale *= damageRadius;
-		fireRange.GetComponent<FireballRange>().attackDamage = damage;
-		fireRange.transform.position = transform.position;
 		PlayImpactSound();
+
+		FireballRange fireRange = Instantiate(FireRangePrefab).GetComponent<FireballRange>();
+		fireRange.transform.localScale *= damageRadius;
+		fireRange.attackDamage = damage;
+		fireRange.transform.position = transform.position;
+
 		//print("damage:" + damage.ToString());
 		//print("radius:" + damageRadius.ToString());
 		Destroy(gameObject);

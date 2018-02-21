@@ -44,16 +44,18 @@ public class SoundManager : MonoBehaviour
 		Destroy(audio.gameObject, THIS.crowSound.length);
 	}
 
-	public static void PlayLevelLostSound()
+	public static AudioClip PlayLevelLostSound()
 	{
 		THIS.levelMusicChild.GetComponent<AudioSource>().Stop();
 		THIS.audioSource.PlayOneShot(THIS.gameLost);
+		return THIS.gameLost;
 	}
 
-	public static void PlayWinFanfare()
+	public static AudioClip PlayWinFanfare()
 	{
 		THIS.levelMusicChild.GetComponent<AudioSource>().Stop();
 		THIS.audioSource.PlayOneShot(THIS.gameWon);
+		return THIS.gameLost;
 	}
 
 	public static void PlaySoundAtPoint(AudioClip sound, Vector3 point, float volume = 1f, Transform parent = null)

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class Fireball : Spell
 {
@@ -7,11 +8,16 @@ public class Fireball : Spell
 	public float damage = 15f;
 	public float maxAdditionalDamage = 30f;
 	private Vector3 direction;
+
 	public Light pointLight;
 
 	public GameObject FireRangePrefab;
 	private float damageRadius = 0.5f;
 	private float maxAdditionalDamageRadius = 3f;
+
+	public float towerDiameter = 2.2f;
+	private float originalSphereColliderRadius;
+	private bool passedHead = false;
 
 	#region ParticleSystem
 	private float maxScaleMultiplier = 7.1f; //double the size of fireball;
@@ -20,6 +26,10 @@ public class Fireball : Spell
 
 	protected override void Start_Derived()
 	{
+		SphereCollider sphereCollider = GetComponent<SphereCollider>();
+		originalSphereColliderRadius = sphereCollider.radius;
+		sphereCollider.radius /= 2;
+
 		maxAdditionalScale = transform.lossyScale * maxScaleMultiplier;
 		StartCoroutine(Show());
 	}
@@ -28,15 +38,24 @@ public class Fireball : Spell
 	{
 		if (Input.GetKey(KeyCode.Space))
 			OnPlayerHoldSpell();
+	}
+
+	protected override void FixedUpdate_Derived()
+	{
 		if (fired)
 		{
-
 			transform.Translate(direction * (speed * Time.deltaTime), Space.World);
+
+			if (!passedHead
+				&& (transform.position - Player.instance.headCollider.transform.position).magnitude >= towerDiameter)
+			{
+				GetComponent<SphereCollider>().radius = originalSphereColliderRadius;
+				passedHead = true;
+			}
+
 			// TODO: edit gravity of fireball to get the moving feel
 		}
 	}
-
-	protected override void FixedUpdate_Derived() { }
 
 	public override void OnPlayerHoldSpell()
 	{
@@ -62,7 +81,7 @@ public class Fireball : Spell
 		transform.parent = null;
 		direction = handDirection;
 		fired = true;
-		GetComponent<BoxCollider>().enabled = true;
+
 		//rotate the transform towards the direction. to be able to use transform forward
 		transform.rotation = Quaternion.LookRotation(direction);
 

@@ -6,9 +6,17 @@ public class GameHealthManager : MonoBehaviour
 	private static GameHealthManager THIS;
 
 	public IGameManager gameManager;
+
+	public float warnPlayer_enemyDistance = 20f;
+
 	// when "gameHealth" gets decreased to 0, the player loses the game.
 	private int gameHealth; // we should have 20 penguins on the water
 	private List<IGameHealthIndicationItem> gameHealthIndicationItems = new List<IGameHealthIndicationItem>();
+
+	public static float GetWarnPlayerDistance()
+	{
+		return THIS.warnPlayer_enemyDistance;
+	}
 
 	void Awake()
 	{

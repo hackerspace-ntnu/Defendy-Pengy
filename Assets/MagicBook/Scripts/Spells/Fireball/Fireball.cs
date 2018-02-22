@@ -47,7 +47,7 @@ public class Fireball : Spell
 			transform.Translate(direction * (speed * Time.deltaTime), Space.World);
 
 			if (!passedHead
-				&& (transform.position - Player.instance.headCollider.transform.position).magnitude >= towerDiameter)
+				&& Vector3.Distance(transform.position, Player.instance.headCollider.transform.position) >= towerDiameter)
 			{
 				GetComponent<SphereCollider>().radius = originalSphereColliderRadius;
 				passedHead = true;

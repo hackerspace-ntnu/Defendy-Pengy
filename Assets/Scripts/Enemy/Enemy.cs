@@ -89,6 +89,11 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 		SoundUpdate();
 	}
 
+	void FixedUpdate()
+	{
+		SoundFixedUpdate();
+	}
+
 	public void InflictDamage(float damage, Component source = null)
 	{
 		health -= damage;

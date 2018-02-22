@@ -12,6 +12,6 @@ public class Butterfly_randomFlapping : StateMachineBehaviour
 		float speedMultiplier_percentage = Random.value * (speedVariabilityPercentage * 2) - speedVariabilityPercentage;
 		// Translates to between 0.95 and 1.05
 		float speedMultiplier = 1f + speedMultiplier_percentage / 100f;
-		animator.SetFloat("SpeedMultiplier", speedMultiplier);
+		animator.SetFloat(speedMultiplierHash, speedMultiplier);
 	}
 }

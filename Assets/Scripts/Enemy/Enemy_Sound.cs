@@ -20,17 +20,32 @@ abstract partial class Enemy
 
 	private AudioClip lastPlayedSound;
 
+	private float warnPlayerDistance;
+	private bool hasWarned = false;
+
 	void SoundStart()
 	{
 		nextIdleSoundTime = Time.time;
 		lastSoundPlayTime = Time.time;
 
 		enemyManager.EnemyPlaySoundTimeManaged(this, PlayIdleSound, maxSilenceDuration_sec);
+
+		warnPlayerDistance = GameHealthManager.GetWarnPlayerDistance();
 	}
 
 	void SoundUpdate()
 	{
 		HandleIdleSound();
+	}
+
+	void SoundFixedUpdate()
+	{
+		if (!hasWarned
+			&& Vector3.Distance(transform.position, goal.position) <= warnPlayerDistance)
+		{
+			PlayIdleSound();
+			hasWarned = true;
+		}
 	}
 
 	private void HandleIdleSound()

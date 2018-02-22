@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using Valve.VR;
 using Valve.VR.InteractionSystem;
 
 [RequireComponent(typeof(Interactable))]
@@ -20,7 +21,7 @@ public class SelectLevel : MonoBehaviour
 
 	void HandHoverUpdate(Hand hand)
 	{
-		if (hand.GetStandardInteractionButton())
+		if (hand.controller.GetPressDown(EVRButtonId.k_EButton_SteamVR_Trigger))
 		{
 			if (!isLoadingLevel)
 			{

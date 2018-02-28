@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 23704755590810514}
   - component: {fileID: 114531263990191468}
   - component: {fileID: 54785709522886298}
+  - component: {fileID: 114380002433175008}
   - component: {fileID: 82270390973700498}
   m_Layer: 0
   m_Name: Fireball
@@ -159,10 +160,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
+  m_IsKinematic: 1
+  m_Interpolate: 2
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!82 &82270390973700498
 AudioSource:
   m_ObjectHideFlags: 1
@@ -279,6 +280,17 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114380002433175008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1740384599701424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc3be917a80086a48b97933694257f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114463852571642486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -308,11 +320,13 @@ MonoBehaviour:
   isInitSizing: 1
   delayBetweenSpawns: 1
   playerHoldScalingDuration: 6
-  speed: 10
-  damage: 67
-  maxAdditionalDamage: 200
+  speed: 14
+  damage: 10
+  maxAdditionalDamage: 30
   pointLight: {fileID: 108569519831283328}
-  ps: {fileID: 198121465302706526}
+  FireRangePrefab: {fileID: 1673509378881658, guid: 1f33a090d0a27e74f954abe39f8629cf,
+    type: 2}
+  towerDiameter: 2.2
 --- !u!135 &135151076508705686
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -323,7 +337,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198121465302706526
 ParticleSystem:

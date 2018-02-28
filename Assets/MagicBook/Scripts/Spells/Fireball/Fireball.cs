@@ -1,25 +1,35 @@
 ﻿using System.Collections;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class Fireball : Spell
 {
 	public float speed = 10f;
-	public float damage = 67f;
-	public float maxAdditionalDamage = 200f;
+	public float damage = 15f;
+	public float maxAdditionalDamage = 30f;
 	private Vector3 direction;
+
 	public Light pointLight;
 
-	#region ParticleSystem
-	public ParticleSystem ps;
-	//private float targetStartSize;
+	public GameObject FireRangePrefab;
+	private float damageRadius = 0.5f;
+	private float maxAdditionalDamageRadius = 3f;
 
+	public float towerDiameter = 2.2f;
+	private float originalSphereColliderRadius;
+	private bool passedHead = false;
+
+	#region ParticleSystem
 	private float maxScaleMultiplier = 7.1f; //double the size of fireball;
 	private Vector3 maxAdditionalScale;
 	#endregion
 
 	protected override void Start_Derived()
 	{
-		//targetStartSize = ps.main.startSize.constant;
+		SphereCollider sphereCollider = GetComponent<SphereCollider>();
+		originalSphereColliderRadius = sphereCollider.radius;
+		sphereCollider.radius /= 2;
+
 		maxAdditionalScale = transform.lossyScale * maxScaleMultiplier;
 		StartCoroutine(Show());
 	}
@@ -28,14 +38,24 @@ public class Fireball : Spell
 	{
 		if (Input.GetKey(KeyCode.Space))
 			OnPlayerHoldSpell();
+	}
+
+	protected override void FixedUpdate_Derived()
+	{
 		if (fired)
 		{
 			transform.Translate(direction * (speed * Time.deltaTime), Space.World);
+
+			if (!passedHead
+				&& Vector3.Distance(transform.position, Player.instance.headCollider.transform.position) >= towerDiameter)
+			{
+				GetComponent<SphereCollider>().radius = originalSphereColliderRadius;
+				passedHead = true;
+			}
+
 			// TODO: edit gravity of fireball to get the moving feel
 		}
 	}
-
-	protected override void FixedUpdate_Derived() { }
 
 	public override void OnPlayerHoldSpell()
 	{
@@ -52,6 +72,7 @@ public class Fireball : Spell
 			UpdateLoopSound();
 
 			damage += maxAdditionalDamage * Time.deltaTime / playerHoldScalingDuration;
+			damageRadius += maxAdditionalDamageRadius * 1.3f * Time.deltaTime / playerHoldScalingDuration;
 		}
 	}
 
@@ -60,6 +81,10 @@ public class Fireball : Spell
 		transform.parent = null;
 		direction = handDirection;
 		fired = true;
+
+		//rotate the transform towards the direction. to be able to use transform forward
+		transform.rotation = Quaternion.LookRotation(direction);
+
 		StartCoroutine(LifeTimeOut());
 		PlayThrowSound();
 	}
@@ -72,7 +97,9 @@ public class Fireball : Spell
 			return;
 		if (collider.GetComponent<SlowRange>()) //don't collide with spells
 			return;
-		IDamagable damagable = collider.gameObject.GetComponentInParent<IDamagable>();
+		if (collider.GetComponent<FireballRange>()) //don't collide with spells
+			return;
+		/*IDamagable damagable = collider.gameObject.GetComponentInParent<IDamagable>();
 		if (damagable != null)
 		{
 			damagable.InflictDamage(damage);
@@ -89,7 +116,17 @@ public class Fireball : Spell
 				PlayImpactSound();
 				Destroy(gameObject);
 			}
-		}
+		}*/
+		PlayImpactSound();
+
+		FireballRange fireRange = Instantiate(FireRangePrefab).GetComponent<FireballRange>();
+		fireRange.transform.localScale *= damageRadius;
+		fireRange.attackDamage = damage;
+		fireRange.transform.position = transform.position;
+
+		//print("damage:" + damage.ToString());
+		//print("radius:" + damageRadius.ToString());
+		Destroy(gameObject);
 	}
 
 	public override void ShowPreview()

@@ -4,18 +4,33 @@ using UnityEngine.SceneManagement;
 
 public class GameManager_level01 : MonoBehaviour, IGameManager
 {
+	private static GameManager_level01 THIS;
+
 	public SpawnManager spawnManager;
 	public EnemyManager enemyManager;
 	public GameHealthManager gameHealthManager;
 	public GameUI_ImportantMessage importantMessage;
 
-	private float timeToStart = 3f;
+	public string sceneLoadedOnRestart = "menu";
+
 	public bool started = false;
 	public bool levelEnded = false;
 
+	void Awake()
+	{
+		if (THIS == null)
+		{
+			THIS = this;
+		} else if (THIS != this)
+		{
+			Debug.LogWarning("There's more than one GameManager in the scene!");
+			Destroy(gameObject);
+		}
+	}
+
 	void Start()
 	{
-		gameHealthManager.gameManager = (IGameManager)this;
+		gameHealthManager.gameManager = this;
 	}
 
 	void Update()
@@ -42,13 +57,6 @@ public class GameManager_level01 : MonoBehaviour, IGameManager
 					GameStart();
 				if (Input.GetKeyUp(KeyCode.S))
 					GameLost();
-				if (timeToStart >= 0)
-				{
-					//timeToStart -= Time.deltaTime;
-				} else
-				{
-					//GameStart ();
-				}
 			}
 			if (started)
 			{
@@ -74,18 +82,6 @@ public class GameManager_level01 : MonoBehaviour, IGameManager
 		}
 	}
 
-	public void GameLost()
-	{
-		levelEnded = true;
-		print("You have lost the game");
-		spawnManager.StopSpawning();
-		importantMessage.Show("Game Over");
-		SoundManager.PlayLevelLostSound();
-		//Invoke ("LoadMenu", 5f);
-		//change scene??
-		Invoke("GameRestart", 10f);
-	}
-
 	public void GameStart()
 	{
 		if (started)
@@ -106,22 +102,29 @@ public class GameManager_level01 : MonoBehaviour, IGameManager
 		throw new System.NotImplementedException();
 	}
 
-	public void GameRestart()
-	{
-		SceneManager.LoadScene("menu");
-	}
-
 	public void GameWin()
 	{
 		levelEnded = true;
 		print("You have won the game");
 		importantMessage.Show("Game Win");
-		SoundManager.PlayWinFanfare();
-		Invoke("GameRestart", 5f);
+
+		AudioClip sound = SoundManager.PlayWinFanfare();
+		Invoke("GameRestart", Mathf.Max(sound.length, 5f));
 	}
 
-	void LoadMenu()
+	public void GameLost()
 	{
-		SceneManager.LoadScene("menu");
+		levelEnded = true;
+		print("You have lost the game");
+		spawnManager.StopSpawning();
+		importantMessage.Show("Game Over");
+
+		AudioClip sound = SoundManager.PlayLevelLostSound();
+		Invoke("GameRestart", Mathf.Max(sound.length, 10f));
+	}
+
+	public void GameRestart()
+	{
+		SceneManager.LoadScene(sceneLoadedOnRestart);
 	}
 }

@@ -171,8 +171,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4206575795094156}
-  - component: {fileID: 114847146269127126}
   - component: {fileID: 114704428381771678}
+  - component: {fileID: 114847146269127126}
   - component: {fileID: 95801465728627076}
   - component: {fileID: 195509730443165448}
   - component: {fileID: 82217460910292980}
@@ -834,7 +834,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 5
-  MaxDistance: 40
+  MaxDistance: 60
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -938,8 +938,10 @@ MonoBehaviour:
   deathSounds:
   - {fileID: 8300000, guid: 9794e025b44737e489997ec71352a644, type: 3}
   deathVolume: 1
-  IdleSoundFreq_sec: 5
-  IdleSoundChance: 0.1
+  idleSoundFreq_sec: 5
+  idleSoundChance: 0.2
+  maxSilenceDuration_sec: 20
+  randomPitchRange: {x: 0.8, y: 1.2}
   baseSpeed: 1.2
   speedRange: 0.5
 --- !u!114 &114847146269127126

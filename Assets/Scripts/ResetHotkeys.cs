@@ -5,7 +5,7 @@ using Valve.VR.InteractionSystem;
 
 public class ResetHotkeys : MonoBehaviour
 {
-	public string sceneLoadedWhenReset;
+	public string sceneLoadedWhenReset = "menu";
 
 	private SteamVR_Controller.Device[] controllers = null;
 

@@ -19,6 +19,7 @@ public class MagicBook_SpellController : MonoBehaviour {
 		{
 			Debug.LogError("No Spells added to the MagicBook_SpellController");
 			Destroy(this);
+			return;
 		}
 	}
 

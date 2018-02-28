@@ -3,6 +3,11 @@
 	public float baseSpeed = 3.5f;
 	public float speedRange = 1f;
 
+	public override Type type
+	{
+		get { return Type.Fox; }
+	}
+
 	protected override float GetBaseSpeed()
 	{
 		return baseSpeed;

@@ -3,22 +3,13 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-	public enum EnemyType { Wolf, Bear, Fox, Seal, PolarBear, Muskox, Null };
-	public Enemy[] enemyPrefabs;
-	public Transform enemyManager;
-	public Transform goal;
-
+	public EnemyManager enemyManager;
 	public CrowSpawner crowSpawner;
+
 	private bool firstEnemy = true;
 
-	public bool SpawnEnemy(EnemyType enemyType, float speed)
+	public void SpawnEnemy(Enemy enemy)
 	{
-		if (enemyType == EnemyType.Null)
-		{
-			Debug.LogError("Enemy " + enemyType + " not defined");
-			return false;
-		}
-
 		if (firstEnemy)
 		{
 			if (crowSpawner)
@@ -29,15 +20,6 @@ public class EnemySpawner : MonoBehaviour
 			firstEnemy = false;
 		}
 
-		//replace the "prefab enemy variable" with a real enemy
-		Enemy enemy = Instantiate(GetPrefab(enemyType).gameObject, transform).GetComponent<Enemy>();
-		enemy.transform.parent = enemyManager;
-		enemy.goal = goal;
-		return true;
-	}
-
-	private Enemy GetPrefab(EnemyType enemyType)
-	{
-		return enemyPrefabs[(int)enemyType];
+		enemyManager.OnEnemySpawned(Instantiate(enemy.gameObject, transform).GetComponent<Enemy>());
 	}
 }

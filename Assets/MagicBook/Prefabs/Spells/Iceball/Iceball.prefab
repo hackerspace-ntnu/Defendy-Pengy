@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 114157552082744226}
   - component: {fileID: 54282387143933532}
   - component: {fileID: 82730320709960490}
+  - component: {fileID: 114479417073197578}
   m_Layer: 0
   m_Name: Iceball
   m_TagString: Untagged
@@ -292,6 +293,17 @@ MonoBehaviour:
     type: 2}
   maxAdditionalSlowRadius: 8
   ps: {fileID: 198794649077697692}
+--- !u!114 &114479417073197578
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1871344310892532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc3be917a80086a48b97933694257f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135297419013762676
 SphereCollider:
   m_ObjectHideFlags: 1

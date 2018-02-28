@@ -22,7 +22,10 @@ public class SoundManager : MonoBehaviour
 			THIS = this;
 			audioSource = GetComponent<AudioSource>();
 		} else if (THIS != this)
+		{
+			Debug.LogWarning("There's more than one SoundManager in the scene!");
 			Destroy(gameObject);
+		}
 	}
 
 	public static void PlayStinger()
@@ -41,16 +44,18 @@ public class SoundManager : MonoBehaviour
 		Destroy(audio.gameObject, THIS.crowSound.length);
 	}
 
-	public static void PlayLevelLostSound()
+	public static AudioClip PlayLevelLostSound()
 	{
 		THIS.levelMusicChild.GetComponent<AudioSource>().Stop();
 		THIS.audioSource.PlayOneShot(THIS.gameLost);
+		return THIS.gameLost;
 	}
 
-	public static void PlayWinFanfare()
+	public static AudioClip PlayWinFanfare()
 	{
 		THIS.levelMusicChild.GetComponent<AudioSource>().Stop();
 		THIS.audioSource.PlayOneShot(THIS.gameWon);
+		return THIS.gameLost;
 	}
 
 	public static void PlaySoundAtPoint(AudioClip sound, Vector3 point, float volume = 1f, Transform parent = null)
@@ -62,31 +67,35 @@ public class SoundManager : MonoBehaviour
 		Destroy(audio.gameObject, sound.length);
 	}
 
-	public static void PlayRandomSoundAtPoint(AudioClip[] sounds, Vector3 point, float volume = 1f, Transform parent = null)
+	/// <summary>
+	/// Returns the AudioClip played.
+	/// </summary>
+	public static AudioClip PlayRandomSoundAtPoint(AudioClip[] sounds, Vector3 point, Vector2 randomPitchRange, float volume = 1f, Transform parent = null)
 	{
 		AudioSource audio = CreatePointSound(point, parent);
-		AudioClip sound = PlayRandomSound(audio, sounds, volume);
+		AudioClip sound = PlayRandomSound(audio, sounds, randomPitchRange, volume);
 		Destroy(audio.gameObject, sound.length);
+		return audio.clip;
 	}
 
-	public static AudioClip PlayRandomSound(Component gameObject, AudioClip[] sounds, float volume = 1f)
+	/// <summary>
+	/// Returns the AudioClip played.
+	/// </summary>
+	public static AudioClip PlayRandomSound(Component gameObject, AudioClip[] sounds, Vector2 randomPitchRange, float volume = 1f)
 	{
 		AudioSource audio = gameObject.GetComponent<AudioSource>();
 
-		AudioClip sound = null;
 		try
 		{
-			sound = ChooseRandomAudioClip(sounds);
+			audio.clip = ChooseRandomAudioClip(sounds);
 		} catch (System.IndexOutOfRangeException)
 		{
 			Debug.LogError(audio.gameObject.name + " is missing some sounds. Playing \"" + THIS.DEBUG_SOUND.name + "\" instead.");
-		}
-		if (sound)
-			audio.clip = sound;
-		else
 			audio.clip = THIS.DEBUG_SOUND;
+		}
 
 		audio.volume = volume;
+		audio.pitch = GetRandomPitch(randomPitchRange);
 		audio.Play();
 		return audio.clip;
 	}
@@ -103,16 +112,14 @@ public class SoundManager : MonoBehaviour
 		return audio;
 	}
 
-	private static readonly float[] RANDOM_PITCH_RANGE = { 0.9f, 1.1f };
-
 	private static AudioClip ChooseRandomAudioClip(AudioClip[] sounds)
 	{
 		int soundIndex = (int)Mathf.Round(Random.value * (sounds.Length - 1));
 		return sounds[soundIndex];
 	}
 
-	private static float GetRandomPitch()
+	private static float GetRandomPitch(Vector2 randomPitchRange)
 	{
-		return Random.value * (RANDOM_PITCH_RANGE[1] - RANDOM_PITCH_RANGE[0]) + RANDOM_PITCH_RANGE[0];
+		return Random.value * (randomPitchRange[1] - randomPitchRange[0]) + randomPitchRange[0];
 	}
 }

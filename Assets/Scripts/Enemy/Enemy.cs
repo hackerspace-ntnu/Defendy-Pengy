@@ -6,6 +6,11 @@ using Valve.VR.InteractionSystem;
 [RequireComponent(typeof(Enemy_Animator))]
 public abstract partial class Enemy : MonoBehaviour, IDamagable
 {
+	public enum Type
+	{
+		Wolf, Bear, Fox, Seal, PolarBear, Muskox
+	}
+
 	protected NavMeshAgent agent;
 	public Transform goal;
 	public float startHealth = 40f;
@@ -17,16 +22,16 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 	private EnemyManager enemyManager;
 	private SkinnedMeshRenderer enemySkinnedMeshRenderer;
 
-	private bool alive = true;
+	public abstract Type type { get; }
 
 	protected abstract float GetBaseSpeed();
 	protected abstract float GetSpeedRange();
 
 	void Start()
 	{
+		enemyManager = transform.parent.GetComponent<EnemyManager>();
 		agent = GetComponent<NavMeshAgent>();
 		agent.destination = goal.position;
-		enemyManager = transform.parent.GetComponent<EnemyManager>();
 		SetSpeed();
 
 		//initiate healthbar and finding headsetposition, Arne-Martin
@@ -35,9 +40,6 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 		healthBar.transform.parent = transform;
 		headsetPosition = Player.instance.trackingOriginTransform;
 		health = startHealth;
-
-		//Vector3 left = Quaternion.Inverse(InputTracking.GetLocalRotation(VRNode.LeftEye)) * InputTracking.GetLocalPosition(VRNode.LeftEye);
-		SoundStart();
 
 		float h, s, v; // hue, saturation, value (brightness)
 		float oldV;
@@ -54,6 +56,8 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 
 			enemySkinnedMeshRenderer.materials[i].color = Color.HSVToRGB(h, s, v);
 		}
+
+		SoundStart();
 	}
 
 	protected void SetSpeed()
@@ -71,41 +75,52 @@ public abstract partial class Enemy : MonoBehaviour, IDamagable
 		if (agent.remainingDistance < 1f)
 		{
 			print(name + " reached goal");
-			enemyManager.ReachedGoal(1);
+			enemyManager.EnemyReachedGoal(1);
 			Destroy(gameObject);
 		}
 
-		if (health <= 0f)
-		{
-			//play die animation
-			//instantiate particles
-			if (alive)
-			{
-				GetComponent<Enemy_Animator>().OnDeath();
-				GetComponent<NavMeshAgent>().speed = 0f;
-				alive = false;
-				GetComponentInChildren<MeshCollider>().enabled = false;
-				Destroy(healthBar.gameObject);
-				Destroy(gameObject, 4f);
-				PlayDeathSound();
-			}
-		} else
-		{
-			//To scale healthbar to health, Arne-Martin
-			float healthPercentage = health / startHealth;
-			healthBar.Display(healthPercentage);
-			//Rotate healthbar towards player, Arne-Martin
-			Vector3 UpdatedHeadsetPosition = headsetPosition.position;
-			healthBar.transform.LookAt(UpdatedHeadsetPosition);
-		}
+		//To scale healthbar to health, Arne-Martin
+		float healthPercentage = health / startHealth;
+		healthBar.Display(healthPercentage);
+		//Rotate healthbar towards player, Arne-Martin
+		Vector3 UpdatedHeadsetPosition = headsetPosition.position;
+		healthBar.transform.LookAt(UpdatedHeadsetPosition);
 
-		HandleIdleSound();
+		SoundUpdate();
 	}
 
-	public void InflictDamage(float damage)
+	void FixedUpdate()
+	{
+		SoundFixedUpdate();
+	}
+
+	public void InflictDamage(float damage, Component source = null)
 	{
 		health -= damage;
+		if (health > 0f)
+			PlayHurtSound(source);
+		else
+			OnDeath();
+	}
 
-		PlayHurtSound();
+	private void OnDeath()
+	{
+		AudioClip chosenClip = PlayDeathSound();
+
+		// Play death animation
+		Enemy_Animator animator = GetComponent<Enemy_Animator>();
+		animator.OnDeath();
+
+		float timeTillDestroy = Mathf.Max(chosenClip.length, animator.GetDeathAnimationLength());
+
+		// Stop movement and collision
+		GetComponent<NavMeshAgent>().speed = 0f;
+		GetComponentInChildren<MeshCollider>().enabled = false;
+
+		Destroy(healthBar.gameObject);
+		// Destroy game object after death animation has finished playing
+		Destroy(gameObject, timeTillDestroy);
+		// Destroy this script component to prevent further invocations of Update()
+		Destroy(this);
 	}
 }

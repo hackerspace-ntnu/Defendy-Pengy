@@ -9,34 +9,93 @@ abstract partial class Enemy
 	public AudioClip[] deathSounds;
 	public float deathVolume = 1f;
 
-	public float IdleSoundFreq_sec = 5f;
-	public float IdleSoundChance = 0.1f;
+	public float idleSoundFreq_sec = 5f;
+	public float idleSoundChance = 0.2f;
+	public float maxSilenceDuration_sec = 20f;
 
-	protected float lastIdleSoundTime;
+	public Vector2 randomPitchRange = new Vector2(0.8f, 1.2f);
+
+	private float nextIdleSoundTime;
+	private float lastSoundPlayTime;
+
+	private AudioClip lastPlayedSound;
+
+	private float warnPlayerDistance;
+	private bool hasWarned = false;
 
 	void SoundStart()
 	{
-		lastIdleSoundTime = Random.value * IdleSoundFreq_sec;
+		nextIdleSoundTime = Time.time;
+		lastSoundPlayTime = Time.time;
+
+		enemyManager.EnemyPlaySoundTimeManaged(this, PlayIdleSound, maxSilenceDuration_sec);
+
+		warnPlayerDistance = GameHealthManager.GetWarnPlayerDistance();
 	}
 
-	protected void HandleIdleSound()
+	void SoundUpdate()
 	{
-		if (Time.time + IdleSoundFreq_sec >= lastIdleSoundTime)
-		{
-			if (Random.value <= IdleSoundChance)
-				SoundManager.PlayRandomSound(this, idleSounds);
+		HandleIdleSound();
+	}
 
-			lastIdleSoundTime += IdleSoundFreq_sec;
+	void SoundFixedUpdate()
+	{
+		if (!hasWarned
+			&& Vector3.Distance(transform.position, goal.position) <= warnPlayerDistance)
+		{
+			PlayIdleSound();
+			hasWarned = true;
 		}
 	}
 
-	protected void PlayHurtSound()
+	private void HandleIdleSound()
 	{
-		SoundManager.PlayRandomSound(this, hurtSounds, hurtVolume);
+		float currentTime = Time.time;
+		if (currentTime >= nextIdleSoundTime)
+		{
+			if (Random.value <= idleSoundChance)
+				PlayIdleSound();
+			else // Timeout till next time enemy should try playing
+				nextIdleSoundTime = currentTime + idleSoundFreq_sec * 0.5f + Random.value * idleSoundFreq_sec;
+		} else if (currentTime > lastSoundPlayTime + maxSilenceDuration_sec)
+		{
+			enemyManager.EnemyPlaySoundTimeManaged(this, PlayIdleSound, maxSilenceDuration_sec);
+		}
 	}
 
-	protected void PlayDeathSound()
+	private void PlayIdleSound()
 	{
-		SoundManager.PlayRandomSoundAtPoint(deathSounds, transform.position, 1f, transform.parent);
+		float currentTime = Time.time;
+		AudioClip clip = SoundManager.PlayRandomSound(this, idleSounds, randomPitchRange, idleVolume);
+		enemyManager.OnEnemyPlayedSound(this);
+		lastSoundPlayTime = currentTime;
+		lastPlayedSound = clip;
+		// Longer timeout when enemy has just played a sound
+		nextIdleSoundTime = currentTime + idleSoundFreq_sec * 1.5f + Random.value * idleSoundFreq_sec;
+	}
+
+	private void PlayHurtSound(Component source)
+	{
+		float currentTime = Time.time;
+		if (source is FireballRange)
+		{
+			if (lastPlayedSound != null
+				&& currentTime <= lastSoundPlayTime + lastPlayedSound.length * 1.5f) // 50% extra silence time
+				return;
+		}
+
+		AudioClip clip = SoundManager.PlayRandomSound(this, hurtSounds, randomPitchRange, hurtVolume);
+		enemyManager.OnEnemyPlayedSound(this);
+		lastSoundPlayTime = currentTime;
+		lastPlayedSound = clip;
+	}
+
+	private AudioClip PlayDeathSound()
+	{
+		AudioClip clip = SoundManager.PlayRandomSound(this, deathSounds, randomPitchRange, deathVolume);
+		enemyManager.OnEnemyPlayedSound(this);
+		lastSoundPlayTime = Time.time;
+		lastPlayedSound = clip;
+		return clip;
 	}
 }

@@ -1,58 +1,46 @@
-## Merging av scene-filer (.unity) og prefab-filer
+<img src="img/Logo.png" alt="Defendy Pengy logo" width="50%">
 
-Forutsetter at du har installert Git og helst også KDiff3, som kan gjøres gjennom [Git Extensions](https://gitextensions.github.io)-installeren, hvor du kan krysse av for å installere Git og KDiff3. Kan gjerne installeres i tillegg til [GitHub Desktop](https://desktop.github.com).
+<br>
 
-Evt. link for å installere dem for seg: [Git](https://git-scm.com/downloads) og [KDiff3](https://sourceforge.net/projects/kdiff3/files/latest/download?source=files).
+Defendy Pengy er et tower defence-inspirert spill med et hjemmekoselig dyretema. I Defendy Pengy skal du beskytte små, søte pingvinunger mot ville dyr som er ute etter å spise dem. Du kan teleportere mellom tårn og velge mellom å bruke pil og bue eller magi som våpen. Det er to verdener med forskjellig vanskelighetsgrad som du kan prøve ut.
 
-### Oppsett
+På [releases-siden](https://github.com/hackerspace-ntnu/Defendy-Pengy/releases) ligger det en ferdigbygd versjon av spillet, som du kan laste ned og kjøre hvis du har en HTC Vive eller Oculus Rift.
 
-1. Installer [Perforce Helix Visual Merge Tool](https://www.perforce.com/downloads/visual-merge-tool). (Etter å ha valgt family og platform og trykket på download, kan du trykke på "Already a customer? __Skip registration__".)
-   Evt. [direkte-link til versjon 2017.3](http://www.perforce.com/downloads/perforce/r17.3/bin.ntx64/p4vinst64.exe).
+Pull requests mottas med åpne armer!
 
-   Helst installer i default-stedet (`C:\Program Files\` eller `C:\Program Files (x86)\`), hvis ikke må du erstatte `%programs%\` i steget under.
+## Om prosjektet
+Dette er et prosjekt som ble gjennomført av VR-gruppa i Hackerspace NTNU over en periode på ett år.
 
-2. Åpne fila `mergespecfile.txt` som ligger i `C:\Program Files\Unity\Editor\Data\Tools`, og erstatt disse linjene:
-   ```
-   unity use "%programs%\YouFallbackMergeToolForScenesHere.exe" "%l" "%r" "%b" "%d"
-   prefab use "%programs%\YouFallbackMergeToolForPrefabsHere.exe" "%l" "%r" "%b" "%d"
-   ```
-   med disse:
-   ```
-   unity use "%programs%\Perforce\p4merge.exe" "%b" "%r" "%l" "%d"
-   prefab use "%programs%\Perforce\p4merge.exe" "%b" "%r" "%l" "%d"
-   ```
-   Evt. kan du bare kommentere ut de to linjene som var der fra før med en `#` foran hver av dem, og legge til de to linjene over, istedenfor.
+Du kan lese mer om prosjektet og gruppa på nettsiden vår: https://hackerspace-ntnu.no/groups/prosjekt-vr
 
-3. Gå til mappen hvor hele spillet ligger og gå til `Defendy-Pengy/.git`; `.git` er en skjult mappe, så du må vise skjulte filer før den dukker opp.
-   Åpne `config`-fila og legg til disse linjene, f.eks. i bunnen av fila:
-   ```
-   [merge]
-   	tool = unityyamlmerge
+## Medlemmer
 
-   [mergetool "unityyamlmerge"]
-   	trustExitCode = false
-   	cmd = 'C:/Program Files/Unity/Editor/Data/Tools/UnityYAMLMerge.exe' merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"
-   ```
-   Hvis Unity er installert et annet sted enn i `C:/Program Files/`, må den biten over erstattes med den riktige plasseringen.
+Leder: [eskarpnes](https://github.com/eskarpnes)
+
+Nestleder: [haakov](https://github.com/haakov)
+
+Utviklere:
+ - [ArneMartin](https://github.com/ArneMartin)
+ - [ddabble](https://github.com/ddabble)
+ - [haigol](https://github.com/haigol)
+ - [yDragonChan](https://github.com/yDragonChan)
+
+Grafisk:
+ - [dukefoss](https://github.com/dukefoss)
+ - [MiriamFi](https://github.com/MiriamFi)
+ - [oddaspa](https://github.com/oddaspa)
+ - [trebor292](https://github.com/trebor292)
+
+Lyd:
+ - [manathalie](https://github.com/manathalie)
+ - [Mattis52](https://github.com/Mattis52)
+
+## Screenshots
+
+![Screenshots](img/Screenshots.png)
+
+<br>
 
 ---
 
-Fra nå av, hver gang det oppstår en merge conflict med .unity- eller .prefab-filer kan du starte Git, som du i GitHub Desktop kan gjøre ved å trykke "Repository→Open in Command Prompt" *(evt. "Open in Git Bash" som du kan endre under "File→Options→Advanced→Shell")*:
-
-![GitHub Desktop - git bash](https://i.imgur.com/vl9tgww.png)
-
-eller i Git Extensions ved å trykke på "Git bash"-knappen:
-
-![Git Extensions - git bash](https://i.imgur.com/bZ4HAtv.png)
-
-Når du har startet Git kan du skrive `git mergetool`, som vil åpne Perforce P4Merge.
-  - Hvis det er konflikt med .meta-filer og den sier at filen "seems unchanged" og spør "Was the merge successful?", svar nei (n); evt. svar ja (y) hvis den spør "Continue merging other unresolved paths?". Etter å ha løst resten av konfliktene kan du løse de .meta-fil-konfliktene du hoppet over. Dette kan du gjøre manuelt eller med KDiff3 ved å skrive:
-
-    `git mergetool --tool=kdiff3`, eller `git mergetool -t kdiff3`
-
-  - Hvis det er konflikt med vanlige kodefiler, som .cs-filer, sørg for at det er de endringene du ønsker å ta vare på som er markert i grønt i nederste del av P4Merge-vinduet. Hvis ikke, fjern alle linjene innenfor seksjonen med rødt omriss og skriv koden du egentlig vil ta vare på.
-
-Ellers trenger du i P4Merge bare å trykke på "Save"-knappen øverst til venstre, og deretter lukke vinduet.
-  - For hver konflikt, f.eks. at posisjonen til samme objekt har blitt endret på i begge branchene, vil den *nyeste endringen* bli tatt vare på når du trykker "Save".
-
-Dermed er konflikten løst. Dette vil som regel opprette en ny .orig-fil per konflikt, som det bare er å slette før du commiter.
+### Guide for merging av scene-filer (.unity) og prefab-filer ligger på [wikien](https://github.com/hackerspace-ntnu/Defendy-Pengy/wiki/Merging-av-scene-filer-(.unity)-og-prefab-filer).

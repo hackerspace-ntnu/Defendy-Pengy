@@ -23,7 +23,7 @@ Utviklere:
  - [ArneMartin](https://github.com/ArneMartin)
  - [ddabble](https://github.com/ddabble)
  - [haigol](https://github.com/haigol)
- - [yDragonChan](https://github.com/yDragonChan) (også Grafisk)
+ - [timmychan97](https://github.com/timmychan97) (også Grafisk)
 
 Grafisk:
  - [dukefoss](https://github.com/dukefoss)

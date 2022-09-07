@@ -1,17 +1,21 @@
-<img src="img/Logo.png" alt="Defendy Pengy logo" width="50%">
+<img src="img/Logo.png" alt="Defendy Pengy logo" width="50%"/>
 
-<br>
+<br/>
 
-Defendy Pengy er et tower defence-inspirert spill med et hjemmekoselig dyretema. I Defendy Pengy skal du beskytte små, søte pingvinunger mot ville dyr som er ute etter å spise dem. Du kan teleportere mellom tårn og velge mellom å bruke pil og bue eller magi som våpen. Det er to verdener med forskjellig vanskelighetsgrad som du kan prøve ut.
+Defendy Pengy er et tower defence-inspirert spill med et hjemmekoselig dyretema.
+I Defendy Pengy skal du beskytte små, søte pingvinunger mot ville dyr som er ute etter å spise dem.
+Du kan teleportere mellom tårn og velge mellom å bruke pil og bue eller magi som våpen.
+Det er to verdener med forskjellig vanskelighetsgrad som du kan prøve ut.
 
-På [releases-siden](https://github.com/hackerspace-ntnu/Defendy-Pengy/releases) ligger det en ferdigbygd versjon av spillet, som du kan laste ned og kjøre hvis du har en HTC Vive eller Oculus Rift.
+På [releases-siden](https://github.com/hackerspace-ntnu/Defendy-Pengy/releases) ligger det en ferdigbygd versjon av spillet,
+som du kan laste ned og kjøre hvis du har en HTC Vive eller Oculus Rift.
 
 Pull requests mottas med åpne armer!
 
 ## Om prosjektet
-Dette er et prosjekt som ble gjennomført av VR-gruppa i Hackerspace NTNU over en periode på ett år.
+Dette er et prosjekt som ble gjennomført av VR-gruppa i Hackerspace NTNU over en periode på litt over ett år.
 
-Du kan lese mer om prosjektet og gruppa på nettsiden vår: https://hackerspace-ntnu.no/groups/prosjekt-vr
+Du kan lese mer om prosjektet og gruppa på nettsiden vår: https://www.hackerspace-ntnu.no/projectarchive/2
 
 ## Medlemmer
 
@@ -37,9 +41,9 @@ Lyd:
 
 ## Screenshots
 
-![Screenshots](img/Screenshots.png)
+![Gameplay screenshots from Defendy Pengy](img/Screenshots.png)
 
-<br>
+<br/>
 
 ---
 
